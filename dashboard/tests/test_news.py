@@ -25,6 +25,7 @@ CASES = [
     # wrong country / wrong meaning -> not top impact
     ("UK inflation rises to 4.1% as energy prices climb", "bbc_business", 1, None),
     ("Saudi Arabia raises electricity and water tariffs for 2027", "gn_trade", 1, "GEO"),
+    ("Cass County Judge sorry to see Swift and Sure Sanctions Probation Program end", "gn_trade", 0, None),
     ("Bitcoin buy-and-hold underperforms trend following in 10-year backtest", "coindesk", 1, None),
 ]
 

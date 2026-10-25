@@ -6,3 +6,6 @@ Newest first. Every change: date (UTC), what, why.
 - **Gamma, Tape and Liquidations moved into tabs** to make room for news. Gamma levels are still drawn on the chart and still feed the scorecard.
 - **Restored `vendor/`** (the chart library), which didn't come across when the project moved to Documents. Added a CDN fallback if the file goes missing again.
 - **Tests:** `tests/test_news.py` (16 headline cases).
+
+## 2026-10-25 (late)
+- News rule: "sanctions" now needs a country or sanctioning-body context. Why: a US county probation program ("Swift and Sure Sanctions") showed up as a geopolitical headline. Test case added.

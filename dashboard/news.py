@@ -160,7 +160,7 @@ RULES = [
     ("geo", 3, "HORMUZ", [r"strait of hormuz|\bhormuz\b", r"\b(clos\w+|block\w*|mine[sd]?|seiz\w+|attack\w*|shut\w*|tanker)\b"], [SPEC]),
     ("geo", 2, "CONFLICT", [ACTORS, r"\b(war|wars|missiles?|strikes?|attack\w*|troops|military|nuclear|drones?|bomb\w*|ceasefire|truce|"
                                     r"sanctions?|shot down|killed|warships?|navy)\b"], []),
-    ("geo", 2, "SANCTIONS", [r"\bsanctions?\b"], []),
+    ("geo", 2, "SANCTIONS", [r"\bsanctions?\b", ACTORS + r"|\b(us|u\.s\.|eu|european union|treasury|ofac|un|western|cuba|venezuela)\b"], []),
     ("geo", 1, "GEO", [ACTORS], []),
 ]
 RULES = [(c, i, t, [re.compile(p, re.I) for p in a], [re.compile(p, re.I) for p in n]) for c, i, t, a, n in RULES]
