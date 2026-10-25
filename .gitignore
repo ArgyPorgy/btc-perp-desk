@@ -1,0 +1,25 @@
+# Secrets: never commit. Real keys live only in launcher/.env (see launcher/.env.example).
+.env
+.env.*
+!.env.example
+*.pem
+*keypair*.json
+
+# Local machine / generated
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+.claude/settings.local.json
+
+# Caches the code rebuilds by itself
+dashboard/data/
+quant/data/
+orb/data/
+crash_history.npy
+crash_blocks_1.8x.csv
+
+# Launcher runtime output (its own .gitignore also covers config/state/ledgers)
+launcher/logs/
+launcher/out/

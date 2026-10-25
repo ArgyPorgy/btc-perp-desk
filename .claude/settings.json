@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 quant/paper_desk.py *)",
+      "Bash(node dashboard/tools/snapshot.js *)",
+      "Bash(python3 quant/btc_outlook.py *)",
+      "Bash(python3 dashboard/news.py *)",
+      "Bash(python3 quant/*)",
+      "Bash(node dashboard/tests/test_indicators.js *)",
+      "Bash(node dashboard/tests/test_book_live.js *)",
+      "Bash(python3 dashboard/tests/test_news.py *)",
+      "Edit(quant/**)",
+      "Edit(dashboard/**)"
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BTC Perp Desk</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="sym">BTCUSDT<span>.P</span> <small>Binance USDⓈ-M</small></div>
+  <div class="stat"><label>Last</label><b id="last">—</b></div>
+  <div class="stat"><label>Mark</label><b id="mark">—</b></div>
+  <div class="stat"><label>Index</label><b id="index">—</b></div>
+  <div class="stat"><label>Funding / 8h</label><b id="funding">—</b><small id="fundingIn"></small></div>
+  <div class="stat"><label>Open interest</label><b id="oi">—</b><small id="oiChg"></small></div>
+  <div class="stat next"><label>Next US catalyst</label><b id="nextEvent">—</b></div>
+  <div class="tfs" id="tfs"></div>
+  <button id="settingsBtn" title="Layers & settings">Layers ▾</button>
+  <div class="health" id="health" title="Data health"><i></i><span>connecting</span></div>
+</header>
+
+<div id="settings" class="settings hidden"></div>
+
+<main>
+  <section class="charts">
+    <div id="chartMain" class="chart main"><div id="toast" class="toast hidden" title="click to open"></div></div>
+    <div class="pane-label">Delta (bars) &amp; CVD (line, resets 00:00 UTC) — exact Binance taker volume</div>
+    <div id="chartCvd" class="chart cvd"></div>
+    <div class="pane-label">Open interest (BTC)</div>
+    <div id="chartOi" class="chart oi"></div>
+    <div class="pane-label fp-head">
+      Footprint — aggressive sells × buys per price
+      <select id="fpTf"><option value="60">1m</option><option value="300">5m</option><option value="900">15m</option></select>
+      <select id="fpTick"><option value="0">auto rows</option><option value="5">$5</option><option value="10">$10</option><option value="25">$25</option><option value="50">$50</option></select>
+      <span id="fpInfo" class="muted"></span>
+    </div>
+    <canvas id="footprint" class="footprint"></canvas>
+  </section>
+
+  <aside>
+    <div class="card">
+      <h3>Scorecard <span id="net" class="pill">—</span></h3>
+      <table id="score"></table>
+      <p class="muted tiny">Context, not a forecast. Structure breaks alone tested ≈ coin flip on 9 years of BTC 1h.</p>
+    </div>
+    <div class="card grow tabs-card">
+      <div class="tabs" id="sideTabs">
+        <button data-tab="news" class="on">News <span id="newsBadge" class="badge"></span></button>
+        <button data-tab="calendar">Calendar</button>
+        <button data-tab="gamma">Gamma</button>
+        <button data-tab="tape">Tape</button>
+        <button data-tab="liqs">Liqs</button>
+      </div>
+      <div class="tab" data-tab="news">
+        <div class="news-filters" id="newsFilters"></div>
+        <div class="muted tiny" id="newsInfo"></div>
+        <div id="newsList" class="news-list"><p class="muted">loading headlines…</p></div>
+      </div>
+      <div class="tab hidden" data-tab="calendar"><div id="calList" class="cal-list"></div></div>
+      <div class="tab hidden" data-tab="gamma">
+        <h3>Options gamma <small class="muted" id="gexWhen"></small></h3>
+        <div id="gex" class="muted">loading Deribit…</div>
+      </div>
+      <div class="tab hidden" data-tab="tape">
+        <h3>Time &amp; sales <label class="muted tiny">min <input id="tapeMin" type="number" value="0.5" step="0.1" min="0"> BTC</label></h3>
+        <div class="tape-head"><span>time</span><span>price</span><span>size</span></div>
+        <div id="tape" class="tape"></div>
+      </div>
+      <div class="tab hidden" data-tab="liqs">
+        <h3>Liquidations <small class="muted">(this session)</small></h3>
+        <div id="liqs" class="liqs muted">none yet</div>
+      </div>
+    </div>
+    <p class="muted tiny attribution">Data: Binance USDⓈ-M futures (public API) · Deribit options · public news RSS + ForexFactory calendar via server.py. Charts: TradingView Lightweight Charts™ (Apache-2.0).</p>
+  </aside>
+</main>
+
+<script src="vendor/lightweight-charts.standalone.production.js"></script>
+<script>window.LightweightCharts || document.write('<script src="https://cdn.jsdelivr.net/npm/lightweight-charts@4.2.3/dist/lightweight-charts.standalone.production.js"><\/script>');</script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

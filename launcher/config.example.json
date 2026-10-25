@@ -1,0 +1,29 @@
+{
+  "_comment": "Copy to config.json and edit. dry_run must be false AND you must pass --live to send real transactions.",
+  "dry_run": true,
+  "accounts": ["elonmusk", "cz_binance", "aeyakovenko"],
+  "keywords": [],
+  "ignore_replies": true,
+  "ignore_retweets": true,
+  "poll_seconds": 10,
+  "max_tweet_age_seconds": 120,
+
+  "dev_buy_sol": 0.05,
+  "slippage_pct": 15,
+  "priority_fee_sol": 0.0005,
+
+  "take_profit_multiple": 2.0,
+  "stop_loss_multiple": 0.6,
+  "max_hold_minutes": 15,
+  "sell_if_no_outside_buyer_minutes": 5,
+
+  "max_launches_per_day": 10,
+  "max_sol_per_day": 1.0,
+  "min_seconds_between_launches": 60,
+  "author_cooldown_minutes": 30,
+  "claim_creator_fees_every_hours": 6,
+
+  "use_claude": true,
+  "claude_model": "claude-opus-5-5",
+  "rules_fallback_live": false
+}

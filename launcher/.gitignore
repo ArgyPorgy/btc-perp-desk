@@ -1,0 +1,8 @@
+.env
+.venv/
+config.json
+state*.json
+ledger*.csv
+logs/
+out/
+__pycache__/

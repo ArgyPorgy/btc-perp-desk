@@ -1,0 +1,394 @@
+// This Pine Script® code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+//@version=6
+// Quant Context — one indicator instead of many: structure (BOS/CHoCH, order blocks, FVG), consolidation breakouts,
+// session/weekly VWAP, volume profile, prior-day value area + initial balance (auction market theory),
+// lower-timeframe volume delta / CVD, open interest, options gamma levels, and a context scorecard.
+// Built for BTC perps (e.g. BINANCE:BTCUSDT.P). It describes context; it does not predict outcomes.
+indicator("Quant Context", shorttitle = "QC", overlay = true, max_boxes_count = 500, max_lines_count = 500,
+     max_labels_count = 500, max_bars_back = 5000)
+
+// ───────────── Inputs
+gS = "Structure"
+swingLen   = input.int(20, "Swing length", minval = 3, group = gS)
+showStruct = input.bool(true, "Show BOS / CHoCH", group = gS)
+showOB     = input.bool(true, "Show order blocks", group = gS)
+maxOB      = input.int(3, "Order blocks kept per side", minval = 1, maxval = 10, group = gS)
+showFVG    = input.bool(true, "Show fair value gaps", group = gS)
+fvgMinAtr  = input.float(0.3, "Min FVG size (x ATR)", minval = 0, step = 0.1, group = gS)
+maxFVG     = input.int(6, "FVGs kept", minval = 1, maxval = 20, group = gS)
+
+gC = "Consolidation breakout"
+showCons    = input.bool(true, "Show consolidation boxes", group = gC)
+consLen     = input.int(30, "Lookback bars", minval = 5, group = gC)
+consAtrMult = input.float(2.2, "Max range (x ATR)", minval = 0.5, step = 0.1, group = gC)
+consMinBars = input.int(8, "Min bars in range", minval = 3, group = gC)
+volMult     = input.float(1.8, "Breakout volume (x average)", minval = 1, step = 0.1, group = gC)
+
+gV = "VWAP"
+showVwap  = input.bool(true, "Session VWAP + bands", group = gV)
+showWVwap = input.bool(true, "Weekly VWAP", group = gV)
+
+gP = "Volume profile / auction"
+showVP    = input.bool(true, "Volume profile (recent bars)", group = gP)
+vpBars    = input.int(300, "Profile bars", minval = 50, maxval = 2000, group = gP)
+vpRows    = input.int(40, "Profile rows", minval = 10, maxval = 100, group = gP)
+vaPct     = input.float(70, "Value area %", minval = 50, maxval = 95, group = gP) / 100
+vpWidth   = input.int(40, "Histogram width (bars)", minval = 10, maxval = 150, group = gP)
+showPrevVA = input.bool(true, "Prior day POC / VAH / VAL", group = gP)
+showIB    = input.bool(true, "Initial balance", group = gP)
+ibMinutes = input.int(60, "Initial balance minutes (from 00:00 UTC)", minval = 15, group = gP)
+
+gF = "Order flow / positioning"
+flowLen  = input.int(12, "Flow lookback bars", minval = 2, group = gF)
+ltfInput = input.timeframe("", "Delta lower timeframe (blank = auto)", group = gF)
+showDivs = input.bool(true, "Mark price / CVD divergences", group = gF)
+htfTf    = input.timeframe("240", "Higher-timeframe trend", group = gF)
+
+gG = "Options gamma (paste from gex.py, 0 = off)"
+gFlip = input.float(0, "Gamma flip", group = gG)
+gCall = input.float(0, "Call wall", group = gG)
+gPut  = input.float(0, "Put wall", group = gG)
+
+gT = "Scorecard"
+showTable = input.bool(true, "Show scorecard", group = gT)
+tablePos  = input.string("Top right", "Position", options = ["Top right", "Bottom right", "Top left", "Bottom left"], group = gT)
+
+// ───────────── Shared
+atr = ta.atr(14)
+bull = color.new(#089981, 0)
+bear = color.new(#f23645, 0)
+muted = color.new(#787b86, 0)
+newDay = timeframe.change("D")
+
+// ───────────── Structure: swings, BOS / CHoCH, order blocks
+ph = ta.pivothigh(high, swingLen, swingLen)
+pl = ta.pivotlow(low, swingLen, swingLen)
+var float swHi = na
+var int swHiBar = na
+var bool swHiBroken = true
+var float swLo = na
+var int swLoBar = na
+var bool swLoBroken = true
+var int trend = 0
+var int lastBreak = 0
+var array<label> structLabels = array.new<label>()
+var array<line> structLines = array.new<line>()
+var array<box> bullOBs = array.new<box>()
+var array<box> bearOBs = array.new<box>()
+
+if not na(ph)
+    swHi := ph
+    swHiBar := bar_index - swingLen
+    swHiBroken := false
+if not na(pl)
+    swLo := pl
+    swLoBar := bar_index - swingLen
+    swLoBroken := false
+
+trimLabels(array<label> arr, int keep) =>
+    while array.size(arr) > keep
+        label.delete(array.shift(arr))
+trimLines(array<line> arr, int keep) =>
+    while array.size(arr) > keep
+        line.delete(array.shift(arr))
+trimBoxes(array<box> arr, int keep) =>
+    while array.size(arr) > keep
+        box.delete(array.shift(arr))
+
+bullBreak = not swHiBroken and not na(swHi) and close > swHi
+bearBreak = not swLoBroken and not na(swLo) and close < swLo
+
+if bullBreak
+    kind = trend == -1 ? "CHoCH" : "BOS"
+    if showStruct
+        array.push(structLines, line.new(swHiBar, swHi, bar_index, swHi, color = bull, style = line.style_dashed))
+        array.push(structLabels, label.new(math.round((swHiBar + bar_index) / 2), swHi, kind, color = color(na),
+             textcolor = bull, style = label.style_label_down, size = size.small))
+    if showOB
+        span = math.min(bar_index - swHiBar, 4000)
+        idx = 1
+        for i = 1 to span
+            if low[i] < low[idx]
+                idx := i
+        array.push(bullOBs, box.new(bar_index - idx, high[idx], bar_index, low[idx], border_color = color.new(bull, 60),
+             bgcolor = color.new(bull, 85), extend = extend.right))
+    swHiBroken := true
+    trend := 1
+    lastBreak := 1
+
+if bearBreak
+    kind = trend == 1 ? "CHoCH" : "BOS"
+    if showStruct
+        array.push(structLines, line.new(swLoBar, swLo, bar_index, swLo, color = bear, style = line.style_dashed))
+        array.push(structLabels, label.new(math.round((swLoBar + bar_index) / 2), swLo, kind, color = color(na),
+             textcolor = bear, style = label.style_label_up, size = size.small))
+    if showOB
+        span = math.min(bar_index - swLoBar, 4000)
+        idx = 1
+        for i = 1 to span
+            if high[i] > high[idx]
+                idx := i
+        array.push(bearOBs, box.new(bar_index - idx, high[idx], bar_index, low[idx], border_color = color.new(bear, 60),
+             bgcolor = color.new(bear, 85), extend = extend.right))
+    swLoBroken := true
+    trend := -1
+    lastBreak := -1
+
+// remove mitigated order blocks (closed through)
+if array.size(bullOBs) > 0
+    for i = array.size(bullOBs) - 1 to 0
+        if close < box.get_bottom(array.get(bullOBs, i))
+            box.delete(array.remove(bullOBs, i))
+if array.size(bearOBs) > 0
+    for i = array.size(bearOBs) - 1 to 0
+        if close > box.get_top(array.get(bearOBs, i))
+            box.delete(array.remove(bearOBs, i))
+trimBoxes(bullOBs, maxOB)
+trimBoxes(bearOBs, maxOB)
+trimLabels(structLabels, 60)
+trimLines(structLines, 60)
+
+// ───────────── Fair value gaps
+var array<box> fvgs = array.new<box>()
+if showFVG and bar_index > 2
+    if low > high[2] and close[1] > high[2] and low - high[2] >= fvgMinAtr * atr
+        array.push(fvgs, box.new(bar_index - 2, low, bar_index, high[2], border_color = color(na),
+             bgcolor = color.new(bull, 88), extend = extend.right))
+    if high < low[2] and close[1] < low[2] and low[2] - high >= fvgMinAtr * atr
+        array.push(fvgs, box.new(bar_index - 2, low[2], bar_index, high, border_color = color(na),
+             bgcolor = color.new(bear, 88), extend = extend.right))
+if array.size(fvgs) > 0
+    for i = array.size(fvgs) - 1 to 0
+        b = array.get(fvgs, i)
+        if low <= box.get_bottom(b) and high >= box.get_top(b)
+            box.delete(array.remove(fvgs, i))
+trimBoxes(fvgs, maxFVG)
+
+// ───────────── Consolidation breakout
+// A range starts when the last consMinBars fit inside consAtrMult x ATR; it expires after consLen bars.
+volAvg = ta.sma(volume, 20)
+tightHi = ta.highest(high, consMinBars)
+tightLo = ta.lowest(low, consMinBars)
+var box consBox = na
+var float boxTop = na
+var float boxBot = na
+var int boxStart = na
+var int consState = 0  // 1 = broke up, -1 = broke down, 2 = inside a range
+tight = tightHi - tightLo <= consAtrMult * atr
+if na(boxTop) and tight
+    boxTop := tightHi
+    boxBot := tightLo
+    boxStart := bar_index - consMinBars + 1
+    consState := 2
+    if showCons
+        consBox := box.new(boxStart, boxTop, bar_index, boxBot, border_color = color.new(muted, 40),
+             bgcolor = color.new(muted, 90))
+else if not na(boxTop)
+    if bar_index - boxStart > consLen
+        consState := 0
+        boxTop := na
+        boxBot := na
+    else if close > boxTop or close < boxBot
+        up = close > boxTop
+        if volume >= volMult * volAvg
+            consState := up ? 1 : -1
+            if showCons
+                label.new(bar_index, up ? low : high, up ? "▲ breakout" : "▼ breakdown", color = color(na),
+                     textcolor = up ? bull : bear, style = up ? label.style_label_up : label.style_label_down, size = size.small)
+        else
+            consState := 0
+        boxTop := na
+        boxBot := na
+    else if showCons
+        box.set_right(consBox, bar_index)
+
+// ───────────── VWAP
+[vwap, vwUp1, vwDn1] = ta.vwap(hlc3, newDay, 1.0)
+[vwapB, vwUp2, vwDn2] = ta.vwap(hlc3, newDay, 2.0)
+wVwap = ta.vwap(hlc3, timeframe.change("W"))
+plot(showVwap and timeframe.isintraday ? vwap : na, "Session VWAP", color = color.new(#2962ff, 0), linewidth = 2)
+plot(showVwap and timeframe.isintraday ? vwUp1 : na, "VWAP +1σ", color = color.new(#2962ff, 60))
+plot(showVwap and timeframe.isintraday ? vwDn1 : na, "VWAP -1σ", color = color.new(#2962ff, 60))
+plot(showVwap and timeframe.isintraday ? vwUp2 : na, "VWAP +2σ", color = color.new(#2962ff, 80))
+plot(showVwap and timeframe.isintraday ? vwDn2 : na, "VWAP -2σ", color = color.new(#2962ff, 80))
+plot(showWVwap ? wVwap : na, "Weekly VWAP", color = color.new(#ff9800, 0), linewidth = 2)
+
+// ───────────── Profile helper: POC / VAH / VAL from bars [from, to] bars back
+profile(int fromBack, int toBack, int rows) =>
+    float hi = high[fromBack]
+    float lo = low[fromBack]
+    for i = fromBack to toBack
+        hi := math.max(hi, high[i])
+        lo := math.min(lo, low[i])
+    step = (hi - lo) / rows
+    vols = array.new<float>(rows, 0.0)
+    if step > 0
+        for i = fromBack to toBack
+            s = math.min(rows - 1, math.max(0, int((low[i] - lo) / step)))
+            e = math.min(rows - 1, math.max(0, int((high[i] - lo) / step)))
+            share = nz(volume[i]) / (e - s + 1)
+            for b = s to e
+                array.set(vols, b, array.get(vols, b) + share)
+    poc = array.indexof(vols, array.max(vols))
+    total = array.sum(vols)
+    acc = array.get(vols, poc)
+    up = poc
+    dn = poc
+    while acc < vaPct * total and (up < rows - 1 or dn > 0)
+        vUp = up < rows - 1 ? array.get(vols, up + 1) : -1.0
+        vDn = dn > 0 ? array.get(vols, dn - 1) : -1.0
+        if vUp >= vDn
+            up += 1
+            acc += vUp
+        else
+            dn -= 1
+            acc += vDn
+    [lo + (poc + 0.5) * step, lo + (up + 1) * step, lo + dn * step, vols, lo, step]
+
+// recent-bars volume profile, drawn on the last bar
+var array<box> vpBoxes = array.new<box>()
+var line pocLine = na
+var line vahLine = na
+var line valLine = na
+var float vpPOC = na
+var float vpVAH = na
+var float vpVAL = na
+if showVP and barstate.islast and bar_index > vpBars
+    [poc, vah, val, vols, lo, step] = profile(0, vpBars - 1, vpRows)
+    vpPOC := poc
+    vpVAH := vah
+    vpVAL := val
+    trimBoxes(vpBoxes, 0)
+    mx = array.max(vols)
+    x0 = bar_index + 5
+    for r = 0 to vpRows - 1
+        v = array.get(vols, r)
+        if v > 0
+            mid = lo + (r + 0.5) * step
+            inVA = mid >= val and mid <= vah
+            array.push(vpBoxes, box.new(x0, lo + (r + 1) * step, x0 + math.max(1, int(vpWidth * v / mx)), lo + r * step,
+                 border_color = color(na), bgcolor = color.new(inVA ? #2962ff : muted, inVA ? 65 : 80)))
+    line.delete(pocLine)
+    line.delete(vahLine)
+    line.delete(valLine)
+    pocLine := line.new(bar_index - vpBars + 1, poc, x0 + vpWidth, poc, color = color.new(#f7c948, 0), width = 2)
+    vahLine := line.new(bar_index - vpBars + 1, vah, x0 + vpWidth, vah, color = color.new(#2962ff, 30), style = line.style_dotted)
+    valLine := line.new(bar_index - vpBars + 1, val, x0 + vpWidth, val, color = color.new(#2962ff, 30), style = line.style_dotted)
+
+// ───────────── Prior-day value area + initial balance (auction market theory)
+var int dayStart = 0
+var float pPOC = na
+var float pVAH = na
+var float pVAL = na
+var float ibHi = na
+var float ibLo = na
+var int dayStartTime = 0
+if newDay and timeframe.isintraday and bar_index > 0
+    n = bar_index - dayStart
+    if n >= 3 and n <= 4900
+        [dPoc, dVah, dVal, _v, _l, _s] = profile(1, n, 30)
+        pPOC := dPoc
+        pVAH := dVah
+        pVAL := dVal
+    dayStart := bar_index
+    dayStartTime := time
+    ibHi := high
+    ibLo := low
+else if timeframe.isintraday and time - dayStartTime < ibMinutes * 60000
+    ibHi := math.max(nz(ibHi, high), high)
+    ibLo := math.min(nz(ibLo, low), low)
+plot(showPrevVA ? pPOC : na, "Prior day POC", color = color.new(#f7c948, 30), style = plot.style_linebr)
+plot(showPrevVA ? pVAH : na, "Prior day VAH", color = color.new(#9c27b0, 30), style = plot.style_linebr)
+plot(showPrevVA ? pVAL : na, "Prior day VAL", color = color.new(#9c27b0, 30), style = plot.style_linebr)
+plot(showIB ? ibHi : na, "IB high", color = color.new(muted, 40), style = plot.style_linebr)
+plot(showIB ? ibLo : na, "IB low", color = color.new(muted, 40), style = plot.style_linebr)
+
+// ───────────── Lower-timeframe volume delta and CVD
+autoLtf = timeframe.in_seconds() <= 3600 ? "1" : timeframe.in_seconds() <= 14400 ? "5" : "15"
+ltf = ltfInput == "" ? autoLtf : ltfInput
+[ltfO, ltfC, ltfV] = request.security_lower_tf(syminfo.tickerid, ltf, [open, close, volume])
+float delta = 0.0
+int nIntra = array.size(ltfV)
+if nIntra > 0
+    for i = 0 to nIntra - 1
+        o = array.get(ltfO, i)
+        c = array.get(ltfC, i)
+        v = array.get(ltfV, i)
+        delta += c > o ? v : c < o ? -v : 0.0
+var float cvd = 0.0
+if newDay
+    cvd := 0.0
+cvd += delta
+cvdChg = cvd - cvd[flowLen]
+priceChg = close - close[flowLen]
+flowHi = ta.highest(high, flowLen)
+flowLo = ta.lowest(low, flowLen)
+divBear = nIntra > 0 and priceChg > 0 and cvdChg < 0 and high >= flowHi
+divBull = nIntra > 0 and priceChg < 0 and cvdChg > 0 and low <= flowLo
+plotshape(showDivs and divBear, "Bearish CVD divergence", shape.triangledown, location.abovebar, color.new(bear, 30), size = size.tiny)
+plotshape(showDivs and divBull, "Bullish CVD divergence", shape.triangleup, location.belowbar, color.new(bull, 30), size = size.tiny)
+
+// ───────────── Open interest (TradingView's "<symbol>_OI" series; perp charts only)
+oi = request.security(syminfo.prefix + ":" + syminfo.ticker + "_OI", timeframe.period, close, ignore_invalid_symbol = true)
+oiChgPct = na(oi) or na(oi[flowLen]) or oi[flowLen] == 0 ? na : (oi - oi[flowLen]) / oi[flowLen] * 100
+
+// ───────────── Higher-timeframe trend (non-repainting)
+htfEma = request.security(syminfo.tickerid, htfTf, ta.ema(close, 200)[1], lookahead = barmerge.lookahead_on)
+
+// ───────────── Options gamma levels
+var array<line> gLines = array.new<line>()
+var array<label> gLabels = array.new<label>()
+if barstate.islast
+    trimLines(gLines, 0)
+    trimLabels(gLabels, 0)
+    levels = array.from(gFlip, gCall, gPut)
+    names = array.from("Gamma flip", "Call wall", "Put wall")
+    cols = array.from(color.new(#e040fb, 0), bull, bear)
+    for i = 0 to 2
+        p = array.get(levels, i)
+        if p > 0
+            array.push(gLines, line.new(bar_index - 1, p, bar_index, p, extend = extend.both, color = array.get(cols, i),
+                 style = line.style_dashed))
+            array.push(gLabels, label.new(bar_index + 3, p, array.get(names, i), color = color(na),
+                 textcolor = array.get(cols, i), style = label.style_label_left, size = size.small))
+
+// ───────────── Scorecard
+pos = tablePos == "Top right" ? position.top_right : tablePos == "Bottom right" ? position.bottom_right :
+     tablePos == "Top left" ? position.top_left : position.bottom_left
+var table tb = table.new(pos, 3, 11, bgcolor = color.new(#131722, 15), border_width = 1, border_color = color.new(muted, 70))
+row(int r, string name, int score, string detail) =>
+    col = score > 0 ? bull : score < 0 ? bear : muted
+    table.cell(tb, 0, r, name, text_color = color.white, text_size = size.small, text_halign = text.align_left)
+    table.cell(tb, 1, r, score > 0 ? "▲" : score < 0 ? "▼" : "•", text_color = col, text_size = size.small)
+    table.cell(tb, 2, r, detail, text_color = col, text_size = size.small, text_halign = text.align_left)
+    score
+
+if showTable and barstate.islast
+    table.cell(tb, 0, 0, "Quant Context", text_color = color.white, text_size = size.small)
+    table.cell(tb, 2, 0, syminfo.ticker + " " + timeframe.period, text_color = muted, text_size = size.small)
+    s = 0
+    s += row(1, "HTF trend", na(htfEma) ? 0 : close > htfEma ? 1 : -1,
+         na(htfEma) ? "n/a" : (close > htfEma ? "above " : "below ") + htfTf + " EMA200")
+    s += row(2, "VWAP", not timeframe.isintraday ? 0 : close > vwap ? 1 : -1,
+         not timeframe.isintraday ? "intraday only" : close > vwUp1 ? "above +1σ (stretched)" : close < vwDn1 ? "below -1σ (stretched)" : close > vwap ? "above session VWAP" : "below session VWAP")
+    s += row(3, "Structure", lastBreak, lastBreak == 0 ? "no break yet" : (trend == 1 ? "last break up" : "last break down"))
+    locScore = na(vpVAH) ? 0 : close > vpVAH ? 1 : close < vpVAL ? -1 : 0
+    s += row(4, "Value (profile)", locScore,
+         na(vpVAH) ? "n/a" : close > vpVAH ? "above value area" : close < vpVAL ? "below value area" : "inside value: rotation odds")
+    aucScore = na(pVAH) ? 0 : close > pVAH ? 1 : close < pVAL ? -1 : 0
+    s += row(5, "Auction (prior day)", aucScore,
+         na(pVAH) ? "n/a" : high > pVAH and close <= pVAH ? "looked above, failed" : low < pVAL and close >= pVAL ? "looked below, failed" :
+         close > pVAH ? "accepted above value" : close < pVAL ? "accepted below value" : "balance: inside value")
+    flowScore = nIntra == 0 ? 0 : cvdChg > 0 ? 1 : cvdChg < 0 ? -1 : 0
+    s += row(6, "Delta (CVD)", flowScore,
+         nIntra == 0 ? "no lower-TF data" : (divBear ? "divergence: price up, CVD down" : divBull ? "divergence: price down, CVD up" :
+         cvdChg > 0 ? "net buying " : "net selling ") + (divBear or divBull ? "" : str.tostring(cvdChg, format.volume)))
+    oiScore = na(oiChgPct) ? 0 : oiChgPct > 0 ? (priceChg > 0 ? 1 : -1) : 0
+    s += row(7, "Open interest", oiScore,
+         na(oiChgPct) ? "n/a (use a perp chart)" : oiChgPct > 0 ? (priceChg > 0 ? "rising with price: new longs" : "rising as price falls: new shorts") :
+         priceChg > 0 ? "falling as price rises: short covering" : "falling with price: longs exiting")
+    s += row(8, "Gamma", 0, gFlip <= 0 ? "paste levels from gex.py" : close > gFlip ? "above flip: moves damped" : "below flip: moves amplified")
+    s += row(9, "Range", consState == 2 ? 0 : consState, consState == 2 ? "consolidating" : consState == 1 ? "volume breakout up" :
+         consState == -1 ? "volume breakdown" : "no active range")
+    table.cell(tb, 0, 10, "Net: " + str.tostring(s), text_color = s > 0 ? bull : s < 0 ? bear : muted, text_size = size.small)
+    table.cell(tb, 2, 10, "context, not a forecast", text_color = muted, text_size = size.tiny)

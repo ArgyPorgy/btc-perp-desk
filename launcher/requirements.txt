@@ -1,0 +1,5 @@
+anthropic>=2.1
+solders>=0.29
+requests>=2.32
+websockets>=15
+pillow>=11
