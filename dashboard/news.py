@@ -141,7 +141,7 @@ RULES = [
     ("crypto", 1, "BTC", [r"\b(bitcoin|btc)\b"], []),
     ("crypto", 1, "CRYPTO", [CRYPTO], []),
     ("markets", 3, "CRASH", [r"\b(stocks?|wall street|markets?|s&p|nasdaq|dow|equities)\b", r"\b(crash\w*|rout|meltdown|circuit breakers?|bloodbath|"
-                                                                                              r"worst day|panic sell\w*)\b"], [SPEC, r"\bretire\w*|sipp|401k|portfolio\b"]),
+                                                                                              r"worst day|panic sell\w*)\b"], [SPEC, FOREIGN, r"\bretire\w*|sipp|401k|portfolio\b|smart money"]),
     ("markets", 3, "BANKS", [r"bank (failure|collapse|run)|banking crisis|bank fail\w*"], [SPEC]),
     ("markets", 2, "STOCKS", [r"\b(s&p 500|s&p|nasdaq|dow jones|dow|wall street|stock market|stocks|equities)\b",
                               r"\b(record|slump\w*|tumbl\w*|sell-?off|surg\w*|rall\w*|sink\w*|slid\w*|drop\w*|fall\w*|fell|jump\w*|plung\w*|soar\w*)\b"],
@@ -156,7 +156,8 @@ RULES = [
     ("markets", 1, "MARKETS", [r"\b(stocks|s&p|nasdaq|dow|futures|treasur\w+|bonds?|yields?)\b"], []),
     ("geo", 3, "WAR", [MAJOR, r"\b(declares? war|invasion|invad\w+|nuclear (strike|test|weapons? test|attack)|missile strikes?|air ?strikes?|"
                               r"launch(es|ed)? (missiles?|strikes?|attack)|blockade|attack(s|ed)? on|escalat\w+|retaliat\w+|mobiliz\w+|strikes? (on|against)|"
-                              r"bomb(s|ed|ing)|resum\w+ (war|strikes|attacks|fighting))\b"], [SPEC]),
+                              r"bomb(s|ed|ing)|resum\w+ (war|strikes|attacks|fighting))\b"],
+     [SPEC, r"\b(kharkiv|kyiv|kiev|odesa|odessa|zaporizhzhia|dnipro|lviv|donetsk|donbas|kherson|sumy)\b|ukraine's energy|war crime"]),
     ("geo", 3, "HORMUZ", [r"strait of hormuz|\bhormuz\b", r"\b(clos\w+|block\w*|mine[sd]?|seiz\w+|attack\w*|shut\w*|tanker)\b"], [SPEC]),
     ("geo", 2, "CONFLICT", [ACTORS, r"\b(war|wars|missiles?|strikes?|attack\w*|troops|military|nuclear|drones?|bomb\w*|ceasefire|truce|"
                                     r"sanctions?|shot down|killed|warships?|navy)\b"], []),

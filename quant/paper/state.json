@@ -2,27 +2,7 @@
   "start_equity": 10000.0,
   "equity": 10000.0,
   "risk_pct": 1.0,
-  "orders": [
-    {
-      "id": "B1",
-      "side": "short",
-      "trigger": "close_below",
-      "level": 78450.0,
-      "stop": 79812.0,
-      "target": null,
-      "target_r": 1.0,
-      "oco": "G1",
-      "note": "continuation short (tested 9x, +0.44R/trade)",
-      "max_hold_h": 168,
-      "created_ms": 1792857300000,
-      "arm": {
-        "trigger": "close_below",
-        "level": 79732.0
-      },
-      "expires_ms": 1793030400000,
-      "armed_ms": 1792987199999
-    }
-  ],
+  "orders": [],
   "positions": [
     {
       "id": "L1",

@@ -9,3 +9,6 @@ Newest first. Every change: date (UTC), what, why.
 
 ## 2026-10-25 (late)
 - News rule: "sanctions" now needs a country or sanctioning-body context. Why: a US county probation program ("Swift and Sure Sanctions") showed up as a geopolitical headline. Test case added.
+
+## 2026-10-26
+- News rules: a crash in a foreign market (e.g. Brazil after its election) is no longer flagged as a US market crash, and clickbait like "smart money shock" is excluded. Routine Russian strikes on Ukrainian cities now count as ongoing conflict (impact 2), not escalation (3); strikes on NATO members still count as 3. Why: three of today's five impact-3 headlines were these, and BTC barely moved on them (≤0.2% in 15m). Tests: 20/20.

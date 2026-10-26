@@ -60,3 +60,10 @@
 - News: Saudi-Iran de-escalation talks pull oil lower; reports US/Israel weigh renewed Iran strikes (CNN: Trump refused Netanyahu's pre-election strike); Trump lifts some Canada tariffs. BTC -0.9% over the morning, no single headline >0.4% in 15m. FOMC Wed 18:00 UTC.
 - DECISION: HOLD L1 (long 79,752, -0.1R at 79,693). Invalidation is the sweep low 79,179 (stop 79,099), not the 79,732 close; no tested reason to cut early. Zero-drift MC: stop zone touched in 24h ~59%, target 81k ~24% -> expected value is just the mark; plan unchanged.
 - Orders: B1 (armed, needs a 4h close < 78,450) expires today 16:00 UTC and is left to expire: the 16:00 candle would need -1.6% in 2h, and the continuation short has only n=9 (< 15), so no renewal. No new orders.
+
+## 2026-10-26 19:38 UTC — price 80,010
+- 1h: below EMA50/200 (80.4k/81.3k), at weekly/session VWAP 80.05k; 12h delta +2.0k BTC. 4h: CHoCH down after the 79,565 close, but the sweep low 79,179 (L1 invalidation) held. Low since entry 79,322 (-0.66R). 1d: above EMA200 (76.3k), below EMA50 (80.8k).
+- Positioning: funding 0.010% (rising), OI +1.6% 24h, near-term gamma -15M/1% under the flip ~80.15k; 80k is both call and put wall.
+- News: no market-moving US headline; FOMC Wed 18:00 UTC, PCE/GDP Thu 12:30. B1 expired 16:00 UTC unfilled.
+- Review (user asked: scalp the range instead of holding?). L1 bounced off the entry zone repeatedly (+1.91, +1.22, +1.64, +1.19R). Tested it properly: mechanical range fades and prior-day sweep scalps lose after fees (-0.06 to -0.23R, n in thousands); taking profit and re-entering on sweep setups lowers R on the broad samples (n=90/153). Hold-one-shot on 10/20-day-low sweeps is positive (+0.14/+0.17R, any daily trend). Shorts at highs negative.
+- DECISION: HOLD L1 (long 79,752, +0.34R at 79,975), stop 79,099 / target 81,057 unchanged. Desk upgrade: S10 (1.5R) and S20 (2R) long sweeps without trend filter are now tradable; setup_scan.py added. No fresh signal now (10/20-day low 79,179, 1.5% below).

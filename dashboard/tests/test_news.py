@@ -25,6 +25,9 @@ CASES = [
     # wrong country / wrong meaning -> not top impact
     ("UK inflation rises to 4.1% as energy prices climb", "bbc_business", 1, None),
     ("Saudi Arabia raises electricity and water tariffs for 2027", "gn_trade", 1, "GEO"),
+    ("Brazilian Markets Crash After Lula's Surprise Election Win Stuns Investors", "gn_markets", 0, None),
+    ("Russian missile strikes on Ukraine's Kharkiv kill two, injure four, mayor says", "gn_geo", 2, "CONFLICT"),
+    ("Russia launches missile strikes on NATO member Poland", "gn_geo", 3, "WAR"),
     ("Cass County Judge sorry to see Swift and Sure Sanctions Probation Program end", "gn_trade", 0, None),
     ("Bitcoin buy-and-hold underperforms trend following in 10-year backtest", "coindesk", 1, None),
 ]
