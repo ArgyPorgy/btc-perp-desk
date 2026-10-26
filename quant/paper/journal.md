@@ -51,3 +51,12 @@
 - News: US-Iran escalation risk building (Semafor 'new threats could push US and Iran toward war', BTC -0.69% in the following hour), oil firm; US-Canada tariff relief. FOMC Wed 18:00 UTC, PCE/GDP Thu 12:30.
 - DECISION: HOLD L1 (long 79,752, +0.7R at 80,224). Stop 79,099 / target 81,057 unchanged: thesis (20-day-low sweep held) not invalidated; zero-drift odds of target before stop from here ~57%; no tested reason to tighten. No new orders (one-position limit). B1 unchanged (expires 2026-10-26 16:00).
 - Desk: tightened news 'sanctions' rule (false geo flag); tests 17/17.
+
+## 2026-10-26 14:02 UTC — price 79,683
+- 1h: below EMA50/200 (80.4k/81.4k), structure down, below value and session/weekly VWAP (79.93k); but 12h taker delta +3.1k BTC (buyers absorbing the dip).
+- 4h: 04:00 close 79,565 broke the 79,732 swing low -> CHoCH down; B1 ARMED. Last close 79,713. Sweep low 79,179 (= L1 invalidation) still intact.
+- 1d: above EMA200 (76.3k), below EMA50 (80.7k); lower edge of daily bull FVG 77.2k-80.8k.
+- Positioning: funding 0.008% (up), OI +1.0% 24h (shorts adding into the dip), basis -3.5bp; near-term gamma -21M/1% (amplifying), price under the flip ~80.1k; 80k is both call and put wall.
+- News: Saudi-Iran de-escalation talks pull oil lower; reports US/Israel weigh renewed Iran strikes (CNN: Trump refused Netanyahu's pre-election strike); Trump lifts some Canada tariffs. BTC -0.9% over the morning, no single headline >0.4% in 15m. FOMC Wed 18:00 UTC.
+- DECISION: HOLD L1 (long 79,752, -0.1R at 79,693). Invalidation is the sweep low 79,179 (stop 79,099), not the 79,732 close; no tested reason to cut early. Zero-drift MC: stop zone touched in 24h ~59%, target 81k ~24% -> expected value is just the mark; plan unchanged.
+- Orders: B1 (armed, needs a 4h close < 78,450) expires today 16:00 UTC and is left to expire: the 16:00 candle would need -1.6% in 2h, and the continuation short has only n=9 (< 15), so no renewal. No new orders.

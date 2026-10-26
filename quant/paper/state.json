@@ -19,7 +19,8 @@
         "trigger": "close_below",
         "level": 79732.0
       },
-      "expires_ms": 1793030400000
+      "expires_ms": 1793030400000,
+      "armed_ms": 1792987199999
     }
   ],
   "positions": [
