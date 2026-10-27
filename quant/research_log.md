@@ -38,6 +38,13 @@ L1 bounced from the entry zone repeatedly: +1.91R, +0.84R, +0.93R, +0.81R, +1.22
 
 → **No change:** keep the one-shot hold with the original stop. No breakeven trailing.
 
+## 2026-10-28: HOOD "oversold" long (`hood_oversold_test.py`)
+HOODUSDT perp 1h since Feb 2026 (267 days). Now 87.8, −8.9% vs the 1h EMA200, after a Q3 earnings miss. Price sits that stretched only 1.6% of the time.
+- **≥8% below the EMA (12 episodes):** up 7 days later 82% (median +3.5%). +9.3% (to 96) came before −4% in 40% of 10, against 30% for a random walk; before −1.5%, 27% of 11 against 14%.
+- **≥6% below (23 episodes):** weaker. Up 55–64%, and the odds of reaching 96 are close to random (17% vs 14%, 33% vs 30%).
+
+→ Leans toward a bounce, but n=10–23 from one stock in one year, and the uncertainty (±15%) covers zero edge. This episode is also earnings-driven: after earnings misses, stocks tend to keep drifting down for weeks (post-earnings drift), which most of these episodes didn't have. **Not tradable by the desk rule (n < 15 at the tested threshold). Idea only.**
+
 ## Backlog (highest expected value first)
 1. Post-release reaction trades: first 15m/1h candle after CPI/FOMC, fade vs follow, using calendar timestamps.
 2. Funding extremes (top/bottom 5%) + OI change → 24–72h forward returns.
