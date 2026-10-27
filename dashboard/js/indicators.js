@@ -210,7 +210,7 @@ export function scorecard(s) {
     add('Auction', c > p.vah ? 1 : c < p.val ? -1 : 0, txt);
   }
   add('Delta (CVD)', Math.sign(s.cvdChange || 0), s.cvdChange == null ? 'n/a'
-    : `${s.cvdChange > 0 ? 'net taker buying' : 'net taker selling'} ${fmtQty(s.cvdChange)} BTC / ${s.flowBars} bars`
+    : `${s.cvdChange > 0 ? 'net taker buying' : 'net taker selling'} ${fmtQty(s.cvdChange)} ${s.unit || 'BTC'} / ${s.flowBars} bars`
       + (s.priceChange > 0 && s.cvdChange < 0 ? ' — divergence' : s.priceChange < 0 && s.cvdChange > 0 ? ' — divergence' : ''));
   if (s.oiChangePct == null) add('Open interest', 0, 'loading');
   else add('Open interest', s.oiChangePct > 0 ? Math.sign(s.priceChange) : 0,
@@ -221,7 +221,8 @@ export function scorecard(s) {
   if (s.bookImbalance == null) add('Order book', 0, 'syncing');
   else add('Order book', s.bookImbalance > 0.15 ? 1 : s.bookImbalance < -0.15 ? -1 : 0,
     `±0.5%: ${s.bookImbalance > 0 ? 'bids' : 'asks'} heavier by ${Math.abs(s.bookImbalance * 100).toFixed(0)}% (spoofable)`);
-  if (!s.gex) add('Gamma', 0, 'loading');
+  if (s.noOptions) add('Gamma', 0, 'no listed options');
+  else if (!s.gex) add('Gamma', 0, 'loading');
   else add('Gamma', 0, isFinite(s.gex.flip) ? (c > s.gex.flip ? 'above flip: moves tend to be damped' : 'below flip: moves tend to be amplified') : 'no flip in range');
   add('Range', s.consState === 2 ? 0 : s.consState, s.consState === 2 ? 'consolidating' : s.consState === 1 ? 'volume breakout up'
     : s.consState === -1 ? 'volume breakdown' : 'no active range');

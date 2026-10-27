@@ -1,6 +1,8 @@
 // News terminal: headlines + economic calendar from server.py (/api/news, /api/calendar).
 // Impact 3 = can move BTC now (FOMC, CPI, tariffs, war escalation, exchange hack...), 2 = relevant, 1 = background.
 
+import { SYMBOL, MARKET } from './config.js';
+
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const GROUPS = { all: null, macro: ['fed', 'cb', 'data'], policy: ['policy'], geo: ['geo'], markets: ['markets'], crypto: ['crypto'] };
@@ -50,7 +52,7 @@ export class News {
 
   async poll() {
     try {
-      const r = await fetch('api/news?hours=72&min=1', { cache: 'no-store' });
+      const r = await fetch(`api/news?hours=72&min=1&sym=${SYMBOL}`, { cache: 'no-store' });
       if (!r.ok) throw new Error(r.status);
       const d = await r.json();
       this.available = true;
@@ -115,9 +117,9 @@ export class News {
     $('newsInfo').title = down ? `down: ${Object.values(this.feeds).filter((f) => !f.ok).map((f) => `${f.label} (${f.error || 'no data yet'})`).join(', ')}` : 'all feeds healthy';
     $('newsList').innerHTML = rows.length ? rows.map((it) => {
       const b = it.btc || {};
-      const mv = b.m15 != null ? `<span class="${b.m15 >= 0 ? 'up' : 'down'}" title="BTC move 15 minutes after the headline">${pct(b.m15)} 15m</span>`
-        : b.now != null ? `<span class="${b.now >= 0 ? 'up' : 'down'}" title="BTC move since the headline">${pct(b.now)}</span>` : '';
-      const since = b.now != null && b.m15 != null ? `<span class="muted" title="BTC move since the headline">· ${pct(b.now)} since</span>` : '';
+      const mv = b.m15 != null ? `<span class="${b.m15 >= 0 ? 'up' : 'down'}" title="${MARKET.label} move 15 minutes after the headline">${pct(b.m15)} 15m</span>`
+        : b.now != null ? `<span class="${b.now >= 0 ? 'up' : 'down'}" title="${MARKET.label} move since the headline">${pct(b.now)}</span>` : '';
+      const since = b.now != null && b.m15 != null ? `<span class="muted" title="${MARKET.label} move since the headline">· ${pct(b.now)} since</span>` : '';
       const src = it.sources.slice(0, 2).join(' · ') + (it.sources.length > 2 ? ` +${it.sources.length - 2}` : '');
       const isNew = it._new && Date.now() - it._new < 5 * 60e3;
       return `<div class="news-item imp${it.impact}${isNew ? ' new' : ''}">

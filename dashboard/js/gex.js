@@ -1,4 +1,4 @@
-// BTC options gamma exposure from Deribit public data (same method as quant/gex.py).
+// Options gamma exposure (BTC or ETH) from Deribit public data (same method as quant/gex.py).
 // Naive dealer sign: calls +, puts -. The strike "walls" are the robust part; the sign is an assumption.
 
 const MONTHS = { JAN: 0, FEB: 1, MAR: 2, APR: 3, MAY: 4, JUN: 5, JUL: 6, AUG: 7, SEP: 8, OCT: 9, NOV: 10, DEC: 11 };
@@ -48,14 +48,14 @@ export function computeGex(spot, summaries, nowMs, maxDays = Infinity) {
   return { spot, total: net(spot), flip, callWall, putWall, top, count: opts.length };
 }
 
-export async function fetchGex(deribit, maxDays = Infinity, timeoutMs = 15000) {
+export async function fetchGex(deribit, maxDays = Infinity, timeoutMs = 15000, currency = 'BTC') {
   const get = (u) => fetch(u, { signal: AbortSignal.timeout(timeoutMs) }).then((r) => {
     if (!r.ok) throw new Error(`Deribit HTTP ${r.status}`);
     return r.json();
   });
   const [idx, book] = await Promise.all([
-    get(`${deribit}/get_index_price?index_name=btc_usd`),
-    get(`${deribit}/get_book_summary_by_currency?currency=BTC&kind=option`),
+    get(`${deribit}/get_index_price?index_name=${currency.toLowerCase()}_usd`),
+    get(`${deribit}/get_book_summary_by_currency?currency=${currency}&kind=option`),
   ]);
   return computeGex(idx.result.index_price, book.result, Date.now(), maxDays);
 }

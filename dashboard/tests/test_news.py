@@ -30,6 +30,8 @@ CASES = [
     ("Russian missile strikes on Ukraine's Kharkiv kill two, injure four, mayor says", "gn_geo", 2, "CONFLICT"),
     ("Russia launches missile strikes on NATO member Poland", "gn_geo", 3, "WAR"),
     ("Cass County Judge sorry to see Swift and Sure Sanctions Probation Program end", "gn_trade", 0, None),
+    ("Robinhood shares sink after earnings miss on crypto revenue", "gn_hood", 2, "HOOD"),
+    ("Ether ETF inflows hit record as ETH rallies", "gn_eth", 2, "ETF FLOWS"),
     ("Bitcoin buy-and-hold underperforms trend following in 10-year backtest", "coindesk", 1, None),
 ]
 

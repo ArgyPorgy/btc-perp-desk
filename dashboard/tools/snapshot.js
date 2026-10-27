@@ -1,18 +1,22 @@
 // Multi-timeframe snapshot using the dashboard's own indicator code. Read-only.
-//   node tools/snapshot.js
+//   node tools/snapshot.js [BTCUSDT|ETHUSDT|HOODUSDT]   (default BTCUSDT)
 import { DAY, dayKey, weekKey, ema, atr, vwapBands, deltaCvd, structure, fairValueGaps, consolidation, volumeProfile, dailyAuction } from '../js/indicators.js';
 import { fetchGex } from '../js/gex.js';
 
 const REST = 'https://fapi.binance.com';
+const SYM = (process.argv[2] || 'BTCUSDT').toUpperCase();
+const UNIT = SYM.replace(/USDT$/, '');
+const OPTIONS = { BTCUSDT: 'BTC', ETHUSDT: 'ETH' }[SYM];
+const DP = UNIT === 'BTC' ? 0 : 2;
 const get = async (u) => (await fetch(u)).json();
-const bars = async (tf) => (await get(`${REST}/fapi/v1/klines?symbol=BTCUSDT&interval=${tf}&limit=1500`))
+const bars = async (tf) => (await get(`${REST}/fapi/v1/klines?symbol=${SYM}&interval=${tf}&limit=1500`))
   .map((k) => ({ time: k[0] / 1000, open: +k[1], high: +k[2], low: +k[3], close: +k[4], volume: +k[5], takerBuy: +k[9] }));
-const f = (x, d = 0) => (x == null || !isFinite(x) ? '—' : x.toLocaleString('en-US', { maximumFractionDigits: d, minimumFractionDigits: d }));
+const f = (x, d = DP) => (x == null || !isFinite(x) ? '—' : x.toLocaleString('en-US', { maximumFractionDigits: d, minimumFractionDigits: d }));
 const pct = (a, b) => `${((a / b - 1) * 100).toFixed(2)}%`;
 
 const [prem, oiNow, oiH, fund] = await Promise.all([
-  get(`${REST}/fapi/v1/premiumIndex?symbol=BTCUSDT`), get(`${REST}/fapi/v1/openInterest?symbol=BTCUSDT`),
-  get(`${REST}/futures/data/openInterestHist?symbol=BTCUSDT&period=1h&limit=168`), get(`${REST}/fapi/v1/fundingRate?symbol=BTCUSDT&limit=21`),
+  get(`${REST}/fapi/v1/premiumIndex?symbol=${SYM}`), get(`${REST}/fapi/v1/openInterest?symbol=${SYM}`),
+  get(`${REST}/futures/data/openInterestHist?symbol=${SYM}&period=1h&limit=168`), get(`${REST}/fapi/v1/fundingRate?symbol=${SYM}&limit=21`),
 ]);
 const out = {};
 for (const [tf, sec, swing] of [['1h', 3600, 20], ['4h', 14400, 20], ['1d', DAY, 10]]) {
@@ -40,18 +44,19 @@ for (const [tf, sec, swing] of [['1h', 3600, 20], ['4h', 14400, 20], ['1d', DAY,
   console.log(`  weekly VWAP ${f(w.vwap[n])} (${c > w.vwap[n] ? 'above' : 'below'})${dv ? `   session VWAP ${f(dv.vwap[n])} [-1σ ${f(dv.dn1[n])}, +1σ ${f(dv.up1[n])}]` : ''}`);
   console.log(`  volume profile (300 bars): POC ${f(prof.poc)}  VAH ${f(prof.vah)}  VAL ${f(prof.val)}  -> ${c > prof.vah ? 'above value' : c < prof.val ? 'below value' : 'inside value'}`);
   if (auc.prior[n]) console.log(`  prior day: POC ${f(auc.prior[n].poc)} VAH ${f(auc.prior[n].vah)} VAL ${f(auc.prior[n].val)}`);
-  console.log(`  taker delta last ${k} bars: ${flow > 0 ? '+' : ''}${f(flow)} BTC   consolidation: ${cons.state === 2 ? 'in range' : cons.state === 1 ? 'broke up w/ volume' : cons.state === -1 ? 'broke down w/ volume' : 'none'}`);
+  console.log(`  taker delta last ${k} bars: ${flow > 0 ? '+' : ''}${f(flow, 0)} ${UNIT}   consolidation: ${cons.state === 2 ? 'in range' : cons.state === 1 ? 'broke up w/ volume' : cons.state === -1 ? 'broke down w/ volume' : 'none'}`);
   console.log(`  order blocks: ${st.orderBlocks.map((o) => `${o.side > 0 ? 'bull' : 'bear'} ${f(o.bottom)}–${f(o.top)}`).join(', ') || 'none'}`);
   console.log(`  open FVGs: ${fv.map((g) => `${g.side > 0 ? 'bull' : 'bear'} ${f(g.bottom)}–${f(g.top)}`).join(', ') || 'none'}`);
 }
 const oi = oiH.map((x) => +x.sumOpenInterest);
 console.log(`\n=== positioning`);
-console.log(`  mark ${f(+prem.markPrice, 1)} index ${f(+prem.indexPrice, 1)} basis ${((+prem.markPrice / +prem.indexPrice - 1) * 1e4).toFixed(1)} bp`);
+console.log(`  mark ${f(+prem.markPrice, DP + 1)} index ${f(+prem.indexPrice, DP + 1)} basis ${((+prem.markPrice / +prem.indexPrice - 1) * 1e4).toFixed(1)} bp`);
 console.log(`  funding now ${(+prem.lastFundingRate * 100).toFixed(4)}%  last 7d avg ${(fund.reduce((s, x) => s + +x.fundingRate, 0) / fund.length * 100).toFixed(4)}% per 8h`);
-console.log(`  OI ${f(+oiNow.openInterest)} BTC   24h ${pct(oi.at(-1), oi.at(-25))}   7d ${pct(oi.at(-1), oi[0])}`);
-try {
+console.log(`  OI ${f(+oiNow.openInterest, 0)} ${UNIT}   24h ${pct(oi.at(-1), oi.at(-25))}   7d ${pct(oi.at(-1), oi[0])}`);
+if (!OPTIONS) console.log(`  gamma: no listed options for ${UNIT} on Deribit`);
+else try {
   for (const d of [7, 30, 9999]) {
-    const g = await fetchGex('https://www.deribit.com/api/v2/public', d);
-    console.log(`  gamma ${d > 999 ? 'all' : '≤' + d + 'd'}: net ${(g.total / 1e6).toFixed(1)}M/1%  flip ${f(g.flip)}  call wall ${f(g.callWall)}  put wall ${f(g.putWall)}  top ${g.top.slice(0, 3).map((s) => f(s.strike)).join(', ')}`);
+    const g = await fetchGex('https://www.deribit.com/api/v2/public', d, 15000, OPTIONS);
+    console.log(`  gamma ${d > 999 ? 'all' : '≤' + d + 'd'}: net ${(g.total / 1e6).toFixed(1)}M/1%  flip ${f(g.flip, 0)}  call wall ${f(g.callWall, 0)}  put wall ${f(g.putWall, 0)}  top ${g.top.slice(0, 3).map((s) => f(s.strike, 0)).join(', ')}`);
   }
 } catch (e) { console.log('  gamma: Deribit error', e.message); }

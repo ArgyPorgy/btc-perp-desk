@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BTC Perp Desk</title>
+<title>Perp Desk</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header>
-  <div class="sym">BTCUSDT<span>.P</span> <small>Binance USDⓈ-M</small></div>
+  <div class="sym" id="symTabs"></div>
   <div class="stat"><label>Last</label><b id="last">—</b></div>
   <div class="stat"><label>Mark</label><b id="mark">—</b></div>
   <div class="stat"><label>Index</label><b id="index">—</b></div>
@@ -27,12 +27,12 @@
     <div id="chartMain" class="chart main"><div id="toast" class="toast hidden" title="click to open"></div></div>
     <div class="pane-label">Delta (bars) &amp; CVD (line, resets 00:00 UTC) — exact Binance taker volume</div>
     <div id="chartCvd" class="chart cvd"></div>
-    <div class="pane-label">Open interest (BTC)</div>
+    <div class="pane-label">Open interest (<span class="unit">BTC</span>)</div>
     <div id="chartOi" class="chart oi"></div>
     <div class="pane-label fp-head">
       Footprint — aggressive sells × buys per price
       <select id="fpTf"><option value="60">1m</option><option value="300">5m</option><option value="900">15m</option></select>
-      <select id="fpTick"><option value="0">auto rows</option><option value="5">$5</option><option value="10">$10</option><option value="25">$25</option><option value="50">$50</option></select>
+      <select id="fpTick"></select>
       <span id="fpInfo" class="muted"></span>
     </div>
     <canvas id="footprint" class="footprint"></canvas>
@@ -63,7 +63,7 @@
         <div id="gex" class="muted">loading Deribit…</div>
       </div>
       <div class="tab hidden" data-tab="tape">
-        <h3>Time &amp; sales <label class="muted tiny">min <input id="tapeMin" type="number" value="0.5" step="0.1" min="0"> BTC</label></h3>
+        <h3>Time &amp; sales <label class="muted tiny">min <input id="tapeMin" type="number" value="0.5" step="0.1" min="0"> <span class="unit">BTC</span></label></h3>
         <div class="tape-head"><span>time</span><span>price</span><span>size</span></div>
         <div id="tape" class="tape"></div>
       </div>

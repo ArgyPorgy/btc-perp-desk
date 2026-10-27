@@ -58,6 +58,8 @@ FEEDS = [
     ("gn_trade", "Google News", gnews('tariffs OR "trade war" OR "trade deal" OR sanctions OR "export controls" when:1d'), "policy", 0, 2, 300),
     ("gn_geo", "Google News", gnews('(Iran OR Israel OR Russia OR Ukraine OR China OR Taiwan OR "North Korea") (missile OR strike OR attack OR war OR ceasefire OR troops) when:1d'), "geo", 0, 2, 300),
     ("gn_markets", "Google News", gnews('"Wall Street" OR "stock market" OR "Treasury yields" OR "dollar index" OR "oil prices" when:1d'), "markets", 0, 2, 300),
+    ("gn_hood", "Google News", gnews('Robinhood OR "HOOD stock" OR "Vlad Tenev" when:1d'), "markets", 1, 1, 300),
+    ("gn_eth", "Google News", gnews('ethereum OR "ether ETF" OR "ETH price" when:1d'), "crypto", 1, 1, 300),
     ("gn_crypto", "Google News", gnews('bitcoin OR "crypto market" OR "bitcoin ETF" OR stablecoin OR "crypto bill" when:1d'), "crypto", 1, 1, 300),
     ("bbc_world", "BBC", "https://feeds.bbci.co.uk/news/world/rss.xml", "geo", 0, 2, 180),
     ("bbc_business", "BBC", "https://feeds.bbci.co.uk/news/business/rss.xml", "markets", 0, 2, 300),
@@ -140,6 +142,10 @@ RULES = [
     ("crypto", 2, "LIQUIDATIONS", [r"liquidat\w+", CRYPTO], []),
     ("crypto", 1, "BTC MOVE", [r"\b(bitcoin|btc)\b", r"\b(surg\w*|plung\w*|plummet\w*|crash\w*|tumbl\w*|soar\w*|rall(y|ies|ied)|slid\w*|slides?|sinks?|"
                                                       r"record|all-time high|drops?|dropped|falls?|fell|jumps?|jumped|\$\d{2,3},?\d{3}|\d{2,3}k)\b"], []),
+    ("markets", 2, "HOOD", [r"\b(robinhood|hood)\b", r"\b(earnings|results|revenue|guidance|sec|fine[sd]?|lawsuit|outage|launch\w*|acquir\w+|"
+                                                     r"stock|shares|surg\w*|plung\w*|sink\w*|tumbl\w*|jump\w*|rall\w*|record|downgrad\w*|upgrad\w*|s&p)\b"], []),
+    ("crypto", 2, "ETH", [r"\b(ethereum|ether|eth)\b", r"\b(etfs?|upgrade|hard fork|staking|surg\w*|plung\w*|crash\w*|tumbl\w*|rall\w*|record|"
+                                                         r"all-time high|liquidat\w+|inflows?|outflows?)\b"], []),
     ("crypto", 1, "BTC", [r"\b(bitcoin|btc)\b"], []),
     ("crypto", 1, "CRYPTO", [CRYPTO], []),
     ("markets", 3, "CRASH", [r"\b(stocks?|wall street|markets?|s&p|nasdaq|dow|equities)\b", r"\b(crash\w*|rout|meltdown|circuit breakers?|bloodbath|"
@@ -348,9 +354,9 @@ class NewsStore:
 
 
 # ───────── BTC reaction to each headline
-def btc_minutes():
-    """Last ~25h of Binance perp 1m candles -> {minute_ts: (open, close)}."""
-    req = urllib.request.Request(f"{REST}/fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=1500", headers={"User-Agent": UA})
+def btc_minutes(symbol="BTCUSDT"):
+    """Last ~25h of Binance perp 1m candles for `symbol` -> {minute_ts: (open, close)}."""
+    req = urllib.request.Request(f"{REST}/fapi/v1/klines?symbol={symbol}&interval=1m&limit=1500", headers={"User-Agent": UA})
     with urllib.request.urlopen(req, timeout=15) as r:
         k = json.load(r)
     return {int(x[0] // 1000): (float(x[1]), float(x[4])) for x in k}

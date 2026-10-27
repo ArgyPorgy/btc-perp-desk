@@ -16,3 +16,8 @@ Newest first. Every change: date (UTC), what, why.
 ## 2026-10-27
 - News rule: tariff headlines about a domestic budget (chancellor, budget, fuel duty) are capped at impact 2. Why: the UK budget's food-tariff cut showed up as an impact-3 TARIFFS headline, but it isn't a trade-war action and BTC moved under 0.1% in the 15 minutes after. Test case added (21/21).
 - `tests/test_indicators.js` now finds `quant/gex.py` relative to its own file, so it passes when run from the project root (the scheduled desk runs it that way) as well as from `dashboard/`. Before this, the gamma cross-check crashed with "file not found".
+
+## 2026-10-28
+- **Multi-market: BTC / ETH / HOOD.** Header buttons switch markets (or use `?s=ETHUSDT` / `?s=HOODUSDT`; the last one picked is remembered). All three are Binance USDⓈ-M perps on the same API, and HOODUSDT is Binance's 24/7 TradFi perp on Robinhood stock, so every panel works on each: candles, delta/CVD, OI, footprint, heatmap, tape, liquidations, scorecard, structure, VWAP, profile. Price decimals, footprint row sizes, tape size filter and units adapt per market. Options gamma uses Deribit BTC or ETH options; HOOD has no listed options, so its gamma panel says so.
+- `tools/snapshot.js` takes a symbol: `node tools/snapshot.js ETHUSDT`.
+- News: Robinhood and Ethereum Google News searches, plus HOOD / ETH rules. The 15m/since reaction on each headline is measured in the market you're viewing. Tests 23/23.

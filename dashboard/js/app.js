@@ -1,5 +1,5 @@
-// BTC Perp Desk: live Binance USDⓈ-M BTCUSDT data -> charts, order flow and context, all computed locally.
-import { SYMBOL, REST, WS_MARKET, WS_PUBLIC, DERIBIT, TIMEFRAMES, OI_PERIOD, HEATMAP_EVERY_SEC } from './config.js';
+// Perp Desk: live Binance USDⓈ-M data (BTC, ETH, HOOD) -> charts, order flow and context, all computed locally.
+import { MARKETS, MARKET, SYMBOL, REST, WS_MARKET, WS_PUBLIC, DERIBIT, TIMEFRAMES, OI_PERIOD, HEATMAP_EVERY_SEC } from './config.js';
 import { DAY, dayKey, weekKey, ema, atr, vwapBands, deltaCvd, structure, fairValueGaps, consolidation,
   volumeProfile, dailyAuction, scorecard, fmtQty } from './indicators.js';
 import { OrderBook, Heatmap } from './book.js';
@@ -18,7 +18,7 @@ const LAYERS = [['heatmap', 'Liquidity heatmap'], ['profile', 'Volume profile'],
   ['vwap', 'Session VWAP + bands'], ['weeklyVwap', 'Weekly VWAP'], ['priorValue', 'Prior-day value area'],
   ['ib', 'Initial balance'], ['gamma', 'Gamma levels'], ['liquidations', 'Liquidation markers'], ['ema200', 'EMA 200'],
   ['news', 'News markers (high impact)']];
-const DEFAULTS = { tf: '15m', swingLen: 20, profileBars: 300, flowBars: 12, gexDays: 30, fpTf: 60, fpTick: 0 };
+const DEFAULTS = { tf: '15m', swingLen: 20, profileBars: 300, flowBars: 12, gexDays: 30, fpTf: 60 };
 for (const [k] of LAYERS) DEFAULTS[k] = true;
 const settings = (() => { try { return { ...DEFAULTS, ...JSON.parse(localStorage.getItem('btc-perp-desk') || '{}') }; } catch { return { ...DEFAULTS }; } })();
 const save = () => { try { localStorage.setItem('btc-perp-desk', JSON.stringify(settings)); } catch { /* storage unavailable */ } };
@@ -107,7 +107,7 @@ main.subscribeCrosshairMove((p) => {
 // ───────── helpers
 const getJSON = async (url) => { const r = await fetch(url); if (!r.ok) throw new Error(`${r.status} ${url}`); return r.json(); };
 const toBar = (k) => ({ time: k[0] / 1000, open: +k[1], high: +k[2], low: +k[3], close: +k[4], volume: +k[5], takerBuy: +k[9] });
-const fmtP = (x, d = 1) => (x == null || !isFinite(x) ? '—' : (+x).toLocaleString(undefined, { minimumFractionDigits: d, maximumFractionDigits: d }));
+const fmtP = (x, d = MARKET.dp) => (x == null || !isFinite(x) ? '—' : (+x).toLocaleString(undefined, { minimumFractionDigits: d, maximumFractionDigits: d }));
 const series = (arr, f = (x) => x) => S.bars.map((b, i) => (arr[i] == null || !isFinite(f(arr[i])) ? { time: b.time } : { time: b.time, value: f(arr[i]) }));
 
 // ───────── data loading
@@ -196,7 +196,8 @@ async function gapFill() { // after a reconnect: refetch recent bars so no candl
 }
 
 // ───────── trades: tape + footprint
-let fp = new Footprint(settings.fpTf, 40, 1), fpReady = false, fpBuffer = [], fpMaxId = 0;
+const fpTickKey = `fpTick_${SYMBOL}`; // footprint row size is per market
+let fp = new Footprint(settings.fpTf, 40, MARKET.fpBase), fpReady = false, fpBuffer = [], fpMaxId = 0;
 function onTrade(d) {
   S.last = +d.p;
   const t = { p: d.p, q: d.q, T: d.T, m: d.m, a: d.a };
@@ -206,7 +207,7 @@ function onTrade(d) {
 }
 
 async function startFootprint() {
-  fp = new Footprint(settings.fpTf, 40, 1); fpReady = false; fpBuffer = []; fpMaxId = 0;
+  fp = new Footprint(settings.fpTf, 40, MARKET.fpBase); fpReady = false; fpBuffer = []; fpMaxId = 0;
   const now = Date.now();
   const startMs = Math.floor((now - Math.min(20 * 60e3, 30 * settings.fpTf * 1e3)) / (settings.fpTf * 1e3)) * settings.fpTf * 1e3;
   $('fpInfo').textContent = 'loading recent trades…';
@@ -328,7 +329,7 @@ function renderScore() {
     cvdChange: ind.dc.delta.slice(i - n + 1).reduce((a, x) => a + x, 0), flowBars: n, priceChange: last.close - b[i - n].close,
     oiChangePct: oiA[i] != null && oiA[i - n] != null ? (oiA[i] - oiA[i - n]) / oiA[i - n] * 100 : null,
     funding: S.funding, bookImbalance: book.synced ? book.imbalance(0.005) : null,
-    gex: settings.gamma ? S.gex : null, consState: ind.cons.state,
+    gex: settings.gamma ? S.gex : null, consState: ind.cons.state, unit: MARKET.unit, noOptions: !MARKET.options,
   });
   $('score').innerHTML = sc.rows.map((r) => `<tr><td>${r.name}</td><td class="${r.score > 0 ? 'up' : r.score < 0 ? 'down' : 'muted'}">${r.score > 0 ? '▲' : r.score < 0 ? '▼' : '•'}</td><td class="${r.score > 0 ? 'up' : r.score < 0 ? 'down' : ''}">${r.text}</td></tr>`).join('');
   $('net').textContent = `net ${sc.net > 0 ? '+' : ''}${sc.net}`;
@@ -338,8 +339,9 @@ function renderScore() {
 let gexLines = [], gexRetry = null;
 async function refreshGex() {
   clearTimeout(gexRetry);
+  if (!MARKET.options) { $('gex').textContent = `No listed options for ${MARKET.label} on Deribit, so no gamma levels.`; return; }
   try {
-    S.gex = await fetchGex(DERIBIT, settings.gexDays);
+    S.gex = await fetchGex(DERIBIT, settings.gexDays, 15000, MARKET.options);
     $('gexWhen').textContent = `${settings.gexDays >= 9999 ? 'all expiries' : `≤${settings.gexDays}d`} · ${new Date().toLocaleTimeString([], { hour12: false })}`;
   } catch (e) {
     console.warn('gex', e);
@@ -375,10 +377,10 @@ function renderTape() {
   if (!tapeDirty) return;
   tapeDirty = false;
   const big = Math.max(5, (+$('tapeMin').value || 0) * 10);
-  $('tape').innerHTML = S.tape.slice(0, 120).map((t) => `<div class="${t.m ? 'down' : 'up'}${+t.q >= big ? ' big' : ''}"><span>${new Date(t.T).toLocaleTimeString([], { hour12: false })}</span><span>${fmtP(+t.p, 1)}</span><span>${(+t.q).toFixed(3)}</span></div>`).join('');
+  $('tape').innerHTML = S.tape.slice(0, 120).map((t) => `<div class="${t.m ? 'down' : 'up'}${+t.q >= big ? ' big' : ''}"><span>${new Date(t.T).toLocaleTimeString([], { hour12: false })}</span><span>${fmtP(+t.p)}</span><span>${fmtQ(+t.q)}</span></div>`).join('');
 }
 function renderLiqs() {
-  $('liqs').innerHTML = S.liqs.length ? S.liqs.slice(0, 40).map((l) => `<div class="${l.side === 'long' ? 'down' : 'up'}">${new Date(l.T).toLocaleTimeString([], { hour12: false })} · ${l.side} liq · ${l.qty.toFixed(3)} BTC @ ${fmtP(l.price, 1)} ($${(l.qty * l.price / 1e3).toFixed(0)}k)</div>`).join('') : 'none yet';
+  $('liqs').innerHTML = S.liqs.length ? S.liqs.slice(0, 40).map((l) => `<div class="${l.side === 'long' ? 'down' : 'up'}">${new Date(l.T).toLocaleTimeString([], { hour12: false })} · ${l.side} liq · ${fmtQ(l.qty)} ${MARKET.unit} @ ${fmtP(l.price)} ($${(l.qty * l.price / 1e3).toFixed(0)}k)</div>`).join('') : 'none yet';
 }
 
 function renderHeader() {
@@ -393,7 +395,7 @@ function renderHeader() {
     $('fundingIn').textContent = ` in ${Math.floor(s / 3600)}h ${String(Math.floor(s / 60) % 60).padStart(2, '0')}m`;
   }
   if (S.oiNow != null) {
-    $('oi').textContent = `${(S.oiNow / 1000).toFixed(1)}k BTC`;
+    $('oi').textContent = `${S.oiNow >= 1e6 ? (S.oiNow / 1e6).toFixed(2) + 'M' : (S.oiNow / 1000).toFixed(1) + 'k'} ${MARKET.unit}`;
     if (S.oi1hAgo) { const c = (S.oiNow - S.oi1hAgo) / S.oi1hAgo * 100; $('oiChg').textContent = ` ${c >= 0 ? '+' : ''}${c.toFixed(2)}% 1h`; }
   }
   const now = Date.now(), ageM = (now - S.health.market) / 1000, ageP = (now - S.health.public) / 1000;
@@ -404,7 +406,12 @@ function renderHeader() {
 }
 
 // ───────── footprint canvas
-function niceStep(x) { const steps = [1, 2, 5, 10, 20, 25, 50, 100, 200, 250, 500]; return steps.find((s) => s >= x) || 1000; }
+function niceStep(x) { // 1-2-2.5-5 steps at any scale (BTC $10 rows, HOOD $0.01 rows)
+  const p = 10 ** Math.floor(Math.log10(Math.max(x, MARKET.fpBase)));
+  return [1, 2, 2.5, 5, 10].map((m) => m * p).find((s) => s >= x - 1e-12);
+}
+const r8 = (x) => Number(x.toFixed(8));
+const decimalsOf = (step) => (step >= 1 ? 0 : Math.min(4, Math.ceil(-Math.log10(step) - 1e-9)));
 function drawFootprint() {
   const cv = $('footprint'), dpr = window.devicePixelRatio || 1;
   const W = cv.clientWidth, H = cv.clientHeight;
@@ -419,15 +426,16 @@ function drawFootprint() {
   let hi = -Infinity, lo = Infinity;
   for (const c of view) for (const r of c.rows) { hi = Math.max(hi, r.price); lo = Math.min(lo, r.price); }
   const rowsFit = Math.max(4, Math.floor((H - footH) / 13));
-  const tick = settings.fpTick || niceStep((hi - lo + 1) / rowsFit);
+  const tick = settings[fpTickKey] || niceStep((hi - lo + MARKET.fpBase) / rowsFit);
   view = fp.view(n, tick);
   hi = -Infinity; lo = Infinity;
   for (const c of view) for (const r of c.rows) { hi = Math.max(hi, r.price); lo = Math.min(lo, r.price); }
   let nRows = Math.round((hi - lo) / tick) + 1;
+  const axisDp = decimalsOf(tick);
   let top = hi;
   if (nRows > rowsFit) { // keep the ladder centred on the last price
-    const center = Math.floor((S.last || hi) / tick) * tick;
-    top = Math.min(hi, center + Math.floor(rowsFit / 2) * tick);
+    const center = r8(Math.floor((S.last || hi) / tick + 1e-9) * tick);
+    top = Math.min(hi, r8(center + Math.floor(rowsFit / 2) * tick));
     nRows = rowsFit;
   }
   const rowH = Math.min(18, (H - footH) / nRows);
@@ -436,23 +444,24 @@ function drawFootprint() {
   ctx.font = `${Math.max(9, Math.min(11, rowH - 3))}px ui-monospace, Menlo, monospace`;
   ctx.textBaseline = 'middle';
   for (let k = 0; k < nRows; k++) {
-    const price = top - k * tick, y = k * rowH;
-    ctx.fillStyle = Math.abs(price - Math.floor((S.last || 0) / tick) * tick) < 1e-9 ? '#f7c948' : '#7d8794';
-    ctx.fillText(fmtP(price, 0), 4, y + rowH / 2);
+    const price = r8(top - k * tick), y = k * rowH;
+    ctx.fillStyle = Math.abs(price - Math.floor((S.last || 0) / tick + 1e-9) * tick) < tick / 2 ? '#f7c948' : '#7d8794';
+    ctx.fillText(fmtP(price, axisDp), 4, y + rowH / 2);
   }
   view.forEach((c, ci) => {
     const x = axisW + ci * colW;
     const byPrice = new Map(c.rows.map((r) => [r.price, r]));
     for (let k = 0; k < nRows; k++) {
-      const price = top - k * tick, r = byPrice.get(price);
+      const price = r8(top - k * tick), r = byPrice.get(price);
       if (!r) continue;
       const y = k * rowH, d = r.buy - r.sell, a = Math.min(0.85, 0.12 + 0.8 * (r.buy + r.sell) / (maxCell || 1));
       ctx.fillStyle = d >= 0 ? `rgba(38,166,154,${a})` : `rgba(239,83,80,${a})`;
       ctx.fillRect(x + 1, y + 1, colW - 3, rowH - 1);
       if (c.poc === price) { ctx.strokeStyle = '#f7c948'; ctx.lineWidth = 1; ctx.strokeRect(x + 1.5, y + 1.5, colW - 4, rowH - 2); }
       if (rowH >= 11) {
-        const below = byPrice.get(price - tick), above = byPrice.get(price + tick);
-        const buyImb = below && r.buy >= 3 * below.sell && r.buy > 0.5, sellImb = above && r.sell >= 3 * above.buy && r.sell > 0.5;
+        const below = byPrice.get(r8(price - tick)), above = byPrice.get(r8(price + tick));
+        const minQ = MARKET.tapeMin; // ignore imbalances on tiny prints
+        const buyImb = below && r.buy >= 3 * below.sell && r.buy > minQ, sellImb = above && r.sell >= 3 * above.buy && r.sell > minQ;
         ctx.fillStyle = sellImb ? '#ff8a80' : '#e6e6e6';
         ctx.textAlign = 'right'; ctx.fillText(fmtQ(r.sell), x + colW / 2 - 6, y + rowH / 2);
         ctx.fillStyle = '#8a8f98'; ctx.textAlign = 'center'; ctx.fillText('×', x + colW / 2, y + rowH / 2);
@@ -490,6 +499,19 @@ function buildTabs() {
 
 // ───────── controls
 function buildControls() {
+  document.title = `${MARKET.label} · Perp Desk`;
+  $('symTabs').innerHTML = Object.entries(MARKETS).map(([s, m]) => `<button data-s="${s}" class="${s === SYMBOL ? 'on' : ''}" title="${m.name} · ${m.venue}">${m.label}</button>`).join('')
+    + `<small>${MARKET.name} · ${MARKET.venue}</small>`;
+  $('symTabs').onclick = (e) => {
+    const s = e.target.closest('button')?.dataset.s;
+    if (!s || s === SYMBOL) return;
+    try { localStorage.setItem('btc-perp-desk-symbol', s); } catch { /* storage unavailable */ }
+    location.search = `?s=${s}`; // a clean reload: every stream, book and cache belongs to one market
+  };
+  document.querySelectorAll('.unit').forEach((el) => { el.textContent = MARKET.unit; });
+  $('tapeMin').value = MARKET.tapeMin;
+  $('tapeMin').step = MARKET.tapeMin / 5;
+  $('fpTick').innerHTML = `<option value="0">auto rows</option>` + MARKET.fpTicks.map((v) => `<option value="${v}">$${v}</option>`).join('');
   $('tfs').innerHTML = Object.keys(TIMEFRAMES).map((tf) => `<button data-tf="${tf}" class="${tf === S.tf ? 'on' : ''}">${tf}</button>`).join('');
   $('tfs').onclick = (e) => { const tf = e.target.dataset.tf; if (tf && tf !== S.tf) switchTf(tf); };
   const st = $('settings');
@@ -510,9 +532,9 @@ function buildControls() {
   };
   $('settingsBtn').onclick = () => st.classList.toggle('hidden');
   $('fpTf').value = String(settings.fpTf);
-  $('fpTick').value = String(settings.fpTick);
+  $('fpTick').value = String(settings[fpTickKey] || 0);
   $('fpTf').onchange = (e) => { settings.fpTf = +e.target.value; save(); startFootprint(); };
-  $('fpTick').onchange = (e) => { settings.fpTick = +e.target.value; save(); };
+  $('fpTick').onchange = (e) => { settings[fpTickKey] = +e.target.value; save(); };
 }
 
 async function switchTf(tf) {

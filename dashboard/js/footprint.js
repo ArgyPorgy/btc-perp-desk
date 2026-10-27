@@ -1,6 +1,8 @@
 // Footprint: aggressive buy / sell volume per price level per candle, built from Binance aggTrades.
 // aggTrade.m === true means the buyer was the maker, i.e. the aggressor SOLD (hit the bid).
 
+const r8 = (x) => Number(x.toFixed(8)); // keep price keys exact for fractional ticks (ETH, HOOD)
+
 export class Footprint {
   constructor(tfSec, keepCandles = 40, baseTick = 1) {
     this.tf = tfSec;
@@ -18,7 +20,7 @@ export class Footprint {
       this.candles.set(ct, c);
       if (this.candles.size > this.keep) this.candles.delete(Math.min(...this.candles.keys()));
     }
-    const px = Math.floor(+t.p / this.base) * this.base, q = +t.q;
+    const px = r8(Math.floor(+t.p / this.base + 1e-9) * this.base), q = +t.q;
     let lv = c.levels.get(px);
     if (!lv) { lv = { buy: 0, sell: 0 }; c.levels.set(px, lv); }
     if (t.m) { lv.sell += q; c.sell += q; } else { lv.buy += q; c.buy += q; }
@@ -33,7 +35,7 @@ export class Footprint {
       const c = this.candles.get(time);
       const agg = new Map();
       for (const [p, lv] of c.levels) {
-        const k = Math.floor(p / tick) * tick;
+        const k = r8(Math.floor(p / tick + 1e-9) * tick);
         const a = agg.get(k) || { buy: 0, sell: 0 };
         a.buy += lv.buy; a.sell += lv.sell;
         agg.set(k, a);

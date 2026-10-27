@@ -24,6 +24,8 @@ import news
 HERE = Path(__file__).parent
 store = news.NewsStore()
 state = {"mins": {}, "mins_at": 0, "polls": 0, "started": time.time()}
+SYMBOLS = ("BTCUSDT", "ETHUSDT", "HOODUSDT")  # markets whose reaction to each headline we measure
+other_mins = {}  # symbol -> (fetched_at, minutes), fetched on demand
 
 
 def poller():
@@ -67,13 +69,27 @@ class Handler(SimpleHTTPRequestHandler):
         q = urllib.parse.parse_qs(u.query)
         if u.path == "/api/news":
             hours = min(float(q.get("hours", ["48"])[0]), 24 * news.KEEP_DAYS)
-            items = news.annotate(store.query(hours, int(q.get("min", ["1"])[0])), state["mins"])
+            sym = q.get("sym", ["BTCUSDT"])[0].upper()
+            items = news.annotate(store.query(hours, int(q.get("min", ["1"])[0])), self.minutes(sym))
             return self.send_json({"now": time.time(), "items": items[:600], "feeds": self.feed_status()})
         if u.path == "/api/calendar":
             return self.send_json(news.calendar())
         if u.path == "/api/health":
             return self.send_json({"ok": True, "uptime": time.time() - state["started"], "feeds": self.feed_status()})
         return super().do_GET()
+
+    @staticmethod
+    def minutes(sym):
+        if sym == "BTCUSDT" or sym not in SYMBOLS:
+            return state["mins"]
+        at, mins = other_mins.get(sym, (0, {}))
+        if time.time() - at > 60:
+            try:
+                mins = news.btc_minutes(sym)
+                other_mins[sym] = (time.time(), mins)
+            except Exception as e:
+                print(f"{sym} 1m candles unavailable: {e}", file=sys.stderr)
+        return mins
 
     @staticmethod
     def feed_status():
