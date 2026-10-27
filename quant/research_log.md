@@ -45,6 +45,15 @@ HOODUSDT perp 1h since Feb 2026 (267 days). Now 87.8, −8.9% vs the 1h EMA200, 
 
 → Leans toward a bounce, but n=10–23 from one stock in one year, and the uncertainty (±15%) covers zero edge. This episode is also earnings-driven: after earnings misses, stocks tend to keep drifting down for weeks (post-earnings drift), which most of these episodes didn't have. **Not tradable by the desk rule (n < 15 at the tested threshold). Idea only.**
 
+## 2026-10-28: HOOD gap-downs, full Nasdaq history since the 2021 IPO (`hood_gap_test.py`)
+1,318 daily bars from Yahoo Finance; 31 gap-downs of 5% or more. Earnings missed 2026-10-27 after the close: regular close 94.56, after hours 87.8 → about −7% gap expected at the Oct 28 open, with HOOD already −10% below its 50-day EMA.
+- **All gap-downs (n=31):** long at the open is +0.11 to +0.19R across −4% to −10% stops and 9.3% / 15% targets, but the halves are mixed (−0.36 to +0.64). The gap fills (reaches the prior close) within 10 days 77% of the time.
+- **Gap-down while already >8% below the 50-day EMA (n=11):** +0.36 to +0.83R in every stop/target combination, with both halves positive. The gap day closed above its open 73% of the time (median +7.1%), and the 10-day median is +23.9%. With an −8% stop and a +9.3% target: 64% wins, +0.36R ±0.31.
+- **Earnings-miss gaps only (n=8):** weaker. The gap filled within 10 days only 38% of the time (post-earnings drift). Earnings gaps that were also stretched (n=3): 2 wins, 1 loss.
+- **A −4% stop is below HOOD's daily range (ATR ~5.6%).** Several winners first hit −4%, then ran +25–36%. Size stops to volatility (−8%).
+
+→ The stretched-gap long is promising but n=11 (<15), so it's an idea, not desk-tradable yet. Track the Oct 28 outcome as an out-of-sample case.
+
 ## Backlog (highest expected value first)
 1. Post-release reaction trades: first 15m/1h candle after CPI/FOMC, fade vs follow, using calendar timestamps.
 2. Funding extremes (top/bottom 5%) + OI change → 24–72h forward returns.
