@@ -5,6 +5,10 @@ import { vwapBands, dayKey, deltaCvd, structure, fairValueGaps, volumeProfile, c
 import { computeGex, parseInstrument } from '../js/gex.js';
 import { backfillAggTrades, Footprint } from '../js/footprint.js';
 import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+
+// resolve from this file, so the test runs from the project root or from dashboard/
+const GEX_PY = fileURLToPath(new URL('../../quant/gex.py', import.meta.url));
 
 const REST = 'https://fapi.binance.com';
 let passed = 0;
@@ -133,7 +137,7 @@ const bar = (time, o, h, l, c, v = 10, tb = 5) => ({ time, open: o, high: h, low
     fetch('https://www.deribit.com/api/v2/public/get_book_summary_by_currency?currency=BTC&kind=option').then((r) => r.json()),
   ]);
   const js = computeGex(idx.result.index_price, book.result, Date.now(), 30);
-  const py = execFileSync('python3', ['../quant/gex.py', '30'], { encoding: 'utf8' });
+  const py = execFileSync('python3', [GEX_PY, '30'], { encoding: 'utf8' });
   const m = py.match(/gamma flip: ([\d,]+|nan)\s+call wall: ([\d,]+)\s+put wall: ([\d,]+)/);
   const num = (s) => +s.replace(/,/g, '');
   console.log(`   JS  flip ${js.flip.toFixed(0)} call ${js.callWall} put ${js.putWall} | PY flip ${m[1]} call ${m[2]} put ${m[3]}`);

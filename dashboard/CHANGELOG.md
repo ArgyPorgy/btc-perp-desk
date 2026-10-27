@@ -12,3 +12,7 @@ Newest first. Every change: date (UTC), what, why.
 
 ## 2026-10-26
 - News rules: a crash in a foreign market (e.g. Brazil after its election) is no longer flagged as a US market crash, and clickbait like "smart money shock" is excluded. Routine Russian strikes on Ukrainian cities now count as ongoing conflict (impact 2), not escalation (3); strikes on NATO members still count as 3. Why: three of today's five impact-3 headlines were these, and BTC barely moved on them (≤0.2% in 15m). Tests: 20/20.
+
+## 2026-10-27
+- News rule: tariff headlines about a domestic budget (chancellor, budget, fuel duty) are capped at impact 2. Why: the UK budget's food-tariff cut showed up as an impact-3 TARIFFS headline, but it isn't a trade-war action and BTC moved under 0.1% in the 15 minutes after. Test case added (21/21).
+- `tests/test_indicators.js` now finds `quant/gex.py` relative to its own file, so it passes when run from the project root (the scheduled desk runs it that way) as well as from `dashboard/`. Before this, the gamma cross-check crashed with "file not found".

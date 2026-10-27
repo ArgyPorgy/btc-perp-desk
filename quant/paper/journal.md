@@ -67,3 +67,76 @@
 - News: no market-moving US headline; FOMC Wed 18:00 UTC, PCE/GDP Thu 12:30. B1 expired 16:00 UTC unfilled.
 - Review (user asked: scalp the range instead of holding?). L1 bounced off the entry zone repeatedly (+1.91, +1.22, +1.64, +1.19R). Tested it properly: mechanical range fades and prior-day sweep scalps lose after fees (-0.06 to -0.23R, n in thousands); taking profit and re-entering on sweep setups lowers R on the broad samples (n=90/153). Hold-one-shot on 10/20-day-low sweeps is positive (+0.14/+0.17R, any daily trend). Shorts at highs negative.
 - DECISION: HOLD L1 (long 79,752, +0.34R at 79,975), stop 79,099 / target 81,057 unchanged. Desk upgrade: S10 (1.5R) and S20 (2R) long sweeps without trend filter are now tradable; setup_scan.py added. No fresh signal now (10/20-day low 79,179, 1.5% below).
+
+## 2026-10-27 11:43 UTC — price 79,851
+- 1h: 79.86k, below EMA50/200 (80.15k/81.12k), last CHoCH down; 20-bar range 79.47-80.53k; 12h delta -2.1k BTC; sitting on session VWAP, under weekly VWAP 80.0k.
+- 4h: below EMA50/200 (81.1k/81.7k), 20-bar range 79.18-81.08k; 08:00 close 79,774, low 79,548 (no new low).
+- 1d: above EMA200 76.3k, below EMA50 80.7k; inside the 77.2-80.8k bull FVG; 20d low 79,179 is 0.75% below.
+- Positioning: funding 0.008%/8h, OI +4.9% 24h (shorts adding into the dip?), basis -4bp; gamma flip 80.1k with the call and put walls both at 80k (pinning), short gamma <=7d.
+- News: Fed meeting starts today, FOMC decision Wed 28 Oct 18:00 UTC (hold at 4.00% expected, hawkish tilt), Core PCE + GDP Thu 12:30. Nothing today moved BTC more than 0.45%.
+- DECISION: HOLD L1 (S20 long 79,752, stop 79,099, target 81,057 = 2R; +0.17R now). No new S10/S20 signal. Thesis unchanged: wick below the 20d low reclaimed; stop under the wick. S20 tested n=90, +0.17R/trade. Holding through FOMC is allowed (stop-hit odds ~1.1x normal). No new entries Wed 16:00-18:00.
+- Orders: none. MC zero-drift: 81k touch 57% in 72h, 79k 73%; the stop is closer than the target, so the risk is real.
+
+## 2026-10-27 12:16 UTC — price 79,917
+- 1h: 79,942, below EMA50/200 (80.1k/81.1k), last CHoCH down; 20-bar range 79,468-80,528; 12h delta -2.5k BTC; below weekly VWAP 80.0k.
+- 4h: below EMA50/200 (81.1k/81.7k), 20-bar range 79,179-81,000; 12:00 candle closed 79,880 (low 79,468), no wick under the 20d/10d low 79,179 -> no S10/S20.
+- 1d: above EMA200 (76.3k), below EMA50 (80.7k); above 300d value (VAH 79.5k).
+- Positioning: funding 0.0087%/8h, OI +4.8% 24h (shorts adding into the low), basis -3bp; gamma 7d net -12M/1% short, flip 80.1k, 80k call=put wall pinning.
+- News: Fed meeting started; CNBC survey says hikes coming, not this week; BTC -0.3% on the Fed headlines, then flat. FOMC Wed 18:00, Core PCE/GDP Thu 12:30.
+- DECISION: HOLD L1 (S20 long 79,752, stop 79,099, target 81,057, +0.28R open). Thesis unchanged: the sweep of the 20d low held; MC 81k touch 55% in 72h vs 79k 75%. Hold through FOMC with the stop (event study: stop-hit odds ~1.1x). No new entries: no setup fired, and FOMC is >2h away but there is no signal.
+- Orders: none changed.
+
+## 2026-10-27 16:31 UTC — price 80,616
+- 1h: 80.3-80.5k, back above EMA50 (80.16k) but below EMA200 (81.09k); above weekly VWAP 80.02k and session VWAP 79.95k; inside value (VAL 80.25k); 12h delta -40 BTC (flat); bear FVG 80.2-80.6k being worked through.
+- 4h: below EMA50/200 (81.07k/81.70k), 20-bar range 79,179-81,000; 12:00 close 79,880, low 79,468, no new 10/20d low -> no S10/S20.
+- 1d: above EMA200 (76.35k), just under EMA50 (80.75k); inside the 77.2-80.8k bull FVG.
+- Positioning: funding 0.010%/8h, OI +2.9% 24h, basis -2bp; near-term gamma flipped to LONG +9.5M/1% with price above the 80.04k flip (dampening; 80k call=put wall), next strikes 81k/82k.
+- News: equities firmer into FOMC; Iran leadership discussing war-end conditions (oil lower); Oleshky ceasefire. No headline moved BTC >0.45% in 15m. FOMC Wed 28 Oct 18:00, Core PCE/GDP Thu 12:30, BOJ Fri 02:30.
+- DECISION: HOLD L1 (S20 long 79,752, stop 79,099, target 81,057 = 2R; +1.15R open at 80,500). Thesis unchanged: 20d-low sweep reclaimed, now above the gamma flip. S20 n=90, +0.17R/trade, one-shot hold (no partials, tested worse). MC zero drift: 81k touch ~51% in 24h / 72% in 72h. Hold through FOMC with stop (event study ~1.1x stop odds). No new entries Wed 16:00-18:00.
+- Orders: none changed. Desk fix: paper_desk.py HTTP get() now retries transient resets (first run today died on ConnectionResetError).
+
+## 2026-10-27 16:34 UTC — price 80,614
+- 1h: 80.58k, above EMA50 80.19k / below EMA200 80.08k->81.08k; broke up out of 79.5-80.7k box w/ volume, but 12-bar delta -226 BTC; above weekly (80.05k) + session VWAP, inside value (VAL 80.25k).
+- 4h: still below EMA50 81.05k / EMA200 81.69k; 20-bar range 79.18-81.00k, last 4h close 80,530; bull FVG 80.13-80.43k below as support.
+- 1d: above EMA200 76.4k, just under EMA50 80.75k; 20d range 79.18-84.88k.
+- Positioning: funding 0.010%/8h, OI +3.7% 24h, basis -4bp; 7d gamma flip 80.14k (price above), walls 80k/81k/82k.
+- News: risk-on tone (US consumer confidence 91.7 vs 81 exp, equities near record, Oleshky truce); BTC +0.5-0.8% over 3h, no shock. FOMC Wed 28 Oct 18:00 UTC, Core PCE/GDP Thu 12:30.
+- Setups: none (S10/S20 low 79,179 is 1.7% away).
+- DECISION: HOLD L1 (entry 79,751.8, stop 79,099, target 81,057.4 = 2R), +1.27R open. One-shot hold per tests; no trailing (untested). MC 24h touch 81k 65%. Holding through FOMC allowed (event study: stop odds ~1.1x, no drift).
+- Orders: none changed.
+
+## 2026-10-27 18:16 UTC — price 80,596
+- 1h: 80.59k, above EMA50 80.22k / below EMA200 81.07k; above weekly VWAP 80.07k and session VWAP 80.12k (+1.6σ); inside value (VAL 80.25k); 12-bar delta -182 BTC; swing high 80.82k, 20-bar range 79.47-80.81k.
+- 4h: below EMA50/200 (81.05k/81.69k); 20-bar range 79,179-81,000; candle closing 16:00 at 80,530 (low 79,810), no sweep -> no S10/S20 (10/20d low 79,179, 1.7% away).
+- 1d: above EMA200 76.4k, just under EMA50 80.75k; inside 77.2-80.8k bull FVG.
+- Positioning: funding 0.010%/8h, OI +2.5% 24h, basis -1bp; gamma long (7d +26M/1%), flip 80.14k below price, 80k call=put wall, next strikes 81k/82k.
+- News: pre-FOMC previews (hold at 4.00% expected, hawkish tone), Oleshky truce, Iran war-end talk; nothing moved BTC >0.3% in 15m. FOMC Wed 28 Oct 18:00 UTC, Core PCE/GDP Thu 12:30, ECB Thu 13:15, BOJ Fri 02:30.
+- DECISION: HOLD L1 (S20 long 79,751.8, stop 79,099, target 81,057.4 = 2R; +1.28R open). Thesis unchanged: 20d-low wick reclaimed, price now above the gamma flip. S20 n=90, +0.17R/trade, one-shot hold. MC zero drift: 81k touch 61% in 24h / 79% in 72h. Hold through FOMC with stop (event study ~1.1x stop odds). No new entries Wed 16:00-18:00.
+- Orders: none changed.
+
+## 2026-10-27 20:17 UTC — price 80,755
+- 1h: 80,740, back above EMA50 80.26k, still under EMA200 81.06k; 20-bar range 79.47-80.81k broke up with volume; 12-bar delta -318 BTC. Above weekly VWAP 80.09k.
+- 4h: below EMA50/200 (81.05k/81.68k); last structure is a down CHoCH at 79.73k; range 79.3-81.0k; bull FVG 80.13-80.41k under price.
+- 1d: sitting on EMA50 80.76k, well above EMA200 76.35k; 20d range 79.18-84.88k.
+- Positioning: funding 0.010%/8h, OI +1.7% 24h, basis -5bp. Gamma flip 80.17k, call wall 81.0k right at the L1 target, put wall 80.0k.
+- News: nothing BTC reacted to (moves under 0.3%). FOMC Wed 18:00 UTC (hold expected at 4.00%), Core PCE Thu 12:30.
+- DECISION: HOLD L1 (entry 79,751.8, stop 79,099, target 81,057.4 = 2R), +1.51R open. No S10/S20 signal (20d low is 2.0% below). Tested breakeven stops (breakeven_test.py): worse than holding at every trigger; for S20 trades that reached +1.5R, holding gave +1.62R vs +1.50R with BE (n=21). Keep the original stop; holding through FOMC is allowed. MC 24h touch of 81k is 83%.
+- Orders: none changed.
+
+## 2026-10-27 22:08 UTC — price 80,899
+- EVENT: L1 long closed at target 81,057.4 on the 22:00 1h close, +1.88R, equity $10,187.68.
+- 1h: 80,899, above EMA50 80.3k, just under EMA200 81.06k; up CHoCH 80,819; 12-bar delta +2.0k BTC; broke out of range on volume; 81.0k call wall and the 81.6k POC sit overhead.
+- 4h: below EMA50/200 (81.06k/81.68k); last structure still a down CHoCH; 20-bar range 79.3k-81.3k; delta +2.5k.
+- 1d: above EMA50 80.77k and EMA200 76.4k; 20d range 79.18k-84.88k.
+- Positioning: funding 0.0073%, OI +0.5% 24h; gamma flip 80.18k, call wall 81k, put wall 80k (pinned between them).
+- News: nothing BTC reacted to (moves <0.6%). FOMC Wed 28 Oct 18:00 UTC, Core PCE/GDP Thu 12:30.
+- DECISION: NO TRADE. setup_scan shows no S10/S20 signal (the 10d/20d low of 79,179 is 2.0% below). Analog plans from here are all EV ~0 (-0.08R to +0.04R); mechanical range fades tested negative. No new entries 16:00-18:00 UTC Wed before FOMC.
+- Orders: none. Book flat.
+
+## 2026-10-27 22:14 UTC — price 80,873
+- CLOSED L1 at target 81,057 (2026-10-27 22:00 UTC): +1.88R net of fees, +$187.68. Equity $10,187.68. Track record 1/1, +1.88R. Plan held as tested (hold one shot to 2R); the dip to -0.66R never reached the 79,099 stop.
+- 1h: reclaimed EMA50 (80.3k), up CHoCH at 80.8k, just under EMA200 (81.06k), inside value; 12h delta +1.7k BTC. 4h: still below EMA50/200 (81.05k/81.7k), inside value. 1d: back above EMA50 (80.77k) and EMA200 (76.4k).
+- Positioning: funding 0.007%, OI +0.5% 24h; near-term gamma flipped POSITIVE (+41.5M/1%, dampening), call wall 81k right overhead, put wall 80k.
+- News: Iran escalation risk flagged after the midterms (Al Jazeera, OilPrice); US-Canada tariff easing. FOMC tomorrow 18:00 UTC (hold 4.00% expected), PCE/GDP Thu 12:30.
+- Scan: no S10/S20 signal (10/20-day low 79,179 is 2.0% below). DECISION: NO TRADE, flat into FOMC. No tested setup at 80.9k; chasing into the 81k call wall 20h before FOMC has no evidence behind it. Next entry: a 4h sweep-and-reclaim of 79,179 (S20, 2R), caught by setup_scan at each 4h close.
+- Research idea (backlog): buying 4h closes ABOVE the 10/20-day high, since short fades of highs tested strongly negative.

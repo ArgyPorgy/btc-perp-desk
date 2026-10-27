@@ -82,6 +82,8 @@ ACTORS = (r"\b(iran\w*|israel\w*|russia\w*|ukrain\w*|china|chinese|taiwan\w*|nor
 MAJOR = r"\b(iran\w*|tehran|russia\w*|moscow|kremlin|putin|china|chinese|beijing|taiwan\w*|north korea\w*|pyongyang|nato|hormuz|pentagon)\b"
 CRYPTO = r"\b(bitcoin|btc|crypto\w*|ether(eum)?|stablecoins?|tether|usdt|usdc|binance|coinbase|okx|bybit|kraken|solana|xrp|defi)\b"
 UTILITY = r"\b(electricity|water|power|feed-in|energy|electric|utility|gas|rail|fares?)\b"
+# domestic budget measures (e.g. a UK chancellor cutting food tariffs) are not trade-war actions
+BUDGET = r"\b(chancellor|budget|fuel duty)\b"
 RULES = [
     ("fed", 3, "FOMC", [r"\b(fomc|federal open market committee|dot plot)\b"], [SPEC]),
     ("fed", 3, "FED RATES", [r"\b(fed|federal reserve)\b", r"\b(cuts?|hikes?|raises?|holds?|lowers?|keeps?|leaves?|slash\w*|pause\w*)\b.{0,40}\brates?\b"], [SPEC]),
@@ -111,7 +113,7 @@ RULES = [
     ("policy", 3, "TARIFFS", [r"\b(impos\w*|announc\w*|rais\w*|hik\w*|slap\w*|exempt\w*|paus\w*|lift\w*|suspend\w*|sign\w*|doubl\w*|loosen\w*|"
                               r"cut\w*|retaliat\w*|threatens? (new |more |higher )?)\b.{0,40}\b(tariffs?|import duties)\b|"
                               r"\btariffs? (of|at|to) \d+ ?%|\d+ ?% tariffs?|\btariffs? (take|took|go|went) (effect|into effect)|section (232|301|338) tariffs?"],
-     [SPEC, UTILITY]),
+     [SPEC, UTILITY, BUDGET]),
     ("policy", 2, "TARIFFS", [r"\btariffs?\b|trade war|import (duties|taxes)|section (232|301|338)"], [UTILITY]),
     ("policy", 3, "SHUTDOWN", [r"government shutdown|debt ceiling|debt limit|default on (us|u\.s\.|american) debt"], [SPEC]),
     ("policy", 2, "SHUTDOWN", [r"government shutdown|debt ceiling|debt limit"], []),

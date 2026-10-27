@@ -28,9 +28,16 @@ STATE = Path(os.environ.get("PAPER_STATE", Path(__file__).parent / "paper" / "st
 JOURNAL = STATE.parent / "journal.md"
 
 
-def get(url):
-    with urllib.request.urlopen(url, timeout=30) as r:
-        return json.load(r)
+def get(url, tries=3):
+    # retry transient resets/timeouts so a flaky connection doesn't kill the run
+    for i in range(tries):
+        try:
+            with urllib.request.urlopen(url, timeout=30) as r:
+                return json.load(r)
+        except (OSError, ValueError):
+            if i == tries - 1:
+                raise
+            time.sleep(2 * (i + 1))
 
 
 def iso(ms):

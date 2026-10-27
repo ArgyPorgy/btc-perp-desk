@@ -1,9 +1,10 @@
 {
   "start_equity": 10000.0,
-  "equity": 10000.0,
+  "equity": 10187.683118872548,
   "risk_pct": 1.0,
   "orders": [],
-  "positions": [
+  "positions": [],
+  "closed": [
     {
       "id": "L1",
       "side": "long",
@@ -13,8 +14,12 @@
       "qty": 0.15318627450980324,
       "opened_ms": 1792857672454.7078,
       "note": "4h sweep of the 20-day low (wick 79,179) closed back above 79,732 in a daily uptrend. Tested 44x since 2019: 2R win 38.6% vs 33% random, +0.03R/trade (unstable halves); 72h up 61%. Stop under wick; target 2R near the 81k put wall / 1h VAL.",
-      "max_hold_h": 168
+      "max_hold_h": 168,
+      "exit": 81057.40000000001,
+      "closed_ms": 1793138400000,
+      "reason": "target",
+      "pnl": 187.68311887254907,
+      "R": 1.8768311887254907
     }
-  ],
-  "closed": []
+  ]
 }

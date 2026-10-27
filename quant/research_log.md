@@ -30,9 +30,18 @@ L1 bounced from the entry zone repeatedly: +1.91R, +0.84R, +0.93R, +0.81R, +1.22
 
 → **Desk change:** tradable setups are now S10 (10-day-low sweep, 1.5R) and S20 (20-day-low sweep, 2R), long only, any daily trend, one-shot hold. That's ~3x more opportunities than the trend-filtered version. `setup_scan.py` flags them live. No mechanical scalping: it loses after costs.
 
+## 2026-10-27: Breakeven stop vs one-shot hold (L1 at +1.5R the day before FOMC)
+`breakeven_test.py`: S10/S20 events, move the stop to entry + fees once a closed 1h candle is at +0.5R / +1R / +1.5R.
+- S20/2R (n=90): hold +0.163R. BE at +0.5R −0.054R, at +1R +0.034R, at +1.5R +0.137R. Among trades that reached +1.5R (n=21): hold +1.62R (target hit 86%) vs BE +1.50R.
+- S10/1.5R (n=153): hold +0.126R. BE at +0.5R +0.038R, at +1R +0.111R. Among trades that reached +1R (n=39): hold +1.32R (95% hit target) vs BE +1.26R.
+- Breakeven cuts R at every trigger. Once a sweep trade is up 1R+, it usually finishes; BE stops get tagged on normal retests. Conditional samples are small (n=21–45).
+
+→ **No change:** keep the one-shot hold with the original stop. No breakeven trailing.
+
 ## Backlog (highest expected value first)
 1. Post-release reaction trades: first 15m/1h candle after CPI/FOMC, fade vs follow, using calendar timestamps.
 2. Funding extremes (top/bottom 5%) + OI change → 24–72h forward returns.
 3. Failed breakouts at prior-day VAH/VAL (auction failure) on 1h.
 4. Liquidation cascades: needs our own forceOrder history (start logging it).
 5. Session opens (Asia/London/NY) × weekly VWAP side.
+6. Breakout longs: 4h close above the prior 10/20-day high (short fades of highs tested −0.13 to −0.39R, so the breakout side may carry the edge).
