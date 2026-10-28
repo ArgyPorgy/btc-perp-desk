@@ -166,3 +166,27 @@
 - News: Coinbase denies breach (vendor leak), BTC +0.9% in the following hour; FOMC today 18:00 UTC.
 - Scan: no S10/S20 signal (10/20-day low 79,179, 2.4% below). DECISION: NO TRADE. Event rule: no new entries from 16:00 UTC (2h before FOMC). No tested long-breakout setup yet (backlog #6).
 - Watch (not desk-tradable): HOOD -6.5% after earnings (perp 87.3), gap-down-while-stretched study n=11 favours a bounce; tracking the US open as an out-of-sample case.
+
+## 2026-10-28 10:11 UTC — price 81,436
+- 1h: 81.45k, back above EMA50/200 (80.6k/81.06k) after up CHoCH; broke out of consolidation with volume, but 12-bar delta -1.9k BTC and bear OB 81.58-82.04k overhead; POC 81.6k.
+- 4h: above EMA50 81.07k, still under EMA200 81.67k; 20-bar range 79.3-81.8k; last closed 08:00 bar 81,050.
+- 1d: above EMA50/200, in 79.2-84.9k range; 20d/10d low 79,179 is 2.4% away.
+- Positioning: funding 0.0096%/8h, OI 24h -1.7%, basis -5bp; gamma flip ~80.4k, call wall 82k, put wall 80k (pinned 80-82k).
+- News: FOMC 18:00 UTC (hold expected, presser 18:30); Core PCE+GDP Thu 12:30. Coinbase vendor data breach: no BTC reaction. Iran-deal headlines +0.3-0.5% m15 earlier.
+- DECISION: NO TRADE. setup_scan: no S10/S20 signal in 3 days; analogs ~coin-flip (24h up 54%, n=102 episodes). No entries 16:00-18:00 UTC per event rule.
+- Orders: none. Book flat, 1 closed +1.88R, equity 10,187.68.
+
+## 2026-10-28 13:38 UTC — price 80,776
+- 1h: 80.8k, back above EMA50 80.6k but under EMA200 81.1k; pulled back from 81.3k (12:00 4h close) into session VWAP -1σ; 12-bar delta +187 BTC.
+- 4h: below EMA50 81.1k / EMA200 81.7k; 20-bar range 79.3k-81.8k, last CHoCH down; 12-bar delta -2.5k BTC.
+- 1d: above EMA200 76.4k, at EMA50 80.8k; in 79.2k-84.9k range.
+- Positioning: funding 0.0055%, OI -1.7% 24h, basis -4bp; 7d gamma flip 80.1k, put wall 80k, call wall 82k (pinned between).
+- News: FOMC 18:00 UTC (hold 4.00% fcst), presser 18:30; core PCE + GDP Thu 12:30. BTC -0.7% over 2h on pre-Fed tape, no single headline move.
+- DECISION: NO TRADE. setup_scan: no S10/S20 (10/20d low 79,179, 2.7% away). Outlook plans all EV ~0R. 16:00 close falls at the edge of the 2h pre-FOMC no-entry window, so no conditional orders either.
+- Orders: none.
+
+## 2026-10-28 14:19 UTC — price 80,595
+- 14:19 UTC check: flat. BTC 80,572, slipped below 1h EMA50/200 (80.6k/81.05k) after rejecting 81.6k; 4h below EMA50/200; 1d at EMA50 (80.76k). 12-bar 4h delta -2.9k BTC. Funding 0.005%, OI -0.85% 24h, gamma +20M/1% (pin 80-82k, flip 80.1k).
+- Scan: no S10/S20 signal (79,179 is 2.7% below). DECISION: NO TRADE; event rule blocks new entries from 16:00 UTC (FOMC 18:00).
+- HOOD watch (out-of-sample case): bounced from 86.3 low / ~87 pre-open to 91.8 after the US open (+5%), in line with the stretched gap-down study (gap day closed above open 73%, n=11).
+- Schedule changed to every 4h, 5 min after each 4h close.
