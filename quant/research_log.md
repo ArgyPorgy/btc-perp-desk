@@ -1,5 +1,6 @@
 # Research log
-Every idea tested, positive or negative. A setup becomes tradable only with average R >= 0 and n >= 15 after fees.
+Every idea tested, positive or negative. A setup becomes tradable only with average R >= 0, n >= 15, both halves >= 0
+and t >= 1.5 (avg R / standard error), after fees. (t was added 2026-10-28: random-walk data passed the rest.)
 
 ## 2026-10-25 — Are round thousands sticky? (`round_level_test.py`)
 Approach a level within 7bp, then either trade 7bp through it or fall back 2.4%. BTC perp 1h, price > 20k.
@@ -63,14 +64,26 @@ level within 48h (RT), and crowded longs (funding top 5% of 90 days + price up 5
 - **Control on a pure random walk:** every setup is ~-0.1R (fees), as it should be, so there's no lookahead in the code. But
   FR10 passed the old desk rule on random data (+0.07R, n=152, t=0.6). **The rule now also needs t >= 1.5** (avg R
   over its standard error) for any new setup. Note S10 (+0.14R, halves +0.26 / +0.02) is borderline by that bar too.
-- **Real BTC results: pending.** This session's network policy blocks every exchange API (Binance 403), so the run waits for the
-  next session with data access.
+- **Real BTC results** (59,852 hourly bars, 2019-12-31 to 2026-10-28; Binance's archive starts there):
+  - **Breakdowns work in a daily bear market.** B20 (first 4h close below the 20-day low, daily < EMA200, n=33):
+    +0.25 / +0.32 / +0.37 / +0.37R at 1 / 1.5 / 2 / 3R, both halves positive at every target; 1.5R passes (t 1.6).
+    R10 (first 1h retest of a broken 10-day low within 48h, bear, n=46): +0.27 / +0.41 / +0.29R at 1.5 / 2 / 3R;
+    2R passes (+0.41R, halves +0.22 / +0.59, t 1.8). BD10 bear 1R +0.17R (t 1.3) points the same way.
+  - **The same breakdowns in all regimes are ~0R** (BD20 all −0.04 to +0.10R; BD10 2R −0.14R): in uptrends they get
+    bought, as found earlier.
+  - **Failed rallies lose in every regime** (FR10 −0.27 to −0.36R, t −3; in bear −0.14 to −0.40R).
+  - **Crowded-funding shorts lose badly** (CROWD −0.24 to −0.54R, t −2 to −4, n=66): when funding is top-5% and price
+    is up 5% in 3 days, the rally usually keeps going. That is a long-momentum idea for the backlog, not a short.
+  - Caveat: 84 combinations were tested; at t >= 1.5 a few could pass by luck. What makes B20/R10 credible is that the
+    whole bear-regime breakdown family is positive across targets and halves, while the bull-regime one is flat.
 
-→ **Policy:** the desk is direction-neutral. Any short setup that passes goes into `setup_scan.py` and is traded like S10/S20.
+→ **Desk change:** the desk trades both directions. B20 (1.5R) and R10 (2R) shorts are live in `setup_scan.py`, only
+  while the last daily close is below the daily EMA200 (76.4k today, so they are off now: a 79k break today is a
+  bull-regime breakdown, ~0R). Standard 1% risk, like S10/S20.
 
 ## Backlog (highest expected value first)
 1. Post-release reaction trades: first 15m/1h candle after CPI/FOMC, fade vs follow, using calendar timestamps.
-2. Funding extremes + OI change → 24–72h forward returns (the funding half is CROWD in `short_test.py`; OI history needs logging).
+2. Crowded-rally LONGS: CROWD shorts lost −0.54R at 2R (t −3.9), so test the long side: funding top 5% + up 5% in 72h → long, with OI change once we log it.
 3. Failed breakouts at prior-day VAH/VAL (auction failure) on 1h.
 4. Liquidation cascades: needs our own forceOrder history (start logging it).
 5. Session opens (Asia/London/NY) × weekly VWAP side.

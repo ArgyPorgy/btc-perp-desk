@@ -21,6 +21,7 @@ import html
 import json
 import os
 import re
+import sys
 import threading
 import time
 import urllib.parse
@@ -34,7 +35,8 @@ HERE = Path(__file__).parent
 STORE = HERE / "data" / "news.json"
 CAL_STORE = HERE / "data" / "calendar.json"
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36"
-REST = "https://fapi.binance.com"
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "quant"))
+from fapi import base as fapi_base  # noqa: E402  Binance futures REST, or the local fallback where it is geo-blocked
 KEEP_DAYS = 7
 
 
@@ -365,7 +367,7 @@ class NewsStore:
 # ───────── BTC reaction to each headline
 def btc_minutes(symbol="BTCUSDT"):
     """Last ~25h of Binance perp 1m candles for `symbol` -> {minute_ts: (open, close)}."""
-    req = urllib.request.Request(f"{REST}/fapi/v1/klines?symbol={symbol}&interval=1m&limit=1500", headers={"User-Agent": UA})
+    req = urllib.request.Request(f"{fapi_base()}/fapi/v1/klines?symbol={symbol}&interval=1m&limit=1500", headers={"User-Agent": UA})
     with urllib.request.urlopen(req, timeout=15) as r:
         k = json.load(r)
     return {int(x[0] // 1000): (float(x[1]), float(x[4])) for x in k}

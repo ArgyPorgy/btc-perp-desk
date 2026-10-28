@@ -21,7 +21,8 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
-REST = "https://fapi.binance.com"
+from fapi import base  # Binance futures REST, or the local fallback where it is geo-blocked
+REST = base()
 FEE = 0.0005
 import os
 STATE = Path(os.environ.get("PAPER_STATE", Path(__file__).parent / "paper" / "state.json"))

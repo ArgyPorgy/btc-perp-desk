@@ -29,7 +29,8 @@ from pathlib import Path
 
 import numpy as np
 
-REST = "https://fapi.binance.com"
+from fapi import base  # Binance futures REST, or the local fallback where it is geo-blocked
+REST = base()
 DATA = Path(os.environ.get("SHORT_TEST_DATA", Path(__file__).parent / "data"))
 DATA.mkdir(exist_ok=True)
 TAKER, MAKER, HOLD, MIN_RISK, COOL = 0.0005, 0.0002, 168, 0.004, 3

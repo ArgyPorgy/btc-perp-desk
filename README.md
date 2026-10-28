@@ -16,8 +16,12 @@ The dashboard and the desk need **no API keys**: Binance USDⓈ-M futures and De
 feeds and the ForexFactory calendar for news. The launcher is the only part that uses keys; they go in `launcher/.env`
 (template: `launcher/.env.example`), which git ignores.
 
+Where `fapi.binance.com` is geo-blocked (HTTP 451, e.g. the cloud box the scheduled runs use), `quant/fapi.py`
+serves the same endpoints locally from Binance's public archive (data.binance.vision, complete days) plus OKX's USDT
+perp (today, live price, funding, open interest). The tools switch to it automatically; on a normal machine nothing changes.
+
 Large caches (candles, crash history, news) aren't in the repo; the scripts rebuild them on first run.
 
 ## Automation
-A Claude scheduled task (`btc-paper-desk-2h`) runs the desk every 2 hours: it reads the chart and news, manages the
+A Claude scheduled task (`BTC desk 4h run`) runs the desk 5 minutes after every 4h close: it reads the chart and news, manages the
 paper book, and writes `quant/paper/journal.md`. `.claude/settings.json` holds the narrow permissions it needs.

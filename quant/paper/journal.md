@@ -190,3 +190,12 @@
 - Scan: no S10/S20 signal (79,179 is 2.7% below). DECISION: NO TRADE; event rule blocks new entries from 16:00 UTC (FOMC 18:00).
 - HOOD watch (out-of-sample case): bounced from 86.3 low / ~87 pre-open to 91.8 after the US open (+5%), in line with the stretched gap-down study (gap day closed above open 73%, n=11).
 - Schedule changed to every 4h, 5 min after each 4h close.
+
+## 2026-10-28 20:53 UTC — price 81,121
+- 20:05 UTC run (done at 20:53; data back via the new Binance-archive + OKX fallback, fapi.binance.com is geo-blocked from the cloud box).
+- 1h: 81.06k, above EMA50/200 (80.70k/81.04k), last CHoCH up; FOMC spike to 81.79k faded, 12-bar delta -219 BTC; session VWAP 81.0k.
+- 4h: at EMA50 81.06k, under EMA200 81.65k; 20-bar range 79.3-81.8k. 1d: above EMA50 80.8k and EMA200 76.4k (bull regime).
+- Positioning: funding 0.010%/8h (7d avg 0.0074%), OI -2.7% 24h (OKX), basis -3bp; gamma pin 80k put wall / 82k call wall, 7d flip 80.3k.
+- News: Fed held (split vote, two dissents wanted a hike), Warsh: fewer meetings from next year, 'information-rich period' ahead; BTC +0.8% in the hour after, then gave it back (-0.8% from the 45m-ago headlines). Core PCE + GDP Thu 12:30.
+- Scan: no signal. Daily regime BULL, so the new B20/R10 shorts are off; S10/S20 lows at 79,179 (3.0% away).
+- DECISION: NO TRADE. Desk now trades both directions: B20/R10 shorts added (bear regime only), see research_log 2026-10-28.
