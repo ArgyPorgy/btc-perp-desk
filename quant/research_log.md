@@ -54,9 +54,23 @@ HOODUSDT perp 1h since Feb 2026 (267 days). Now 87.8, −8.9% vs the 1h EMA200, 
 
 → The stretched-gap long is promising but n=11 (<15), so it's an idea, not desk-tradable yet. Track the Oct 28 outcome as an out-of-sample case.
 
+## 2026-10-28: Short-side playbook (`short_test.py`), prompted by "play both sides"
+The desk was long-only because the shorts tested so far lost money, but those tests were narrow: breakdowns only inside
+daily uptrends, and high-sweep fades with no regime split. A 79k breakdown in a falling market was never tested.
+`short_test.py` tests, each split by daily regime (all / below EMA200 / below EMA50) with 1-3R targets after fees:
+failed rallies at the 10/20-day high (FR), first 4h close below the 10/20-day low (BD), the first retest of that broken
+level within 48h (RT), and crowded longs (funding top 5% of 90 days + price up 5% in 72h, CROWD).
+- **Control on a pure random walk:** every setup is ~-0.1R (fees), as it should be, so there's no lookahead in the code. But
+  FR10 passed the old desk rule on random data (+0.07R, n=152, t=0.6). **The rule now also needs t >= 1.5** (avg R
+  over its standard error) for any new setup. Note S10 (+0.14R, halves +0.26 / +0.02) is borderline by that bar too.
+- **Real BTC results: pending.** This session's network policy blocks every exchange API (Binance 403), so the run waits for the
+  next session with data access.
+
+→ **Policy:** the desk is direction-neutral. Any short setup that passes goes into `setup_scan.py` and is traded like S10/S20.
+
 ## Backlog (highest expected value first)
 1. Post-release reaction trades: first 15m/1h candle after CPI/FOMC, fade vs follow, using calendar timestamps.
-2. Funding extremes (top/bottom 5%) + OI change → 24–72h forward returns.
+2. Funding extremes + OI change → 24–72h forward returns (the funding half is CROWD in `short_test.py`; OI history needs logging).
 3. Failed breakouts at prior-day VAH/VAL (auction failure) on 1h.
 4. Liquidation cascades: needs our own forceOrder history (start logging it).
 5. Session opens (Asia/London/NY) × weekly VWAP side.

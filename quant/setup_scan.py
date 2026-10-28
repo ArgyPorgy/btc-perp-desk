@@ -3,7 +3,8 @@
   S10: 4h candle wicks below the prior 10-day low and closes back above it -> long, stop under the wick, target 1.5R.
        153 events since 2019: +0.14R/trade after fees (halves +0.26 / +0.02).
   S20: same with the prior 20-day low -> target 2R. 90 events: +0.17R/trade (halves +0.04 / +0.30).
-  (Short-side mirrors at 10/20-day HIGHS tested negative: -0.13 to -0.39R. Not traded.)
+  The desk trades BOTH directions. No short setup has passed yet: high-sweep fades tested -0.13 to -0.39R, and the
+  bear-regime playbook (failed rallies, breakdowns, retests, crowded funding) is in short_test.py, waiting on data.
 Evidence: quant/reentry_test.py (one-shot hold beats take-profit-and-re-enter on these setups).
 Run: python3 setup_scan.py [days_back]   default 3 (also lists signals from the last N days, for context)
 """
