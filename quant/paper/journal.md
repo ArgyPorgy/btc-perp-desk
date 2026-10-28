@@ -140,3 +140,29 @@
 - News: Iran escalation risk flagged after the midterms (Al Jazeera, OilPrice); US-Canada tariff easing. FOMC tomorrow 18:00 UTC (hold 4.00% expected), PCE/GDP Thu 12:30.
 - Scan: no S10/S20 signal (10/20-day low 79,179 is 2.0% below). DECISION: NO TRADE, flat into FOMC. No tested setup at 80.9k; chasing into the 81k call wall 20h before FOMC has no evidence behind it. Next entry: a 4h sweep-and-reclaim of 79,179 (S20, 2R), caught by setup_scan at each 4h close.
 - Research idea (backlog): buying 4h closes ABOVE the 10/20-day high, since short fades of highs tested strongly negative.
+
+## 2026-10-28 04:22 UTC — price 80,916
+- 1h: 80.9k, above EMA50 80.4k, just under EMA200 81.05k; last CHoCH up at 80.8k; 20-bar range 79.5-81.3k; 12-bar delta -1.9k BTC (sellers into 81k).
+- 4h: below EMA50 81.05k / EMA200 81.7k, last CHoCH down; 04:00 close 81,111, holding above weekly VWAP 80.2k.
+- 1d: above EMA50 80.8k and EMA200 76.4k; range 79.2-84.9k; 12d delta -5.0k BTC.
+- Positioning: funding 0.005%/8h (neutral), OI -0.7% 24h, basis -5bp; gamma pinned 80k put wall / 81k call wall, flip ~80.3k.
+- News: FOMC 18:00 UTC today (hold 4.00% expected), Core PCE/GDP Thu 12:30; Iran/oil headlines, BTC reaction <0.3%.
+- DECISION: NO TRADE. setup_scan: no S10/S20 (20d low 79,179 is 2.4% away). Analog plans all EV ~0R; price pinned between gamma walls. No entries 16:00-18:00 per event rule.
+- Orders: none.
+
+## 2026-10-28 09:21 UTC — price 81,437
+- 1h: 80.88k, above EMA50 80.47k, just under EMA200 81.05k; last CHoCH up (80.82k); 79.8-81.3k range; 12-bar delta -1.5k BTC.
+- 4h: below EMA50 81.05k / EMA200 81.67k; last CHoCH down 79.73k; 20-bar range 79.3-81.3k; last close 81.11k.
+- 1d: above EMA50 80.77k and EMA200 76.4k; inside 79.2-84.9k 20-day range; 12d delta -4.9k BTC.
+- Positioning: funding 0.006%/8h (neutral), OI -1.1% 24h, basis -4bp; gamma pinned 80k put wall / 81k call wall, flip ~80.2k.
+- News: no BTC-moving headlines (all <0.15% m60). FOMC 18:00 UTC today, Core PCE + GDP Thu 12:30, ECB Thu, BOJ Fri. 7/25 feeds down.
+- DECISION: NO TRADE. No S10/S20 signal (20d/10d low 79,179 is 2.4% below the last 4h low). Analog plans all EV ~0R; MC 7d P(higher) 44.5%. Range chop between gamma walls, no edge. FOMC blackout starts 16:00 UTC; any S10/S20 wick under 79.18k after the 20:00 close is valid (stop under the wick, 1.5R/2R).
+- Orders: none. Book flat, 1 closed +1.88R, equity 10,187.68.
+
+## 2026-10-28 09:21 UTC — price 81,390
+- Flat, equity $10,187.68 (1 trade, +1.88R).
+- 1h: above EMA50/200 (80.5k/81.05k), up CHoCH 80.8k, broke up from consolidation; 4h: above EMA50 (81.07k), just under EMA200 (81.67k); 1d: above EMA50/200. Price 81,497, inside value (POC 81.6k, VAH 82.5k).
+- Positioning: funding 0.0098% (rising), OI -1.5% 24h (rally on short covering), near-term gamma +51M/1% (dampening), call wall 82k overhead, put wall 80k.
+- News: Coinbase denies breach (vendor leak), BTC +0.9% in the following hour; FOMC today 18:00 UTC.
+- Scan: no S10/S20 signal (10/20-day low 79,179, 2.4% below). DECISION: NO TRADE. Event rule: no new entries from 16:00 UTC (2h before FOMC). No tested long-breakout setup yet (backlog #6).
+- Watch (not desk-tradable): HOOD -6.5% after earnings (perp 87.3), gap-down-while-stretched study n=11 favours a bounce; tracking the US open as an out-of-sample case.

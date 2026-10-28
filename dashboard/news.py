@@ -203,10 +203,19 @@ def classify(text, default_cat, base):
 
 
 # ───────── fetching / parsing
-def fetch(url, timeout=12):
+def fetch(url, timeout=12, deadline=30):
+    """`timeout` bounds each socket op; `deadline` bounds the whole body read (a feed trickling bytes could hang for minutes)."""
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/rss+xml, application/xml, text/xml, */*"})
+    end = time.time() + deadline
     with urllib.request.urlopen(req, timeout=timeout) as r:
-        return r.read()
+        chunks = []
+        while True:
+            if time.time() > end:
+                raise TimeoutError(f"body not read within {deadline}s")
+            b = r.read(65536)
+            if not b:
+                return b"".join(chunks)
+            chunks.append(b)
 
 
 def clean(s):
