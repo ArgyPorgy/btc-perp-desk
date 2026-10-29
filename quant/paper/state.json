@@ -23,25 +23,6 @@
       "expires_ms": 1793325600000
     },
     {
-      "id": "X17",
-      "symbol": "BTCUSDT",
-      "book": "scalp",
-      "side": "long",
-      "trigger": "limit",
-      "tf": "4h",
-      "level": 78650.0,
-      "stop": 78150.0,
-      "target": 79650.0,
-      "target_r": null,
-      "oco": null,
-      "note": "X16 re-sized to 0.2% now the Binance hack is confirmed (CoinDesk 21:12; Tether froze 971M USDT). Long the retest of the 78.2-78.8k base at the 78k put wall; the base absorbed the confirmation (BTC +0.1-0.3% after the headlines, BNB steady ~710). Stop 78,150 below the 78,233 low; target 79,650 (2R). If the base breaks, X15 short takes over.",
-      "risk_pct": 0.2,
-      "max_hold_h": 24,
-      "created_ms": 1793309326187.5867,
-      "arm": null,
-      "expires_ms": 1793316600000
-    },
-    {
       "id": "X18",
       "symbol": "ETHUSDT",
       "book": "scalp",
@@ -61,7 +42,23 @@
       "expires_ms": 1793320200000
     }
   ],
-  "positions": [],
+  "positions": [
+    {
+      "id": "X17",
+      "symbol": "BTCUSDT",
+      "book": "scalp",
+      "side": "long",
+      "entry": 78650.0,
+      "stop": 78450.0,
+      "target": 79650.0,
+      "qty": 0.04053429346982855,
+      "risk_pct": 0.2,
+      "opened_ms": 1793311500000,
+      "note": "X16 re-sized to 0.2% now the Binance hack is confirmed (CoinDesk 21:12; Tether froze 971M USDT). Long the retest of the 78.2-78.8k base at the 78k put wall; the base absorbed the confirmation (BTC +0.1-0.3% after the headlines, BNB steady ~710). Stop 78,150 below the 78,233 low; target 79,650 (2R). If the base breaks, X15 short takes over.",
+      "max_hold_h": 24,
+      "orig_stop": 78150.0
+    }
+  ],
   "closed": [
     {
       "id": "L1",

@@ -365,3 +365,10 @@
 - Reaction so far: muted. BTC 79,220 (+0.1-0.3% after the headlines), base 78.2-79.2k intact, BNB steady ~710, OI +5% 24h (shorts), 7d gamma -66M (any break moves fast). The Tether freeze limits how much the hacker can dump.
 - Orders: X16 -> X17 (same base long 78,650/78,150/79,650, cut to 0.2%: event risk); X15 short < 78,200 kept; NEW X18 ETH SHORT limit 2,300 (bounce into the broken 2,288-2,325 zone), stop 2,332, target 2,235 (2R), 0.2%: ETH is the weak link (stolen funds usually route through ETH).
 - HYPE 93.9: still above its EMAs, no trade (rule 13 for longs; no short case against its strength).
+
+## 2026-10-29 22:13 UTC — price 78,902
+- 22:12 hourly: X17 BTC long FILLED 78,650 (22:05), now 78,930 (+0.56R). Hack details escalating: Decrypt 'Binance drained of $5.5B', The Block 'outflows up to $5.8B', CZ 'may have been hacked', Binance 'user funds completely safe', Tether+Circle froze $1.79B. Yet BTC holds the 78.2-79.9k base; BNB ~707; OI +7.1% 24h (shorts keep adding), 7d gamma -75M.
+- X17: stop tightened 78,150 -> 78,450 (under the 78,533 higher low): event tail risk is still growing (the numbers keep rising), so cut the open risk from $20 to ~$8 while keeping the trade. Target 79,650 unchanged.
+- X15 (short < 78,200) and X18 (ETH short limit 2,300; ETH 2,270, 15m delta -157k, weakest major) kept.
+- HYPE 93.0: momentum fading (15m delta -342k) but above the 15m EMA50; no trade.
+- Macro: Nasdaq-100 futures falling on Amazon/Intel earnings, Google -$500bn (AI fears): risk-off backdrop.
