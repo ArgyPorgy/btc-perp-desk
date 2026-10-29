@@ -63,6 +63,7 @@ FEEDS = [
     ("gn_hood", "Google News", gnews('Robinhood OR "HOOD stock" OR "Vlad Tenev" when:1d'), "markets", 1, 1, 300),
     ("gn_eth", "Google News", gnews('ethereum OR "ether ETF" OR "ETH price" when:1d'), "crypto", 1, 1, 300),
     ("gn_hype", "Google News", gnews('Hyperliquid OR "HYPE token" OR "HYPE price" when:1d'), "crypto", 1, 1, 300),
+    ("gn_exchange_risk", "Google News", gnews('(Binance OR Coinbase OR OKX OR Bybit OR Hyperliquid) (hack OR hacked OR exploit OR breach OR "withdrawals paused" OR "withdrawals suspended" OR insolvency) when:1d'), "crypto", 2, 1, 120),
     ("gn_crypto", "Google News", gnews('bitcoin OR "crypto market" OR "bitcoin ETF" OR stablecoin OR "crypto bill" when:1d'), "crypto", 1, 1, 300),
     ("bbc_world", "BBC", "https://feeds.bbci.co.uk/news/world/rss.xml", "geo", 0, 2, 180),
     ("bbc_business", "BBC", "https://feeds.bbci.co.uk/news/business/rss.xml", "markets", 0, 2, 300),
