@@ -253,3 +253,6 @@
 
 ## 2026-10-29 12:56 UTC — price 80,013
 - 12:56 UTC: rules corrected to Propr Turbo 1-Step (propr.xyz/rules via search; the site itself is outside this session's network allowlist): +9% target, 3% STATIC max drawdown (floor $9,700, never moves: profit adds room) and 3% daily loss from the 00:00 UTC balance (today $9,882.05, the binding one). No time limit, no minimum days. Leverage up to 1:10 on BTC/ETH per a listing; the 1x setting is margin, positions stay sized by the stop.
+
+## 2026-10-29 13:05 UTC — price 80,104
+- 13:05 post-release check: core PCE +0.5% m/m vs +0.3% expected (hot), GDP 3.4% vs 3.2%. Hawkish, yet BTC barely moved: 12:30 15m range 79,974-80,245, 12:45 close 80,024. Still inside 79,790-80,350, so X4 didn't trigger and stays pending to 16:00. HYPE 89.7, no pullback; X1 limit 85.5 unfilled. No changes: a muted reaction to hot data leaves the pin intact. Desk fix: news calendar showed released events as 'in -1d 23h', now 'released Xm ago'.

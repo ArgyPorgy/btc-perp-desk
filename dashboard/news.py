@@ -444,6 +444,8 @@ def ago(ts):
 
 def until(ts):
     s = int(ts - time.time())
+    if s < 0:  # already released: say how long ago, not "in -1d 23h"
+        return f"released {ago(ts)}"
     d, h, m = s // 86400, s % 86400 // 3600, s % 3600 // 60
     return f"in {d}d {h}h" if d else f"in {h}h {m:02d}m"
 
