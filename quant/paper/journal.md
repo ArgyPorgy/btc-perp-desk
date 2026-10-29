@@ -281,3 +281,10 @@
 
 ## 2026-10-29 15:13 UTC — price 81,462
 - 15:20 UTC: (1) lessons.md now leads with WINS and what made them work (L1 +1.88R; S1 shadow +1.5R; D1F HYPE retro +2R) next to mistakes/misses; every closed trade gets a row either way. (2) User's tweet (@MuroCrypto, HYPE daily S/R flip + rising MA, entry ~77.3 on Oct 26, now ~91): coded as D1F and backtested: daily works (BTC +0.32R n=46, ETH +0.25R n=45, both halves positive), the same rule on 4h is ~0R. Added to setup_scan.py for BTC/ETH/HYPE; the scanner would have fired on HYPE at the Oct 24 close (76.65 -> 2R 91.57 hit today). No D1F signal now (nearest untested flipped levels are 19-39% below). (3) Swing reads now start from 1D/4H screenshots (rule 10).
+
+## 2026-10-29 15:42 UTC — price 81,565
+- 15:40 UTC plan (zoomed 5m-1D on all three). Risk-on in crypto while Nasdaq -1.5%: BTC +1.4% from the 80k pin, all intraday TFs above EMAs.
+- BTC 81,525: 1h back above EMA200 (80,941), 4h testing EMA200 81,598, 7d gamma +70M (dampening) with the 82k call wall right above and bear OBs 81.37-81.88k (the 'weak high'). NO TRADE: long here buys into the call wall/supply under long gamma (pin 81-82k); short fades a strong trend. Swing scan: no S10/S20 (79,179 is 2.9% below), no D1F, shorts off (bull regime).
+- ETH 2,365: X7 LONG limit 2,350 (pullback into bull FVG 2,342-2,356 after the range breakout), stop 2,326 (back inside the old range), target 2,398 under the 2,400 gamma wall (2R).
+- HYPE 93.9: X5 (88.9) cancelled, 5% below. X6 LONG limit 92.2 (retest of the 92.1 breakout), stop 90.6 (under the 5m bull OB), target 95.0 under the 95.27 ATH (1.75R).
+- Correlation: X6/X7 both crypto longs; together $86 max loss, inside the $153 cap. Only one BTC/ETH-type bet (ETH chosen: cleaner breakout-retest with a defined 2,400 target; BTC is pinned under 82k).
