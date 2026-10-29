@@ -358,3 +358,10 @@
 - 21:13 hourly (BTC already covered at 21:12: X16 long 78,650 / X15 short < 78,200 pending, flat otherwise).
 - ETH 2,265: broke below the 2,288-2,325 demand zone and the 2,292 strong low on heavy selling (15m delta -162k); the zone failed. NO TRADE: mid-move after -2.7%, the next demand is far below; a short here sells the bottom. ETH weaker than BTC (-2.9% vs -1.8% vs 15m EMA200).
 - HYPE 93.3: held 92.7, still above 15m/1h EMAs while BTC/ETH broke: relative strength from its own catalyst. NO TRADE: rule 13 (leader broken) blocks alt longs; revisit if BTC reclaims 80k.
+
+## 2026-10-29 21:28 UTC — price 79,287
+- 21:28 UTC: HACK CONFIRMED in the news feed: CoinDesk 'Multi-billion Binance hack hitting crypto markets' (21:12) and 'Tether freezes 971M USDT amid suspected Binance hack' (21:11). The user's read from Twitter was right ~35 min before mainstream pickup; the new exchange-risk feed flagged it impact 3.
+- Shadow S4 resolved: X14's stop 79,650 would have been hit (21:15 high 79,766): closing at -$6 saved ~$29.
+- Reaction so far: muted. BTC 79,220 (+0.1-0.3% after the headlines), base 78.2-79.2k intact, BNB steady ~710, OI +5% 24h (shorts), 7d gamma -66M (any break moves fast). The Tether freeze limits how much the hacker can dump.
+- Orders: X16 -> X17 (same base long 78,650/78,150/79,650, cut to 0.2%: event risk); X15 short < 78,200 kept; NEW X18 ETH SHORT limit 2,300 (bounce into the broken 2,288-2,325 zone), stop 2,332, target 2,235 (2R), 0.2%: ETH is the weak link (stolen funds usually route through ETH).
+- HYPE 93.9: still above its EMAs, no trade (rule 13 for longs; no short case against its strength).

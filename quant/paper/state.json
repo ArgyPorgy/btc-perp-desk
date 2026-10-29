@@ -23,7 +23,7 @@
       "expires_ms": 1793325600000
     },
     {
-      "id": "X16",
+      "id": "X17",
       "symbol": "BTCUSDT",
       "book": "scalp",
       "side": "long",
@@ -34,12 +34,31 @@
       "target": 79650.0,
       "target_r": null,
       "oco": null,
-      "note": "Two-sided plan for the 78.2-79.2k base. Long the retest of the base (78,533-78,788 lows) where the 78k put wall sits; buyers defended 78,233 / 78,533 / 78,788, BNB recovering (692 -> 713), OI +3.5% into the lows = shorts to squeeze. Stop 78,150 below the 78,233 low and above the 78k wall (if it breaks, X15 short takes over). Target 79,650 under the 79,750 top of the 5m bear FVG (2R). Counter-trend: 0.35%.",
-      "risk_pct": 0.35,
+      "note": "X16 re-sized to 0.2% now the Binance hack is confirmed (CoinDesk 21:12; Tether froze 971M USDT). Long the retest of the 78.2-78.8k base at the 78k put wall; the base absorbed the confirmation (BTC +0.1-0.3% after the headlines, BNB steady ~710). Stop 78,150 below the 78,233 low; target 79,650 (2R). If the base breaks, X15 short takes over.",
+      "risk_pct": 0.2,
       "max_hold_h": 24,
-      "created_ms": 1793308348267.6448,
+      "created_ms": 1793309326187.5867,
       "arm": null,
       "expires_ms": 1793316600000
+    },
+    {
+      "id": "X18",
+      "symbol": "ETHUSDT",
+      "book": "scalp",
+      "side": "short",
+      "trigger": "limit",
+      "tf": "4h",
+      "level": 2300.0,
+      "stop": 2332.0,
+      "target": 2235.0,
+      "target_r": null,
+      "oco": null,
+      "note": "ETH is the weak link of the hack selloff (-3.6% vs its 1h EMA200, 15m delta -141k; stolen tokens usually get swapped/sold via ETH). Short the bounce into its broken demand zone 2,288-2,325 (now supply) at the 2,300 gamma wall; stop 2,332 above the whole zone; target 2,235 above the 2,231 low (2R). 0.2%: correlated with the X15 BTC short (rule 14).",
+      "risk_pct": 0.2,
+      "max_hold_h": 24,
+      "created_ms": 1793309330913.6125,
+      "arm": null,
+      "expires_ms": 1793320200000
     }
   ],
   "positions": [],
@@ -221,8 +240,8 @@
       "stop": 79650.0,
       "target": 78150.0,
       "why": "X14 closed at ~breakeven 21:11: BNB bounced +3% (hack panic fading), selling flat at the 78.2k triple low, OI +3.5% = trapped shorts, stop sat inside the 5m bear FVG 79,099-79,750",
-      "result": null,
-      "R": null
+      "result": "stop",
+      "R": -1.0
     }
   ]
 }
