@@ -43,6 +43,8 @@ the rule goes into **Current rules** too. Skipped or cancelled plan trades are a
 18. **Crypto Twitter is ~30 min ahead of the news wires.** The Binance hack was on X at ~20:50 and on CoinDesk at 21:12.
     x.com is blocked here, so a rumor the user reports from X is treated as live risk at once (size down, no fresh
     longs into it, look for the tape's confirmation e.g. the exchange token underperforming), not as unconfirmed noise.
+19. **No counter-trend longs during a live exchange crisis.** Until the venue resumes withdrawals or its token recovers,
+    supports are temporary: the next shoe (here a withdrawal halt) breaks them. Trade with the stress or stand aside.
 
 ## Mistakes and misses
 | Date (UTC) | What happened | Cost | Lesson → rule |
@@ -61,6 +63,7 @@ the rule goes into **Current rules** too. Skipped or cancelled plan trades are a
 | 2026-10-29 18:35 | **X7** ETH long 2,350 stopped at 2,326 (−1.10R, −$39). Placed 15:40 as a breakout-retest while BTC was ripping; it filled at 17:05, 85 min later, AFTER BTC had rejected the 82k call wall (81,944 at 16:00) and lost the 81k pin, and after ETH itself had been rejected at 2,378.8 with 15m delta −18k (16:15). I flagged "risk: BTC" at 17:16 and held. ETH then lost the old range top 2,330 with BTC under its 1h EMA200: the breakout failed (a real thesis loss, not a wick). The target 2,398 also sat behind the 2,360 call wall and bear OBs 2,365–2,391 that had rejected price. And X7 + X8 were two correlated crypto longs filled 25 min apart: both lost (−$77 together). | −$39 (−$77 with X8) | Rules 12–15: stale limits expire/re-check, leader check, correlated longs = one bet, targets must clear supply. Done right: stop honoured, loss = the planned 0.35%, floors never in danger. |
 | 2026-10-29 18:40 | User (LuxAlgo chart): "your stop is where the bounce is supposed to come from; you took the trade in the middle." True: X7's entry 2,350 was mid-range; its stop 2,326 sat on top of the demand zone (5m bull OB 2,312–2,325, 15m bull OB 2,296–2,313, put wall 2,300, strong low 2,292), all printed in my own snapshot. ETH then traded straight into that zone. | part of X7's −$39 | Rule 16 (location). Re-entered correctly as X10a/b: limits 2,322 / 2,312 inside the zone, stop 2,288 below it, target 2,362 before supply. |
 | 2026-10-29 21:12 | **X14** BTC short 79,150: the stop (79,650) sat inside the 5m bear FVG 79,099–79,750, so a normal fill-the-gap squeeze would take it out; and the short was entered as the catalyst (Binance panic) was already fading (BNB bouncing). Closed at −0.18R. | −$6 | Rule 16 applies to shorts too: stop ABOVE the whole supply zone. Re-check the catalyst before a limit fills (rule 12). |
+| 2026-10-29 23:45 | **X17** BTC base long 78,650 stopped at 78,450 (−0.56R, −$11). Bought the 78.2k base during an escalating exchange crisis; at 23:37 "Binance halts withdrawals amid $5.3B hack" broke the base to 77,896. Done right: the stop was tightened from 78,150 under the higher low at 22:12, so the loss was $11 instead of $20 (77,896 took out both). | −$11 | Rule 19: no counter-trend longs during a live exchange crisis. |
 
 ## Shadow trades (skipped or cancelled plan trades)
 | ID | Trade | Why skipped | Result |

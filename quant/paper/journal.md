@@ -378,3 +378,8 @@
 - X15 (BTC short < 78,200) and X18 (ETH short limit 2,300, ETH 2,266 in a 2,251-2,294 box) kept.
 - HYPE 90.9: lost its 15m EMA50, heading for the 90.2-91.9 bull OB; no trade (no location yet; rule 13 for longs).
 - 00:00 UTC: the 4h candle (low 78,233) closes; S20 long only if it closes back above 79,179 (BTC 78,760 now, unlikely). The daily-loss floor resets to 97% of the 00:00 balance.
+
+## 2026-10-29 23:55 UTC — price 78,094
+- 23:54: X17 BTC long STOPPED 78,450 at 23:45 (-0.56R, -$11.29). Investing.com 23:37: 'Binance halts withdrawals amid $5.3B hack'; Cointelegraph: BNB -7%. BTC broke the 78.2k base to 77,896, now ~78,000 on the 78k put wall; 7d gamma -99M/1% (moves amplified), OI +7.8% 24h. Equity $10,122.28 (+1.22%).
+- X15 SHORT (15m close < 78,200, stop 78,950, target 76,700) is the plan's other side: if the 23:45 candle closes below 78,200 at 00:00 it fills; kept (two-sided plan; the base broke on new exchange-crisis news). X18 ETH short limit 2,300 (ETH 2,254) kept to its 00:30 expiry. HYPE 89.1 broke its 89.95 range low: no trade.
+- Lessons: rule 19 (no counter-trend longs during a live exchange crisis); X17 row (tightened stop saved ~$9).
