@@ -353,3 +353,8 @@
 ## 2026-10-29 21:12 UTC — price 79,193
 - 21:12 (user: 'short is going back, people are betting on this level'). Agreed. BTC built a base at 78.2-79.2k: lows 78,233 / 78,533 / 78,788 held, 5m selling faded (-239, +84, 0 in the last three bars), BNB bounced 692 -> 713 (+3%: the Binance panic is fading, no hack confirmed), OI +3.5% 24h added into the lows (shorts trapped), 78k is the new 7d/30d put wall. X14's stop 79,650 also sat INSIDE the 5m bear FVG 79,099-79,750 (rule 16 mirror: it should have been above 79,750). Closed X14 at 79,158 (-$6.22, -0.18R); shadow S4 tracks it.
 - Two-sided plan for the base: X16 LONG limit 78,650 (retest of the base at the 78k put wall), stop 78,150 below the 78,233 low, target 79,650 under the FVG top (2R). X15 SHORT kept for a 15m close below 78,200 (the base breaks = cascade resumes), stop 78,950, target 76,700. Gamma is -67M/1%: whichever side breaks will move fast.
+
+## 2026-10-29 21:14 UTC — price 79,204
+- 21:13 hourly (BTC already covered at 21:12: X16 long 78,650 / X15 short < 78,200 pending, flat otherwise).
+- ETH 2,265: broke below the 2,288-2,325 demand zone and the 2,292 strong low on heavy selling (15m delta -162k); the zone failed. NO TRADE: mid-move after -2.7%, the next demand is far below; a short here sells the bottom. ETH weaker than BTC (-2.9% vs -1.8% vs 15m EMA200).
+- HYPE 93.3: held 92.7, still above 15m/1h EMAs while BTC/ETH broke: relative strength from its own catalyst. NO TRADE: rule 13 (leader broken) blocks alt longs; revisit if BTC reclaims 80k.
