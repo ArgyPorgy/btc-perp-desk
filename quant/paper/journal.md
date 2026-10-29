@@ -263,3 +263,10 @@
 - HYPE 91.1 (+15%, OI +13.6%, funding 0.01%, 15m delta +1.4M): X1 at 85.5 cancelled (6% away), X5 LONG limit 88.9 (retest of the 88.96 breakout), stop 87.2, 2R ~92.3, 0.35%. Not chasing 91: buying the first retest of the breakout level.
 - ETH 2,328: 2,309-2,330 range, capped by weekly VWAP 2,331, 1h delta -29.6k vs 5m above EMAs: mixed, mid-range. No trade (range-edge fades tested negative; no edge either side).
 - HOOD: Nasdaq opens 13:30; watch only.
+
+## 2026-10-29 14:20 UTC — price 80,407
+- 14:18 hourly: flat, room $305.
+- BTC 80,422: broke UP out of 79,790-80,350 (15m close 80,431), above session/weekly VWAP, 7d gamma flipped positive (+5M/1%) above the 80,275 flip = dampening. X4 (short on a break below 79,790) CANCELLED: the range resolved the other way, and a later drop to 79,790 would be a different trade. No long: the break already happened (no chasing), the 1h is still under EMA50/200 (80,495/80,928) with supply 80.5-81.06k right above, and positive gamma favors chop, so a retest long has ~1R of room before resistance.
+- HYPE 91.3: holding 88.5-92.1 at the highs; OI -2.7% in the last hour and 5m delta flat (profit-taking, no reversal). X5 LONG limit 88.9 kept: it sits just above the consolidation low 88.52, the breakout-retest level.
+- ETH 2,330: pressing the range top 2,332.7 / weekly VWAP 2,331 with 1h delta -23k (selling into it). No trade: a short at the top is a range fade (tested negative) and a long into supply with sellers active isn't one either.
+- HOOD: Nasdaq open; watch only.
