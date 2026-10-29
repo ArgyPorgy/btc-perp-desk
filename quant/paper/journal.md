@@ -322,3 +322,6 @@
 
 ## 2026-10-29 18:42 UTC — price 80,632
 - 18:50 reconciliation (user: 'why 2 scalp losers? only the ETH long filled'). Paper book: L1 swing BTC +1.88R; X8 scalp HYPE long filled 95.30 at 16:40 (5m low 95.30, then 95.25 at 16:45), stopped 93.90 at 17:50 (-1.07R); X7 scalp ETH long -1.10R. The user's HYPE order was the original X1 at 85.5, which never filled: I moved the HYPE long X1 -> X5 -> X6 -> X8 without flagging each move as an order to mirror, so the two books diverged. Fixes: rule 17 (every order change announced as an ORDER UPDATE); limits now fill only when price trades THROUGH the level (X8 would still have filled at 16:45, low 95.25). BTC release long = shadow S1 +1.5R (missed); BTC short X4 never triggered (correctly cancelled after the upside break).
+
+## 2026-10-29 18:48 UTC — price 80,629
+- 18:48 R check (user asked): X10a was 1.18R (2,322 -> 2,362 vs stop 2,288) and X9 at most 1.44R: both under my own 1.5R minimum. Replaced: X11a ETH limit 2,318 (1.53R) + X11b limit 2,312 (2.17R), stop 2,288, target 2,364 (0.175% each; ~1.85R blended); X12 HYPE long on a 15m close > 95.4, stop 92.9, target 2R from the fill. Every order now gets its R stated before placing.
