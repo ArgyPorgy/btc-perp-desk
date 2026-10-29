@@ -256,3 +256,10 @@
 
 ## 2026-10-29 13:05 UTC — price 80,104
 - 13:05 post-release check: core PCE +0.5% m/m vs +0.3% expected (hot), GDP 3.4% vs 3.2%. Hawkish, yet BTC barely moved: 12:30 15m range 79,974-80,245, 12:45 close 80,024. Still inside 79,790-80,350, so X4 didn't trigger and stays pending to 16:00. HYPE 89.7, no pullback; X1 limit 85.5 unfilled. No changes: a muted reaction to hot data leaves the pin intact. Desk fix: news calendar showed released events as 'in -1d 23h', now 'released Xm ago'.
+
+## 2026-10-29 13:18 UTC — price 80,170
+- 13:16 hourly: flat, floor $9,882 (daily), room $305.
+- BTC 80,140: hot PCE absorbed; 1h taker delta flipped to +1.0k (was -1.3k), price back on session VWAP 80.13k, still inside 79,790-80,350 under the 15m/1h EMAs and weekly VWAP 80.39k. Keep X4 (short on a 15m close < 79,790): the close itself would restore the downside case; the flow flip weakens it, so no new BTC entries. Upside break = against the 1h trend into supply 80.15-81.06k: no long.
+- HYPE 91.1 (+15%, OI +13.6%, funding 0.01%, 15m delta +1.4M): X1 at 85.5 cancelled (6% away), X5 LONG limit 88.9 (retest of the 88.96 breakout), stop 87.2, 2R ~92.3, 0.35%. Not chasing 91: buying the first retest of the breakout level.
+- ETH 2,328: 2,309-2,330 range, capped by weekly VWAP 2,331, 1h delta -29.6k vs 5m above EMAs: mixed, mid-range. No trade (range-edge fades tested negative; no edge either side).
+- HOOD: Nasdaq opens 13:30; watch only.

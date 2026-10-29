@@ -4,25 +4,6 @@
   "risk_pct": 0.5,
   "orders": [
     {
-      "id": "X1",
-      "symbol": "HYPEUSDT",
-      "book": "scalp",
-      "side": "long",
-      "trigger": "limit",
-      "tf": "4h",
-      "level": 85.5,
-      "stop": 83.9,
-      "target": null,
-      "target_r": 2.0,
-      "oco": null,
-      "note": "HYPE repricing on ICE/NYSE Hyperliquid-futures news: +11% with OI +9.8% 24h, funding only 0.01%, 5m taker delta +331k. Buy the first pullback into the 5m bull FVG top (85.5); invalid below 83.9 (gap filled = momentum failed). Untested, discretionary.",
-      "risk_pct": 0.35,
-      "max_hold_h": 24,
-      "created_ms": 1793277000000,
-      "arm": null,
-      "expires_ms": 1793296800000
-    },
-    {
       "id": "X4",
       "symbol": "BTCUSDT",
       "book": "scalp",
@@ -40,6 +21,25 @@
       "created_ms": 1793277000000,
       "arm": null,
       "expires_ms": 1793289600000
+    },
+    {
+      "id": "X5",
+      "symbol": "HYPEUSDT",
+      "book": "scalp",
+      "side": "long",
+      "trigger": "limit",
+      "tf": "4h",
+      "level": 88.9,
+      "stop": 87.2,
+      "target": null,
+      "target_r": 2.0,
+      "oco": null,
+      "note": "Replaces X1 (85.5 is now 6% away; trend left it behind). HYPE 91.1, +15% on the ICE/NYSE futures news, OI +13.6% 24h with funding still 0.01% (new money, not crowded), 15m taker delta +1.4M. First pullback to the old 88.96 high (break-and-retest, near session VWAP +1sigma 89.05); stop 87.2 inside the 86.2-87.3 1h gap, a loss of the retest = failed breakout. Target 2R ~92.3 (new high). Pattern on HYPE +0.83R n=8 (thin).",
+      "risk_pct": 0.35,
+      "max_hold_h": 24,
+      "created_ms": 1793279886095.9756,
+      "arm": null,
+      "expires_ms": 1793304000000
     }
   ],
   "positions": [],
