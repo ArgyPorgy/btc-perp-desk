@@ -1,5 +1,5 @@
 // Multi-timeframe snapshot using the dashboard's own indicator code. Read-only.
-//   node tools/snapshot.js [BTCUSDT|ETHUSDT|HYPEUSDT|HOOD]   (default BTCUSDT; HOOD = Nasdaq via Yahoo, no positioning)
+//   node tools/snapshot.js [BTCUSDT|ETHUSDT|HYPEUSDT|HOOD] [5m,15m,1h]   (default BTCUSDT, 1h,4h,1d; HOOD = Nasdaq via Yahoo)
 import { DAY, dayKey, weekKey, ema, atr, vwapBands, deltaCvd, structure, fairValueGaps, consolidation, volumeProfile, dailyAuction } from '../js/indicators.js';
 import { fetchGex } from '../js/gex.js';
 import { execFileSync, spawnSync } from 'node:child_process';
@@ -19,7 +19,7 @@ const UNIT = SYM.replace(/USDT$/, '');
 const OPTIONS = { BTCUSDT: 'BTC', ETHUSDT: 'ETH' }[SYM];
 const DP = UNIT === 'BTC' ? 0 : UNIT === 'HYPE' ? 3 : 2;
 const get = async (u) => (await fetch(u, { headers: { 'User-Agent': 'Mozilla/5.0 (btc-perp-desk)' } })).json();
-const YF = { '15m': ['15m', '60d'], '1h': ['60m', '730d'], '1d': ['1d', '10y'] };
+const YF = { '5m': ['5m', '60d'], '15m': ['15m', '60d'], '1h': ['60m', '730d'], '1d': ['1d', '10y'] };
 const stockBars = async (tf) => { // Yahoo Finance, regular session; no taker split, so delta reads 0
   const r = (await get(`https://query1.finance.yahoo.com/v8/finance/chart/${SYM}?interval=${YF[tf][0]}&range=${YF[tf][1]}`)).chart.result[0];
   const q = r.indicators.quote[0];
@@ -36,7 +36,10 @@ const [prem, oiNow, oiH, fund] = STOCK ? [] : await Promise.all([
   get(`${REST}/futures/data/openInterestHist?symbol=${SYM}&period=1h&limit=168`), get(`${REST}/fapi/v1/fundingRate?symbol=${SYM}&limit=21`),
 ]);
 const out = {};
-for (const [tf, sec, swing] of STOCK ? [['15m', 900, 20], ['1h', 3600, 20], ['1d', DAY, 10]] : [['1h', 3600, 20], ['4h', 14400, 20], ['1d', DAY, 10]]) {
+const SEC = { '5m': 300, '15m': 900, '1h': 3600, '4h': 14400, '1d': DAY };
+const TFS = process.argv[3] ? process.argv[3].split(',').filter((x) => SEC[x] && !(STOCK && x === '4h')) // e.g. 5m,15m,1h for scalps
+  : STOCK ? ['15m', '1h', '1d'] : ['1h', '4h', '1d'];
+for (const [tf, sec, swing] of TFS.map((x) => [x, SEC[x], x === '1d' ? 10 : 20])) {
   const b = await bars(tf);
   const n = b.length - 1, c = b[n].close;
   const e200 = ema(b.map((x) => x.close), 200)[n], e50 = ema(b.map((x) => x.close), 50)[n];

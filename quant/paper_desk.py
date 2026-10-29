@@ -1,17 +1,28 @@
-"""Paper trading desk for BTCUSDT perp (Binance prices). Every call is recorded and scored automatically.
+"""Paper trading desk for Binance USDT perps (BTC, ETH, HYPE). Every call is recorded and scored automatically.
+
+Two books share one account:
+  swing  tested setups (S10/S20/B20 on BTC), 1% risk, 4h triggers, managed on 1h candles.
+  scalp  discretionary chart-read trades, long or short, any listed market; default 0.5% risk, managed on 5m candles,
+         24h max hold. Every scalp needs a written thesis (--note). Rails: at most 3 open positions, no new scalp after
+         the day's realised scalp loss reaches 1.5% of equity. The track record is split by book, so the scalp book
+         earns its place or gets cut.
 
   python3 paper_desk.py                 # process orders/positions against closed candles, print report
   python3 paper_desk.py add --id A --side long --trigger close_above --level 79732 --stop low_since:2026-10-24T12:00 \
         --target-r 2 --expires 2026-10-26T12:00 --oco G1 --note "reclaim long"
   python3 paper_desk.py add --id M --side short --trigger market --stop 80400 --target 78450   # enter now
+  python3 paper_desk.py add --id X1 --book scalp --symbol HYPEUSDT --side long --trigger limit --level 84.2 \
+        --stop 83.1 --target-r 2 --expires 2026-10-29T18:00 --note "retest of 82.5 breakout"   # limit fills on a touch (5m)
+  python3 paper_desk.py add --id X2 --book scalp --side short --trigger close_below --tf 15m --level 79900 --stop 80250 --target-r 1.5
   python3 paper_desk.py cancel A
   python3 paper_desk.py close POSITION_ID       # close an open position at the current price
   python3 paper_desk.py modify L1 --stop 79500  # tighten a stop (never widen) and/or move the target
   python3 paper_desk.py journal "- 1h: ...\n- DECISION: HOLD ..."   # append a dated entry to paper/journal.md
 
-Rules: triggers 'close_above' / 'close_below' fill at the CLOSE of the first 4h candle (closed after the order was
-placed) beyond the level. Positions are then managed on closed 1h candles: if stop and target are both touched in
-the same hour the stop counts (conservative). Fees 0.05% per side. Size = risk % of equity / stop distance.
+Rules: triggers 'close_above' / 'close_below' fill at the CLOSE of the first candle of --tf (default 4h; closed after
+the order was placed) beyond the level; 'limit' fills at the level when a 5m candle trades through it. Swing positions
+are managed on closed 1h candles, scalps on 5m: if stop and target are both touched in the same candle the stop counts
+(conservative). Fees 0.05% per side. Size = risk % of equity / stop distance.
 """
 import argparse
 import json
@@ -24,6 +35,8 @@ from pathlib import Path
 from fapi import base  # Binance futures REST, or the local fallback where it is geo-blocked
 REST = base()
 FEE = 0.0005
+SYMBOLS = ("BTCUSDT", "ETHUSDT", "HYPEUSDT")
+SCALP_RISK, SCALP_DAY_STOP, MAX_OPEN = 0.5, 1.5, 3
 import os
 STATE = Path(os.environ.get("PAPER_STATE", Path(__file__).parent / "paper" / "state.json"))
 JOURNAL = STATE.parent / "journal.md"
@@ -41,6 +54,10 @@ def get(url, tries=3):
             time.sleep(2 * (i + 1))
 
 
+def px(x):  # BTC 80,000.0 ... HYPE 86.123
+    return f"{x:,.1f}" if abs(x) >= 1000 else f"{x:,.3f}" if abs(x) >= 10 else f"{x:,.4f}"
+
+
 def iso(ms):
     return datetime.fromtimestamp(ms / 1000, timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
@@ -49,10 +66,10 @@ def parse_time(s):
     return int(datetime.fromisoformat(s).replace(tzinfo=timezone.utc).timestamp() * 1000)
 
 
-def klines(interval, start_ms):
+def klines(interval, start_ms, symbol="BTCUSDT"):
     out, now = [], time.time() * 1000
     while True:
-        k = get(f"{REST}/fapi/v1/klines?symbol=BTCUSDT&interval={interval}&limit=1500&startTime={int(start_ms)}")
+        k = get(f"{REST}/fapi/v1/klines?symbol={symbol}&interval={interval}&limit=1500&startTime={int(start_ms)}")
         out += [{"t": x[0], "T": x[6], "o": float(x[1]), "h": float(x[2]), "l": float(x[3]), "c": float(x[4])} for x in k]
         if len(k) < 1500:
             break
@@ -71,15 +88,19 @@ def save(s):
     STATE.write_text(json.dumps(s, indent=2))
 
 
-def price_now():
-    return float(get(f"{REST}/fapi/v1/ticker/price?symbol=BTCUSDT")["price"])
+def price_now(symbol="BTCUSDT"):
+    return float(get(f"{REST}/fapi/v1/ticker/price?symbol={symbol}")["price"])
 
 
-def resolve_stop(spec, side, upto_ms):
+def sym(x):
+    return x.get("symbol", "BTCUSDT")
+
+
+def resolve_stop(spec, side, upto_ms, symbol="BTCUSDT"):
     if isinstance(spec, (int, float)):
         return float(spec)
     kind, since = spec.split(":", 1)
-    bars = [b for b in klines("1h", parse_time(since)) if b["T"] <= upto_ms]
+    bars = [b for b in klines("1h", parse_time(since), symbol) if b["T"] <= upto_ms]
     if kind == "low_since":
         return min(b["l"] for b in bars) * 0.999
     if kind == "high_since":
@@ -89,18 +110,20 @@ def resolve_stop(spec, side, upto_ms):
 
 def open_position(s, o, entry, at_ms, events):
     side = 1 if o["side"] == "long" else -1
-    stop = resolve_stop(o["stop"], side, at_ms)
+    stop = resolve_stop(o["stop"], side, at_ms, sym(o))
     risk_px = (entry - stop) * side
     if risk_px <= entry * 0.0005:
-        events.append(f"SKIPPED {o['id']}: stop {stop:,.1f} is on the wrong side of entry {entry:,.1f}")
+        events.append(f"SKIPPED {o['id']}: stop {px(stop)} is on the wrong side of (or too close to) entry {px(entry)}")
         return
     target = o.get("target") or entry + side * o["target_r"] * risk_px
-    qty = s["equity"] * s["risk_pct"] / 100 / risk_px
-    p = {"id": o["id"], "side": o["side"], "entry": entry, "stop": stop, "target": target, "qty": qty,
-         "opened_ms": at_ms, "note": o.get("note", ""), "max_hold_h": o.get("max_hold_h", 168)}
+    risk_pct = o.get("risk_pct") or s["risk_pct"]
+    qty = s["equity"] * risk_pct / 100 / risk_px
+    p = {"id": o["id"], "symbol": sym(o), "book": o.get("book", "swing"), "side": o["side"], "entry": entry, "stop": stop,
+         "target": target, "qty": qty, "risk_pct": risk_pct, "opened_ms": at_ms, "note": o.get("note", ""),
+         "max_hold_h": o.get("max_hold_h", 168)}
     s["positions"].append(p)
-    events.append(f"ENTERED {p['side'].upper()} {p['id']} @ {entry:,.1f} | stop {stop:,.1f} | target {target:,.1f} | "
-                  f"size {qty:.4f} BTC (risk ${s['equity'] * s['risk_pct'] / 100:,.0f}) | {iso(at_ms)}")
+    events.append(f"ENTERED {p['book']} {p['side'].upper()} {p['id']} {p['symbol']} @ {px(entry)} | stop {px(stop)} | target {px(target)} | "
+                  f"size {qty:.4f} {p['symbol'][:-4]} (risk ${s['equity'] * risk_pct / 100:,.0f}, {risk_pct}%) | {iso(at_ms)}")
     if o.get("oco"):
         for other in [x for x in s["orders"] if x.get("oco") == o["oco"] and x["id"] != o["id"]]:
             s["orders"].remove(other)
@@ -114,7 +137,7 @@ def close_position(s, p, exit_px, at_ms, reason, events):
     s["equity"] += pnl
     s["positions"].remove(p)
     s["closed"].append({**p, "exit": exit_px, "closed_ms": at_ms, "reason": reason, "pnl": pnl, "R": pnl / risk_usd})
-    events.append(f"CLOSED {p['side'].upper()} {p['id']} @ {exit_px:,.1f} ({reason}) | PnL ${pnl:+,.2f} = {pnl / risk_usd:+.2f}R | "
+    events.append(f"CLOSED {p.get('book', 'swing')} {p['side'].upper()} {p['id']} {sym(p)} @ {px(exit_px)} ({reason}) | PnL ${pnl:+,.2f} = {pnl / risk_usd:+.2f}R | "
                   f"equity ${s['equity']:,.2f} | {iso(at_ms)}")
 
 
@@ -130,7 +153,7 @@ def process(s):
             events.append(f"EXPIRED {o['id']} (no trigger by {iso(o['expires_ms'])})")
             continue
         if o.get("arm") and not o.get("armed_ms"):
-            for b in klines("4h", o["created_ms"] - 4 * 3600e3):
+            for b in klines("4h", o["created_ms"] - 4 * 3600e3, sym(o)):
                 if b["T"] <= o["created_ms"]:
                     continue
                 a = o["arm"]
@@ -141,7 +164,17 @@ def process(s):
             if not o.get("armed_ms"):
                 continue
         start = o.get("armed_ms") or o["created_ms"]
-        for b in klines("4h", start - 4 * 3600e3):
+        if o["trigger"] == "limit":  # fills at the level when a 5m candle (opened after placement) trades through it
+            for b in klines("5m", start - 300e3, sym(o)):
+                if b["t"] < start:
+                    continue
+                if (o["side"] == "long" and b["l"] <= o["level"]) or (o["side"] == "short" and b["h"] >= o["level"]):
+                    s["orders"].remove(o)
+                    open_position(s, o, o["level"], b["t"], events)
+                    break
+            continue
+        tf = o.get("tf", "4h")
+        for b in klines(tf, start - 4 * 3600e3, sym(o)):
             if b["T"] <= start:
                 continue
             hit = (o["trigger"] == "close_above" and b["c"] > o["level"]) or (o["trigger"] == "close_below" and b["c"] < o["level"])
@@ -149,12 +182,13 @@ def process(s):
                 s["orders"].remove(o)
                 open_position(s, o, b["c"], b["T"] + 1, events)
                 break
-    # 2) open positions vs closed 1h candles
+    # 2) open positions vs closed candles: 1h for swings, 5m for scalps
     for p in list(s["positions"]):
         side = 1 if p["side"] == "long" else -1
-        for b in klines("1h", p["opened_ms"] - 3600e3):
+        tf, ms = ("5m", 300e3) if p.get("book") == "scalp" else ("1h", 3600e3)
+        for b in klines(tf, p["opened_ms"] - ms, sym(p)):
             if b["t"] < p["opened_ms"]:
-                continue
+                continue  # candles from the one opening at/after the fill (a limit's fill candle counts: stop first)
             stop_hit = b["l"] <= p["stop"] if side == 1 else b["h"] >= p["stop"]
             tgt_hit = b["h"] >= p["target"] if side == 1 else b["l"] <= p["target"]
             if stop_hit:
@@ -170,31 +204,35 @@ def process(s):
 
 
 def report(s, events):
-    px = price_now()
-    print(f"BTCUSDT perp {px:,.1f}   |   {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
+    prices = {x: price_now(x) for x in sorted({"BTCUSDT"} | {sym(p) for p in s["positions"] + s["orders"]})}
+    print("   ".join(f"{k[:-4]} {px(v)}" for k, v in prices.items()) + f"   |   {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
     for e in events:
         print(f"EVENT: {e}")
-    print(f"\nequity ${s['equity']:,.2f} (start ${s['start_equity']:,.0f}, risk {s['risk_pct']}% per trade)")
+    print(f"\nequity ${s['equity']:,.2f} ({(s['equity'] / s['start_equity'] - 1) * 100:+.2f}%, target +9.00%; swing risk {s['risk_pct']}%, scalp {SCALP_RISK}%)")
     print("open positions:" if s["positions"] else "open positions: none")
     for p in s["positions"]:
         side = 1 if p["side"] == "long" else -1
-        u = (px - p["entry"]) * side * p["qty"]
+        u = (prices[sym(p)] - p["entry"]) * side * p["qty"]
         r = u / (abs(p["entry"] - p.get("orig_stop", p["stop"])) * p["qty"])
-        print(f"  {p['id']} {p['side'].upper()} entry {p['entry']:,.1f} stop {p['stop']:,.1f} target {p['target']:,.1f} "
+        print(f"  {p['id']} [{p.get('book', 'swing')}] {sym(p)} {p['side'].upper()} entry {px(p['entry'])} stop {px(p['stop'])} target {px(p['target'])} "
               f"| unrealised ${u:+,.2f} ({r:+.2f}R) | since {iso(p['opened_ms'])} | {p['note']}")
     print("pending orders:" if s["orders"] else "pending orders: none")
     for o in s["orders"]:
-        tgt = f"target {o['target']:,.0f}" if o.get("target") else f"target {o['target_r']}R"
+        tgt = f"target {px(o['target'])}" if o.get("target") else f"target {o['target_r']}R"
         arm = f"[{'armed' if o.get('armed_ms') else 'arms on 4h ' + o['arm']['trigger'].replace('_', ' ') + ' ' + format(o['arm']['level'], ',.0f')}] " if o.get("arm") else ""
-        print(f"  {o['id']} {arm}{o['side'].upper()} on 4h {o['trigger'].replace('_', ' ')} {o['level']:,.1f} | stop {o['stop']} | {tgt}"
+        trig = f"limit {px(o['level'])}" if o["trigger"] == "limit" else f"{o.get('tf', '4h')} {o['trigger'].replace('_', ' ')} {px(o['level'])}"
+        print(f"  {o['id']} [{o.get('book', 'swing')}] {sym(o)} {arm}{o['side'].upper()} on {trig} | stop {o['stop']} | {tgt}"
               f" | expires {iso(o['expires_ms']) if o.get('expires_ms') else 'never'}{' | OCO ' + o['oco'] if o.get('oco') else ''} | {o.get('note', '')}")
     c = s["closed"]
     if c:
-        rs = [x["R"] for x in c]
-        print(f"track record: {len(c)} closed | win {sum(r > 0 for r in rs) / len(rs):.0%} | total {sum(rs):+.2f}R | "
-              f"avg {sum(rs) / len(rs):+.2f}R | PnL ${sum(x['pnl'] for x in c):+,.2f}")
-        for x in c[-5:]:
-            print(f"  {x['id']} {x['side']} {x['entry']:,.0f}->{x['exit']:,.0f} {x['reason']} {x['R']:+.2f}R  ({iso(x['closed_ms'])})")
+        for book in ("swing", "scalp"):
+            cb = [x for x in c if x.get("book", "swing") == book]
+            if cb:
+                rs = [x["R"] for x in cb]
+                print(f"track record {book}: {len(cb)} closed | win {sum(r > 0 for r in rs) / len(rs):.0%} | total {sum(rs):+.2f}R | "
+                      f"avg {sum(rs) / len(rs):+.2f}R | PnL ${sum(x['pnl'] for x in cb):+,.2f}")
+        for x in c[-6:]:
+            print(f"  {x['id']} [{x.get('book', 'swing')}] {sym(x)} {x['side']} {px(x['entry'])}->{px(x['exit'])} {x['reason']} {x['R']:+.2f}R  ({iso(x['closed_ms'])})")
     else:
         print("track record: no closed trades yet")
 
@@ -205,14 +243,18 @@ def main():
     a = sub.add_parser("add")
     a.add_argument("--id", required=True)
     a.add_argument("--side", choices=["long", "short"], required=True)
-    a.add_argument("--trigger", choices=["close_above", "close_below", "market"], required=True)
+    a.add_argument("--trigger", choices=["close_above", "close_below", "limit", "market"], required=True)
+    a.add_argument("--tf", choices=["5m", "15m", "1h", "4h"], default="4h", help="candle for close_above/close_below")
+    a.add_argument("--symbol", default="BTCUSDT", type=str.upper, choices=SYMBOLS)
+    a.add_argument("--book", choices=["swing", "scalp"], default="swing")
+    a.add_argument("--risk-pct", type=float, help=f"default: swing = account risk_pct, scalp = {SCALP_RISK}")
     a.add_argument("--level", type=float)
     a.add_argument("--stop", required=True, help="price, or low_since:ISO / high_since:ISO")
     a.add_argument("--target", type=float)
     a.add_argument("--target-r", type=float)
     a.add_argument("--expires")
     a.add_argument("--oco")
-    a.add_argument("--max-hold-h", type=int, default=168)
+    a.add_argument("--max-hold-h", type=int, help="default 168 swing, 24 scalp")
     a.add_argument("--note", default="")
     a.add_argument("--arm-trigger", choices=["close_above", "close_below"], help="order only arms after this 4h close")
     a.add_argument("--arm-level", type=float)
@@ -236,20 +278,32 @@ def main():
             sys.exit(f"id {args.id} already used")
         if not (args.target or args.target_r):
             sys.exit("give --target or --target-r")
+        if args.book == "scalp":
+            if not args.note:
+                sys.exit("a scalp needs --note: the thesis and what invalidates it")
+            if len(s["positions"]) >= MAX_OPEN:
+                sys.exit(f"refused: already {MAX_OPEN} open positions")
+            day0 = datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0).timestamp() * 1000
+            lost = -sum(x["pnl"] for x in s["closed"] if x.get("book") == "scalp" and x["closed_ms"] >= day0)
+            if lost >= s["equity"] * SCALP_DAY_STOP / 100:
+                sys.exit(f"refused: scalp book is down ${lost:,.0f} today (limit {SCALP_DAY_STOP}%); no new scalps until 00:00 UTC")
         stop = float(args.stop) if args.stop.replace(".", "", 1).isdigit() else args.stop
-        o = {"id": args.id, "side": args.side, "trigger": args.trigger, "level": args.level, "stop": stop,
-             "target": args.target, "target_r": args.target_r, "oco": args.oco, "note": args.note,
-             "max_hold_h": args.max_hold_h,
+        o = {"id": args.id, "symbol": args.symbol, "book": args.book, "side": args.side, "trigger": args.trigger,
+             "tf": args.tf, "level": args.level, "stop": stop, "target": args.target, "target_r": args.target_r,
+             "oco": args.oco, "note": args.note,
+             "risk_pct": args.risk_pct or (SCALP_RISK if args.book == "scalp" else None),
+             "max_hold_h": args.max_hold_h or (24 if args.book == "scalp" else 168),
              "created_ms": parse_time(args.created) if args.created else time.time() * 1000,
              "arm": {"trigger": args.arm_trigger, "level": args.arm_level} if args.arm_trigger else None,
              "expires_ms": parse_time(args.expires) if args.expires else None}
         if args.trigger == "market":
-            open_position(s, o, price_now(), time.time() * 1000, events)
+            open_position(s, o, price_now(args.symbol), time.time() * 1000, events)
         else:
             if args.level is None:
-                sys.exit("--level required for close_above / close_below")
+                sys.exit("--level required for close_above / close_below / limit")
             s["orders"].append(o)
-            events.append(f"PLACED {o['id']} {o['side'].upper()} on 4h {o['trigger']} {o['level']:,.1f}")
+            events.append(f"PLACED {o['id']} [{o['book']}] {o['symbol']} {o['side'].upper()} on "
+                          f"{'limit' if o['trigger'] == 'limit' else o['tf'] + ' ' + o['trigger']} {px(o['level'])}")
     elif args.cmd == "cancel":
         before = len(s["orders"])
         s["orders"] = [o for o in s["orders"] if o["id"] != args.id]
@@ -257,7 +311,7 @@ def main():
     elif args.cmd == "close":
         p = next((x for x in s["positions"] if x["id"] == args.id), None)
         if p:
-            close_position(s, p, price_now(), time.time() * 1000, "manual", events)
+            close_position(s, p, price_now(sym(p)), time.time() * 1000, "manual", events)
         else:
             events.append(f"no open position {args.id}")
     elif args.cmd == "modify":
@@ -265,19 +319,19 @@ def main():
         if not p:
             sys.exit(f"no open position {args.id}")
         side = 1 if p["side"] == "long" else -1
-        px = price_now()
+        now_px = price_now(sym(p))
         if args.stop is not None:
             if (args.stop - p["stop"]) * side < 0:
-                sys.exit(f"refused: {args.stop:,.1f} would WIDEN the stop ({p['stop']:,.1f}); only tightening is allowed")
-            if (px - args.stop) * side <= 0:
-                sys.exit(f"refused: stop {args.stop:,.1f} is already through the current price {px:,.1f}; use close instead")
+                sys.exit(f"refused: {px(args.stop)} would WIDEN the stop ({px(p['stop'])}); only tightening is allowed")
+            if (now_px - args.stop) * side <= 0:
+                sys.exit(f"refused: stop {px(args.stop)} is already through the current price {px(now_px)}; use close instead")
             p.setdefault("orig_stop", p["stop"])  # R stays measured against the original risk
-            events.append(f"MODIFIED {p['id']}: stop {p['stop']:,.1f} -> {args.stop:,.1f}")
+            events.append(f"MODIFIED {p['id']}: stop {px(p['stop'])} -> {px(args.stop)}")
             p["stop"] = args.stop
         if args.target is not None:
-            if (args.target - px) * side <= 0:
-                sys.exit(f"refused: target {args.target:,.1f} is on the wrong side of the current price {px:,.1f}")
-            events.append(f"MODIFIED {p['id']}: target {p['target']:,.1f} -> {args.target:,.1f}")
+            if (args.target - now_px) * side <= 0:
+                sys.exit(f"refused: target {px(args.target)} is on the wrong side of the current price {px(now_px)}")
+            events.append(f"MODIFIED {p['id']}: target {px(p['target'])} -> {px(args.target)}")
             p["target"] = args.target
     elif args.cmd == "journal":
         body = args.text.replace("\\n", "\n").strip()

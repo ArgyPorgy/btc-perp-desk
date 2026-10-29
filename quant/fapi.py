@@ -241,14 +241,14 @@ def okx_candles(sym, interval, a_ms):
     return [out[k] for k in sorted(out)]
 
 
-def okx_taker_buy(sym, a_ms):
-    """Closed hours since a_ms: {hour_open_ms: (taker buy, total)} in contracts."""
+def okx_taker_buy(sym, a_ms, period_ms=3_600_000):
+    """Closed periods (5m or 1h) since a_ms: {period_open_ms: (taker buy, total)} in contracts."""
     inst, out, end = okx_inst(sym), {}, ""
     now = time.time() * 1000
-    for _ in range(20):
-        rows = okx(f"/rubik/stat/taker-volume-contract?instId={inst}&period=1H&limit=100{end}")
+    for _ in range(40):
+        rows = okx(f"/rubik/stat/taker-volume-contract?instId={inst}&period={'1H' if period_ms == 3_600_000 else '5m'}&limit=100{end}")
         for t, sell, buy in rows:
-            if int(t) + 3_600_000 <= now:  # the open hour reads 0 until it closes
+            if int(t) + period_ms <= now:  # the open period reads 0 until it closes
                 out[int(t)] = (float(buy), float(buy) + float(sell))
         if not rows or int(rows[-1][0]) <= a_ms:
             break
@@ -288,11 +288,12 @@ def _klines(sym, interval, limit=500, start=None, end=None):
         ov = [(bars[t][5], v) for t, *_x, v, _q in oc if t in bars]
         if ov and sum(v for _b, v in ov) > 0:
             ratio = sum(float(b_) for b_, _v in ov) / sum(v for _b, v in ov)
-        tb = okx_taker_buy(sym, o_from) if step >= 3_600_000 else {}
+        tb_ms = 3_600_000 if step >= 3_600_000 else 300_000  # taker split: hourly, or 5m for 5m/15m/30m candles
+        tb = okx_taker_buy(sym, o_from, tb_ms) if step >= 300_000 else {}
         for t, o, h, l, c, v, q in oc:
             if t in bars or t < covered or not a <= t <= b:
                 continue
-            hours = [tb[x] for x in range(t, t + step, 3_600_000) if x in tb]
+            hours = [tb[x] for x in range(t, t + step, tb_ms) if x in tb]
             tot = sum(x[1] for x in hours)
             vol = v * ratio
             buy = vol * (sum(x[0] for x in hours) / tot if tot else 0.5)  # taker-buy share of the closed hours

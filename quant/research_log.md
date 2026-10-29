@@ -93,6 +93,14 @@ Same rules on each market's own Binance perp 1h history (ETH 2020-2026, 59.8k ba
 - **R10 is fragile.** Checking the bear regime at the breakdown (here) instead of at the retest (`short_test.py`) moves it from +0.41R t 1.8 to +0.27R t 1.2. A real edge shouldn't swing that much on a detail → **demoted to idea, not traded.** B20 holds in both versions (+0.32R).
 - **S10/S20 on 2020+ data** (the archive starts 2019-12-31) are +0.09R / +0.14R at t 0.9: positive, but they would not pass the t >= 1.5 bar if proposed today. Kept (grandfathered, and L1 worked), flagged marginal. Testing filters that might sharpen them is backlog #1.
 
+## 2026-10-29: Scalp book (desk change, prompted by "you won't pass with swings only")
+The account needs +9%; it is at +1.88% after one trade in four days. The tested swing setups fire ~2x a month at
++0.1-0.3R: months to the target. Mechanical scalps tested so far lost (range fades, prior-day sweeps), but those were
+blind rules; discretionary reads that combine structure, flow (taker delta, OI, funding), gamma and news are untested.
+→ **Second book, `--book scalp`:** long or short on BTC/ETH/HYPE, 0.5% risk, written thesis + invalidation per trade,
+  managed on 5m candles, 24h max hold, max 3 open, scalp book stops for the day at -1.5%. Scored separately from the
+  swing book. Review after 20 scalps: if the scalp book is net negative, cut it or change it.
+
 ## Backlog (highest expected value first)
 1. Sharpen S10/S20 (t 0.9 on 2020+): volume on the sweep candle, funding/OI state, distance swept, session.
 2. Post-release reaction trades: first 15m/1h candle after CPI/FOMC, fade vs follow, using calendar timestamps.
