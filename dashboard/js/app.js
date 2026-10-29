@@ -395,6 +395,31 @@ function drawGexLines() {
   add(g.putWall, '#ef5350', 'put wall');
 }
 
+// ───────── paper desk overlay: entry / stop / target of this market's open positions and pending orders
+let paperLines = [];
+async function refreshPaper() {
+  let st;
+  try { st = await getJSON('api/paper'); } catch { return; } // page not served by server.py
+  for (const l of paperLines) candles.removePriceLine(l);
+  paperLines = [];
+  const mine = (x) => (x.symbol || 'BTCUSDT') === SYMBOL;
+  const add = (price, color, title, style = LC.LineStyle.Solid) => { if (price != null && isFinite(price)) paperLines.push(candles.createPriceLine({ price: +price, color, lineWidth: 2, lineStyle: style, axisLabelVisible: true, title })); };
+  for (const p of (st.positions || []).filter(mine)) {
+    add(p.entry, '#4fc3f7', `${p.id} ${p.side} entry`);
+    add(p.stop, '#ef5350', `${p.id} stop`, LC.LineStyle.Dashed);
+    add(p.target, '#26a69a', `${p.id} target`, LC.LineStyle.Dashed);
+  }
+  for (const o of (st.orders || []).filter(mine)) {
+    const lvl = o.level, stop = typeof o.stop === 'number' ? o.stop : null;
+    const tgt = o.target ?? (stop != null && lvl != null ? lvl + (lvl - stop) * (o.target_r || 0) : null);
+    add(lvl, '#b39ddb', `${o.id} ${o.side} ${o.trigger === 'limit' ? 'limit' : (o.tf || '4h') + ' ' + o.trigger.replace('_', ' ')}`, LC.LineStyle.Dotted);
+    add(stop, 'rgba(239,83,80,0.6)', `${o.id} stop`, LC.LineStyle.Dotted);
+    add(tgt, 'rgba(38,166,154,0.6)', `${o.id} target`, LC.LineStyle.Dotted);
+  }
+  if (st.equity) $('paper').textContent = `${((st.equity / st.start_equity - 1) * 100).toFixed(2)}% · ${(st.positions || []).length} open · ${(st.orders || []).length} pending`;
+}
+setInterval(refreshPaper, 30000);
+
 let tapeDirty = false;
 function renderTape() {
   if (!tapeDirty) return;
@@ -629,4 +654,5 @@ news.start();
   S.last = S.bars[S.bars.length - 1].close;
   refreshGex();
   startFootprint();
+  refreshPaper();
 })();

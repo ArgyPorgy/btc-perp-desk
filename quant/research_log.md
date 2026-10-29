@@ -101,6 +101,18 @@ blind rules; discretionary reads that combine structure, flow (taker delta, OI, 
   managed on 5m candles, 24h max hold, max 3 open, scalp book stops for the day at -1.5%. Scored separately from the
   swing book. Review after 20 scalps: if the scalp book is net negative, cut it or change it.
 
+## 2026-10-29: Testing the first scalps after placing them (`scalp_tests.py`), prompted by "are these backtested?"
+They weren't. Closest tests the data allows:
+- **BTC release-window range break** (X2/X3): first 15m close outside the 2h pre-12:30 range, stop 0.45% inside, 1.5R.
+  **−0.22R/trade, n=1,526, t −6.9**, both halves −0.22; 13:30 anchor the same; Asia control −0.20R. Breakouts of a
+  short range with a tight stop get faded back inside. → X2/X3 **cancelled** at 12:24, before the release.
+- **Impulse pullback** (X1): after a 1h candle of >= 3 ATR, limit at 25% retrace, stop under the impulse midpoint, 2R.
+  Up-impulse longs: BTC −0.14R (n=147), ETH −0.13R (n=107), **HYPE +0.83R (n=8)**. Down-impulse shorts: BTC +0.15R
+  (n=123, t 1.1, idea), ETH −0.05R. → X1 kept at 0.5% as a **low-confidence** trade: pooled evidence is negative;
+  only HYPE's own 8 cases (plus a structural catalyst) favour it.
+→ **Rule for the scalp book from now on:** test the pattern before placing it, at least roughly; place untested reads
+  only when the pattern has no history to test, and say so.
+
 ## Backlog (highest expected value first)
 1. Sharpen S10/S20 (t 0.9 on 2020+): volume on the sweep candle, funding/OI state, distance swept, session.
 2. Post-release reaction trades: first 15m/1h candle after CPI/FOMC, fade vs follow, using calendar timestamps.

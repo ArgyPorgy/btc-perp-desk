@@ -8,6 +8,7 @@ Endpoints (local only):
   /api/calendar              high-impact economic events (ForexFactory weekly calendar, cached 1h)
   /api/stock?symbol=HOOD&tf=1h   Nasdaq candles (Yahoo Finance, Binance kline layout) for the stock markets
   /api/health                feed status
+  /api/paper                 the paper desk's orders, positions and recent trades (quant/paper/state.json)
 Every feed is polled on its own interval (60-300s) in a background thread; see news.py for sources and rules.
 """
 import argparse
@@ -83,6 +84,12 @@ class Handler(SimpleHTTPRequestHandler):
                 return self.send_json(stocks.chart(sym, tf))
             except Exception as e:  # noqa: BLE001 - Yahoo down or rate-limited: tell the page, keep serving
                 return self.send_json({"error": f"{type(e).__name__}: {e}"})
+        if u.path == "/api/paper":
+            try:
+                st = json.loads((HERE.parent / "quant" / "paper" / "state.json").read_text())
+            except (OSError, ValueError):
+                st = {}
+            return self.send_json({k: st.get(k) for k in ("equity", "start_equity", "orders", "positions")} | {"closed": (st.get("closed") or [])[-20:]})
         if u.path == "/api/calendar":
             return self.send_json(news.calendar())
         if u.path == "/api/health":

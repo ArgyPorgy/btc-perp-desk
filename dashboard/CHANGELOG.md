@@ -29,3 +29,4 @@ Newest first. Every change: date (UTC), what, why.
 - News: Hyperliquid Google News search and a HYPE rule. Why: "NYSE owner takes steps to bring Hyperliquid perpetual futures to U.S." (HYPE +9% that hour) scored impact 1. Tests 24/24. HYPE replaces HOODUSDT in the per-market headline reactions; HOOD reactions use Nasdaq 1m candles.
 - `quant/fapi.py` (the geo-block fallback) moved to port 8797, off the dashboard's 8787.
 
+- **Paper desk on the chart.** `server.py` serves `/api/paper` (the paper desk's state); the page draws this market's open positions (entry / stop / target) and pending orders as price lines, refreshed every 30s, plus a "Paper desk" header stat (P&L %, open, pending). `?rest=http://127.0.0.1:8797` points the page at `quant/fapi.py` where Binance is geo-blocked (local URLs only).

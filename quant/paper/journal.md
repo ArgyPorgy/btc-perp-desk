@@ -240,3 +240,6 @@
 - BTC 80,118: pinned at 80k (call wall = put wall), 15m range 79,790-80,350, short gamma below the 80.2k flip, OI +4.8% 24h with low funding. GDP + core PCE at 12:30. OCO BRK1 from the 12:30 candle on: X2 LONG on a 15m close > 80,350 (stop 79,990, 1.5R) / X3 SHORT on a 15m close < 79,790 (stop 80,150, 1.5R). Why: the release should break the pin; trade whichever side it breaks, out of the 15m range, with the stop back inside it.
 - ETH 2,322: no order. It is a near-copy of BTC (sitting on its daily EMA200 2,319, 15m range 2,304-2,330); a second BTC-like bet doubles the same risk.
 - HOOD: Nasdaq pre-market; no order (desk trades perps).
+
+## 2026-10-29 12:25 UTC — price 80,064
+- 12:24 UTC review (user: are these backtested?). No, they weren't; tested now (quant/scalp_tests.py). BTC release range break: -0.22R/trade, n=1,526, t -6.9 -> X2/X3 CANCELLED before 12:30. HYPE impulse pullback: BTC/ETH versions lose (-0.14/-0.13R, n=147/107), HYPE's own +0.83R on n=8 -> X1 kept at 0.5% risk, low confidence. HYPE 88.67 is now at X1's target (prior-high retest); if it fills at 85.5 the trade is a pullback-to-high play. Dashboard now draws paper orders/positions on the chart (server.py /api/paper).

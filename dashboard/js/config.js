@@ -17,7 +17,9 @@ const pick = (() => {
 })();
 export const SYMBOL = MARKETS[pick] ? pick : 'BTCUSDT';
 export const MARKET = MARKETS[SYMBOL];
-export const REST = 'https://fapi.binance.com';
+// ?rest=http://127.0.0.1:8797 points the page at quant/fapi.py's fallback (machines where Binance is geo-blocked). Local URLs only.
+const restParam = typeof location === 'undefined' ? null : new URLSearchParams(location.search).get('rest');
+export const REST = restParam && /^http:\/\/(127\.0\.0\.1|localhost):\d+$/.test(restParam) ? restParam : 'https://fapi.binance.com';
 export const WS_MARKET = 'wss://fstream.binance.com/market/stream?streams=';
 export const WS_PUBLIC = 'wss://fstream.binance.com/public/stream?streams=';
 export const DERIBIT = 'https://www.deribit.com/api/v2/public';
