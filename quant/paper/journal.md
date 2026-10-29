@@ -219,3 +219,9 @@
 - Flow/positioning: 12-bar 1h delta -2.2k BTC; OI +3.5% 24h / +9.4% 7d while funding sits at 0.004% (shorts adding, not longs); 7d gamma -29M/1% below the 80.26k flip; 80k is both call and put wall.
 - News: no new BTC catalyst; Vance restarting Iran talks (oil lower), Russia/Ukraine drone strikes, PCE/GDP preview keeps hike bets alive. GDP (fcst 3.2%) + core PCE at 12:30.
 - Scan: no signal (needs a CLOSED 4h candle). 79,179 sweep zone 0.9% below; the 08:00 close is the next chance, checked by the 08:05 run. DECISION: NO TRADE.
+
+## 2026-10-29 08:10 UTC — price 79,982
+- 08:05 UTC check: flat. 04-08 4h candle closed 79,820 (range 79,750-80,486): inside bar under the 4h EMA50/200 (80.94k/81.60k), no test of 79,179. 1h below EMA50/200; 1d below EMA50 80.75k, above EMA200 76.44k (bull regime, shorts off).
+- Positioning: OI +4.4% 24h with funding sliding to 0.003%: shorts keep adding into the 80k magnet (call wall = put wall = 80k, 7d gamma -20M/1%, flip 80.28k).
+- News: Treasury yields lower post-Fed, oil down on renewed US-Iran peace efforts; nothing BTC-specific. GDP + core PCE 12:30.
+- Scan: no signal; 79,179 sweep zone 0.8% below. The 12:00 close falls inside the pre-data window (no entries 10:30-12:30), so the next actionable close is 16:00. DECISION: NO TRADE.
