@@ -40,6 +40,9 @@ the rule goes into **Current rules** too. Skipped or cancelled plan trades are a
 17. **Every order change is announced as an ORDER UPDATE** (new / moved / cancelled, with entry, stop, target) in the
     reply, so the user can mirror it. The HYPE long was moved four times (X1 85.5 -> X5 88.9 -> X6 92.2 -> X8 95.3);
     the user only had X1, so their book and the paper book diverged (X8 filled and lost; their X1 never filled).
+18. **Crypto Twitter is ~30 min ahead of the news wires.** The Binance hack was on X at ~20:50 and on CoinDesk at 21:12.
+    x.com is blocked here, so a rumor the user reports from X is treated as live risk at once (size down, no fresh
+    longs into it, look for the tape's confirmation e.g. the exchange token underperforming), not as unconfirmed noise.
 
 ## Mistakes and misses
 | Date (UTC) | What happened | Cost | Lesson → rule |
@@ -74,6 +77,7 @@ Running total: **+1.50R** missed by overriding the plan.
 | 2026-10-29 | **D1F** HYPE (scanner, retro-check): daily close 76.65 on Oct 24 retesting a flipped level (73.0) above a rising SMA100, stop 69.2 | 2R target 91.57 traded today (+2R) | Zoomed-out daily structure + trend filter; the same trade @MuroCrypto posted on Oct 26 at ~77.3 (+17%). Not a desk trade (setup added today); logged so the pattern's live record starts here. |
 | 2026-10-29 20:35 | **X13** BTC scalp short 80,420 -> 79,880 | **+1.64R, +$33.20** | Reacted to a top-impact headline (Iran naval blockade) the same run; shorted the RETEST of the broken gamma flip inside a 15m bear FVG (location at supply, rule 16), stop above the FVG and 1h EMA50, target in front of the next bull OB; sized 0.2% for the day stop. |
 | 2026-10-29 20:14 | **Early exit** of X11a/X11c ETH longs at 2,314 (−$3.89 total) | saved ~$36 (shadows S2/S3 both hit the 2,288 stop) | Rule 13 worked: the leader (BTC) broke its gamma flip on new risk-off news, so the zone thesis was re-judged instead of waiting for the stop. |
+| 2026-10-29 21:12 | **X14 exit** at 79,158 (−$6) | saved ~$29 (shadow S4: stop 79,650 hit at 21:15, high 79,766) | Read the base forming (three held lows, fading delta, trapped OI, BNB bouncing) and the stop sitting inside a bear FVG; cut instead of hoping. |
 
 ## Process wins
 - 2026-10-29: kept every order inside the daily-loss floor; cancelled X4 when BTC broke the other way instead of hoping.
