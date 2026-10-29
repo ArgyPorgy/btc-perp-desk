@@ -4,25 +4,6 @@
   "risk_pct": 0.5,
   "orders": [
     {
-      "id": "X6",
-      "symbol": "HYPEUSDT",
-      "book": "scalp",
-      "side": "long",
-      "trigger": "limit",
-      "tf": "4h",
-      "level": 92.2,
-      "stop": 90.6,
-      "target": 95.0,
-      "target_r": null,
-      "oco": null,
-      "note": "Replaces X5 (88.9 now 5% below; trend kept going). HYPE 93.9 broke 92.1 (5m BOS) on the ICE/NYSE news, OI +12% 24h, funding 0.0097% (not crowded), 1h delta +1.2M. Buy the retest of the 92.1 breakout (15m bull FVG 91.4-92.8); stop 90.6 under the 5m bull OB 90.2-91.9 (losing it = failed breakout). Target 95.0 just under the 95.27 all-time-high / 4h bear OB 93.8-95.3 (1.75R).",
-      "risk_pct": 0.35,
-      "max_hold_h": 24,
-      "created_ms": 1793288529135.5269,
-      "arm": null,
-      "expires_ms": 1793318400000
-    },
-    {
       "id": "X7",
       "symbol": "ETHUSDT",
       "book": "scalp",
@@ -40,6 +21,25 @@
       "created_ms": 1793288531705.4644,
       "arm": null,
       "expires_ms": 1793318400000
+    },
+    {
+      "id": "X8",
+      "symbol": "HYPEUSDT",
+      "book": "scalp",
+      "side": "long",
+      "trigger": "limit",
+      "tf": "4h",
+      "level": 95.3,
+      "stop": 93.9,
+      "target": 98.1,
+      "target_r": null,
+      "oco": null,
+      "note": "Replaces X6 (92.2 never filled; its 95.0 target is now below price). HYPE broke its 95.27 all-time high to 96.9 (price discovery, no overhead supply), OI +16.6% 24h with funding easing to 0.006% (not crowded), 1h delta +1.6M. Buy the retest of the old ATH 95.27 as support; stop 93.9 under the 4h bear-OB-turned-support 93.8 (losing it = failed ATH break). Target 98.1 (2R).",
+      "risk_pct": 0.35,
+      "max_hold_h": 24,
+      "created_ms": 1793291011375.0835,
+      "arm": null,
+      "expires_ms": 1793332800000
     }
   ],
   "positions": [],

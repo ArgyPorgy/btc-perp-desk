@@ -288,3 +288,10 @@
 - ETH 2,365: X7 LONG limit 2,350 (pullback into bull FVG 2,342-2,356 after the range breakout), stop 2,326 (back inside the old range), target 2,398 under the 2,400 gamma wall (2R).
 - HYPE 93.9: X5 (88.9) cancelled, 5% below. X6 LONG limit 92.2 (retest of the 92.1 breakout), stop 90.6 (under the 5m bull OB), target 95.0 under the 95.27 ATH (1.75R).
 - Correlation: X6/X7 both crypto longs; together $86 max loss, inside the $153 cap. Only one BTC/ETH-type bet (ETH chosen: cleaner breakout-retest with a defined 2,400 target; BTC is pinned under 82k).
+
+## 2026-10-29 16:23 UTC — price 81,401
+- 16:21 hourly: flat, room $305; X7 ETH limit 2,350 still pending (low since placement ~2,353).
+- BTC 81,377: the 16:00 4h closed 81,744 after tagging 81,944 into the 82k call wall; 5m delta -558 now. Pinned 81-82k under long gamma (+61M). NO TRADE: same as 15:40, a long buys the wall, a short fights the trend; watch a 4h close > 82k (breakout) or < 81k put wall (pin breaks down).
+- ETH 2,358: holding the breakout, 15m delta +99k. X7 kept.
+- HYPE 95.9: ran through X6's target zone and the 95.27 ATH to 96.9 without retesting 92.2 (X6 never filled, so no shadow). X6 cancelled; X8 LONG limit 95.3 (old ATH retest), stop 93.9, target 98.1 (2R). Not chasing 96: waiting for the retest.
+- HOOD: watch only.
