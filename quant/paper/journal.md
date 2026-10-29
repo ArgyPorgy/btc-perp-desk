@@ -213,3 +213,9 @@
 - Positioning: OI +2.1% 24h / +6.2% 7d into the drop (shorts adding), funding down to 0.004%; 7d gamma flipped NEGATIVE (-30M/1%) below the 80.2k flip: dealers now amplify moves.
 - Scan: no signal yet. Price is 0.8% above the 20/10-day low 79,179: a 4h wick below it that closes back above = S10/S20 long; the 08:05 run will catch an 08:00 close. A 4h close BELOW 79,179 is a bull-regime breakdown (~0R): no short.
 - DECISION: NO TRADE now. Event rule: no new entries 10:30-12:30 UTC (Core PCE + GDP 12:30), so a signal on the 12:00 close is skipped.
+
+## 2026-10-29 07:05 UTC — price 79,909
+- 07:05 UTC manual run: flat. BTC 79,905, 3h into the 04:00 4h candle (range 79,750-80,486): bounced to 80.49k and faded back under session VWAP 80.14k. 1h/4h below EMA50/200; 1d below EMA50 80.75k, above EMA200 76.44k (bull regime, shorts off).
+- Flow/positioning: 12-bar 1h delta -2.2k BTC; OI +3.5% 24h / +9.4% 7d while funding sits at 0.004% (shorts adding, not longs); 7d gamma -29M/1% below the 80.26k flip; 80k is both call and put wall.
+- News: no new BTC catalyst; Vance restarting Iran talks (oil lower), Russia/Ukraine drone strikes, PCE/GDP preview keeps hike bets alive. GDP (fcst 3.2%) + core PCE at 12:30.
+- Scan: no signal (needs a CLOSED 4h candle). 79,179 sweep zone 0.9% below; the 08:00 close is the next chance, checked by the 08:05 run. DECISION: NO TRADE.
