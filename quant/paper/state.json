@@ -1,26 +1,45 @@
 {
   "start_equity": 10000.0,
-  "equity": 10106.59837414202,
+  "equity": 10139.794940301657,
   "risk_pct": 0.5,
   "orders": [
     {
-      "id": "X13",
+      "id": "X14",
       "symbol": "BTCUSDT",
       "book": "scalp",
       "side": "short",
       "trigger": "limit",
       "tf": "4h",
-      "level": 80420.0,
-      "stop": 80700.0,
-      "target": 79880.0,
+      "level": 79150.0,
+      "stop": 79650.0,
+      "target": 78150.0,
       "target_r": null,
       "oco": null,
-      "note": "News + leader break: Trump announced a naval blockade of Iran (20:00, impact 3), BTC -0.5% and a 15m close below its 80,389 gamma flip (7d gamma now -5.6M = amplifying), below 5m/15m/1h/4h EMAs. Short the retest of the flip inside the 15m bear FVG 80,148-80,450 (location: at supply). Stop 80,700 above the FVG and the 1h EMA50 80,614. Target 79,880 in front of the 79,860 bull OB / swing low (1.93R). 0.2% risk so a loss keeps the day's scalp losses near the 1% stop. Daily regime is still bull (B20 off): this is a news scalp, not the swing short.",
+      "note": "Risk-off cascade: BNB -5.3% in one 15m (2x BTC/ETH/SOL) = Binance-specific stress (unconfirmed hack talk), Iran naval blockade headline, Nasdaq/Amazon rout, BTC lost the 80k put wall, its gamma flip (amplifying below) and the 20-day low 79,179. Short the RETEST of the broken 20-day low (location: at the broken support, not after a 2.5% drop). Stop 79,650 above the 20:35 breakdown base. Target 78,150 under the 78,233 low (2R). If a tested S20 sweep-long fires at the 00:00 4h close, this stop covers it.",
+      "risk_pct": 0.35,
+      "max_hold_h": 24,
+      "created_ms": 1793306973785.5896,
+      "arm": null,
+      "expires_ms": 1793314173785.5903
+    },
+    {
+      "id": "X15",
+      "symbol": "BTCUSDT",
+      "book": "scalp",
+      "side": "short",
+      "trigger": "close_below",
+      "tf": "15m",
+      "level": 78200.0,
+      "stop": 78950.0,
+      "target": 76700.0,
+      "target_r": null,
+      "oco": null,
+      "note": "Continuation add if the cascade extends: 15m close below the 78,233 low. Stop 78,950 back above the breakdown, target 76,700 (2R) toward the 76.4k daily EMA200. 0.2% risk (selling a breakdown low tested negative in normal markets; taken only because an exchange-stress event is outside that sample).",
       "risk_pct": 0.2,
       "max_hold_h": 24,
-      "created_ms": 1793304956352.807,
+      "created_ms": 1793306976239.3618,
       "arm": null,
-      "expires_ms": 1793312156352.8083
+      "expires_ms": 1793325600000
     }
   ],
   "positions": [],
@@ -116,6 +135,25 @@
       "reason": "manual",
       "pnl": -0.24548787505179992,
       "R": -0.013874583333332568
+    },
+    {
+      "id": "X13",
+      "symbol": "BTCUSDT",
+      "book": "scalp",
+      "side": "short",
+      "entry": 80420.0,
+      "stop": 80700.0,
+      "target": 79880.0,
+      "qty": 0.07218998838672872,
+      "risk_pct": 0.2,
+      "opened_ms": 1793305800000,
+      "note": "News + leader break: Trump announced a naval blockade of Iran (20:00, impact 3), BTC -0.5% and a 15m close below its 80,389 gamma flip (7d gamma now -5.6M = amplifying), below 5m/15m/1h/4h EMAs. Short the retest of the flip inside the 15m bear FVG 80,148-80,450 (location: at supply). Stop 80,700 above the FVG and the 1h EMA50 80,614. Target 79,880 in front of the 79,860 bull OB / swing low (1.93R). 0.2% risk so a loss keeps the day's scalp losses near the 1% stop. Daily regime is still bull (B20 off): this is a news scalp, not the swing short.",
+      "max_hold_h": 24,
+      "exit": 79880.0,
+      "closed_ms": 1793306100000,
+      "reason": "target",
+      "pnl": 33.1965661596372,
+      "R": 1.6423214285714285
     }
   ],
   "shadow": [
@@ -140,8 +178,8 @@
       "stop": 2288.0,
       "target": 2364.0,
       "why": "X11a closed early at 20:14 on the Iran blockade headline + BTC losing its gamma flip (rule 13)",
-      "result": null,
-      "R": null
+      "result": "stop",
+      "R": -1.0
     },
     {
       "id": "S3",
@@ -152,8 +190,8 @@
       "stop": 2288.0,
       "target": 2395.0,
       "why": "X11c closed early at 20:14, same reason",
-      "result": null,
-      "R": null
+      "result": "stop",
+      "R": -1.0
     }
   ]
 }

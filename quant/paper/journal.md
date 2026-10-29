@@ -340,3 +340,9 @@
 - Rule 13 (leader broke while an alt long is open: judge the thesis): the zone thesis now fights a risk-off war headline plus an amplifying gamma regime. CLOSED both at 2,314 for -$3.64 and -$0.25 (near flat) instead of waiting for 2,288. Logged as shadows S2/S3 to measure whether this exit was right. Cancelled X12 (HYPE reclaim long, rule 13).
 - BTC: X13 SHORT limit 80,420 (retest of the broken flip inside the 15m bear FVG 80,148-80,450), stop 80,700 above the FVG and 1h EMA50, target 79,880 in front of the 79,860 bull OB (1.93R), 0.2% risk (keeps a loss near the 1% scalp day stop). News scalp; the daily regime is still bull so B20 stays off.
 - Equity $10,106.60 (+1.07%), room $224.6, scalp losses today $81.
+
+## 2026-10-29 20:49 UTC — price 78,941
+- 20:50 UTC (user: 'Binance got hacked? BTC can go down'). X13 BTC short hit target 79,880 at 20:35: +$33.20 (+1.64R). ETH early exit at 20:14 confirmed right: shadows S2/S3 both stopped at 2,288 (-1R each) = ~$36 saved (user's mirrored ETH longs hit SL).
+- Hack check: no report in the news feeds or a web search (latest: Binance said on Oct 27 it blocked DPRK-linked attacks, no losses). Market evidence of Binance-specific stress: BNB -5.3% in the 20:15-20:30 15m vs BTC -1.9%, ETH -2.65%, SOL -2.7%. BTC prices agree across venues (Binance.US 78,834, OKX 78,820, Coinbase 78,755), so no BTC dislocation.
+- BTC 78,800 after 80.4k -> 78,233: lost the 80k put wall, the 80,389 gamma flip (amplifying) and the 20-day low 79,179. Shorts, at location: X14 SHORT limit 79,150 (retest of the broken 20-day low), stop 79,650, target 78,150 (2R), 0.35%. X15 SHORT on a 15m close < 78,200 (continuation), stop 78,950, target 76,700 (2R), 0.2%. Not selling at 78.8k after a 2.5% drop.
+- Conflict noted: a tested S20 long fires if the 00:00 4h candle closes back above 79,179. If Binance stress is real, that sample doesn't cover an exchange-risk event; the 00:00 run decides with that in mind.
