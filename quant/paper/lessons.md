@@ -37,6 +37,7 @@ the rule goes into **Current rules** too. Skipped or cancelled plan trades are a
 | 2026-10-29 14:18 | Saw the 15m close 80,431 > 80,350 and called entering "chasing" with price at 80,420, i.e. at the planned entry. | **−1.5R missed (S1, ~$53)** | Rule 6. |
 | 2026-10-29 | Sized risk at 1% swing / 0.5% scalp before checking the account's 3% max drawdown; then assumed a trailing drawdown. Propr's is static + daily. | none (caught before a loss) | Rule 1. Rules now coded in `paper_desk.py`. |
 | 2026-10-29 | X1 (HYPE limit 85.5) chose a target (88.7) price had already reached before the entry could fill. | none (never filled) | Rule 8. |
+| 2026-10-29 | HYPE news trend 79 -> 97 (+22%): three pullback limits (X1 85.5, X5 88.9, X6 92.2) each set 3-6% under price, each left behind; moved up only after price ran. | missed most of the move (no fill, no loss) | In a news-driven trend (OI rising, funding normal, strong taker delta) pullbacks are shallow: set entries at the nearest structure (last 5m/15m breakout level, 15m EMA20), or split: half at the shallow level, half deeper. |
 
 ## Shadow trades (skipped or cancelled plan trades)
 | ID | Trade | Why skipped | Result |
