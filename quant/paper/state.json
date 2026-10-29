@@ -1,27 +1,8 @@
 {
   "start_equity": 10000.0,
-  "equity": 10139.794940301657,
+  "equity": 10133.573367457137,
   "risk_pct": 0.5,
   "orders": [
-    {
-      "id": "X14",
-      "symbol": "BTCUSDT",
-      "book": "scalp",
-      "side": "short",
-      "trigger": "limit",
-      "tf": "4h",
-      "level": 79150.0,
-      "stop": 79650.0,
-      "target": 78150.0,
-      "target_r": null,
-      "oco": null,
-      "note": "Risk-off cascade: BNB -5.3% in one 15m (2x BTC/ETH/SOL) = Binance-specific stress (unconfirmed hack talk), Iran naval blockade headline, Nasdaq/Amazon rout, BTC lost the 80k put wall, its gamma flip (amplifying below) and the 20-day low 79,179. Short the RETEST of the broken 20-day low (location: at the broken support, not after a 2.5% drop). Stop 79,650 above the 20:35 breakdown base. Target 78,150 under the 78,233 low (2R). If a tested S20 sweep-long fires at the 00:00 4h close, this stop covers it.",
-      "risk_pct": 0.35,
-      "max_hold_h": 24,
-      "created_ms": 1793306973785.5896,
-      "arm": null,
-      "expires_ms": 1793314173785.5903
-    },
     {
       "id": "X15",
       "symbol": "BTCUSDT",
@@ -40,6 +21,25 @@
       "created_ms": 1793306976239.3618,
       "arm": null,
       "expires_ms": 1793325600000
+    },
+    {
+      "id": "X16",
+      "symbol": "BTCUSDT",
+      "book": "scalp",
+      "side": "long",
+      "trigger": "limit",
+      "tf": "4h",
+      "level": 78650.0,
+      "stop": 78150.0,
+      "target": 79650.0,
+      "target_r": null,
+      "oco": null,
+      "note": "Two-sided plan for the 78.2-79.2k base. Long the retest of the base (78,533-78,788 lows) where the 78k put wall sits; buyers defended 78,233 / 78,533 / 78,788, BNB recovering (692 -> 713), OI +3.5% into the lows = shorts to squeeze. Stop 78,150 below the 78,233 low and above the 78k wall (if it breaks, X15 short takes over). Target 79,650 under the 79,750 top of the 5m bear FVG (2R). Counter-trend: 0.35%.",
+      "risk_pct": 0.35,
+      "max_hold_h": 24,
+      "created_ms": 1793308348267.6448,
+      "arm": null,
+      "expires_ms": 1793316600000
     }
   ],
   "positions": [],
@@ -154,6 +154,25 @@
       "reason": "target",
       "pnl": 33.1965661596372,
       "R": 1.6423214285714285
+    },
+    {
+      "id": "X14",
+      "symbol": "BTCUSDT",
+      "book": "scalp",
+      "side": "short",
+      "entry": 79150.0,
+      "stop": 79650.0,
+      "target": 78150.0,
+      "qty": 0.07097856458211159,
+      "risk_pct": 0.35,
+      "opened_ms": 1793307000000,
+      "note": "Risk-off cascade: BNB -5.3% in one 15m (2x BTC/ETH/SOL) = Binance-specific stress (unconfirmed hack talk), Iran naval blockade headline, Nasdaq/Amazon rout, BTC lost the 80k put wall, its gamma flip (amplifying below) and the 20-day low 79,179. Short the RETEST of the broken 20-day low (location: at the broken support, not after a 2.5% drop). Stop 79,650 above the 20:35 breakdown base. Target 78,150 under the 78,233 low (2R). If a tested S20 sweep-long fires at the 00:00 4h close, this stop covers it.",
+      "max_hold_h": 24,
+      "exit": 79158.5,
+      "closed_ms": 1793308341533.2705,
+      "reason": "manual",
+      "pnl": -6.221572844521555,
+      "R": -0.1753085
     }
   ],
   "shadow": [
@@ -192,6 +211,18 @@
       "why": "X11c closed early at 20:14, same reason",
       "result": "stop",
       "R": -1.0
+    },
+    {
+      "id": "S4",
+      "symbol": "BTCUSDT",
+      "side": "short",
+      "entry": 79150.0,
+      "at_ms": 1793307000000,
+      "stop": 79650.0,
+      "target": 78150.0,
+      "why": "X14 closed at ~breakeven 21:11: BNB bounced +3% (hack panic fading), selling flat at the 78.2k triple low, OI +3.5% = trapped shorts, stop sat inside the 5m bear FVG 79,099-79,750",
+      "result": null,
+      "R": null
     }
   ]
 }
