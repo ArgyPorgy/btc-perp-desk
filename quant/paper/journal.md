@@ -295,3 +295,10 @@
 - ETH 2,358: holding the breakout, 15m delta +99k. X7 kept.
 - HYPE 95.9: ran through X6's target zone and the 95.27 ATH to 96.9 without retesting 92.2 (X6 never filled, so no shadow). X6 cancelled; X8 LONG limit 95.3 (old ATH retest), stop 93.9, target 98.1 (2R). Not chasing 96: waiting for the retest.
 - HOOD: watch only.
+
+## 2026-10-29 17:17 UTC — price 80,973
+- 17:16 hourly: X8 HYPE long FILLED 95.30 (16:40), X7 ETH long FILLED 2,350.0 (17:05). Open risk $77, room $305.
+- HYPE 95.4 (X8 +0.24R): holding the old ATH 95.27 inside a 93.5-97.1 5m range; funding fell to 0.0018% while OI is +17% 24h (new shorts fading the ATH = squeeze fuel); 1h delta +1.9M; fresh catalyst (Druckenmiller backing Trade[XYZ]/Hyperliquid perps). HOLD, stop 93.9 / target 98.1 unchanged.
+- ETH 2,350 (X7 0R): sitting in the 2,342-2,356 bull FVG it was bought in; 15m delta +21.8k, 5m -4.7k; call wall 2,360 just above, target 2,398 beyond it. HOLD, stop 2,326 (back inside the old range) unchanged. Risk: BTC.
+- BTC 81,026: rejected 81,944 (82k call wall), now on 81,000 where the call and put walls sit (7d gamma +40M = pin). 1h EMA200 80,947 right below. NO TRADE: a BTC short would bet against the two open longs, and a long buys a pin. Watch: a 1h close < 80,947 weakens the ETH thesis (act on X7's stop, don't pre-empt).
+- HOOD: watch only.
