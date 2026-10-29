@@ -1,8 +1,12 @@
 """Paper trading desk for Binance USDT perps (BTC, ETH, HYPE). Every call is recorded and scored automatically.
 
+Prop-firm rules (enforced): pass at +9% on the $10,000 start; FAIL if equity ever falls 3% ($300) below its highest
+closed value (trailing, the stricter reading). So: swing risk 0.5%, scalp 0.35%, and the risk of everything open or
+pending may never exceed half the room left above that floor. Orders that would break it are refused.
+
 Two books share one account:
-  swing  tested setups (S10/S20/B20 on BTC), 1% risk, 4h triggers, managed on 1h candles.
-  scalp  discretionary chart-read trades, long or short, any listed market; default 0.5% risk, managed on 5m candles,
+  swing  tested setups (S10/S20/B20 on BTC), 0.5% risk, 4h triggers, managed on 1h candles.
+  scalp  discretionary chart-read trades, long or short, any listed market; default 0.35% risk, managed on 5m candles,
          24h max hold. Every scalp needs a written thesis (--note). Rails: at most 3 open positions, no new scalp after
          the day's realised scalp loss reaches 1.5% of equity. The track record is split by book, so the scalp book
          earns its place or gets cut.
@@ -36,7 +40,22 @@ from fapi import base  # Binance futures REST, or the local fallback where it is
 REST = base()
 FEE = 0.0005
 SYMBOLS = ("BTCUSDT", "ETHUSDT", "HYPEUSDT")
-SCALP_RISK, SCALP_DAY_STOP, MAX_OPEN = 0.5, 1.5, 3
+SCALP_RISK, SCALP_DAY_STOP, MAX_OPEN = 0.35, 1.0, 3
+TARGET_PCT, MAX_DD_PCT = 9.0, 3.0  # prop rules: +9% to pass; 3% of the start below the equity high = failed
+
+
+def peak(s):
+    return max([s["start_equity"]] + [s["start_equity"] + sum(x["pnl"] for x in s["closed"][:i + 1]) for i in range(len(s["closed"]))])
+
+
+def floor(s):
+    return peak(s) - s["start_equity"] * MAX_DD_PCT / 100
+
+
+def open_risk(s):
+    """$ lost if every open position and pending order hit its stop (pending at their own risk %), fees included."""
+    r = sum(abs(p["entry"] - p["stop"]) * p["qty"] + FEE * 2 * p["entry"] * p["qty"] for p in s["positions"])
+    return r + sum(s["equity"] * (o.get("risk_pct") or s["risk_pct"]) / 100 * 1.2 for o in s["orders"])
 import os
 STATE = Path(os.environ.get("PAPER_STATE", Path(__file__).parent / "paper" / "state.json"))
 JOURNAL = STATE.parent / "journal.md"
@@ -80,7 +99,7 @@ def klines(interval, start_ms, symbol="BTCUSDT"):
 def load():
     if STATE.exists():
         return json.loads(STATE.read_text())
-    return {"start_equity": 10000.0, "equity": 10000.0, "risk_pct": 1.0, "orders": [], "positions": [], "closed": []}
+    return {"start_equity": 10000.0, "equity": 10000.0, "risk_pct": 0.5, "orders": [], "positions": [], "closed": []}
 
 
 def save(s):
@@ -208,7 +227,10 @@ def report(s, events):
     print("   ".join(f"{k[:-4]} {px(v)}" for k, v in prices.items()) + f"   |   {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
     for e in events:
         print(f"EVENT: {e}")
-    print(f"\nequity ${s['equity']:,.2f} ({(s['equity'] / s['start_equity'] - 1) * 100:+.2f}%, target +9.00%; swing risk {s['risk_pct']}%, scalp {SCALP_RISK}%)")
+    print(f"\nequity ${s['equity']:,.2f} ({(s['equity'] / s['start_equity'] - 1) * 100:+.2f}%, target +{TARGET_PCT:.0f}% = ${s['start_equity'] * (1 + TARGET_PCT / 100):,.0f}; swing risk {s['risk_pct']}%, scalp {SCALP_RISK}%)")
+    room = s["equity"] - floor(s)
+    print(f"drawdown floor ${floor(s):,.2f} (peak ${peak(s):,.2f} - 3%): room ${room:,.2f} | open+pending risk ${open_risk(s):,.2f} (cap ${room / 2:,.2f})"
+          + ("   *** ACCOUNT FAILED ***" if room <= 0 else ""))
     print("open positions:" if s["positions"] else "open positions: none")
     for p in s["positions"]:
         side = 1 if p["side"] == "long" else -1
@@ -278,6 +300,13 @@ def main():
             sys.exit(f"id {args.id} already used")
         if not (args.target or args.target_r):
             sys.exit("give --target or --target-r")
+        room = s["equity"] - floor(s)
+        new_risk = s["equity"] * (args.risk_pct or (SCALP_RISK if args.book == "scalp" else s["risk_pct"])) / 100 * 1.2
+        if room <= 0:
+            sys.exit("refused: account is past the 3% drawdown floor")
+        if open_risk(s) + new_risk > room / 2:
+            sys.exit(f"refused: open+pending risk ${open_risk(s):,.0f} + this ${new_risk:,.0f} would exceed half the room "
+                     f"above the drawdown floor (${room / 2:,.0f}); cancel something or size down with --risk-pct")
         if args.book == "scalp":
             if not args.note:
                 sys.exit("a scalp needs --note: the thesis and what invalidates it")

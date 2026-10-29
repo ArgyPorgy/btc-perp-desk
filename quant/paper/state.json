@@ -1,7 +1,7 @@
 {
   "start_equity": 10000.0,
   "equity": 10187.683118872548,
-  "risk_pct": 1.0,
+  "risk_pct": 0.5,
   "orders": [
     {
       "id": "X1",
@@ -16,7 +16,7 @@
       "target_r": 2.0,
       "oco": null,
       "note": "HYPE repricing on ICE/NYSE Hyperliquid-futures news: +11% with OI +9.8% 24h, funding only 0.01%, 5m taker delta +331k. Buy the first pullback into the 5m bull FVG top (85.5); invalid below 83.9 (gap filled = momentum failed). Untested, discretionary.",
-      "risk_pct": 0.5,
+      "risk_pct": 0.35,
       "max_hold_h": 24,
       "created_ms": 1793277000000,
       "arm": null,
@@ -35,7 +35,7 @@
       "target_r": null,
       "oco": null,
       "note": "Re-placed X3 with confluence (user: weigh the whole picture, not only the backtest). Intraday trend down (below 5m/15m/1h EMAs), 1h taker delta -1.3k BTC, short gamma below the 80.2k flip, shorts adding (OI +4%, low funding). 15m close < 79,790 breaks the post-data range; stop 80,150 above the 79.95-80.18k bear FVG; target 79,250 ahead of the 79,179 swing-long zone. Raw breakout backtest -0.22R (n=1,526): accepted against the confluence, 0.5% risk.",
-      "risk_pct": 0.5,
+      "risk_pct": 0.35,
       "max_hold_h": 24,
       "created_ms": 1793277000000,
       "arm": null,
