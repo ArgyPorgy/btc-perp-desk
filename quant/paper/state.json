@@ -1,8 +1,28 @@
 {
   "start_equity": 10000.0,
-  "equity": 10187.683118872548,
+  "equity": 10149.616840898881,
   "risk_pct": 0.5,
-  "orders": [],
+  "orders": [
+    {
+      "id": "X9",
+      "symbol": "HYPEUSDT",
+      "book": "scalp",
+      "side": "long",
+      "trigger": "close_above",
+      "tf": "15m",
+      "level": 95.4,
+      "stop": 92.9,
+      "target": 99.0,
+      "target_r": null,
+      "oco": null,
+      "note": "Re-entry plan after X8's stop: only if HYPE RECLAIMS the 95.27 ATH on a 15m close > 95.4 (the failed-ATH read is then wrong). Stop 92.9 under today's 93.05 sweep low (not inside the range this time). Target 99.0 (~1.45R from 95.4, more if the trigger closes lower): price discovery above 97.1. Trend/flow still up: 1h delta +2.0M, funding 0.0038% (not crowded).",
+      "risk_pct": 0.35,
+      "max_hold_h": 24,
+      "created_ms": 1793297634319.769,
+      "arm": null,
+      "expires_ms": 1793340000000
+    }
+  ],
   "positions": [
     {
       "id": "X7",
@@ -16,20 +36,6 @@
       "risk_pct": 0.35,
       "opened_ms": 1793293500000,
       "note": "ETH 2,365 broke out of the 2,309-2,330 range with volume (15m delta +74k), reclaimed the 1h EMA200 (2,362) and holds above the daily EMA200 (2,319); BTC strong (+1.4%). Buy the pullback into the 5m/15m bull FVG 2,342-2,356; stop 2,326 back inside the old range under weekly VWAP 2,331 (= failed breakout). Target 2,398 under the 2,400 gamma wall (call=put) / 1h bear OB 2,377-2,417 (2R).",
-      "max_hold_h": 24
-    },
-    {
-      "id": "X8",
-      "symbol": "HYPEUSDT",
-      "book": "scalp",
-      "side": "long",
-      "entry": 95.3,
-      "stop": 93.9,
-      "target": 98.1,
-      "qty": 25.469207797181525,
-      "risk_pct": 0.35,
-      "opened_ms": 1793292000000,
-      "note": "Replaces X6 (92.2 never filled; its 95.0 target is now below price). HYPE broke its 95.27 all-time high to 96.9 (price discovery, no overhead supply), OI +16.6% 24h with funding easing to 0.006% (not crowded), 1h delta +1.6M. Buy the retest of the old ATH 95.27 as support; stop 93.9 under the 4h bear-OB-turned-support 93.8 (losing it = failed ATH break). Target 98.1 (2R).",
       "max_hold_h": 24
     }
   ],
@@ -49,6 +55,25 @@
       "reason": "target",
       "pnl": 187.68311887254907,
       "R": 1.8768311887254907
+    },
+    {
+      "id": "X8",
+      "symbol": "HYPEUSDT",
+      "book": "scalp",
+      "side": "long",
+      "entry": 95.3,
+      "stop": 93.9,
+      "target": 98.1,
+      "qty": 25.469207797181525,
+      "risk_pct": 0.35,
+      "opened_ms": 1793292000000,
+      "note": "Replaces X6 (92.2 never filled; its 95.0 target is now below price). HYPE broke its 95.27 all-time high to 96.9 (price discovery, no overhead supply), OI +16.6% 24h with funding easing to 0.006% (not crowded), 1h delta +1.6M. Buy the retest of the old ATH 95.27 as support; stop 93.9 under the 4h bear-OB-turned-support 93.8 (losing it = failed ATH break). Target 98.1 (2R).",
+      "max_hold_h": 24,
+      "exit": 93.9,
+      "closed_ms": 1793296200000,
+      "reason": "stop",
+      "pnl": -38.06627797366729,
+      "R": -1.067571428571429
     }
   ],
   "shadow": [

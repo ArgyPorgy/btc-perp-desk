@@ -302,3 +302,10 @@
 - ETH 2,350 (X7 0R): sitting in the 2,342-2,356 bull FVG it was bought in; 15m delta +21.8k, 5m -4.7k; call wall 2,360 just above, target 2,398 beyond it. HOLD, stop 2,326 (back inside the old range) unchanged. Risk: BTC.
 - BTC 81,026: rejected 81,944 (82k call wall), now on 81,000 where the call and put walls sit (7d gamma +40M = pin). 1h EMA200 80,947 right below. NO TRADE: a BTC short would bet against the two open longs, and a long buys a pin. Watch: a 1h close < 80,947 weakens the ETH thesis (act on X7's stop, don't pre-empt).
 - HOOD: watch only.
+
+## 2026-10-29 18:13 UTC — price 80,774
+- 18:12 hourly: X8 HYPE STOPPED 93.90 at 17:50 (-1.07R, -$38); equity $10,149.62, room $267.6. Wick to 93.05 then back to 94.3: the stop was inside 1h noise (lesson logged).
+- X7 ETH 2,337.6 (-0.51R): 5m/15m delta -24k/-50k as BTC slipped under its 1h EMA200; still above the old range top 2,330 / weekly VWAP 2,333, so the breakout isn't failed. HOLD, stop 2,326 unchanged (never widen, no pre-emptive cut).
+- HYPE 94.0: lost the ATH, now inside 93-97. X9 plan: LONG only on a 15m close > 95.4 (ATH reclaim), stop 92.9 under the sweep low, target 99.0. No blind re-entry.
+- BTC 80,812: lost the 81k pin and the 1h EMA200 (80,944); 15m delta -2.1k; gamma flip 80,411 below. NO TRADE: a short would double down against X7 (same direction risk), a long has no trigger. Watch 80,411 (below it gamma turns amplifying).
+- HOOD: watch only.

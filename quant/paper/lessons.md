@@ -38,6 +38,7 @@ the rule goes into **Current rules** too. Skipped or cancelled plan trades are a
 | 2026-10-29 | Sized risk at 1% swing / 0.5% scalp before checking the account's 3% max drawdown; then assumed a trailing drawdown. Propr's is static + daily. | none (caught before a loss) | Rule 1. Rules now coded in `paper_desk.py`. |
 | 2026-10-29 | X1 (HYPE limit 85.5) chose a target (88.7) price had already reached before the entry could fill. | none (never filled) | Rule 8. |
 | 2026-10-29 | HYPE news trend 79 -> 97 (+22%): three pullback limits (X1 85.5, X5 88.9, X6 92.2) each set 3-6% under price, each left behind; moved up only after price ran. | missed most of the move (no fill, no loss) | In a news-driven trend (OI rising, funding normal, strong taker delta) pullbacks are shallow: set entries at the nearest structure (last 5m/15m breakout level, 15m EMA20), or split: half at the shallow level, half deeper. |
+| 2026-10-29 17:50 | **X8** HYPE long 95.30 stopped at 93.90 (−1.07R, −$38). Low 93.67 in the 17:45 candle, then 93.05, back to 94.3 within 15 min. The stop was 1.5% away while HYPE's 1h ATR was 1.8%: a noise stop for a trade meant to last hours, placed at an obvious level (just under 93.8) where stops cluster. | −$38 | Scalp stops go beyond the nearest swing low AND at least ~1x the 1h ATR from entry (size down to keep $ risk); never just under an obvious level. |
 
 ## Shadow trades (skipped or cancelled plan trades)
 | ID | Trade | Why skipped | Result |
