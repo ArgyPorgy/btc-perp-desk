@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 
 // Behind an HTTPS proxy (the cloud desk runs), Node's fetch only uses it with NODE_USE_ENV_PROXY=1: re-run with it set.
 if ((process.env.HTTPS_PROXY || process.env.https_proxy) && !process.env.NODE_USE_ENV_PROXY) {
-  const r = spawnSync(process.execPath, process.argv.slice(1), { stdio: 'inherit', env: { ...process.env, NODE_USE_ENV_PROXY: '1' } });
+  const r = spawnSync(process.execPath, process.argv.slice(1), { stdio: 'inherit', env: { ...process.env, NODE_USE_ENV_PROXY: '1', NODE_NO_WARNINGS: '1' } });
   process.exit(r.status ?? 1);
 }
 

@@ -199,3 +199,10 @@
 - News: Fed held (split vote, two dissents wanted a hike), Warsh: fewer meetings from next year, 'information-rich period' ahead; BTC +0.8% in the hour after, then gave it back (-0.8% from the 45m-ago headlines). Core PCE + GDP Thu 12:30.
 - Scan: no signal. Daily regime BULL, so the new B20/R10 shorts are off; S10/S20 lows at 79,179 (3.0% away).
 - DECISION: NO TRADE. Desk now trades both directions: B20/R10 shorts added (bear regime only), see research_log 2026-10-28.
+
+## 2026-10-29 00:06 UTC — price 81,299
+- 00:05 UTC check: flat. BTC 81,246; 1h above EMA50/200 (80.79k/81.06k), 12-bar delta +2.4k BTC; 4h reclaimed EMA50 81.08k, still under EMA200 81.65k; 1d above EMA50 80.8k / EMA200 76.45k (bull regime). Range 79.3-81.8k intact.
+- Positioning: funding 0.010%/8h, OI -1.75% 24h (OKX), basis -4bp; gamma +61M/1% (7d), walls 81k/82k, flip 80.35k: pinned, low-vol tape.
+- News: post-FOMC digestion (split hold, two hike dissents), Hormuz/Iran escort headlines with no BTC reaction. Core PCE + GDP today 12:30 UTC.
+- Scan: no signal. Shorts off (bull regime); S10/S20 trigger zone 79,179 (2.7% below). DECISION: NO TRADE. Event rule: no new entries 10:30-12:30 UTC.
+- Desk: snapshot.js no longer prints Node's proxy-agent warning.
