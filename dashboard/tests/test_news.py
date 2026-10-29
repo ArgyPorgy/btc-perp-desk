@@ -32,6 +32,7 @@ CASES = [
     ("Cass County Judge sorry to see Swift and Sure Sanctions Probation Program end", "gn_trade", 0, None),
     ("Robinhood shares sink after earnings miss on crypto revenue", "gn_hood", 2, "HOOD"),
     ("Ether ETF inflows hit record as ETH rallies", "gn_eth", 2, "ETF FLOWS"),
+    ("NYSE owner takes steps to bring Hyperliquid perpetual futures to U.S.", "coindesk", 2, "HYPE"),
     ("Bitcoin buy-and-hold underperforms trend following in 10-year backtest", "coindesk", 1, None),
 ]
 

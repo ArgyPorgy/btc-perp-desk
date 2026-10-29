@@ -1,7 +1,7 @@
 """Binance USD-M futures data, with a fallback for machines where fapi.binance.com is geo-blocked (HTTP 451).
 
 The desk tools (Python and Node) talk to Binance's futures REST API. Some hosts, such as the cloud box the scheduled
-desk runs use, get 451 from fapi.binance.com. There, this file runs a small local server on 127.0.0.1:8787 that
+desk runs use, get 451 from fapi.binance.com. There, this file runs a small local server on 127.0.0.1:8797 that
 answers the same endpoints in Binance's format:
   - complete days: Binance's own archive (data.binance.vision): exact perp klines incl. taker-buy volume, funding.
   - today / live:  OKX's USDT perp (BTC-USDT-SWAP etc.): candles + taker volume, mark/index, funding, open interest.
@@ -30,7 +30,7 @@ from pathlib import Path
 REAL = "https://fapi.binance.com"
 VISION = "https://data.binance.vision/data/futures/um"
 OKX = "https://www.okx.com/api/v5"
-PORT = int(os.environ.get("FAPI_SHIM_PORT", 8787))
+PORT = int(os.environ.get("FAPI_SHIM_PORT", 8797))  # not 8787: that is the dashboard server
 LOCAL = f"http://127.0.0.1:{PORT}"
 DATA = Path(__file__).parent / "data"
 ARCHIVE = DATA / "vision"
@@ -114,6 +114,15 @@ def base():
 
 
 # ───────── Binance archive (complete days)
+def _recent(path):
+    """Is this daily archive file for one of the last 3 days (maybe not published yet)?"""
+    try:
+        d = datetime.strptime(path[-14:-4], "%Y-%m-%d").date()
+    except ValueError:
+        return False
+    return (datetime.now(timezone.utc).date() - d).days <= 3
+
+
 def _vision_csv(path):
     """Rows of an archive zip (cached forever once downloaded), or None if not published."""
     f = ARCHIVE / path.replace(".zip", ".csv")
@@ -124,7 +133,7 @@ def _vision_csv(path):
             body = http(f"{VISION}/{path}", raw=True)
         except urllib.error.HTTPError as e:
             if e.code == 404:
-                if path.startswith("monthly/"):  # a past month that will never be published (dailies cover it)
+                if path.startswith("monthly/") or not _recent(path):  # never coming (dailies cover a missing month)
                     f.parent.mkdir(parents=True, exist_ok=True)
                     f.with_suffix(".404").touch()
                 return None
@@ -161,6 +170,10 @@ def archive_klines(sym, interval, a_ms, b_ms):
             rows = _vision_csv(f"monthly/klines/{sym}/{interval}/{sym}-{interval}-{ym}.zip")
             if rows is not None:
                 out += rows
+                month_done.add(ym)
+                continue
+            next_month = (d.replace(day=28) + timedelta(days=4)).replace(day=1)
+            if (today - next_month).days > 7:  # long published and still missing: not listed yet (no dailies either)
                 month_done.add(ym)
                 continue
         rows = _vision_csv(f"daily/klines/{sym}/{interval}/{sym}-{interval}-{d}.zip")
@@ -244,6 +257,17 @@ def okx_taker_buy(sym, a_ms):
 
 
 def klines(sym, interval, limit=500, start=None, end=None):
+    """Binance /fapi/v1/klines semantics. With startTime before the market listed, Binance answers from the first
+    candle; here we step forward a window at a time until data appears."""
+    out = _klines(sym, interval, limit, start, end)
+    now = time.time() * 1000
+    while not out and start is not None and start < now and end is None:
+        start += max(1, min(int(limit), 1500)) * MS[interval]
+        out = _klines(sym, interval, limit, start, end)
+    return out
+
+
+def _klines(sym, interval, limit=500, start=None, end=None):
     step = MS[interval]
     now = int(time.time() * 1000)
     limit = max(1, min(int(limit), 1500))

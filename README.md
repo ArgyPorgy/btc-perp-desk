@@ -12,7 +12,7 @@ auditable journal, and the quant research behind every rule. Paper money only. N
 | root `*.py` | Stake Mines / Crash provably-fair verifiers and simulations | `python3 verifier.py` |
 
 ## Data sources and keys
-The dashboard and the desk need **no API keys**: Binance USDⓈ-M futures and Deribit public market data, plus public RSS
+The dashboard and the desk need **no API keys**: Binance USDⓈ-M futures (BTC, ETH, HYPE), Nasdaq candles for HOOD from Yahoo Finance and Deribit public market data, plus public RSS
 feeds and the ForexFactory calendar for news. The launcher is the only part that uses keys; they go in `launcher/.env`
 (template: `launcher/.env.example`), which git ignores.
 

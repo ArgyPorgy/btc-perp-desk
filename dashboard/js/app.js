@@ -1,5 +1,5 @@
-// Perp Desk: live Binance USDⓈ-M data (BTC, ETH, HOOD) -> charts, order flow and context, all computed locally.
-import { MARKETS, MARKET, SYMBOL, REST, WS_MARKET, WS_PUBLIC, DERIBIT, TIMEFRAMES, OI_PERIOD, HEATMAP_EVERY_SEC } from './config.js';
+// Perp Desk: live Binance USDⓈ-M data (BTC, ETH, HYPE) and Nasdaq HOOD -> charts, order flow and context, computed locally.
+import { MARKETS, MARKET, SYMBOL, STOCK, REST, WS_MARKET, WS_PUBLIC, DERIBIT, TIMEFRAMES, OI_PERIOD, HEATMAP_EVERY_SEC } from './config.js';
 import { DAY, dayKey, weekKey, ema, atr, vwapBands, deltaCvd, structure, fairValueGaps, consolidation,
   volumeProfile, dailyAuction, scorecard, fmtQty } from './indicators.js';
 import { OrderBook, Heatmap } from './book.js';
@@ -24,7 +24,8 @@ const settings = (() => { try { return { ...DEFAULTS, ...JSON.parse(localStorage
 const save = () => { try { localStorage.setItem('btc-perp-desk', JSON.stringify(settings)); } catch { /* storage unavailable */ } };
 
 // ───────── state
-const S = { tf: settings.tf, tfSec: TIMEFRAMES[settings.tf], bars: [], last: null, mark: null, index: null, funding: null,
+const startTf = TIMEFRAMES[settings.tf] ? settings.tf : '1h'; // stocks have no 4h
+const S = { tf: startTf, tfSec: TIMEFRAMES[startTf], bars: [], stock: null, stockAt: 0, last: null, mark: null, index: null, funding: null,
   nextFunding: null, oiNow: null, oiHist: [], oiAligned: [], gex: null, liqs: [], tape: [], health: { market: 0, public: 0 },
   restDiff: null, ind: null };
 
@@ -111,7 +112,15 @@ const fmtP = (x, d = MARKET.dp) => (x == null || !isFinite(x) ? '—' : (+x).toL
 const series = (arr, f = (x) => x) => S.bars.map((b, i) => (arr[i] == null || !isFinite(f(arr[i])) ? { time: b.time } : { time: b.time, value: f(arr[i]) }));
 
 // ───────── data loading
+async function loadStock(tf) { // Nasdaq candles via server.py (Yahoo Finance), Binance kline layout
+  const r = await getJSON(`api/stock?symbol=${SYMBOL}&tf=${tf}`);
+  if (r.error) throw new Error(r.error);
+  S.stock = r.meta; S.stockAt = Date.now();
+  return r.bars.map(toBar);
+}
+
 async function loadBars(tf) {
+  if (STOCK) return loadStock(tf);
   const need = tf === '1m' ? 3000 : 1500;
   let bars = [], end = null;
   while (bars.length < need) {
@@ -126,6 +135,7 @@ async function loadBars(tf) {
 }
 
 async function loadOiHistory(tf) {
+  if (STOCK) { S.oiHist = []; return; }
   try {
     const h = await getJSON(`${REST}/futures/data/openInterestHist?symbol=${SYMBOL}&period=${OI_PERIOD[tf]}&limit=500`);
     S.oiHist = h.map((x) => ({ t: x.timestamp / 1000, oi: +x.sumOpenInterest }));
@@ -159,10 +169,22 @@ function socket(url, onMsg, key, onReopen) {
 
 const book = new OrderBook(() => getJSON(`${REST}/fapi/v1/depth?symbol=${SYMBOL}&limit=1000`));
 const heat = new Heatmap(HEATMAP_EVERY_SEC);
-socket(`${WS_PUBLIC}${sym}@depth@100ms`, (m) => book.onEvent(m.data), 'public');
+if (!STOCK) socket(`${WS_PUBLIC}${sym}@depth@100ms`, (m) => book.onEvent(m.data), 'public');
 
-let marketWs = null;
+let marketWs = null, stockTimer = null;
 function openMarket() {
+  if (STOCK) { // no stream for Nasdaq: poll the server (it caches Yahoo for 10s)
+    clearInterval(stockTimer);
+    stockTimer = setInterval(async () => {
+      try {
+        const tf = S.tf, bars = await loadStock(tf);
+        if (tf !== S.tf || !bars.length) return;
+        S.bars = bars; S.last = bars[bars.length - 1].close;
+        setAllData();
+      } catch (e) { console.warn('stock poll', e); }
+    }, 15000);
+    return;
+  }
   if (marketWs) marketWs.close();
   marketWs = socket(`${WS_MARKET}${sym}@kline_${S.tf}/${sym}@aggTrade/${sym}@markPrice@1s/${sym}@forceOrder`, onMarket, 'market', gapFill);
 }
@@ -207,6 +229,7 @@ function onTrade(d) {
 }
 
 async function startFootprint() {
+  if (STOCK) return;
   fp = new Footprint(settings.fpTf, 40, MARKET.fpBase); fpReady = false; fpBuffer = []; fpMaxId = 0;
   const now = Date.now();
   const startMs = Math.floor((now - Math.min(20 * 60e3, 30 * settings.fpTf * 1e3)) / (settings.fpTf * 1e3)) * settings.fpTf * 1e3;
@@ -329,7 +352,7 @@ function renderScore() {
     cvdChange: ind.dc.delta.slice(i - n + 1).reduce((a, x) => a + x, 0), flowBars: n, priceChange: last.close - b[i - n].close,
     oiChangePct: oiA[i] != null && oiA[i - n] != null ? (oiA[i] - oiA[i - n]) / oiA[i - n] * 100 : null,
     funding: S.funding, bookImbalance: book.synced ? book.imbalance(0.005) : null,
-    gex: settings.gamma ? S.gex : null, consState: ind.cons.state, unit: MARKET.unit, noOptions: !MARKET.options,
+    gex: settings.gamma ? S.gex : null, consState: ind.cons.state, unit: MARKET.unit, noOptions: !MARKET.options, stock: STOCK,
   });
   $('score').innerHTML = sc.rows.map((r) => `<tr><td>${r.name}</td><td class="${r.score > 0 ? 'up' : r.score < 0 ? 'down' : 'muted'}">${r.score > 0 ? '▲' : r.score < 0 ? '▼' : '•'}</td><td class="${r.score > 0 ? 'up' : r.score < 0 ? 'down' : ''}">${r.text}</td></tr>`).join('');
   $('net').textContent = `net ${sc.net > 0 ? '+' : ''}${sc.net}`;
@@ -386,6 +409,19 @@ function renderLiqs() {
 function renderHeader() {
   $('last').textContent = fmtP(S.last);
   $('last').className = S.bars.length && S.last >= S.bars[S.bars.length - 1].open ? 'up' : 'down';
+  if (STOCK) {
+    const m = S.stock, age = (Date.now() - S.stockAt) / 1000;
+    if (m?.prevClose) {
+      const c = (S.last / m.prevClose - 1) * 100;
+      $('dayChg').textContent = `${c >= 0 ? '+' : ''}${c.toFixed(2)}%`;
+      $('dayChg').className = c >= 0 ? 'up' : 'down';
+      $('prevClose').textContent = `prev close ${fmtP(m.prevClose)}`;
+    }
+    if (m) $('session').textContent = m.open ? 'open' : 'closed';
+    $('health').className = `health ${age < 40 ? 'ok' : age > 120 ? 'bad' : 'warn'}`;
+    $('health').querySelector('span').textContent = `Nasdaq ${m?.open ? 'open' : 'closed'} · Yahoo · ${Math.round(age)}s ago`;
+    return;
+  }
   $('mark').textContent = fmtP(S.mark);
   $('index').textContent = fmtP(S.index);
   if (S.funding != null) {
@@ -500,6 +536,7 @@ function buildTabs() {
 // ───────── controls
 function buildControls() {
   document.title = `${MARKET.label} · Perp Desk`;
+  document.body.classList.toggle('stock', STOCK); // hides the perp-only panels (funding, OI, footprint, tape, liqs)
   $('symTabs').innerHTML = Object.entries(MARKETS).map(([s, m]) => `<button data-s="${s}" class="${s === SYMBOL ? 'on' : ''}" title="${m.name} · ${m.venue}">${m.label}</button>`).join('')
     + `<small>${MARKET.name} · ${MARKET.venue}</small>`;
   $('symTabs').onclick = (e) => {
@@ -555,6 +592,7 @@ setInterval(() => { // heatmap sampling
   if (settings.heatmap) heatP.set(heat.cols, S.tfSec);
 }, HEATMAP_EVERY_SEC * 1000);
 async function refreshOi() { // live open interest + the value one hour ago (5m history)
+  if (STOCK) return;
   try {
     S.oiNow = +(await getJSON(`${REST}/fapi/v1/openInterest?symbol=${SYMBOL}`)).openInterest;
     const h = await getJSON(`${REST}/futures/data/openInterestHist?symbol=${SYMBOL}&period=5m&limit=13`);
@@ -564,6 +602,7 @@ async function refreshOi() { // live open interest + the value one hour ago (5m 
 }
 setInterval(refreshOi, 15000);
 setInterval(async () => { // independent REST check of the streamed price
+  if (STOCK) return;
   try {
     const p = +(await getJSON(`${REST}/fapi/v1/ticker/price?symbol=${SYMBOL}`)).price;
     if (S.last) S.restDiff = Math.abs(p - S.last) / p;
@@ -581,7 +620,7 @@ buildControls();
 buildTabs();
 news.start();
 (async () => {
-  try {
+  if (!STOCK) try {
     await refreshOi();
     const pi = await getJSON(`${REST}/fapi/v1/premiumIndex?symbol=${SYMBOL}`);
     S.mark = +pi.markPrice; S.index = +pi.indexPrice; S.funding = +pi.lastFundingRate; S.nextFunding = pi.nextFundingTime;

@@ -6,6 +6,7 @@
 Endpoints (local only):
   /api/news?hours=48&min=1   tagged, de-duplicated headlines with BTC's move since each one
   /api/calendar              high-impact economic events (ForexFactory weekly calendar, cached 1h)
+  /api/stock?symbol=HOOD&tf=1h   Nasdaq candles (Yahoo Finance, Binance kline layout) for the stock markets
   /api/health                feed status
 Every feed is polled on its own interval (60-300s) in a background thread; see news.py for sources and rules.
 """
@@ -20,11 +21,13 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 import news
+import stocks
 
 HERE = Path(__file__).parent
 store = news.NewsStore()
 state = {"mins": {}, "mins_at": 0, "polls": 0, "started": time.time()}
-SYMBOLS = ("BTCUSDT", "ETHUSDT", "HOODUSDT")  # markets whose reaction to each headline we measure
+SYMBOLS = ("BTCUSDT", "ETHUSDT", "HYPEUSDT")  # perp markets whose reaction to each headline we measure
+STOCKS = ("HOOD",)  # Nasdaq markets (Yahoo Finance)
 other_mins = {}  # symbol -> (fetched_at, minutes), fetched on demand
 
 
@@ -72,6 +75,14 @@ class Handler(SimpleHTTPRequestHandler):
             sym = q.get("sym", ["BTCUSDT"])[0].upper()
             items = news.annotate(store.query(hours, int(q.get("min", ["1"])[0])), self.minutes(sym))
             return self.send_json({"now": time.time(), "items": items[:600], "feeds": self.feed_status()})
+        if u.path == "/api/stock":
+            sym, tf = q.get("symbol", ["HOOD"])[0].upper(), q.get("tf", ["1h"])[0]
+            if sym not in STOCKS or tf not in stocks.RANGE:
+                return self.send_json({"error": f"unsupported {sym} {tf}"})
+            try:
+                return self.send_json(stocks.chart(sym, tf))
+            except Exception as e:  # noqa: BLE001 - Yahoo down or rate-limited: tell the page, keep serving
+                return self.send_json({"error": f"{type(e).__name__}: {e}"})
         if u.path == "/api/calendar":
             return self.send_json(news.calendar())
         if u.path == "/api/health":
@@ -80,12 +91,12 @@ class Handler(SimpleHTTPRequestHandler):
 
     @staticmethod
     def minutes(sym):
-        if sym == "BTCUSDT" or sym not in SYMBOLS:
+        if sym == "BTCUSDT" or sym not in SYMBOLS + STOCKS:
             return state["mins"]
         at, mins = other_mins.get(sym, (0, {}))
         if time.time() - at > 60:
             try:
-                mins = news.btc_minutes(sym)
+                mins = stocks.minutes(sym) if sym in STOCKS else news.btc_minutes(sym)
                 other_mins[sym] = (time.time(), mins)
             except Exception as e:
                 print(f"{sym} 1m candles unavailable: {e}", file=sys.stderr)

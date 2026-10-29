@@ -62,6 +62,7 @@ FEEDS = [
     ("gn_markets", "Google News", gnews('"Wall Street" OR "stock market" OR "Treasury yields" OR "dollar index" OR "oil prices" when:1d'), "markets", 0, 2, 300),
     ("gn_hood", "Google News", gnews('Robinhood OR "HOOD stock" OR "Vlad Tenev" when:1d'), "markets", 1, 1, 300),
     ("gn_eth", "Google News", gnews('ethereum OR "ether ETF" OR "ETH price" when:1d'), "crypto", 1, 1, 300),
+    ("gn_hype", "Google News", gnews('Hyperliquid OR "HYPE token" OR "HYPE price" when:1d'), "crypto", 1, 1, 300),
     ("gn_crypto", "Google News", gnews('bitcoin OR "crypto market" OR "bitcoin ETF" OR stablecoin OR "crypto bill" when:1d'), "crypto", 1, 1, 300),
     ("bbc_world", "BBC", "https://feeds.bbci.co.uk/news/world/rss.xml", "geo", 0, 2, 180),
     ("bbc_business", "BBC", "https://feeds.bbci.co.uk/news/business/rss.xml", "markets", 0, 2, 300),
@@ -148,6 +149,10 @@ RULES = [
                                                      r"stock|shares|surg\w*|plung\w*|sink\w*|tumbl\w*|jump\w*|rall\w*|record|downgrad\w*|upgrad\w*|s&p)\b"], []),
     ("crypto", 2, "ETH", [r"\b(ethereum|ether|eth)\b", r"\b(etfs?|upgrade|hard fork|staking|surg\w*|plung\w*|crash\w*|tumbl\w*|rall\w*|record|"
                                                          r"all-time high|liquidat\w+|inflows?|outflows?)\b"], []),
+    ("crypto", 2, "HYPE", [r"\b(hyperliquid|hype token|hype price|hypeusdt)\b",
+                           r"\b(etfs?|futures|perpetual|list\w*|launch\w*|exploit\w*|hack\w*|outage|halt\w*|unlock\w*|buyback\w*|"
+                           r"ice|nyse|cme|coinbase|binance|sec|cftc|surg\w*|plung\w*|crash\w*|tumbl\w*|rall\w*|record|all-time high|"
+                           r"liquidat\w+|inflows?|outflows?)\b"], []),
     ("crypto", 1, "BTC", [r"\b(bitcoin|btc)\b"], []),
     ("crypto", 1, "CRYPTO", [CRYPTO], []),
     ("markets", 3, "CRASH", [r"\b(stocks?|wall street|markets?|s&p|nasdaq|dow|equities)\b", r"\b(crash\w*|rout|meltdown|circuit breakers?|bloodbath|"

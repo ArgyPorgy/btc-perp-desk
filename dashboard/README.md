@@ -12,9 +12,11 @@ then open http://127.0.0.1:8787. Leave the tab open; it reconnects by itself aft
 `server.py` serves the page and runs the news feed; the old `python3 -m http.server` still shows the charts but no news.
 
 ## Markets
-Buttons at the top left switch between **BTC**, **ETH** and **HOOD** (Robinhood stock as Binance's 24/7 TradFi perp).
-Direct links: `http://127.0.0.1:8787/?s=ETHUSDT`, `?s=HOODUSDT`. Every panel works on all three; options gamma exists only for
-BTC and ETH (Deribit lists no HOOD options). Terminal snapshot for any of them: `node tools/snapshot.js HOODUSDT`.
+Buttons at the top left switch between **BTC**, **ETH**, **HYPE** (Binance USDⓈ-M perps) and **HOOD** (Robinhood on
+Nasdaq, regular session). Direct links: `http://127.0.0.1:8787/?s=ETHUSDT`, `?s=HYPEUSDT`, `?s=HOOD`. Every panel works on
+the perps; options gamma exists only for BTC and ETH (Deribit). HOOD's candles come from Yahoo Finance through `server.py`
+(so open the page through `server.py`), refreshed every 15s, with no funding, OI, delta, footprint, tape or liquidations,
+and no 4h timeframe. Terminal snapshot for any of them: `node tools/snapshot.js HYPEUSDT` (or `HOOD`).
 
 ## What's on screen
 | Panel | Source | Exact or approximate |

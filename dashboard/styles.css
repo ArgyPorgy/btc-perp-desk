@@ -87,3 +87,6 @@ aside { display: flex; flex-direction: column; gap: 8px; padding: 8px; overflow:
 .tab .liqs { max-height: none; flex: 1; } .tab h3 { margin-top: 2px; }
 code { background: var(--bg); padding: 0 4px; border-radius: 3px; }
 @media (max-width: 900px) { main { grid-template-columns: 1fr; height: auto; } .charts { height: 900px; } aside { overflow: visible; } }
+
+/* Nasdaq markets (body.stock): no perp panels; perps: no stock stats */
+body.stock .perp-only, body:not(.stock) .stock-only { display: none !important; }

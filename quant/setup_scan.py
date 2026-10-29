@@ -7,13 +7,16 @@ LONG (any daily trend):
 SHORT (only while the last closed DAILY candle is below the daily EMA200, "bear"):
   B20: first 4h close below the prior 20-day low -> short at the close, stop 0.1% over that 4h candle's high, 1.5R.
        33 events since 2020: +0.32R/trade (halves +0.26 / +0.39, t 1.6); +0.25 to +0.37R at every target 1-3R.
-  R10: after a 4h close below the prior 10-day low, the first 1h candle within 48h that trades back up to the broken
-       level and closes below it (no 1h close above it first) -> short, stop 0.3% over max(its high, level), 2R.
-       46 events: +0.41R/trade (halves +0.22 / +0.59, t 1.8). It fires on a 1h close: enter only if it is the last
-       closed 1h candle; while one is armed, check hourly.
+  R10 (IDEA, NOT TRADED since 2026-10-29): first 1h retest of a broken 10-day low within 48h, bear -> short, 2R.
+       +0.41R (t 1.8) in short_test.py, but +0.27R (t 1.2) when the regime is checked at the breakdown instead of the
+       retest (market_setups_test.py): too fragile. Still printed, for tracking.
   In daily UPtrends the same breakdowns are ~0R (they get bought), and failed-rally / crowded-funding shorts lose in
   every regime (-0.1 to -0.5R). Evidence: short_test.py, research_log.md 2026-10-28.
-Run: python3 setup_scan.py [days_back]   default 3 (also lists signals from the last N days, for context)
+  S10/S20 on 2020+ data only (Binance archive): +0.09R / +0.14R, t 0.9: positive but below the t >= 1.5 bar set for new
+  setups; kept, flagged marginal.
+OTHER PERPS: tested BTC-only. On ETH and HYPE none of these setups pass (market_setups_test.py, 2026-10-29): the scan
+  runs there for context only, and the desk does not trade those signals.
+Run: python3 setup_scan.py [days_back] [SYMBOL]   default 3 BTCUSDT (also lists signals from the last N days)
 """
 import json
 import sys
@@ -25,15 +28,20 @@ from fapi import base  # Binance futures REST, or the local fallback where it is
 REST = base()
 SETUPS = (("S20", 20, 2.0, "+0.17R/trade, n=90"), ("S10", 10, 1.5, "+0.14R/trade, n=153"))
 B20 = ("B20", 20, 1.5, "+0.32R/trade, n=33, bear only")
-R10 = ("R10", 10, 2.0, "+0.41R/trade, n=46, bear only")
+R10 = ("R10", 10, 2.0, "IDEA ONLY, not traded: fragile")
+SYM = (sys.argv[2] if len(sys.argv) > 2 else "BTCUSDT").upper()
 MIN_RISK = 0.004  # the backtest skipped stops closer than 0.4% (fees dominate)
 
 
 def klines(interval, limit):
-    with urllib.request.urlopen(f"{REST}/fapi/v1/klines?symbol=BTCUSDT&interval={interval}&limit={limit}", timeout=30) as r:
+    with urllib.request.urlopen(f"{REST}/fapi/v1/klines?symbol={SYM}&interval={interval}&limit={limit}", timeout=60) as r:
         k = json.load(r)
     now = time.time() * 1000
     return [{"t": x[0], "T": x[6], "h": float(x[2]), "l": float(x[3]), "c": float(x[4])} for x in k if x[6] < now]
+
+
+def px(x):  # price at a sensible precision for BTC (80,000) down to HYPE (80) and below
+    return f"{x:,.1f}" if x >= 1000 else f"{x:,.2f}" if x >= 10 else f"{x:,.4f}"
 
 
 def ema(xs, n):
@@ -89,21 +97,23 @@ def main():
                     break
             else:
                 if h1[-1]["T"] < b["T"] + 48 * 3600e3:
-                    print(f"R10 ARMED: broke {level:,.1f} at {stamp(b['T'] + 1)}; short a 1h retest that closes below it until {stamp(b['T'] + 1 + 48 * 3600e3)}. Check hourly.")
+                    print(f"R10 (idea, not traded) armed: broke {level:,.1f} at {stamp(b['T'] + 1)}, retest window until {stamp(b['T'] + 1 + 48 * 3600e3)}")
 
     last, close = fours[-1], fours[-1]["c"]
     bear = bear_at(time.time() * 1000)
     closed = [d["c"] for d in days]
-    print(f"last closed 4h candle: {stamp(last['T'] + 1)}  close {close:,.1f}  low {last['l']:,.1f}")
-    print(f"  daily regime: close {closed[-1]:,.1f} vs EMA200 {ema(closed, 200):,.1f} -> {'BEAR: B20/R10 shorts live' if bear else 'BULL: shorts off (breakdowns get bought), longs only'}")
+    if SYM != "BTCUSDT":
+        print(f"{SYM}: these setups are tested on BTC only and FAIL on ETH/HYPE (market_setups_test.py): context, not trades")
+    print(f"{SYM} last closed 4h candle: {stamp(last['T'] + 1)}  close {px(close)}  low {px(last['l'])}")
+    print(f"  daily regime: close {px(closed[-1])} vs EMA200 {px(ema(closed, 200))} -> {'BEAR: B20 shorts live' if bear else 'BULL: shorts off (breakdowns get bought), longs only'}")
     for name, nd, k, ev in SETUPS:
         lo = low_before(last["t"], nd)
-        print(f"  {name}: prior {nd}-day low {lo:,.1f} ({(close / lo - 1) * 100:+.2f}% away)")
+        print(f"  {name}: prior {nd}-day low {px(lo)} ({(close / lo - 1) * 100:+.2f}% away)")
     if not found:
         print(f"no setup signals in the last {back_days:g} days")
     for t, side, name, what, entry, stop, tgt, k, ev, fresh in sorted(found):
         print(f"{'SIGNAL NOW' if fresh else 'earlier   '} {name} at {stamp(t + 1)}: {what}"
-              f" -> {side} {entry:,.1f}, stop {stop:,.1f}, target {tgt:,.1f} ({k:g}R) [{ev}]")
+              f" -> {side} {px(entry)}, stop {px(stop)}, target {px(tgt)} ({k:g}R) [{ev}]")
 
 
 if __name__ == "__main__":

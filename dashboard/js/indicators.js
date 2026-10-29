@@ -209,6 +209,14 @@ export function scorecard(s) {
       : c > p.vah ? 'accepted above prior value' : c < p.val ? 'accepted below prior value' : 'balance: inside prior value';
     add('Auction', c > p.vah ? 1 : c < p.val ? -1 : 0, txt);
   }
+  if (!s.stock) addPerp(s, add);
+  add('Range', s.consState === 2 ? 0 : s.consState, s.consState === 2 ? 'consolidating' : s.consState === 1 ? 'volume breakout up'
+    : s.consState === -1 ? 'volume breakdown' : 'no active range');
+  return { rows, net: rows.reduce((a, r) => a + r.score, 0) };
+}
+
+function addPerp(s, add) { // flow and positioning rows: perps only (a stock has no taker split, OI, funding, book or options here)
+  const c = s.close;
   add('Delta (CVD)', Math.sign(s.cvdChange || 0), s.cvdChange == null ? 'n/a'
     : `${s.cvdChange > 0 ? 'net taker buying' : 'net taker selling'} ${fmtQty(s.cvdChange)} ${s.unit || 'BTC'} / ${s.flowBars} bars`
       + (s.priceChange > 0 && s.cvdChange < 0 ? ' — divergence' : s.priceChange < 0 && s.cvdChange > 0 ? ' — divergence' : ''));
@@ -224,9 +232,6 @@ export function scorecard(s) {
   if (s.noOptions) add('Gamma', 0, 'no listed options');
   else if (!s.gex) add('Gamma', 0, 'loading');
   else add('Gamma', 0, isFinite(s.gex.flip) ? (c > s.gex.flip ? 'above flip: moves tend to be damped' : 'below flip: moves tend to be amplified') : 'no flip in range');
-  add('Range', s.consState === 2 ? 0 : s.consState, s.consState === 2 ? 'consolidating' : s.consState === 1 ? 'volume breakout up'
-    : s.consState === -1 ? 'volume breakdown' : 'no active range');
-  return { rows, net: rows.reduce((a, r) => a + r.score, 0) };
 }
 
 export function fmtQty(x) {

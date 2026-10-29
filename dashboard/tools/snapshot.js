@@ -1,5 +1,5 @@
 // Multi-timeframe snapshot using the dashboard's own indicator code. Read-only.
-//   node tools/snapshot.js [BTCUSDT|ETHUSDT|HOODUSDT]   (default BTCUSDT)
+//   node tools/snapshot.js [BTCUSDT|ETHUSDT|HYPEUSDT|HOOD]   (default BTCUSDT; HOOD = Nasdaq via Yahoo, no positioning)
 import { DAY, dayKey, weekKey, ema, atr, vwapBands, deltaCvd, structure, fairValueGaps, consolidation, volumeProfile, dailyAuction } from '../js/indicators.js';
 import { fetchGex } from '../js/gex.js';
 import { execFileSync, spawnSync } from 'node:child_process';
@@ -11,24 +11,32 @@ if ((process.env.HTTPS_PROXY || process.env.https_proxy) && !process.env.NODE_US
   process.exit(r.status ?? 1);
 }
 
-// Binance futures REST, or the local fallback (quant/fapi.py) where fapi.binance.com is geo-blocked.
-const REST = process.env.FAPI || execFileSync('python3', [fileURLToPath(new URL('../../quant/fapi.py', import.meta.url)), 'base'], { stdio: ['ignore', 'pipe', 'inherit'] }).toString().trim();
 const SYM = (process.argv[2] || 'BTCUSDT').toUpperCase();
+const STOCK = !SYM.endsWith('USDT'); // a Nasdaq ticker
+// Binance futures REST, or the local fallback (quant/fapi.py) where fapi.binance.com is geo-blocked.
+const REST = STOCK ? null : process.env.FAPI || execFileSync('python3', [fileURLToPath(new URL('../../quant/fapi.py', import.meta.url)), 'base'], { stdio: ['ignore', 'pipe', 'inherit'] }).toString().trim();
 const UNIT = SYM.replace(/USDT$/, '');
 const OPTIONS = { BTCUSDT: 'BTC', ETHUSDT: 'ETH' }[SYM];
-const DP = UNIT === 'BTC' ? 0 : 2;
-const get = async (u) => (await fetch(u)).json();
-const bars = async (tf) => (await get(`${REST}/fapi/v1/klines?symbol=${SYM}&interval=${tf}&limit=1500`))
-  .map((k) => ({ time: k[0] / 1000, open: +k[1], high: +k[2], low: +k[3], close: +k[4], volume: +k[5], takerBuy: +k[9] }));
+const DP = UNIT === 'BTC' ? 0 : UNIT === 'HYPE' ? 3 : 2;
+const get = async (u) => (await fetch(u, { headers: { 'User-Agent': 'Mozilla/5.0 (btc-perp-desk)' } })).json();
+const YF = { '15m': ['15m', '60d'], '1h': ['60m', '730d'], '1d': ['1d', '10y'] };
+const stockBars = async (tf) => { // Yahoo Finance, regular session; no taker split, so delta reads 0
+  const r = (await get(`https://query1.finance.yahoo.com/v8/finance/chart/${SYM}?interval=${YF[tf][0]}&range=${YF[tf][1]}`)).chart.result[0];
+  const q = r.indicators.quote[0];
+  return r.timestamp.map((t, i) => ({ time: t, open: q.open[i], high: q.high[i], low: q.low[i], close: q.close[i], volume: q.volume[i] || 0, takerBuy: (q.volume[i] || 0) / 2 }))
+    .filter((b) => b.close != null && (tf === '1d' || b.volume > 0));
+};
+const bars = async (tf) => (STOCK ? stockBars(tf) : (await get(`${REST}/fapi/v1/klines?symbol=${SYM}&interval=${tf}&limit=1500`))
+  .map((k) => ({ time: k[0] / 1000, open: +k[1], high: +k[2], low: +k[3], close: +k[4], volume: +k[5], takerBuy: +k[9] })));
 const f = (x, d = DP) => (x == null || !isFinite(x) ? '—' : x.toLocaleString('en-US', { maximumFractionDigits: d, minimumFractionDigits: d }));
 const pct = (a, b) => `${((a / b - 1) * 100).toFixed(2)}%`;
 
-const [prem, oiNow, oiH, fund] = await Promise.all([
+const [prem, oiNow, oiH, fund] = STOCK ? [] : await Promise.all([
   get(`${REST}/fapi/v1/premiumIndex?symbol=${SYM}`), get(`${REST}/fapi/v1/openInterest?symbol=${SYM}`),
   get(`${REST}/futures/data/openInterestHist?symbol=${SYM}&period=1h&limit=168`), get(`${REST}/fapi/v1/fundingRate?symbol=${SYM}&limit=21`),
 ]);
 const out = {};
-for (const [tf, sec, swing] of [['1h', 3600, 20], ['4h', 14400, 20], ['1d', DAY, 10]]) {
+for (const [tf, sec, swing] of STOCK ? [['15m', 900, 20], ['1h', 3600, 20], ['1d', DAY, 10]] : [['1h', 3600, 20], ['4h', 14400, 20], ['1d', DAY, 10]]) {
   const b = await bars(tf);
   const n = b.length - 1, c = b[n].close;
   const e200 = ema(b.map((x) => x.close), 200)[n], e50 = ema(b.map((x) => x.close), 50)[n];
@@ -53,10 +61,11 @@ for (const [tf, sec, swing] of [['1h', 3600, 20], ['4h', 14400, 20], ['1d', DAY,
   console.log(`  weekly VWAP ${f(w.vwap[n])} (${c > w.vwap[n] ? 'above' : 'below'})${dv ? `   session VWAP ${f(dv.vwap[n])} [-1σ ${f(dv.dn1[n])}, +1σ ${f(dv.up1[n])}]` : ''}`);
   console.log(`  volume profile (300 bars): POC ${f(prof.poc)}  VAH ${f(prof.vah)}  VAL ${f(prof.val)}  -> ${c > prof.vah ? 'above value' : c < prof.val ? 'below value' : 'inside value'}`);
   if (auc.prior[n]) console.log(`  prior day: POC ${f(auc.prior[n].poc)} VAH ${f(auc.prior[n].vah)} VAL ${f(auc.prior[n].val)}`);
-  console.log(`  taker delta last ${k} bars: ${flow > 0 ? '+' : ''}${f(flow, 0)} ${UNIT}   consolidation: ${cons.state === 2 ? 'in range' : cons.state === 1 ? 'broke up w/ volume' : cons.state === -1 ? 'broke down w/ volume' : 'none'}`);
+  console.log(`  ${STOCK ? 'taker delta n/a (stock)' : `taker delta last ${k} bars: ${flow > 0 ? '+' : ''}${f(flow, 0)} ${UNIT}`}   consolidation: ${cons.state === 2 ? 'in range' : cons.state === 1 ? 'broke up w/ volume' : cons.state === -1 ? 'broke down w/ volume' : 'none'}`);
   console.log(`  order blocks: ${st.orderBlocks.map((o) => `${o.side > 0 ? 'bull' : 'bear'} ${f(o.bottom)}–${f(o.top)}`).join(', ') || 'none'}`);
   console.log(`  open FVGs: ${fv.map((g) => `${g.side > 0 ? 'bull' : 'bear'} ${f(g.bottom)}–${f(g.top)}`).join(', ') || 'none'}`);
 }
+if (STOCK) { console.log(`\n(${SYM} is a Nasdaq stock: regular-session candles from Yahoo; no funding, OI, taker delta or options here)`); process.exit(0); }
 const oi = oiH.map((x) => +x.sumOpenInterest);
 console.log(`\n=== positioning`);
 console.log(`  mark ${f(+prem.markPrice, DP + 1)} index ${f(+prem.indexPrice, DP + 1)} basis ${((+prem.markPrice / +prem.indexPrice - 1) * 1e4).toFixed(1)} bp`);

@@ -22,3 +22,10 @@ Newest first. Every change: date (UTC), what, why.
 - `tools/snapshot.js` takes a symbol: `node tools/snapshot.js ETHUSDT`.
 - News: Robinhood and Ethereum Google News searches, plus HOOD / ETH rules. The 15m/since reaction on each headline is measured in the market you're viewing. Tests 23/23.
 - News fetch: each feed now has a 30s cap on the whole body read, on top of the 12s per-socket timeout. Why: in the 07:00 UTC desk run, `news.py --hours 3` took over 5 minutes with 7 feeds failing (resets and handshake/read timeouts). A server that keeps sending bytes slowly never trips the per-socket timeout, which threatens the scheduled run. This does not bound DNS or connect hangs. Tests: news 23/23; indicators offline all ok, but the live section failed to connect to a Cloudflare-fronted API (network, unrelated).
+
+## 2026-10-29
+- **HYPE added; HOOD moved to Nasdaq.** Markets are now BTC / ETH / HYPE (Binance USDⓈ-M perps) and HOOD (Nasdaq, regular session). HOOD candles come from Yahoo Finance through `server.py` (`/api/stock`, new `stocks.py`), polled every 15s; the page hides what a stock doesn't have (funding, OI, taker delta/CVD, footprint, tape, liquidations, 4h) and shows day change, previous close and session open/closed instead. Old `?s=HOODUSDT` links open HOOD. Why: Robinhood trades on Nasdaq; the Binance TradFi perp is a thinner proxy.
+- `tools/snapshot.js HOOD` reads Nasdaq (15m/1h/1d), `HYPEUSDT` works like the other perps.
+- News: Hyperliquid Google News search and a HYPE rule. Why: "NYSE owner takes steps to bring Hyperliquid perpetual futures to U.S." (HYPE +9% that hour) scored impact 1. Tests 24/24. HYPE replaces HOODUSDT in the per-market headline reactions; HOOD reactions use Nasdaq 1m candles.
+- `quant/fapi.py` (the geo-block fallback) moved to port 8797, off the dashboard's 8787.
+

@@ -81,10 +81,23 @@ level within 48h (RT), and crowded longs (funding top 5% of 90 days + price up 5
   while the last daily close is below the daily EMA200 (76.4k today, so they are off now: a 79k break today is a
   bull-regime breakdown, ~0R). Standard 1% risk, like S10/S20.
 
+## 2026-10-29: Do the BTC setups carry over to ETH and HYPE? (`market_setups_test.py`)
+Same rules on each market's own Binance perp 1h history (ETH 2020-2026, 59.8k bars; HYPE since its 2025-05-30 listing, 12.4k bars):
+| setup | BTC | ETH | HYPE |
+|---|---|---|---|
+| S10 long 1.5R | +0.09R n=143 t 0.9 (halves +0.20 / −0.01) | −0.06R n=119 | −0.32R n=34 |
+| S20 long 2R | +0.14R n=85 t 0.9 | −0.28R n=70 | +0.03R n=21 |
+| B20 short 1.5R (bear) | **+0.32R n=35 t 1.6, PASS** | +0.21R n=39 t 1.0 | n=4 |
+| R10 short 2R (bear) | +0.27R n=44 t 1.2 | +0.26R n=40 t 1.1 (halves +0.73 / −0.21) | n=3 |
+- **Nothing passes on ETH or HYPE.** The low-sweep longs lose on both: the "dips below the low get bought" effect is a BTC thing. The desk does not trade these setups on ETH/HYPE; `setup_scan.py SYMBOL` shows them for context only.
+- **R10 is fragile.** Checking the bear regime at the breakdown (here) instead of at the retest (`short_test.py`) moves it from +0.41R t 1.8 to +0.27R t 1.2. A real edge shouldn't swing that much on a detail → **demoted to idea, not traded.** B20 holds in both versions (+0.32R).
+- **S10/S20 on 2020+ data** (the archive starts 2019-12-31) are +0.09R / +0.14R at t 0.9: positive, but they would not pass the t >= 1.5 bar if proposed today. Kept (grandfathered, and L1 worked), flagged marginal. Testing filters that might sharpen them is backlog #1.
+
 ## Backlog (highest expected value first)
-1. Post-release reaction trades: first 15m/1h candle after CPI/FOMC, fade vs follow, using calendar timestamps.
-2. Crowded-rally LONGS: CROWD shorts lost −0.54R at 2R (t −3.9), so test the long side: funding top 5% + up 5% in 72h → long, with OI change once we log it.
-3. Failed breakouts at prior-day VAH/VAL (auction failure) on 1h.
-4. Liquidation cascades: needs our own forceOrder history (start logging it).
-5. Session opens (Asia/London/NY) × weekly VWAP side.
-6. Breakout longs: 4h close above the prior 10/20-day high (short fades of highs tested −0.13 to −0.39R, so the breakout side may carry the edge).
+1. Sharpen S10/S20 (t 0.9 on 2020+): volume on the sweep candle, funding/OI state, distance swept, session.
+2. Post-release reaction trades: first 15m/1h candle after CPI/FOMC, fade vs follow, using calendar timestamps.
+3. Crowded-rally LONGS: CROWD shorts lost −0.54R at 2R (t −3.9), so test the long side: funding top 5% + up 5% in 72h → long, with OI change once we log it.
+4. Failed breakouts at prior-day VAH/VAL (auction failure) on 1h.
+5. Liquidation cascades: needs our own forceOrder history (start logging it).
+6. Session opens (Asia/London/NY) × weekly VWAP side.
+7. Breakout longs: 4h close above the prior 10/20-day high (short fades of highs tested −0.13 to −0.39R, so the breakout side may carry the edge).

@@ -10,10 +10,12 @@
 <header>
   <div class="sym" id="symTabs"></div>
   <div class="stat"><label>Last</label><b id="last">—</b></div>
-  <div class="stat"><label>Mark</label><b id="mark">—</b></div>
-  <div class="stat"><label>Index</label><b id="index">—</b></div>
-  <div class="stat"><label>Funding / 8h</label><b id="funding">—</b><small id="fundingIn"></small></div>
-  <div class="stat"><label>Open interest</label><b id="oi">—</b><small id="oiChg"></small></div>
+  <div class="stat stock-only"><label>Day</label><b id="dayChg">—</b><small id="prevClose"></small></div>
+  <div class="stat stock-only"><label>Session</label><b id="session">—</b></div>
+  <div class="stat perp-only"><label>Mark</label><b id="mark">—</b></div>
+  <div class="stat perp-only"><label>Index</label><b id="index">—</b></div>
+  <div class="stat perp-only"><label>Funding / 8h</label><b id="funding">—</b><small id="fundingIn"></small></div>
+  <div class="stat perp-only"><label>Open interest</label><b id="oi">—</b><small id="oiChg"></small></div>
   <div class="stat next"><label>Next US catalyst</label><b id="nextEvent">—</b></div>
   <div class="tfs" id="tfs"></div>
   <button id="settingsBtn" title="Layers & settings">Layers ▾</button>
@@ -25,17 +27,17 @@
 <main>
   <section class="charts">
     <div id="chartMain" class="chart main"><div id="toast" class="toast hidden" title="click to open"></div></div>
-    <div class="pane-label">Delta (bars) &amp; CVD (line, resets 00:00 UTC) — exact Binance taker volume</div>
-    <div id="chartCvd" class="chart cvd"></div>
-    <div class="pane-label">Open interest (<span class="unit">BTC</span>)</div>
-    <div id="chartOi" class="chart oi"></div>
-    <div class="pane-label fp-head">
+    <div class="pane-label perp-only">Delta (bars) &amp; CVD (line, resets 00:00 UTC) — exact Binance taker volume</div>
+    <div id="chartCvd" class="chart cvd perp-only"></div>
+    <div class="pane-label perp-only">Open interest (<span class="unit">BTC</span>)</div>
+    <div id="chartOi" class="chart oi perp-only"></div>
+    <div class="pane-label fp-head perp-only">
       Footprint — aggressive sells × buys per price
       <select id="fpTf"><option value="60">1m</option><option value="300">5m</option><option value="900">15m</option></select>
       <select id="fpTick"></select>
       <span id="fpInfo" class="muted"></span>
     </div>
-    <canvas id="footprint" class="footprint"></canvas>
+    <canvas id="footprint" class="footprint perp-only"></canvas>
   </section>
 
   <aside>
@@ -49,8 +51,8 @@
         <button data-tab="news" class="on">News <span id="newsBadge" class="badge"></span></button>
         <button data-tab="calendar">Calendar</button>
         <button data-tab="gamma">Gamma</button>
-        <button data-tab="tape">Tape</button>
-        <button data-tab="liqs">Liqs</button>
+        <button data-tab="tape" class="perp-only">Tape</button>
+        <button data-tab="liqs" class="perp-only">Liqs</button>
       </div>
       <div class="tab" data-tab="news">
         <div class="news-filters" id="newsFilters"></div>
@@ -72,7 +74,7 @@
         <div id="liqs" class="liqs muted">none yet</div>
       </div>
     </div>
-    <p class="muted tiny attribution">Data: Binance USDⓈ-M futures (public API) · Deribit options · public news RSS + ForexFactory calendar via server.py. Charts: TradingView Lightweight Charts™ (Apache-2.0).</p>
+    <p class="muted tiny attribution">Data: Binance USDⓈ-M futures (public API) · Nasdaq stocks via Yahoo Finance · Deribit options · public news RSS + ForexFactory calendar via server.py. Charts: TradingView Lightweight Charts™ (Apache-2.0).</p>
   </aside>
 </main>
 
