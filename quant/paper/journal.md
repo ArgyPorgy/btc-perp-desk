@@ -309,3 +309,9 @@
 - HYPE 94.0: lost the ATH, now inside 93-97. X9 plan: LONG only on a 15m close > 95.4 (ATH reclaim), stop 92.9 under the sweep low, target 99.0. No blind re-entry.
 - BTC 80,812: lost the 81k pin and the 1h EMA200 (80,944); 15m delta -2.1k; gamma flip 80,411 below. NO TRADE: a short would double down against X7 (same direction risk), a long has no trigger. Watch 80,411 (below it gamma turns amplifying).
 - HOOD: watch only.
+
+## 2026-10-29 18:35 UTC — price 80,631
+- 18:35 UTC: X7 ETH STOPPED 2,326 (-1.10R, -$39.13). Equity $10,110.49 (+1.10%), room $228. Scalp book 0/2, -2.16R.
+- What went wrong: (1) STALE LIMIT: placed 15:40 in a BTC-led rally; filled 17:05 after the picture had flipped: BTC rejected the 82k call wall (81,944) and lost the 81k pin, ETH was rejected at 2,378.8 with 15m delta -18k. The order filled on weakness, not on a healthy pullback. (2) LEADER IGNORED: I wrote 'risk: BTC' at 17:16 and held; BTC then lost its 1h EMA200 and ETH lost the old range top 2,330 = breakout failed (a real thesis loss, not a wick: 18:30 close 2,328). (3) CORRELATION: X7 and X8 were two crypto longs filled 25 min apart; one market turn took both (-$77). (4) TARGET behind supply: 2,398 sat beyond the 2,360 call wall and the 2,365-2,391 bear OBs that had already rejected ETH.
+- What went right: stop honoured, loss exactly the planned 0.35% (+fees), daily floor never close.
+- Fixes: lessons.md rules 12-15 (stale limits expire after 2h and are re-checked every run; leader check for alt longs; correlated longs count as one bet; targets must clear supply). paper_desk.py: scalp limits now default to a 2h expiry.

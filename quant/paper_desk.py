@@ -366,7 +366,8 @@ def main():
              "max_hold_h": args.max_hold_h or (24 if args.book == "scalp" else 168),
              "created_ms": parse_time(args.created) if args.created else time.time() * 1000,
              "arm": {"trigger": args.arm_trigger, "level": args.arm_level} if args.arm_trigger else None,
-             "expires_ms": parse_time(args.expires) if args.expires else None}
+             "expires_ms": parse_time(args.expires) if args.expires else
+                           (time.time() * 1000 + 2 * 3600e3 if args.book == "scalp" and args.trigger == "limit" else None)}  # lessons rule 12
         if args.trigger == "market":
             open_position(s, o, price_now(args.symbol), time.time() * 1000, events)
         else:

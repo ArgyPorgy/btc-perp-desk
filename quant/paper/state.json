@@ -1,6 +1,6 @@
 {
   "start_equity": 10000.0,
-  "equity": 10149.616840898881,
+  "equity": 10110.486374526088,
   "risk_pct": 0.5,
   "orders": [
     {
@@ -23,22 +23,7 @@
       "expires_ms": 1793340000000
     }
   ],
-  "positions": [
-    {
-      "id": "X7",
-      "symbol": "ETHUSDT",
-      "book": "scalp",
-      "side": "long",
-      "entry": 2350.0,
-      "stop": 2326.0,
-      "target": 2398.0,
-      "qty": 1.4857037881689132,
-      "risk_pct": 0.35,
-      "opened_ms": 1793293500000,
-      "note": "ETH 2,365 broke out of the 2,309-2,330 range with volume (15m delta +74k), reclaimed the 1h EMA200 (2,362) and holds above the daily EMA200 (2,319); BTC strong (+1.4%). Buy the pullback into the 5m/15m bull FVG 2,342-2,356; stop 2,326 back inside the old range under weekly VWAP 2,331 (= failed breakout). Target 2,398 under the 2,400 gamma wall (call=put) / 1h bear OB 2,377-2,417 (2R).",
-      "max_hold_h": 24
-    }
-  ],
+  "positions": [],
   "closed": [
     {
       "id": "L1",
@@ -74,6 +59,25 @@
       "reason": "stop",
       "pnl": -38.06627797366729,
       "R": -1.067571428571429
+    },
+    {
+      "id": "X7",
+      "symbol": "ETHUSDT",
+      "book": "scalp",
+      "side": "long",
+      "entry": 2350.0,
+      "stop": 2326.0,
+      "target": 2398.0,
+      "qty": 1.4857037881689132,
+      "risk_pct": 0.35,
+      "opened_ms": 1793293500000,
+      "note": "ETH 2,365 broke out of the 2,309-2,330 range with volume (15m delta +74k), reclaimed the 1h EMA200 (2,362) and holds above the daily EMA200 (2,319); BTC strong (+1.4%). Buy the pullback into the 5m/15m bull FVG 2,342-2,356; stop 2,326 back inside the old range under weekly VWAP 2,331 (= failed breakout). Target 2,398 under the 2,400 gamma wall (call=put) / 1h bear OB 2,377-2,417 (2R).",
+      "max_hold_h": 24,
+      "exit": 2326.0,
+      "closed_ms": 1793298900000,
+      "reason": "stop",
+      "pnl": -39.13046637279284,
+      "R": -1.0974166666666667
     }
   ],
   "shadow": [
