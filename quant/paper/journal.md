@@ -328,3 +328,9 @@
 
 ## 2026-10-29 18:49 UTC — price 80,696
 - 18:50 (user: 1.21R target makes no sense): agreed. That was X10a (2,322 -> 2,362), already replaced at 18:48 by X11a 2,318 -> 2,364 (1.53R). Now also: deep half X11b -> X11c, limit 2,312, stop 2,288, target 2,395 under the 2,398 weak high (3.46R). Blended if both fill and both hit: ~2.5R on 0.35%.
+
+## 2026-10-29 19:13 UTC — price 80,800
+- 19:11 hourly: no fills, no open positions; equity $10,110.49, room $228.
+- Rule 12 re-check of pending orders: X11a/X11c ETH limits 2,318/2,312 KEPT: ETH 2,328.8 hovering above the demand zone (low 2,323.3); sellers still pressing (15m delta -67k) but the zone hasn't been tested yet, and the leader holds (BTC 80,810 above its 80,422 gamma flip, back above the 15m EMAs). X12 HYPE (15m close > 95.4) KEPT: HYPE 94.5 inside 93.05-95.7, buyers back (+142k 5m).
+- BTC: between the 80,422 flip and the 81k pin, 1h EMA200 80,943 just above. NO TRADE: mid-range, no level to lean on (rule 16).
+- News: Polymarket $2.65M exploit (third-party), no BTC reaction. HOOD: watch only.
