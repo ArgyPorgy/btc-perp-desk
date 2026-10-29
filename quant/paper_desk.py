@@ -24,6 +24,10 @@ Two books share one account:
   python3 paper_desk.py close POSITION_ID       # close an open position at the current price
   python3 paper_desk.py modify L1 --stop 79500  # tighten a stop (never widen) and/or move the target
   python3 paper_desk.py journal "- 1h: ...\n- DECISION: HOLD ..."   # append a dated entry to paper/journal.md
+  python3 paper_desk.py shadow --id S1 --side long --entry 80409 --at 2026-10-29T14:15 --stop 79990 --target 81037 \
+        --why "cancelled on the backtest; plan side fired"   # score a trade the plan called for but I skipped/cancelled
+Shadow trades are resolved on 5m candles like scalps and reported as their own record (R only, no money), so the cost
+or value of my overrides is measured. Lessons and mistakes live in paper/lessons.md.
 
 Rules: triggers 'close_above' / 'close_below' fill at the CLOSE of the first candle of --tf (default 4h; closed after
 the order was placed) beyond the level; 'limit' fills at the level when a 5m candle trades through it. Swing positions
@@ -223,6 +227,21 @@ def process(s):
             if b["T"] - p["opened_ms"] >= p["max_hold_h"] * 3600e3:
                 close_position(s, p, b["c"], b["T"] + 1, "time limit", events)
                 break
+    # 3) shadow trades (skipped or cancelled plan trades): resolve on 5m candles, R only
+    for x in [x for x in s.get("shadow", []) if x.get("result") is None]:
+        side = 1 if x["side"] == "long" else -1
+        for b in klines("5m", x["at_ms"], sym(x)):
+            if b["t"] < x["at_ms"]:
+                continue
+            if (b["l"] <= x["stop"]) if side == 1 else (b["h"] >= x["stop"]):
+                x["result"], x["R"] = "stop", -1.0
+            elif (b["h"] >= x["target"]) if side == 1 else (b["l"] <= x["target"]):
+                x["result"], x["R"] = "target", abs(x["target"] - x["entry"]) / abs(x["entry"] - x["stop"])
+            elif b["T"] - x["at_ms"] >= 24 * 3600e3:
+                x["result"], x["R"] = "time", (b["c"] - x["entry"]) * side / abs(x["entry"] - x["stop"])
+            if x.get("result"):
+                events.append(f"SHADOW {x['id']} {sym(x)} {x['side']} resolved: {x['result']} {x['R']:+.2f}R ({x['why']})")
+                break
     return events
 
 
@@ -263,6 +282,14 @@ def report(s, events):
             print(f"  {x['id']} [{x.get('book', 'swing')}] {sym(x)} {x['side']} {px(x['entry'])}->{px(x['exit'])} {x['reason']} {x['R']:+.2f}R  ({iso(x['closed_ms'])})")
     else:
         print("track record: no closed trades yet")
+    sh = s.get("shadow", [])
+    if sh:
+        done = [x for x in sh if x.get("result")]
+        print(f"shadow (skipped/cancelled plan trades): {len(sh)} logged, {len(done)} resolved, total {sum(x['R'] for x in done):+.2f}R "
+              f"= what my overrides cost (+) or saved (-)")
+        for x in sh[-4:]:
+            print(f"  {x['id']} {sym(x)} {x['side']} {px(x['entry'])} stop {px(x['stop'])} target {px(x['target'])}: "
+                  f"{x.get('result') or 'open'}{'' if x.get('R') is None else f' {x[chr(82)]:+.2f}R'} | {x['why']}")
 
 
 def main():
@@ -295,6 +322,15 @@ def main():
     m.add_argument("id")
     m.add_argument("--stop", type=float)
     m.add_argument("--target", type=float)
+    sh = sub.add_parser("shadow", help="log a plan trade that was skipped or cancelled, to score the override")
+    sh.add_argument("--id", required=True)
+    sh.add_argument("--symbol", default="BTCUSDT", type=str.upper, choices=SYMBOLS)
+    sh.add_argument("--side", choices=["long", "short"], required=True)
+    sh.add_argument("--entry", type=float, required=True)
+    sh.add_argument("--at", required=True, help="ISO time the plan would have entered")
+    sh.add_argument("--stop", type=float, required=True)
+    sh.add_argument("--target", type=float, required=True)
+    sh.add_argument("--why", required=True, help="why it was skipped")
     j = sub.add_parser("journal", help="append an entry (heading with UTC time + price is added)")
     j.add_argument("text", help="entry body; literal \\n becomes a newline")
     args = ap.parse_args()
@@ -368,6 +404,11 @@ def main():
                 sys.exit(f"refused: target {px(args.target)} is on the wrong side of the current price {px(now_px)}")
             events.append(f"MODIFIED {p['id']}: target {px(p['target'])} -> {px(args.target)}")
             p["target"] = args.target
+    elif args.cmd == "shadow":
+        s.setdefault("shadow", []).append({"id": args.id, "symbol": args.symbol, "side": args.side, "entry": args.entry,
+                                           "at_ms": parse_time(args.at), "stop": args.stop, "target": args.target,
+                                           "why": args.why, "result": None, "R": None})
+        events.append(f"SHADOW logged {args.id}: {args.side} {args.symbol} @ {px(args.entry)} ({args.why})")
     elif args.cmd == "journal":
         body = args.text.replace("\\n", "\n").strip()
         head = f"## {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')} — price {price_now():,.0f}"

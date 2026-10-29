@@ -41,5 +41,19 @@
       "pnl": 187.68311887254907,
       "R": 1.8768311887254907
     }
+  ],
+  "shadow": [
+    {
+      "id": "S1",
+      "symbol": "BTCUSDT",
+      "side": "long",
+      "entry": 80409.0,
+      "at_ms": 1793283300000,
+      "stop": 79990.0,
+      "target": 81037.5,
+      "why": "BRK1/X2: cancelled at 12:24 on the -0.22R backtest, not re-placed at 12:30, skipped at 14:18 as 'chasing' at the entry price",
+      "result": "target",
+      "R": 1.5
+    }
   ]
 }
