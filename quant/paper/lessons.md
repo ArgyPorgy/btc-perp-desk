@@ -33,6 +33,10 @@ the rule goes into **Current rules** too. Skipped or cancelled plan trades are a
     scalp size unless each has its own catalyst; otherwise size each down so the pair risks ~0.35%.
 15. **Targets must clear supply.** A target beyond a call wall + bear OBs that already rejected price that day needs a
     reason; otherwise take the target before the supply (or skip if that leaves < 1.5R).
+16. **Location: enter AT the zone, stop BEYOND it.** Longs are bought inside demand (bull OB / FVG / flipped level /
+    put wall), with the stop below the whole zone and the swing low ("strong low"); shorts mirror that. Never a stop
+    inside or on top of a demand zone, never an entry mid-range between zones. Check it on the chart (LuxAlgo-style
+    OB/FVG/strong-weak high-low view) before placing; snapshot.js lists the same zones.
 
 ## Mistakes and misses
 | Date (UTC) | What happened | Cost | Lesson → rule |
@@ -49,6 +53,7 @@ the rule goes into **Current rules** too. Skipped or cancelled plan trades are a
 | 2026-10-29 | HYPE news trend 79 -> 97 (+22%): three pullback limits (X1 85.5, X5 88.9, X6 92.2) each set 3-6% under price, each left behind; moved up only after price ran. | missed most of the move (no fill, no loss) | In a news-driven trend (OI rising, funding normal, strong taker delta) pullbacks are shallow: set entries at the nearest structure (last 5m/15m breakout level, 15m EMA20), or split: half at the shallow level, half deeper. |
 | 2026-10-29 17:50 | **X8** HYPE long 95.30 stopped at 93.90 (−1.07R, −$38). Low 93.67 in the 17:45 candle, then 93.05, back to 94.3 within 15 min. The stop was 1.5% away while HYPE's 1h ATR was 1.8%: a noise stop for a trade meant to last hours, placed at an obvious level (just under 93.8) where stops cluster. | −$38 | Scalp stops go beyond the nearest swing low AND at least ~1x the 1h ATR from entry (size down to keep $ risk); never just under an obvious level. |
 | 2026-10-29 18:35 | **X7** ETH long 2,350 stopped at 2,326 (−1.10R, −$39). Placed 15:40 as a breakout-retest while BTC was ripping; it filled at 17:05, 85 min later, AFTER BTC had rejected the 82k call wall (81,944 at 16:00) and lost the 81k pin, and after ETH itself had been rejected at 2,378.8 with 15m delta −18k (16:15). I flagged "risk: BTC" at 17:16 and held. ETH then lost the old range top 2,330 with BTC under its 1h EMA200: the breakout failed (a real thesis loss, not a wick). The target 2,398 also sat behind the 2,360 call wall and bear OBs 2,365–2,391 that had rejected price. And X7 + X8 were two correlated crypto longs filled 25 min apart: both lost (−$77 together). | −$39 (−$77 with X8) | Rules 12–15: stale limits expire/re-check, leader check, correlated longs = one bet, targets must clear supply. Done right: stop honoured, loss = the planned 0.35%, floors never in danger. |
+| 2026-10-29 18:40 | User (LuxAlgo chart): "your stop is where the bounce is supposed to come from; you took the trade in the middle." True: X7's entry 2,350 was mid-range; its stop 2,326 sat on top of the demand zone (5m bull OB 2,312–2,325, 15m bull OB 2,296–2,313, put wall 2,300, strong low 2,292), all printed in my own snapshot. ETH then traded straight into that zone. | part of X7's −$39 | Rule 16 (location). Re-entered correctly as X10a/b: limits 2,322 / 2,312 inside the zone, stop 2,288 below it, target 2,362 before supply. |
 
 ## Shadow trades (skipped or cancelled plan trades)
 | ID | Trade | Why skipped | Result |
