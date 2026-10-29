@@ -243,3 +243,7 @@
 
 ## 2026-10-29 12:25 UTC — price 80,064
 - 12:24 UTC review (user: are these backtested?). No, they weren't; tested now (quant/scalp_tests.py). BTC release range break: -0.22R/trade, n=1,526, t -6.9 -> X2/X3 CANCELLED before 12:30. HYPE impulse pullback: BTC/ETH versions lose (-0.14/-0.13R, n=147/107), HYPE's own +0.83R on n=8 -> X1 kept at 0.5% risk, low confidence. HYPE 88.67 is now at X1's target (prior-high retest); if it fills at 85.5 the trade is a pullback-to-high play. Dashboard now draws paper orders/positions on the chart (server.py /api/paper).
+
+## 2026-10-29 12:29 UTC — price 80,089
+- 12:30 UTC (user: weigh the whole picture; a backtest is one input, not a veto). Agreed, with one condition: when the backtest is strongly negative, the confluence must give a specific reason this instance differs. Re-read BTC at the release: intraday trend down on 5m/15m/1h, 1h delta -1.3k, short gamma below 80.2k, shorts adding, supply 80.15-81.06k overhead, swing-long zone 79.18k below as a target. Breakdown side has confluence, breakout side doesn't. X4 SHORT on a 15m close < 79,790, stop 80,150, target 79,250 (1.5R), from 12:30 to 16:00, 0.5% risk. Breakout long not re-placed (against the intraday trend, into supply).
+- Calibration: release-window breaks in the 1h-trend direction test -0.20R (n=648) vs -0.31R against (n=564). The trend filter helps but doesn't make it positive, so X4 is low confidence. Next test: breakdown + retest entry and wider ATR stops (the 0.45% stop sits inside release noise).
