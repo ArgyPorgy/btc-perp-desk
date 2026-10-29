@@ -325,3 +325,6 @@
 
 ## 2026-10-29 18:48 UTC — price 80,629
 - 18:48 R check (user asked): X10a was 1.18R (2,322 -> 2,362 vs stop 2,288) and X9 at most 1.44R: both under my own 1.5R minimum. Replaced: X11a ETH limit 2,318 (1.53R) + X11b limit 2,312 (2.17R), stop 2,288, target 2,364 (0.175% each; ~1.85R blended); X12 HYPE long on a 15m close > 95.4, stop 92.9, target 2R from the fill. Every order now gets its R stated before placing.
+
+## 2026-10-29 18:49 UTC — price 80,696
+- 18:50 (user: 1.21R target makes no sense): agreed. That was X10a (2,322 -> 2,362), already replaced at 18:48 by X11a 2,318 -> 2,364 (1.53R). Now also: deep half X11b -> X11c, limit 2,312, stop 2,288, target 2,395 under the 2,398 weak high (3.46R). Blended if both fill and both hit: ~2.5R on 0.35%.
