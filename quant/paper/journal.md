@@ -278,3 +278,6 @@
 
 ## 2026-10-29 15:08 UTC — price 81,339
 - 15:10 UTC: added quant/paper/lessons.md (current rules, mistakes/misses log, shadow trades, review cadence) and paper_desk.py shadow trades: skipped/cancelled plan trades are resolved on 5m candles and reported as their own R record. S1 (missed BRK1 long) logged: +1.50R. Every run reads lessons.md first.
+
+## 2026-10-29 15:13 UTC — price 81,462
+- 15:20 UTC: (1) lessons.md now leads with WINS and what made them work (L1 +1.88R; S1 shadow +1.5R; D1F HYPE retro +2R) next to mistakes/misses; every closed trade gets a row either way. (2) User's tweet (@MuroCrypto, HYPE daily S/R flip + rising MA, entry ~77.3 on Oct 26, now ~91): coded as D1F and backtested: daily works (BTC +0.32R n=46, ETH +0.25R n=45, both halves positive), the same rule on 4h is ~0R. Added to setup_scan.py for BTC/ETH/HYPE; the scanner would have fired on HYPE at the Oct 24 close (76.65 -> 2R 91.57 hit today). No D1F signal now (nearest untested flipped levels are 19-39% below). (3) Swing reads now start from 1D/4H screenshots (rule 10).

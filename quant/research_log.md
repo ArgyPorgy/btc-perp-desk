@@ -113,6 +113,21 @@ They weren't. Closest tests the data allows:
 → **Rule for the scalp book from now on:** test the pattern before placing it, at least roughly; place untested reads
   only when the pattern has no history to test, and say so.
 
+## 2026-10-29: @MuroCrypto's HYPE daily flip, generalised (`sr_flip_test.py`), prompted by the user's tweet
+His call: HYPE's June-July range top (~75.7) flipped to support after the August breakout, retested Oct 26 with the rising
+daily MA underneath; +17% in 3 days. Rule: daily pivot high (+-5), close >= 1% above it, first retest within 2% that
+closes no more than 1% below, close above a RISING SMA100; stop 1 ATR under the level; 2R/3R; 30-bar exit.
+| | 1D SMA100 2R | 1D SMA100 3R | 1D no SMA 2R | 4H SMA100 2R |
+|---|---|---|---|---|
+| BTC | **+0.32R n=46 t 1.5** (halves +0.30/+0.34) | +0.35R | +0.18R n=81 | +0.01R n=465 |
+| ETH | +0.25R n=45 (halves +0.43/+0.08) | **+0.38R t 1.5** | +0.26R n=77 | −0.04R n=380 |
+| HYPE | +0.60R n=9 | +0.79R n=9 | +0.12R n=14 | −0.10R n=69 |
+- **The timeframe is the edge**: daily works on all three, 4h is flat. The rising-SMA filter helps on BTC.
+- Live check: the scanner version fires on HYPE at the Oct 24 close (76.65, level 73.0, stop 69.2, 2R 91.57), and 91.57
+  traded on Oct 29: +2R.
+→ **New swing setup D1F**: daily S/R flip retest above a rising SMA100, long, 2R, BTC/ETH/HYPE, 0.5% risk. In
+  `setup_scan.py` (`d1_flips`). Next: the short mirror (broken support retested from below under a falling SMA100).
+
 ## Backlog (highest expected value first)
 1. Sharpen S10/S20 (t 0.9 on 2020+): volume on the sweep candle, funding/OI state, distance swept, session.
 2. Post-release reaction trades: first 15m/1h candle after CPI/FOMC, fade vs follow, using calendar timestamps.

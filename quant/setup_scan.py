@@ -14,7 +14,8 @@ SHORT (only while the last closed DAILY candle is below the daily EMA200, "bear"
   every regime (-0.1 to -0.5R). Evidence: short_test.py, research_log.md 2026-10-28.
   S10/S20 on 2020+ data only (Binance archive): +0.09R / +0.14R, t 0.9: positive but below the t >= 1.5 bar set for new
   setups; kept, flagged marginal.
-OTHER PERPS: tested BTC-only. On ETH and HYPE none of these setups pass (market_setups_test.py, 2026-10-29): the scan
+D1F (all three perps, daily): S/R flip retest above a rising SMA100, long, 2R. See d1_flips(); printed after the scan.
+OTHER PERPS: the 4h setups above are tested BTC-only. On ETH and HYPE none of these setups pass (market_setups_test.py, 2026-10-29): the scan
   runs there for context only, and the desk does not trade those signals.
 Run: python3 setup_scan.py [days_back] [SYMBOL]   default 3 BTCUSDT (also lists signals from the last N days)
 """
@@ -116,5 +117,58 @@ def main():
               f" -> {side} {px(entry)}, stop {px(stop)}, target {px(tgt)} ({k:g}R) [{ev}]")
 
 
+def d1_flips(days, ma=100):
+    """D1F swing long (sr_flip_test.py, from @MuroCrypto's HYPE call): a daily pivot high (+-5 days) that price later
+    closed >= 1% above becomes support; the first daily close back within 2% above it (no close > 1% below), with the
+    close above a RISING SMA100, is the entry. Stop 1 ATR(14) under the level, 2R. BTC +0.32R n=46, ETH +0.25R n=45
+    (both halves positive); the same rule on 4h is ~0R. Returns (fresh signal on the last closed day, live levels)."""
+    H, L, C = [d["h"] for d in days], [d["l"] for d in days], [d["c"] for d in days]
+    N = len(C)
+    sm = lambda i, n: sum(C[i - n + 1:i + 1]) / n if i >= n - 1 else None
+    atr = lambda i: sum(max(H[j], C[j - 1]) - min(L[j], C[j - 1]) for j in range(i - 13, i + 1)) / 14
+    signal, live = None, []
+    for p in range(5, N - 5):
+        lv = H[p]
+        if lv < max(H[p - 5:p + 6]):
+            continue
+        flip = next((j for j in range(p + 1, min(p + 121, N)) if C[j] >= lv * 1.01), None)
+        if flip is None or any(c > lv * 1.01 for c in C[p + 1:flip]):
+            continue
+        state = "waiting"
+        for i in range(flip + 3, min(flip + 121, N)):
+            if C[i] < lv * 0.98:
+                state = "lost"
+                break
+            if L[i] <= lv * 1.02 and C[i] >= lv * 0.99:
+                m, m10 = sm(i, ma), sm(i - 10, ma)
+                ok = m is not None and m10 is not None and C[i] > m > m10
+                state = "used" if i < N - 1 else ("SIGNAL" if ok else "touch, SMA filter fails")
+                if i == N - 1 and ok:
+                    stop = lv - atr(i)
+                    signal = (lv, C[i], stop, C[i] + 2 * (C[i] - stop))
+                break
+        if state == "waiting" and flip + 121 > N - 1:
+            live.append((lv, days[flip]["T"]))
+    return signal, live
+
+
+def d1_report():
+    for sym in ("BTCUSDT", "ETHUSDT", "HYPEUSDT"):
+        global SYM
+        SYM = sym
+        days = klines("1d", 1500)
+        signal, live = d1_flips(days)
+        c = days[-1]["c"]
+        near = sorted(live, key=lambda x: abs(c / x[0] - 1))[:3]
+        lv_txt = ", ".join(f"{px(lv)} ({(c / lv - 1) * 100:+.1f}%)" for lv, _ in near) or "none"
+        print(f"D1F {sym[:-4]}: close {px(c)}; flipped levels not yet retested (nearest): {lv_txt}")
+        if signal:
+            lv, e, stop, tgt = signal
+            print(f"SIGNAL NOW D1F {sym}: daily close {px(e)} retested flipped level {px(lv)} above a rising SMA100 -> LONG, "
+                  f"stop {px(stop)}, target {px(tgt)} (2R) [BTC +0.32R n=46, ETH +0.25R n=45]")
+
+
 if __name__ == "__main__":
     main()
+    print()
+    d1_report()

@@ -1,6 +1,7 @@
-# Desk lessons: mistakes, misses and the rules they produced
+# Desk lessons: wins, mistakes, misses and the rules they produced
 
-Read this at the start of every run. Every mistake or miss gets a dated entry; when it changes how the desk trades,
+Read this at the start of every run. Every closed trade gets a dated entry: wins with what made them work (so it can
+be repeated), losses and misses with what went wrong (so it isn't). when it changes how the desk trades,
 the rule goes into **Current rules** too. Skipped or cancelled plan trades are also logged as shadow trades in
 `paper_desk.py shadow`, so the report shows what my overrides cost (+R) or saved (−R).
 
@@ -19,6 +20,10 @@ the rule goes into **Current rules** too. Skipped or cancelled plan trades are a
 8. **Look at the actual chart** (screenshot) before placing, not only the numbers: the numbers missed that HYPE had
    already reached X1's target before its entry could fill.
 9. **Size from the stop, not from leverage.** Risk $ / stop distance = size; the 1x leverage setting is margin only.
+10. **Zoom out for swings.** Swings are read on 1D and 4H first (1D decides), scalps on 1m-1h. The S/R flip retest works
+    on the daily chart (BTC +0.32R n=46, ETH +0.25R n=45) and is ~0R on the 4h: the timeframe is part of the setup.
+11. **Outside ideas are welcome, then tested.** A trader's setup (e.g. @MuroCrypto's HYPE daily flip) gets coded and
+    backtested; if it holds, it joins the scanner.
 
 ## Mistakes and misses
 | Date (UTC) | What happened | Cost | Lesson → rule |
@@ -40,10 +45,16 @@ the rule goes into **Current rules** too. Skipped or cancelled plan trades are a
 
 Running total: **+1.50R** missed by overriding the plan.
 
-## What went right
-- 2026-10-27 L1: tested S20 sweep long, held to target through FOMC with the stop: +1.88R.
-- 2026-10-29: caught that BTC's release reaction was muted and that the short side never had a trigger; kept risk inside the
-  daily floor at every step.
+## Wins: what made them work
+| Date (UTC) | Trade | Result | What made it work (repeat this) |
+|---|---|---|---|
+| 2026-10-27 | **L1** BTC swing long 79,752 → 81,057 (S20: 4h sweep of the 20-day low 79,179, closed back above) | **+1.88R, +$187.68** | Tested setup, entered at the 4h close exactly as specified; stop under the sweep wick (real invalidation); held one-shot through FOMC as the event study allowed, no early exit despite three tests of 81k; target sat under the 81k put wall. @MuroCrypto called the same "bounce below 80" that day: independent reads agreed. |
+| 2026-10-29 | **S1** (shadow) BTC release breakout long 80,409 → 81,037 | +1.50R (missed) | The plan itself was right: two-sided OCO around the 80k gamma pin, entry only on a 15m close out of the range, stop back inside. Hot PCE was absorbed (taker flow flipped +1k), so the break came up. Lesson: trust the two-sided plan (rules 5-6). |
+| 2026-10-29 | **D1F** HYPE (scanner, retro-check): daily close 76.65 on Oct 24 retesting a flipped level (73.0) above a rising SMA100, stop 69.2 | 2R target 91.57 traded today (+2R) | Zoomed-out daily structure + trend filter; the same trade @MuroCrypto posted on Oct 26 at ~77.3 (+17%). Not a desk trade (setup added today); logged so the pattern's live record starts here. |
+
+## Process wins
+- 2026-10-29: kept every order inside the daily-loss floor; cancelled X4 when BTC broke the other way instead of hoping.
+- 2026-10-29: the news terminal caught the ICE/NYSE Hyperliquid catalyst the hour it moved HYPE.
 
 ## Review cadence
 - Every run: read **Current rules**; log any new mistake, miss or shadow trade here and in the journal.
