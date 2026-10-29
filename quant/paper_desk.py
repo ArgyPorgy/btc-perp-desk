@@ -1,8 +1,10 @@
 """Paper trading desk for Binance USDT perps (BTC, ETH, HYPE). Every call is recorded and scored automatically.
 
-Prop-firm rules (enforced): pass at +9% on the $10,000 start; FAIL if equity ever falls 3% ($300) below its highest
-closed value (trailing, the stricter reading). So: swing risk 0.5%, scalp 0.35%, and the risk of everything open or
-pending may never exceed half the room left above that floor. Orders that would break it are refused.
+Prop rules (Propr Turbo 1-Step, propr.xyz/rules, checked 2026-10-29): pass at +9% ($10,900). FAIL on either:
+  max drawdown 3%, STATIC: equity below $9,700 (3% under the $10,000 start; the floor never moves, profit adds room)
+  daily loss 3%: equity below 97% of the balance at 00:00 UTC (recomputed daily).
+The binding floor is the higher of the two. Swing risk 0.5%, scalp 0.35%, and the risk of everything open or pending
+may never exceed half the room above that floor. Orders that would break it are refused.
 
 Two books share one account:
   swing  tested setups (S10/S20/B20 on BTC), 0.5% risk, 4h triggers, managed on 1h candles.
@@ -41,15 +43,17 @@ REST = base()
 FEE = 0.0005
 SYMBOLS = ("BTCUSDT", "ETHUSDT", "HYPEUSDT")
 SCALP_RISK, SCALP_DAY_STOP, MAX_OPEN = 0.35, 1.0, 3
-TARGET_PCT, MAX_DD_PCT = 9.0, 3.0  # prop rules: +9% to pass; 3% of the start below the equity high = failed
+TARGET_PCT, MAX_DD_PCT, DAILY_PCT = 9.0, 3.0, 3.0  # Propr Turbo 1-Step
 
 
-def peak(s):
-    return max([s["start_equity"]] + [s["start_equity"] + sum(x["pnl"] for x in s["closed"][:i + 1]) for i in range(len(s["closed"]))])
+def day_start_balance(s):
+    day0 = datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0).timestamp() * 1000
+    return s["start_equity"] + sum(x["pnl"] for x in s["closed"] if x["closed_ms"] < day0)
 
 
 def floor(s):
-    return peak(s) - s["start_equity"] * MAX_DD_PCT / 100
+    """Equity below this fails the account: max(static 3% under the start, 3% under today's 00:00 UTC balance)."""
+    return max(s["start_equity"] * (1 - MAX_DD_PCT / 100), day_start_balance(s) * (1 - DAILY_PCT / 100))
 
 
 def open_risk(s):
@@ -229,7 +233,9 @@ def report(s, events):
         print(f"EVENT: {e}")
     print(f"\nequity ${s['equity']:,.2f} ({(s['equity'] / s['start_equity'] - 1) * 100:+.2f}%, target +{TARGET_PCT:.0f}% = ${s['start_equity'] * (1 + TARGET_PCT / 100):,.0f}; swing risk {s['risk_pct']}%, scalp {SCALP_RISK}%)")
     room = s["equity"] - floor(s)
-    print(f"drawdown floor ${floor(s):,.2f} (peak ${peak(s):,.2f} - 3%): room ${room:,.2f} | open+pending risk ${open_risk(s):,.2f} (cap ${room / 2:,.2f})"
+    static, daily = s["start_equity"] * (1 - MAX_DD_PCT / 100), day_start_balance(s) * (1 - DAILY_PCT / 100)
+    print(f"floor ${floor(s):,.2f} ({'daily: 97% of 00:00 balance' if daily >= static else 'static: start - 3%'}; static ${static:,.0f}, daily ${daily:,.2f}): "
+          f"room ${room:,.2f} | open+pending risk ${open_risk(s):,.2f} (cap ${room / 2:,.2f})"
           + ("   *** ACCOUNT FAILED ***" if room <= 0 else ""))
     print("open positions:" if s["positions"] else "open positions: none")
     for p in s["positions"]:
@@ -303,7 +309,7 @@ def main():
         room = s["equity"] - floor(s)
         new_risk = s["equity"] * (args.risk_pct or (SCALP_RISK if args.book == "scalp" else s["risk_pct"])) / 100 * 1.2
         if room <= 0:
-            sys.exit("refused: account is past the 3% drawdown floor")
+            sys.exit("refused: equity is at or below the max-drawdown / daily-loss floor")
         if open_risk(s) + new_risk > room / 2:
             sys.exit(f"refused: open+pending risk ${open_risk(s):,.0f} + this ${new_risk:,.0f} would exceed half the room "
                      f"above the drawdown floor (${room / 2:,.0f}); cancel something or size down with --risk-pct")

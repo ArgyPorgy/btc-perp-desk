@@ -250,3 +250,6 @@
 
 ## 2026-10-29 12:51 UTC — price 80,057
 - 12:52 UTC: prop rules now enforced in paper_desk.py: pass at +9% ($10,900); fail if equity drops 3% ($300) below its peak (trailing, the strict reading). Floor now $9,887.68, room $300. Swing risk 1% -> 0.5%, scalp 0.5% -> 0.35%, scalp day stop 1%, and open+pending risk capped at half the room ($150). X1/X4 resized to 0.35% (~$36 each, ~$43 with fees). Leverage on X4 ~0.8x notional, X1 ~0.2x: size comes from the stop distance, not leverage.
+
+## 2026-10-29 12:56 UTC — price 80,013
+- 12:56 UTC: rules corrected to Propr Turbo 1-Step (propr.xyz/rules via search; the site itself is outside this session's network allowlist): +9% target, 3% STATIC max drawdown (floor $9,700, never moves: profit adds room) and 3% daily loss from the 00:00 UTC balance (today $9,882.05, the binding one). No time limit, no minimum days. Leverage up to 1:10 on BTC/ETH per a listing; the 1x setting is margin, positions stay sized by the stop.
