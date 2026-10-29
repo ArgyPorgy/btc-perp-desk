@@ -372,3 +372,9 @@
 - X15 (short < 78,200) and X18 (ETH short limit 2,300; ETH 2,270, 15m delta -157k, weakest major) kept.
 - HYPE 93.0: momentum fading (15m delta -342k) but above the 15m EMA50; no trade.
 - Macro: Nasdaq-100 futures falling on Amazon/Intel earnings, Google -$500bn (AI fears): risk-off backdrop.
+
+## 2026-10-29 23:14 UTC — price 78,832
+- 23:13 hourly: X17 BTC long 78,760 (+0.22R), stop 78,450 / target 79,650 unchanged: the 78.2-79.7k base still holds; Reuters: Tether+Circle froze $2.38B, Decrypt: hacker hunting exit ramps, DeFi venues pausing markets (limits the dump). OI +7% 24h, 7d gamma -78M, 78k put wall.
+- X15 (BTC short < 78,200) and X18 (ETH short limit 2,300, ETH 2,266 in a 2,251-2,294 box) kept.
+- HYPE 90.9: lost its 15m EMA50, heading for the 90.2-91.9 bull OB; no trade (no location yet; rule 13 for longs).
+- 00:00 UTC: the 4h candle (low 78,233) closes; S20 long only if it closes back above 79,179 (BTC 78,760 now, unlikely). The daily-loss floor resets to 97% of the 00:00 balance.
