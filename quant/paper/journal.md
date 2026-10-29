@@ -270,3 +270,8 @@
 - HYPE 91.3: holding 88.5-92.1 at the highs; OI -2.7% in the last hour and 5m delta flat (profit-taking, no reversal). X5 LONG limit 88.9 kept: it sits just above the consolidation low 88.52, the breakout-retest level.
 - ETH 2,330: pressing the range top 2,332.7 / weekly VWAP 2,331 with 1h delta -23k (selling into it). No trade: a short at the top is a range fade (tested negative) and a long into supply with sellers active isn't one either.
 - HOOD: Nasdaq open; watch only.
+
+## 2026-10-29 15:03 UTC — price 81,220
+- 15:04 review (user's TradingView): the original BRK1 long side WORKED. 14:00-14:15 15m candle closed 80,409 > 80,350 -> X2 would have entered ~80,409 (stop 79,990, 1.5R target ~81,037); 14:30 candle ran to 81,525 -> target hit, about +1.5R (~+$53 at 0.35%). The short side never triggered (13:30 low 79,860, no close < 79,790).
+- My errors: (1) at 12:24 I cancelled both sides on the -0.22R backtest; (2) at 12:30 I re-placed only the short, using confluence for one side and the backtest for the other (inconsistent); (3) at 14:18 I saw the 80,431 close and called it 'chasing' when price was 80,420, i.e. at the planned entry. The plan was right; my overrides weren't.
+- Rules from this: a two-sided plan stays two-sided unless the chart invalidates one side (not a backtest alone); if a trigger fired since the last run and price is still within 0.25R of the planned entry, take it; every cancelled or skipped plan trade gets scored in the journal as a shadow trade so my overrides are measured too. Shadow #1: BRK1/X2 +1.5R (missed).
