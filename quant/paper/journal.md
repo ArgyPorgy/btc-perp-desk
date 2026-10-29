@@ -334,3 +334,9 @@
 - Rule 12 re-check of pending orders: X11a/X11c ETH limits 2,318/2,312 KEPT: ETH 2,328.8 hovering above the demand zone (low 2,323.3); sellers still pressing (15m delta -67k) but the zone hasn't been tested yet, and the leader holds (BTC 80,810 above its 80,422 gamma flip, back above the 15m EMAs). X12 HYPE (15m close > 95.4) KEPT: HYPE 94.5 inside 93.05-95.7, buyers back (+142k 5m).
 - BTC: between the 80,422 flip and the 81k pin, 1h EMA200 80,943 just above. NO TRADE: mid-range, no level to lean on (rule 16).
 - News: Polymarket $2.65M exploit (third-party), no BTC reaction. HOOD: watch only.
+
+## 2026-10-29 20:16 UTC — price 80,402
+- 20:14 hourly: X11a (2,318) and X11c (2,312) ETH longs FILLED at 20:00. At 20:00 Trump announced a naval blockade of Iran after the Islamabad talks failed (impact 3); BTC -0.5%, 15m close 80,383 under its 80,389 gamma flip (7d gamma -5.6M, amplifying), under all intraday EMAs.
+- Rule 13 (leader broke while an alt long is open: judge the thesis): the zone thesis now fights a risk-off war headline plus an amplifying gamma regime. CLOSED both at 2,314 for -$3.64 and -$0.25 (near flat) instead of waiting for 2,288. Logged as shadows S2/S3 to measure whether this exit was right. Cancelled X12 (HYPE reclaim long, rule 13).
+- BTC: X13 SHORT limit 80,420 (retest of the broken flip inside the 15m bear FVG 80,148-80,450), stop 80,700 above the FVG and 1h EMA50, target 79,880 in front of the 79,860 bull OB (1.93R), 0.2% risk (keeps a loss near the 1% scalp day stop). News scalp; the daily regime is still bull so B20 stays off.
+- Equity $10,106.60 (+1.07%), room $224.6, scalp losses today $81.
