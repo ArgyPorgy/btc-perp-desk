@@ -206,3 +206,10 @@
 - News: post-FOMC digestion (split hold, two hike dissents), Hormuz/Iran escort headlines with no BTC reaction. Core PCE + GDP today 12:30 UTC.
 - Scan: no signal. Shorts off (bull regime); S10/S20 trigger zone 79,179 (2.7% below). DECISION: NO TRADE. Event rule: no new entries 10:30-12:30 UTC.
 - Desk: snapshot.js no longer prints Node's proxy-agent warning.
+
+## 2026-10-29 04:06 UTC — price 79,820
+- 04:05 UTC check: flat. BTC fell 81.3k -> 79.8k (-1.8%) in the 00-04 4h candle; low 79,666, $356M of longs liquidated under 80k (CoinDesk). Drivers: 'hawkish hold' read of the Fed (two hike dissents), Iran/Hormuz risk, crypto equities in a stealth bear market (COIN/CRCL/HOOD -40-56% from highs).
+- 1h below EMA50/200 (80.65k/81.0k); 4h below EMA50/200 (80.98k/81.61k), 12-bar delta -1.4k BTC; 1d lost EMA50 80.75k, still above EMA200 76.44k (bull regime, shorts off).
+- Positioning: OI +2.1% 24h / +6.2% 7d into the drop (shorts adding), funding down to 0.004%; 7d gamma flipped NEGATIVE (-30M/1%) below the 80.2k flip: dealers now amplify moves.
+- Scan: no signal yet. Price is 0.8% above the 20/10-day low 79,179: a 4h wick below it that closes back above = S10/S20 long; the 08:05 run will catch an 08:00 close. A 4h close BELOW 79,179 is a bull-regime breakdown (~0R): no short.
+- DECISION: NO TRADE now. Event rule: no new entries 10:30-12:30 UTC (Core PCE + GDP 12:30), so a signal on the 12:00 close is skipped.
