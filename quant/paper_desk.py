@@ -30,7 +30,7 @@ Shadow trades are resolved on 5m candles like scalps and reported as their own r
 or value of my overrides is measured. Lessons and mistakes live in paper/lessons.md.
 
 Rules: triggers 'close_above' / 'close_below' fill at the CLOSE of the first candle of --tf (default 4h; closed after
-the order was placed) beyond the level; 'limit' fills at the level when a 5m candle trades through it. Swing positions
+the order was placed) beyond the level; 'limit' fills at the level when a 5m candle trades THROUGH it (a bare touch doesn't count). Swing positions
 are managed on closed 1h candles, scalps on 5m: if stop and target are both touched in the same candle the stop counts
 (conservative). Fees 0.05% per side. Size = risk % of equity / stop distance.
 """
@@ -195,7 +195,8 @@ def process(s):
             for b in klines("5m", start - 300e3, sym(o)):
                 if b["t"] < start:
                     continue
-                if (o["side"] == "long" and b["l"] <= o["level"]) or (o["side"] == "short" and b["h"] >= o["level"]):
+                # trade THROUGH the level (a bare touch may not fill a real resting order at the back of the queue)
+                if (o["side"] == "long" and b["l"] < o["level"]) or (o["side"] == "short" and b["h"] > o["level"]):
                     s["orders"].remove(o)
                     open_position(s, o, o["level"], b["t"], events)
                     break

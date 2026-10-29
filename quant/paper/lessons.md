@@ -37,6 +37,9 @@ the rule goes into **Current rules** too. Skipped or cancelled plan trades are a
     put wall), with the stop below the whole zone and the swing low ("strong low"); shorts mirror that. Never a stop
     inside or on top of a demand zone, never an entry mid-range between zones. Check it on the chart (LuxAlgo-style
     OB/FVG/strong-weak high-low view) before placing; snapshot.js lists the same zones.
+17. **Every order change is announced as an ORDER UPDATE** (new / moved / cancelled, with entry, stop, target) in the
+    reply, so the user can mirror it. The HYPE long was moved four times (X1 85.5 -> X5 88.9 -> X6 92.2 -> X8 95.3);
+    the user only had X1, so their book and the paper book diverged (X8 filled and lost; their X1 never filled).
 
 ## Mistakes and misses
 | Date (UTC) | What happened | Cost | Lesson → rule |
