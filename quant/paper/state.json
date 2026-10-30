@@ -21,6 +21,25 @@
       "created_ms": 1793368240353.6108,
       "arm": null,
       "expires_ms": 1793397600000
+    },
+    {
+      "id": "X25",
+      "symbol": "HYPEUSDT",
+      "book": "scalp",
+      "side": "long",
+      "trigger": "limit",
+      "tf": "4h",
+      "level": 90.75,
+      "stop": 89.62,
+      "target": 92.6,
+      "target_r": null,
+      "oco": null,
+      "note": "HYPE range 90.5-94.0 all day, 1h trend up (above 1h EMA50 88.5). Range-floor buy (the same read as X22, which hit target in the shadow SH7 after I strangled its stop). Rule 21: stop 1 ATR15m (0.89) beyond the already-swept 90.51 low = 89.62. Target 92.6 under the session +1sigma 92.68 and the 93-94 supply = 1.64R. 0.25%: correlated with SW1. Against: OI -5% 24h, 1h taker -331k. Invalidation: 89.62 = range lost, and the 88.45 15m swing low becomes the target for sellers.",
+      "risk_pct": 0.25,
+      "max_hold_h": 24,
+      "created_ms": 1793380437586.5986,
+      "arm": null,
+      "expires_ms": 1793387637586.6006
     }
   ],
   "positions": [
