@@ -4,23 +4,23 @@
   "risk_pct": 0.5,
   "orders": [
     {
-      "id": "X21",
+      "id": "X22",
       "symbol": "HYPEUSDT",
       "book": "scalp",
       "side": "long",
-      "trigger": "close_above",
-      "tf": "15m",
-      "level": 93.85,
-      "stop": 92.55,
-      "target": null,
-      "target_r": 1.6,
+      "trigger": "limit",
+      "tf": "4h",
+      "level": 90.85,
+      "stop": 90.25,
+      "target": 92.3,
+      "target_r": null,
       "oco": null,
-      "note": "HYPE range 90.7-93.8 breakout. With-trend (1h up BOS, above all EMAs, above weekly VWAP 88.1), relative strength through the Binance hack (on-chain venue narrative). Invalidation: back under 92.55 (15m structure lows). 0.25% not 0.35%: correlated with SW1 BTC long (rule 14). Target-R 1.6 from the fill, under the 97.09 48h high.",
+      "note": "HYPE range 90.7-93.8 since 05:00, 1h trend up (above 1h EMA50 87.9, up BOS). Buy the range floor, stop beyond it (rule 16): limit 90.85, stop 90.25 under the 90.72 range low + ~0.5 ATR15m. Target 92.3, under the 92.6 session +1sigma and the 93.8 top (rule 15): 2.4R. Binance says $6.34B ready to cover the hack: crisis pressure easing. Against: 1h taker delta -369k and OI -4.8% 24h (longs leaving). 0.25%: correlated with SW1 (rule 14). Invalidation: trade through 90.25.",
       "risk_pct": 0.25,
       "max_hold_h": 24,
-      "created_ms": 1793359170250.7188,
+      "created_ms": 1793366562718.9966,
       "arm": null,
-      "expires_ms": 1793366370250.7205
+      "expires_ms": 1793373762718.998
     }
   ],
   "positions": [
