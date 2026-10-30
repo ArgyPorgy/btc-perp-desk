@@ -402,3 +402,7 @@
 - ETH 2,201: pinned at the 2,200 call=put wall, still heavy selling. X20 SHORT limit 2,252 (bounce), stop 2,296 above the 5m bear OB, target 2,175 (1.75R), 0.15%.
 - HYPE 89.9: back to its 5m EMA200, sellers (-270k 5m); no trade.
 - No longs (rule 19).
+
+## 2026-10-30 03:13 UTC — price 77,448
+- 03:11 hourly: flat; X19 (BTC short 77,800) and X20 (ETH short 2,252) pending to 04:12. BTC 77,474 bouncing off 76,472 toward the 78k pin (7d call wall = put wall = 78k, gamma -117M); OI +9.9% 24h (shorts crowded), BNB back to ~711. Binance itself now says $6.3B affected (BBC/NYT): official, yet BTC +0.07% on it: the news is priced, which raises squeeze risk. Kept X19 as placed: it sells the pin from below with the stop above it (78,350), not the low.
+- ETH 2,216: bouncing inside 2,180-2,219 under the 2,200 pin's resistance band; X20 kept. HYPE 90.9 back above its 5m/15m EMAs, no trade (rule 19). BOJ held rates, raised its 2027 inflation outlook.
