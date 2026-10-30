@@ -46,7 +46,7 @@ from fapi import base  # Binance futures REST, or the local fallback where it is
 REST = base()
 FEE = 0.0005
 SYMBOLS = ("BTCUSDT", "ETHUSDT", "HYPEUSDT")
-SCALP_RISK, SCALP_DAY_STOP, MAX_OPEN = 0.35, 1.0, 3
+SCALP_RISK, SCALP_DAY_STOP, MAX_OPEN = 0.2, 1.0, 3  # 0.2% until a scalp pattern passes the desk bar (lessons rule 22)
 TARGET_PCT, MAX_DD_PCT, DAILY_PCT = 9.0, 3.0, 3.0  # Propr Turbo 1-Step
 
 

@@ -136,3 +136,16 @@ closes no more than 1% below, close above a RISING SMA100; stop 1 ATR under the 
 5. Liquidation cascades: needs our own forceOrder history (start logging it).
 6. Session opens (Asia/London/NY) × weekly VWAP side.
 7. Breakout longs: 4h close above the prior 10/20-day high (short fades of highs tested −0.13 to −0.39R, so the breakout side may carry the edge).
+
+## 2026-10-30 — intraday 24h-level trades (`intraday_level_test.py`)
+Why: the scalp book is 12 closed, −3.62R; most losses were longs at a range floor or a sweep of one. Tested the
+mechanical versions on BTC 15m (2020+) and BTC/ETH/HYPE 1h, fees included, one trade per half day:
+- A: limit buy at the prior-24h low (+0.1%), stop 1 ATR under it, 1.6R: BTC 15m −0.30R (n 1563), BTC 1h −0.15R,
+  ETH 1h −0.23R, HYPE 1h −0.08R (t −1.1).
+- B: 24h-low sweep with a close back above, stop under the wick, 1.5R / 2R: −0.14R to −0.31R everywhere.
+- Mirrors (scratchpad run): short a sweep of the 24h high −0.08R to −0.24R; short a close below the 24h low −0.08R to
+  −0.17R.
+Result: no intraday 24h-level pattern has an edge after fees, in either direction (most t −4 to −9). The live scalp
+record (−0.30R per trade) is what this predicts. The positive setups are all 4h/1d (S10/S20 on 10/20-day lows, B20,
+D1F). Desk change: scalp risk 0.35% → 0.2%; scalps need a catalyst or 4h/1d location (lessons rule 22).
+Backlog: test news-repricing continuation (the two scalp winners, X13/X15) once there are enough tagged events.
