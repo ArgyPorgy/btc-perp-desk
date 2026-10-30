@@ -429,3 +429,7 @@
 ## 2026-10-30 08:14 UTC — price 78,089
 - 08:13 hourly: SW1a/b BTC longs back to entry (78,068, +0.01R); the 08:00 4h closed 78,139 (low 77,883) and held above the 76,472 sweep wick. HOLD to 80,907 / 81,809, stop 76,395.5 (tested one-shot hold: no early exit at breakeven). Options re-struck: 7d gamma -34M (much less negative), put wall 77k, call wall 79k, flip 79.6k: a 77-79k range now. OI +1.7% 24h (froth gone).
 - ETH 2,230 weak (15m delta -24k, OI -3.1%); HYPE 91.4 lost its 15m EMA50 (15m delta -373k). No new trades: SW1 carries the crypto risk (rule 14) and no shorts against the tested BTC long.
+
+## 2026-10-30 09:13 UTC — price 77,800
+- 09:12 hourly: SW1a/b BTC longs 77,777 (-0.17R): drifting toward the 77k put wall with Nasdaq futures tumbling (Investing.com) and 15m delta -1.6k. HOLD, stop 76,395.5 (under the 76,472 sweep wick) unchanged: the setup is invalid only below the wick, and 77k is the new put wall (support) between price and the stop. No early exit, no averaging down.
+- ETH 2,225 weak under all EMAs; HYPE 91.7 at its 15m EMA50 with sellers. No trades (rule 14; no shorts against the tested BTC long). HOOD sliding pre-market (watch only).
