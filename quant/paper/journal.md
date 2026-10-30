@@ -421,3 +421,7 @@
 - 06:15 hourly: SW1a/b BTC longs 78,526 (+0.29R), stop 76,395.5 / targets 80,907 & 81,809 unchanged (tested one-shot hold). Quiet Asia: BTC in a tight 78.2-78.6k box above the 78k call=put pin, 5m ATR 122; 7d gamma -109M, flip 80.0k overhead (above it gamma turns supportive). Saylor: Strategy has $30B credit capacity for more BTC buys (supportive).
 - ETH 2,243 under its 2,250 pin, sellers on 5m/15m; HYPE 93.0 drifting with sellers (-617k 1h) but above all EMAs. No new trades: SW1 is the crypto-long risk (rule 14), no shorts against a tested BTC long.
 - Watch: European open; stocks, yields and gold all falling pre-Europe (risk-off cross-asset).
+
+## 2026-10-30 07:25 UTC — price 78,462
+- 07:24 hourly: SW1a/b BTC longs 78,456 (+0.25R), stop/targets unchanged. Still boxed 78.2-78.6k on the 78k call=put pin (7d gamma -117M, flip 79.7k): a coil; whichever side breaks will run. OI cooling (+3.8% 24h from +11%: shorts covering). Treasury yields at multi-week lows (supportive). Bloomberg full coverage of the $6.3B hack: no new price impact.
+- ETH 2,248 on its 2,250 pin, OI -2.4% 24h (deleveraging); HYPE 93.2 above all EMAs, mild selling. No new trades (rule 14; no shorts against the tested BTC long). European open next.
