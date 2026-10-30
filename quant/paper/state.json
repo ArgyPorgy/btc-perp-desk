@@ -2,27 +2,7 @@
   "start_equity": 10000.0,
   "equity": 10027.79712461737,
   "risk_pct": 0.5,
-  "orders": [
-    {
-      "id": "X26",
-      "symbol": "BTCUSDT",
-      "book": "scalp",
-      "side": "long",
-      "trigger": "limit",
-      "tf": "4h",
-      "level": 75700.0,
-      "stop": 74750.0,
-      "target": 77250.0,
-      "target_r": null,
-      "oco": null,
-      "note": "X23 re-placed at 0.2% (rule 22). 4h/1d demand: 4h bull OB 74,909-77,324, daily FVG 73,400-76,510; limit in the lower half, stop beyond the 74,909 swing low (rule 16), target 77,250 = 1.63R. HTF location is what rule 22 allows a scalp to stand on.",
-      "risk_pct": 0.2,
-      "max_hold_h": 24,
-      "created_ms": 1793387703103.7546,
-      "arm": null,
-      "expires_ms": 1793397600000
-    }
-  ],
+  "orders": [],
   "positions": [
     {
       "id": "SW2a",

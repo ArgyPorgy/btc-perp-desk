@@ -475,3 +475,6 @@
 
 ## 2026-10-30 21:13 UTC — price 76,647
 21:12 UTC hourly. SW2a/SW2b BTC long 76,876 held at -0.34R (BTC 76,639); stop 76,183.7 under the 76,260 sweep wick, the tested invalidation; no change. 1h taker -3.6k BTC, OI +7% 24h (down from +13.9%: some of the crowd closed). Trump: US looking at whether North Korea did the Binance hack; calls for crypto rules (The Block/Bloomberg) - BTC -0.3% on it, no break. X26 limit 75,700 expires 22:00 (sits under SW2's stop). Daily close at 00:00 vs EMA200 76,420 decides the regime: a close below turns B20 shorts on. ETH 2,236 and HYPE 90.1: flat, no catalyst or HTF location (rule 22), no trade.
+
+## 2026-10-30 22:12 UTC — price 76,858
+22:11 UTC hourly. X26 (75,700) EXPIRED unfilled: BTC never revisited the lower half of the zone. SW2a/SW2b held at -0.05R (BTC 76,838), stop 76,183.7, targets 77,915/78,261; 5m/15m taker turned slightly positive. Daily close at 00:00 vs EMA200 76,420 still decides the regime. ETH 2,240 on the 2,240 put wall, flat: no trade. HYPE 89.3 sliding toward the 1h EMA50 88.74 and the 88.45 15m low with OI -5.2% (longs closing): no short (no catalyst, no HTF level under rule 22; selling into the 1h EMA50 is selling the bottom of a 1h uptrend), no long (falling knife, rule 22). No new orders.
