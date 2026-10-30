@@ -282,8 +282,8 @@
       "stop": 78350.0,
       "target": 76600.0,
       "why": "X19 closed at 04:12: the 04:00 4h printed a tested S10/S20 sweep-reclaim (76,472 wick, close 78,200 above 77,896) and BTC reclaimed the 78k pin",
-      "result": null,
-      "R": null
+      "result": "stop",
+      "R": -1.0
     }
   ]
 }

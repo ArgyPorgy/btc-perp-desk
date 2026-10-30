@@ -411,3 +411,8 @@
 - 04:13 UTC: TESTED SWING SIGNAL. The 04:00 4h closed 78,200 after wicking to 76,472 below the 10/20-day low 77,896 = S10 + S20. Rule 19 (exchange crisis) weighed against it: BNB recovered 692 -> 717 (+3.6%), Binance's official $6.3B confirmation moved BTC only +0.1% (priced), OI +7.6% 24h (crowded shorts), 78k pin reclaimed, 5m/15m delta positive. Decision: TAKE IT at reduced size (0.35% total vs 0.5%): SW1a LONG 78,050 (S10 half, target 80,907 = 1.73R) + SW1b LONG 78,050 (S20 half, target 81,809 = 2.27R), stop 76,395.5 under the wick. Managed on 1h candles, one-shot hold (tested exits).
 - X19 BTC short (77,800) CLOSED at 78,050 (-$12.10, -0.60R): the sweep-reclaim and the 78k reclaim invalidate 'sell the pin from below'; can't hold a short against a tested long signal. Shadow S5 tracks it. X20 expired.
 - ETH 2,234 / HYPE 92.2: no trades (ETH still under its daily EMA200; HYPE fine but SW1 already carries the crypto-long risk, rule 14).
+
+## 2026-10-30 05:12 UTC — price 78,576
+- 05:11 hourly: SW1a/SW1b BTC longs 78,613 (+0.34R each); one-shot hold to 80,907 / 81,809, stop 76,395.5 unchanged (tested exits; no breakeven). BTC back above its 5m EMA50, 15m delta +2.1k, BNB 720 (recovered), 7d gamma -99M with the 78k call=put pin now below price and the flip at 80.0k overhead. Shadow S5 resolved -1R: closing X19 at 04:13 saved ~$8.
+- Risk to watch: CoinDesk: the hacker split $1.4B of BTC into 19 wallets that can't be frozen = potential spot supply. If it hits exchanges, SW1's stop does the work (no pre-emptive cut on a headline that is supply risk, not a sale).
+- ETH 2,251 at its 2,250 call=put pin; HYPE 93.3 strong above all EMAs. No new trades: SW1 already carries the crypto-long risk (rule 14).
