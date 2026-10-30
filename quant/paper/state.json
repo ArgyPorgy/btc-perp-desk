@@ -2,7 +2,27 @@
   "start_equity": 10000.0,
   "equity": 10134.679211489887,
   "risk_pct": 0.5,
-  "orders": [],
+  "orders": [
+    {
+      "id": "X21",
+      "symbol": "HYPEUSDT",
+      "book": "scalp",
+      "side": "long",
+      "trigger": "close_above",
+      "tf": "15m",
+      "level": 93.85,
+      "stop": 92.55,
+      "target": null,
+      "target_r": 1.6,
+      "oco": null,
+      "note": "HYPE range 90.7-93.8 breakout. With-trend (1h up BOS, above all EMAs, above weekly VWAP 88.1), relative strength through the Binance hack (on-chain venue narrative). Invalidation: back under 92.55 (15m structure lows). 0.25% not 0.35%: correlated with SW1 BTC long (rule 14). Target-R 1.6 from the fill, under the 97.09 48h high.",
+      "risk_pct": 0.25,
+      "max_hold_h": 24,
+      "created_ms": 1793359170250.7188,
+      "arm": null,
+      "expires_ms": 1793366370250.7205
+    }
+  ],
   "positions": [
     {
       "id": "SW1a",
@@ -284,6 +304,18 @@
       "why": "X19 closed at 04:12: the 04:00 4h printed a tested S10/S20 sweep-reclaim (76,472 wick, close 78,200 above 77,896) and BTC reclaimed the 78k pin",
       "result": "stop",
       "R": -1.0
+    },
+    {
+      "id": "SH6",
+      "symbol": "ETHUSDT",
+      "side": "long",
+      "entry": 2241.2,
+      "at_ms": 1793358900000,
+      "stop": 2214.0,
+      "target": 2282.0,
+      "why": "10:17 note said long only on a 2,240 reclaim; reclaimed, skipped: correlated with SW1 BTC long (rule 14), counter-trend in an exchange crisis with a fresh 'additional points of breach' headline (rule 19), and the 2,280 call wall caps the target at 1.5R (rule 15).",
+      "result": null,
+      "R": null
     }
   ]
 }
