@@ -175,14 +175,13 @@ def process(s):
     for o in list(s["orders"]):
         if o not in s["orders"]:
             continue  # removed by OCO
-        if o.get("expires_ms") and now > o["expires_ms"]:
-            s["orders"].remove(o)
-            events.append(f"EXPIRED {o['id']} (no trigger by {iso(o['expires_ms'])})")
-            continue
+        end = o.get("expires_ms") or float("inf")  # candles that closed before expiry still count, even if this run is late
         if o.get("arm") and not o.get("armed_ms"):
             for b in klines("4h", o["created_ms"] - 4 * 3600e3, sym(o)):
                 if b["T"] <= o["created_ms"]:
                     continue
+                if b["T"] > end:
+                    break
                 a = o["arm"]
                 if (a["trigger"] == "close_below" and b["c"] < a["level"]) or (a["trigger"] == "close_above" and b["c"] > a["level"]):
                     o["armed_ms"] = b["T"]
@@ -195,6 +194,8 @@ def process(s):
             for b in klines("5m", start - 300e3, sym(o)):
                 if b["t"] < start:
                     continue
+                if b["t"] >= end:
+                    break
                 # trade THROUGH the level (a bare touch may not fill a real resting order at the back of the queue)
                 if (o["side"] == "long" and b["l"] < o["level"]) or (o["side"] == "short" and b["h"] > o["level"]):
                     s["orders"].remove(o)
@@ -205,11 +206,16 @@ def process(s):
         for b in klines(tf, start - 4 * 3600e3, sym(o)):
             if b["T"] <= start:
                 continue
+            if b["T"] > end:
+                break
             hit = (o["trigger"] == "close_above" and b["c"] > o["level"]) or (o["trigger"] == "close_below" and b["c"] < o["level"])
             if hit:
                 s["orders"].remove(o)
                 open_position(s, o, b["c"], b["T"] + 1, events)
                 break
+    for o in [o for o in s["orders"] if o.get("expires_ms") and now > o["expires_ms"]]:
+        s["orders"].remove(o)
+        events.append(f"EXPIRED {o['id']} (no trigger by {iso(o['expires_ms'])})")
     # 2) open positions vs closed candles: 1h for swings, 5m for scalps
     for p in list(s["positions"]):
         side = 1 if p["side"] == "long" else -1
