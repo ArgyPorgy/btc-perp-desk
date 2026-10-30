@@ -406,3 +406,8 @@
 ## 2026-10-30 03:13 UTC — price 77,448
 - 03:11 hourly: flat; X19 (BTC short 77,800) and X20 (ETH short 2,252) pending to 04:12. BTC 77,474 bouncing off 76,472 toward the 78k pin (7d call wall = put wall = 78k, gamma -117M); OI +9.9% 24h (shorts crowded), BNB back to ~711. Binance itself now says $6.3B affected (BBC/NYT): official, yet BTC +0.07% on it: the news is priced, which raises squeeze risk. Kept X19 as placed: it sells the pin from below with the stop above it (78,350), not the low.
 - ETH 2,216: bouncing inside 2,180-2,219 under the 2,200 pin's resistance band; X20 kept. HYPE 90.9 back above its 5m/15m EMAs, no trade (rule 19). BOJ held rates, raised its 2027 inflation outlook.
+
+## 2026-10-30 04:13 UTC — price 78,038
+- 04:13 UTC: TESTED SWING SIGNAL. The 04:00 4h closed 78,200 after wicking to 76,472 below the 10/20-day low 77,896 = S10 + S20. Rule 19 (exchange crisis) weighed against it: BNB recovered 692 -> 717 (+3.6%), Binance's official $6.3B confirmation moved BTC only +0.1% (priced), OI +7.6% 24h (crowded shorts), 78k pin reclaimed, 5m/15m delta positive. Decision: TAKE IT at reduced size (0.35% total vs 0.5%): SW1a LONG 78,050 (S10 half, target 80,907 = 1.73R) + SW1b LONG 78,050 (S20 half, target 81,809 = 2.27R), stop 76,395.5 under the wick. Managed on 1h candles, one-shot hold (tested exits).
+- X19 BTC short (77,800) CLOSED at 78,050 (-$12.10, -0.60R): the sweep-reclaim and the 78k reclaim invalidate 'sell the pin from below'; can't hold a short against a tested long signal. Shadow S5 tracks it. X20 expired.
+- ETH 2,234 / HYPE 92.2: no trades (ETH still under its daily EMA200; HYPE fine but SW1 already carries the crypto-long risk, rule 14).

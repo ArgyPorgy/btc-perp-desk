@@ -45,6 +45,8 @@ the rule goes into **Current rules** too. Skipped or cancelled plan trades are a
     longs into it, look for the tape's confirmation e.g. the exchange token underperforming), not as unconfirmed noise.
 19. **No counter-trend longs during a live exchange crisis.** Until the venue resumes withdrawals or its token recovers,
     supports are temporary: the next shoe (here a withdrawal halt) breaks them. Trade with the stress or stand aside.
+    Exception used 2026-10-30 04:13: a TESTED swing signal (S10/S20) after the venue token recovered most of its drop
+    and official confirmation moved price < 0.2%: taken at reduced size (0.35%), with any opposing scalp closed.
 
 ## Mistakes and misses
 | Date (UTC) | What happened | Cost | Lesson → rule |
