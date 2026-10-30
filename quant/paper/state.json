@@ -1,6 +1,6 @@
 {
   "start_equity": 10000.0,
-  "equity": 10134.679211489887,
+  "equity": 10120.291134096826,
   "risk_pct": 0.5,
   "orders": [
     {
@@ -51,21 +51,6 @@
       "opened_ms": 1793333590698.4265,
       "note": "Tested S10+S20 at the 04:00 4h close: wick 76,472 < 10/20-day low 77,896 < close 78,200. Stop 76,395 under the wick. Rule 19 (exchange crisis) weighed: BNB recovered 692 -> 717 (+3.6%), Binance's official $6.3B confirmation moved BTC +0.1% (priced), OI +7.6% 24h (crowded shorts), 78k pin reclaimed. Taken at 0.35% total (not 0.5%) for the residual exchange-event tail. S20 half, 2R.",
       "max_hold_h": 168
-    },
-    {
-      "id": "X22",
-      "symbol": "HYPEUSDT",
-      "book": "scalp",
-      "side": "long",
-      "entry": 90.85,
-      "stop": 90.6,
-      "target": 92.3,
-      "qty": 42.22783004787493,
-      "risk_pct": 0.25,
-      "opened_ms": 1793366700000,
-      "note": "HYPE range 90.7-93.8 since 05:00, 1h trend up (above 1h EMA50 87.9, up BOS). Buy the range floor, stop beyond it (rule 16): limit 90.85, stop 90.25 under the 90.72 range low + ~0.5 ATR15m. Target 92.3, under the 92.6 session +1sigma and the 93.8 top (rule 15): 2.4R. Binance says $6.34B ready to cover the hack: crisis pressure easing. Against: 1h taker delta -369k and OI -4.8% 24h (longs leaving). 0.25%: correlated with SW1 (rule 14). Invalidation: trade through 90.25.",
-      "max_hold_h": 24,
-      "orig_stop": 90.25
     }
   ],
   "closed": [
@@ -257,6 +242,26 @@
       "reason": "manual",
       "pnl": -12.09957248266982,
       "R": -0.5962272727272727
+    },
+    {
+      "id": "X22",
+      "symbol": "HYPEUSDT",
+      "book": "scalp",
+      "side": "long",
+      "entry": 90.85,
+      "stop": 90.6,
+      "target": 92.3,
+      "qty": 42.22783004787493,
+      "risk_pct": 0.25,
+      "opened_ms": 1793366700000,
+      "note": "HYPE range 90.7-93.8 since 05:00, 1h trend up (above 1h EMA50 87.9, up BOS). Buy the range floor, stop beyond it (rule 16): limit 90.85, stop 90.25 under the 90.72 range low + ~0.5 ATR15m. Target 92.3, under the 92.6 session +1sigma and the 93.8 top (rule 15): 2.4R. Binance says $6.34B ready to cover the hack: crisis pressure easing. Against: 1h taker delta -369k and OI -4.8% 24h (longs leaving). 0.25%: correlated with SW1 (rule 14). Invalidation: trade through 90.25.",
+      "max_hold_h": 24,
+      "orig_stop": 90.25,
+      "exit": 90.6,
+      "closed_ms": 1793369400000,
+      "reason": "stop",
+      "pnl": -14.388077393062186,
+      "R": -0.5678750000000053
     }
   ],
   "shadow": [
@@ -331,6 +336,18 @@
       "why": "10:17 note said long only on a 2,240 reclaim; reclaimed, skipped: correlated with SW1 BTC long (rule 14), counter-trend in an exchange crisis with a fresh 'additional points of breach' headline (rule 19), and the 2,280 call wall caps the target at 1.5R (rule 15).",
       "result": "stop",
       "R": -1.0
+    },
+    {
+      "id": "SH7",
+      "symbol": "HYPEUSDT",
+      "side": "long",
+      "entry": 90.85,
+      "at_ms": 1793366700000,
+      "stop": 90.25,
+      "target": 92.3,
+      "why": "X22 as planned, without my 13:43 stop tightening to 90.60 (stopped 14:10 on a sweep of the equal lows to 90.51).",
+      "result": null,
+      "R": null
     }
   ]
 }

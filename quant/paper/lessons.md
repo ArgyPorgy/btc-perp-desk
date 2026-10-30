@@ -47,6 +47,9 @@ the rule goes into **Current rules** too. Skipped or cancelled plan trades are a
     supports are temporary: the next shoe (here a withdrawal halt) breaks them. Trade with the stress or stand aside.
     Exception used 2026-10-30 04:13: a TESTED swing signal (S10/S20) after the venue token recovered most of its drop
     and official confirmation moved price < 0.2%: taken at reduced size (0.35%), with any opposing scalp closed.
+20. **Never tighten a stop to just under equal lows (or over equal highs).** Two touches at the same price are where
+    everyone's stops sit, and they get swept. Tighten only to beyond a level that was already swept, or at least
+    0.5 ATR(15m) past the structure; otherwise leave the original invalidation stop alone.
 
 ## Mistakes and misses
 | Date (UTC) | What happened | Cost | Lesson → rule |
@@ -67,6 +70,7 @@ the rule goes into **Current rules** too. Skipped or cancelled plan trades are a
 | 2026-10-29 21:12 | **X14** BTC short 79,150: the stop (79,650) sat inside the 5m bear FVG 79,099–79,750, so a normal fill-the-gap squeeze would take it out; and the short was entered as the catalyst (Binance panic) was already fading (BNB bouncing). Closed at −0.18R. | −$6 | Rule 16 applies to shorts too: stop ABOVE the whole supply zone. Re-check the catalyst before a limit fills (rule 12). |
 | 2026-10-29 23:45 | **X17** BTC base long 78,650 stopped at 78,450 (−0.56R, −$11). Bought the 78.2k base during an escalating exchange crisis; at 23:37 "Binance halts withdrawals amid $5.3B hack" broke the base to 77,896. Done right: the stop was tightened from 78,150 under the higher low at 22:12, so the loss was $11 instead of $20 (77,896 took out both). | −$11 | Rule 19: no counter-trend longs during a live exchange crisis. |
 | 2026-10-30 13:50 | **SW1a/SW1b** (open, −0.75R): the tested S10/S20 stop (0.1% under the 76,472 sweep wick = 76,395.5) sits INSIDE the 4h/1d demand the user flagged (4h bull OB 74,909–77,324, daily FVG 73,400–76,510, daily EMA200 76,423). A normal sweep into that support takes the stop before the bounce. Rule 16 was checked for scalps but not for the mechanical swing stop. | open; ≤ −1R if hit | A tested setup's stop is kept (never widened), but check it against the HTF zones at entry. When it sits inside support, plan the re-entry at the zone with the stop beyond it at the same time (done late here: X23 limit 75,700 / stop 74,750). Backlog: test S10/S20 with the stop under the nearest 4h/1d order block instead of the wick. |
+| 2026-10-30 14:10 | **X22** HYPE range-floor long 90.85 stopped at 90.60 (−0.57R, −$14). At +1R I tightened the stop from 90.25 to 90.60, 0.1 under the post-fill double low 90.70/90.72, because BTC lost 77k. HYPE swept those equal lows to 90.51 and turned back up to 90.9; the original stop 90.25 was never touched. | −$14 (shadow SH7 scores the original plan) | Rule 20. Cutting risk was right in spirit (BTC breaking support); parking the stop on obvious liquidity was the mistake. Better: scale out half, or leave the stop at the real invalidation. |
 
 ## Shadow trades (skipped or cancelled plan trades)
 | ID | Trade | Why skipped | Result |
