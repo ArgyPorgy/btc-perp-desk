@@ -353,8 +353,8 @@ def main():
         if args.book == "scalp":
             if not args.note:
                 sys.exit("a scalp needs --note: the thesis and what invalidates it")
-            if len(s["positions"]) >= MAX_OPEN:
-                sys.exit(f"refused: already {MAX_OPEN} open positions")
+            if sum(p.get("book") == "scalp" for p in s["positions"]) >= MAX_OPEN:  # the scalp book cap; swings are capped by risk
+                sys.exit(f"refused: already {MAX_OPEN} open scalps")
             day0 = datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0).timestamp() * 1000
             lost = -sum(x["pnl"] for x in s["closed"] if x.get("book") == "scalp" and x["closed_ms"] >= day0)
             if lost >= s["equity"] * SCALP_DAY_STOP / 100:

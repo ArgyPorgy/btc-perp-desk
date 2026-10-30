@@ -2,7 +2,27 @@
   "start_equity": 10000.0,
   "equity": 10134.679211489887,
   "risk_pct": 0.5,
-  "orders": [],
+  "orders": [
+    {
+      "id": "X23",
+      "symbol": "BTCUSDT",
+      "book": "scalp",
+      "side": "long",
+      "trigger": "limit",
+      "tf": "4h",
+      "level": 75700.0,
+      "stop": 74750.0,
+      "target": 77250.0,
+      "target_r": null,
+      "oco": null,
+      "note": "4h/1d demand re-entry (user flagged the 4h support). Zone = 4h bull OB 74,909-77,324 + daily OB 74,909-78,223 + daily bull FVG 73,400-76,510, daily EMA200 76,423; 7d gamma top strikes 77k/75k, 30d put wall 74k. Limit in the lower half of the zone, stop BEYOND it under the 74,909 swing low (rule 16), target 77,250 under the 15m bear FVG 77,017-77,242 = 1.63R. Only fills after SW1's 76,395.5 stop (inside the zone, a location error) is taken, so it is a better-located re-entry, not a second correlated bet. Invalidation: trade through 74,750 (daily OB lost). OI +4.2% 24h into the low with flat funding = shorts adding into support (squeeze fuel).",
+      "risk_pct": 0.35,
+      "max_hold_h": 24,
+      "created_ms": 1793368240353.6108,
+      "arm": null,
+      "expires_ms": 1793397600000
+    }
+  ],
   "positions": [
     {
       "id": "SW1a",
@@ -309,8 +329,8 @@
       "stop": 2214.0,
       "target": 2282.0,
       "why": "10:17 note said long only on a 2,240 reclaim; reclaimed, skipped: correlated with SW1 BTC long (rule 14), counter-trend in an exchange crisis with a fresh 'additional points of breach' headline (rule 19), and the 2,280 call wall caps the target at 1.5R (rule 15).",
-      "result": null,
-      "R": null
+      "result": "stop",
+      "R": -1.0
     }
   ]
 }
