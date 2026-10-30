@@ -416,3 +416,8 @@
 - 05:11 hourly: SW1a/SW1b BTC longs 78,613 (+0.34R each); one-shot hold to 80,907 / 81,809, stop 76,395.5 unchanged (tested exits; no breakeven). BTC back above its 5m EMA50, 15m delta +2.1k, BNB 720 (recovered), 7d gamma -99M with the 78k call=put pin now below price and the flip at 80.0k overhead. Shadow S5 resolved -1R: closing X19 at 04:13 saved ~$8.
 - Risk to watch: CoinDesk: the hacker split $1.4B of BTC into 19 wallets that can't be frozen = potential spot supply. If it hits exchanges, SW1's stop does the work (no pre-emptive cut on a headline that is supply risk, not a sale).
 - ETH 2,251 at its 2,250 call=put pin; HYPE 93.3 strong above all EMAs. No new trades: SW1 already carries the crypto-long risk (rule 14).
+
+## 2026-10-30 06:17 UTC — price 78,571
+- 06:15 hourly: SW1a/b BTC longs 78,526 (+0.29R), stop 76,395.5 / targets 80,907 & 81,809 unchanged (tested one-shot hold). Quiet Asia: BTC in a tight 78.2-78.6k box above the 78k call=put pin, 5m ATR 122; 7d gamma -109M, flip 80.0k overhead (above it gamma turns supportive). Saylor: Strategy has $30B credit capacity for more BTC buys (supportive).
+- ETH 2,243 under its 2,250 pin, sellers on 5m/15m; HYPE 93.0 drifting with sellers (-617k 1h) but above all EMAs. No new trades: SW1 is the crypto-long risk (rule 14), no shorts against a tested BTC long.
+- Watch: European open; stocks, yields and gold all falling pre-Europe (risk-off cross-asset).
