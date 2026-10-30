@@ -1,6 +1,6 @@
 {
   "start_equity": 10000.0,
-  "equity": 10120.291134096826,
+  "equity": 10092.168110071563,
   "risk_pct": 0.5,
   "orders": [
     {
@@ -21,25 +21,6 @@
       "created_ms": 1793368240353.6108,
       "arm": null,
       "expires_ms": 1793397600000
-    },
-    {
-      "id": "X24",
-      "symbol": "ETHUSDT",
-      "book": "scalp",
-      "side": "long",
-      "trigger": "limit",
-      "tf": "4h",
-      "level": 2241.0,
-      "stop": 2221.0,
-      "target": 2278.0,
-      "target_r": null,
-      "oco": null,
-      "note": "ETH broke up out of the 2,205-2,240 box (15m taker +21k ETH, 5m above EMA50/200). Flip-retest: limit at the broken box top 2,241, stop 2,221 beyond the session VWAP 2,225 and 5m EMA50 (rule 16), target 2,278 under the 2,280 call wall (rule 15) = 1.85R. 0.25%: correlated with SW1 (rule 14). Binance pledged to cover losses: crisis easing (rule 19). Invalidation: trade through 2,221 = back inside the box.",
-      "risk_pct": 0.25,
-      "max_hold_h": 24,
-      "created_ms": 1793373382565.4902,
-      "arm": null,
-      "expires_ms": 1793380582565.4915
     }
   ],
   "positions": [
@@ -281,6 +262,25 @@
       "reason": "stop",
       "pnl": -14.388077393062186,
       "R": -0.5678750000000053
+    },
+    {
+      "id": "X24",
+      "symbol": "ETHUSDT",
+      "book": "scalp",
+      "side": "long",
+      "entry": 2241.0,
+      "stop": 2221.0,
+      "target": 2278.0,
+      "qty": 1.2650363917621033,
+      "risk_pct": 0.25,
+      "opened_ms": 1793373900000,
+      "note": "ETH broke up out of the 2,205-2,240 box (15m taker +21k ETH, 5m above EMA50/200). Flip-retest: limit at the broken box top 2,241, stop 2,221 beyond the session VWAP 2,225 and 5m EMA50 (rule 16), target 2,278 under the 2,280 call wall (rule 15) = 1.85R. 0.25%: correlated with SW1 (rule 14). Binance pledged to cover losses: crisis easing (rule 19). Invalidation: trade through 2,221 = back inside the box.",
+      "max_hold_h": 24,
+      "exit": 2221.0,
+      "closed_ms": 1793375400000,
+      "reason": "stop",
+      "pnl": -28.123024025263316,
+      "R": -1.11155
     }
   ],
   "shadow": [

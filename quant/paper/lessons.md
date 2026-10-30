@@ -50,6 +50,10 @@ the rule goes into **Current rules** too. Skipped or cancelled plan trades are a
 20. **Never tighten a stop to just under equal lows (or over equal highs).** Two touches at the same price are where
     everyone's stops sit, and they get swept. Tighten only to beyond a level that was already swept, or at least
     0.5 ATR(15m) past the structure; otherwise leave the original invalidation stop alone.
+21. **Scalp stops get wick room: at least 1 ATR(15m) beyond the level they protect.** X8, X14, X22 and X24 were all
+    stopped by a wick through an obvious level (equal lows, session VWAP, an FVG) that then reversed. Measure the
+    stop from the level, not from the entry; if 1 ATR(15m) of room makes the trade < 1.5R, skip it or wait for a
+    deeper fill.
 
 ## Mistakes and misses
 | Date (UTC) | What happened | Cost | Lesson → rule |
@@ -71,6 +75,7 @@ the rule goes into **Current rules** too. Skipped or cancelled plan trades are a
 | 2026-10-29 23:45 | **X17** BTC base long 78,650 stopped at 78,450 (−0.56R, −$11). Bought the 78.2k base during an escalating exchange crisis; at 23:37 "Binance halts withdrawals amid $5.3B hack" broke the base to 77,896. Done right: the stop was tightened from 78,150 under the higher low at 22:12, so the loss was $11 instead of $20 (77,896 took out both). | −$11 | Rule 19: no counter-trend longs during a live exchange crisis. |
 | 2026-10-30 13:50 | **SW1a/SW1b** (open, −0.75R): the tested S10/S20 stop (0.1% under the 76,472 sweep wick = 76,395.5) sits INSIDE the 4h/1d demand the user flagged (4h bull OB 74,909–77,324, daily FVG 73,400–76,510, daily EMA200 76,423). A normal sweep into that support takes the stop before the bounce. Rule 16 was checked for scalps but not for the mechanical swing stop. | open; ≤ −1R if hit | A tested setup's stop is kept (never widened), but check it against the HTF zones at entry. When it sits inside support, plan the re-entry at the zone with the stop beyond it at the same time (done late here: X23 limit 75,700 / stop 74,750). Backlog: test S10/S20 with the stop under the nearest 4h/1d order block instead of the wick. |
 | 2026-10-30 14:10 | **X22** HYPE range-floor long 90.85 stopped at 90.60 (−0.57R, −$14). At +1R I tightened the stop from 90.25 to 90.60, 0.1 under the post-fill double low 90.70/90.72, because BTC lost 77k. HYPE swept those equal lows to 90.51 and turned back up to 90.9; the original stop 90.25 was never touched. | −$14 actual; the untightened plan (SH7) hit 92.3 by 15:14 = +2.42R, so the tightening cost ~3R (~$75) | Rule 20. Cutting risk was right in spirit (BTC breaking support); parking the stop on obvious liquidity was the mistake. Better: scale out half, or leave the stop at the real invalidation. |
+| 2026-10-30 15:50 | **X24** ETH box-top retest long 2,241 stopped at 2,221 (−1.11R, −$28). Filled 15:25, then BTC's bounce stalled (5m taker turned −1.9k BTC) and ETH wicked to 2,215.56, 10 under the session VWAP 2,225.7, before returning to 2,233. My stop sat 4.7 under the VWAP (0.37 ATR15m): on the liquidity, not beyond it. | −$28 | Rule 21. Fourth scalp loss this week from a stop parked at an obvious level (X8, X14, X22, X24). |
 
 ## Shadow trades (skipped or cancelled plan trades)
 | ID | Trade | Why skipped | Result |
