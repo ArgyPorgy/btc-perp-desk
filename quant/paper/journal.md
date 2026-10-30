@@ -478,3 +478,6 @@
 
 ## 2026-10-30 22:12 UTC — price 76,858
 22:11 UTC hourly. X26 (75,700) EXPIRED unfilled: BTC never revisited the lower half of the zone. SW2a/SW2b held at -0.05R (BTC 76,838), stop 76,183.7, targets 77,915/78,261; 5m/15m taker turned slightly positive. Daily close at 00:00 vs EMA200 76,420 still decides the regime. ETH 2,240 on the 2,240 put wall, flat: no trade. HYPE 89.3 sliding toward the 1h EMA50 88.74 and the 88.45 15m low with OI -5.2% (longs closing): no short (no catalyst, no HTF level under rule 22; selling into the 1h EMA50 is selling the bottom of a 1h uptrend), no long (falling knife, rule 22). No new orders.
+
+## 2026-10-30 23:12 UTC — price 77,029
+23:11 UTC hourly. SW2a/SW2b +0.26R (BTC 77,053, back above the 77k put wall; 5m/15m taker +858/+828 BTC); stop 76,183.7, targets 77,915/78,261; held. Daily close at 00:00 is set to stay above EMA200 76,420 (regime BULL, B20 off). HYPE catalyst checked: Bloomberg 22:53 'NYSE owner plans Hyperliquid perpetuals market in US'. Tape: no reaction (89.1-89.4 on thin 5m volume, OI -12.4% 24h). No trade: a catalyst the market ignores is not a repricing (rule 18 wants tape confirmation), and the confirmation long (15m back above 90.9, stop under the 88.45 low, target the 93.9 range top) is 1.2R. ETH 2,239 pinned at the 2,240 call/put wall: no trade. No calendar events listed for the next 7 days.
