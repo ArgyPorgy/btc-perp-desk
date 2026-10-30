@@ -425,3 +425,7 @@
 ## 2026-10-30 07:25 UTC — price 78,462
 - 07:24 hourly: SW1a/b BTC longs 78,456 (+0.25R), stop/targets unchanged. Still boxed 78.2-78.6k on the 78k call=put pin (7d gamma -117M, flip 79.7k): a coil; whichever side breaks will run. OI cooling (+3.8% 24h from +11%: shorts covering). Treasury yields at multi-week lows (supportive). Bloomberg full coverage of the $6.3B hack: no new price impact.
 - ETH 2,248 on its 2,250 pin, OI -2.4% 24h (deleveraging); HYPE 93.2 above all EMAs, mild selling. No new trades (rule 14; no shorts against the tested BTC long). European open next.
+
+## 2026-10-30 08:14 UTC — price 78,089
+- 08:13 hourly: SW1a/b BTC longs back to entry (78,068, +0.01R); the 08:00 4h closed 78,139 (low 77,883) and held above the 76,472 sweep wick. HOLD to 80,907 / 81,809, stop 76,395.5 (tested one-shot hold: no early exit at breakeven). Options re-struck: 7d gamma -34M (much less negative), put wall 77k, call wall 79k, flip 79.6k: a 77-79k range now. OI +1.7% 24h (froth gone).
+- ETH 2,230 weak (15m delta -24k, OI -3.1%); HYPE 91.4 lost its 15m EMA50 (15m delta -373k). No new trades: SW1 carries the crypto risk (rule 14) and no shorts against the tested BTC long.
