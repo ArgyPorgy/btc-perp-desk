@@ -395,3 +395,10 @@
 - 01:11 hourly: X15 BTC short 77,130 (+0.85R); low 76,739 came within $39 of the 76,700 target. Stop tightened 78,950 -> 78,300 (above the broken 78,233 base low: a reclaim there kills the breakdown), max loss now ~-0.34R. Why now: BNB bouncing 683 -> 701 (+2.6%) and BTC sitting near the 77k strike while 7d gamma is -103M; a squeeze back to the 78k put wall is possible. Target 76,700 unchanged. X18 expired unfilled.
 - News: BBC/Guardian: $2.5bn frozen; CoinDesk: the hack drained reserve wallets backing customer assets; Binance says customer money is safe. Withdrawals still halted.
 - ETH 2,218: new low 2,196 at the 2,200 put wall, 1h delta -224k; no trade (mid-move, no level to sell into). HYPE 90.8: buyers active (+251k 15m), holding 88.5+; no trade (rule 19).
+
+## 2026-10-30 02:12 UTC — price 76,944
+- 02:11 hourly: X15 BTC short hit TARGET 76,700 at 01:35: +$24.50 (+1.21R). Equity $10,146.78 (+1.47%), room $328. Scalp book 8 trades -0.26R (2 wins); today +$24.50.
+- BTC 76,965 (low 76,472): extended 4.7% under the 1h EMA200, OI +11% 24h (crowded shorts), BNB recovering 695 -> 706, Treasuries rallying (flight to safety). 7d call wall now 75k, put wall 78k, gamma -105M. WSJ: Binance suspended transactions, 'possibly the biggest-ever heist'. No chase: X19 SHORT limit 77,800 (retest of the 78k wall / base underside), stop 78,350, target 76,600 (2.2R), 0.2%.
+- ETH 2,201: pinned at the 2,200 call=put wall, still heavy selling. X20 SHORT limit 2,252 (bounce), stop 2,296 above the 5m bear OB, target 2,175 (1.75R), 0.15%.
+- HYPE 89.9: back to its 5m EMA200, sellers (-270k 5m); no trade.
+- No longs (rule 19).

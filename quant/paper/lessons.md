@@ -81,6 +81,7 @@ Running total: **+1.50R** missed by overriding the plan.
 | 2026-10-29 20:35 | **X13** BTC scalp short 80,420 -> 79,880 | **+1.64R, +$33.20** | Reacted to a top-impact headline (Iran naval blockade) the same run; shorted the RETEST of the broken gamma flip inside a 15m bear FVG (location at supply, rule 16), stop above the FVG and 1h EMA50, target in front of the next bull OB; sized 0.2% for the day stop. |
 | 2026-10-29 20:14 | **Early exit** of X11a/X11c ETH longs at 2,314 (−$3.89 total) | saved ~$36 (shadows S2/S3 both hit the 2,288 stop) | Rule 13 worked: the leader (BTC) broke its gamma flip on new risk-off news, so the zone thesis was re-judged instead of waiting for the stop. |
 | 2026-10-29 21:12 | **X14 exit** at 79,158 (−$6) | saved ~$29 (shadow S4: stop 79,650 hit at 21:15, high 79,766) | Read the base forming (three held lows, fading delta, trapped OI, BNB bouncing) and the stop sitting inside a bear FVG; cut instead of hoping. |
+| 2026-10-30 01:35 | **X15** BTC short 77,967 -> 76,700 (base-break continuation) | **+1.21R, +$24.50** | Two-sided plan kept both sides: when the 78.2k base broke on the withdrawal-halt news, the short side triggered on a 15m close (no anticipation). Stop tightened only to structure (78,300, above the broken base) as BNB bounced; target set ahead of the next level. |
 
 ## Process wins
 - 2026-10-29: kept every order inside the daily-loss floor; cancelled X4 when BTC broke the other way instead of hoping.
