@@ -383,3 +383,10 @@
 - 23:54: X17 BTC long STOPPED 78,450 at 23:45 (-0.56R, -$11.29). Investing.com 23:37: 'Binance halts withdrawals amid $5.3B hack'; Cointelegraph: BNB -7%. BTC broke the 78.2k base to 77,896, now ~78,000 on the 78k put wall; 7d gamma -99M/1% (moves amplified), OI +7.8% 24h. Equity $10,122.28 (+1.22%).
 - X15 SHORT (15m close < 78,200, stop 78,950, target 76,700) is the plan's other side: if the 23:45 candle closes below 78,200 at 00:00 it fills; kept (two-sided plan; the base broke on new exchange-crisis news). X18 ETH short limit 2,300 (ETH 2,254) kept to its 00:30 expiry. HYPE 89.1 broke its 89.95 range low: no trade.
 - Lessons: rule 19 (no counter-trend longs during a live exchange crisis); X17 row (tightened stop saved ~$9).
+
+## 2026-10-30 00:15 UTC — price 77,899
+- 00:13 UTC (new day; daily floor $9,818.61, room $303.7): X15 BTC SHORT FILLED 77,966.9 at the 00:00 close (base break), stop 78,950, target 76,700, 0.2%; now 77,932 (+0.04R). HOLD.
+- Daily closes: BTC 77,967, below the daily EMA50 80,563 but above the EMA200 76,420 (bull regime: B20 still off; no S10/S20, the 4h closed below 79,179). ETH closed 2,252.5 BELOW its daily EMA200 2,317 = ETH in a bear regime (B20 on ETH tested +0.21R n=39 t 1.0: not tradable, noted). Options: BTC call wall = put wall = 78,000 with 7d gamma -102M: a pin magnet at 78k inside an amplifying regime: expect whipsaws around 78k.
+- ETH 2,245: X18 (short 2,300) left to expire 00:30; ETH never bounced into it. No chase.
+- HYPE 89.5: holding 88.9-92.5, above its 1h/4h EMAs, 5m buyers +136k; relative strength persists. No trade (rule 19: no counter-trend longs in the exchange crisis; HYPE long would be against BTC's trend).
+- News: Guardian/Investing.com: Binance investigating a reported $5.3B hack; withdrawals halted (23:37). BNB 694.8, sliding again.

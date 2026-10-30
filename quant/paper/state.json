@@ -4,25 +4,6 @@
   "risk_pct": 0.5,
   "orders": [
     {
-      "id": "X15",
-      "symbol": "BTCUSDT",
-      "book": "scalp",
-      "side": "short",
-      "trigger": "close_below",
-      "tf": "15m",
-      "level": 78200.0,
-      "stop": 78950.0,
-      "target": 76700.0,
-      "target_r": null,
-      "oco": null,
-      "note": "Continuation add if the cascade extends: 15m close below the 78,233 low. Stop 78,950 back above the breakdown, target 76,700 (2R) toward the 76.4k daily EMA200. 0.2% risk (selling a breakdown low tested negative in normal markets; taken only because an exchange-stress event is outside that sample).",
-      "risk_pct": 0.2,
-      "max_hold_h": 24,
-      "created_ms": 1793306976239.3618,
-      "arm": null,
-      "expires_ms": 1793325600000
-    },
-    {
       "id": "X18",
       "symbol": "ETHUSDT",
       "book": "scalp",
@@ -42,7 +23,22 @@
       "expires_ms": 1793320200000
     }
   ],
-  "positions": [],
+  "positions": [
+    {
+      "id": "X15",
+      "symbol": "BTCUSDT",
+      "book": "scalp",
+      "side": "short",
+      "entry": 77966.9,
+      "stop": 78950.0,
+      "target": 76700.0,
+      "qty": 0.020592579676555908,
+      "risk_pct": 0.2,
+      "opened_ms": 1793318400000,
+      "note": "Continuation add if the cascade extends: 15m close below the 78,233 low. Stop 78,950 back above the breakdown, target 76,700 (2R) toward the 76.4k daily EMA200. 0.2% risk (selling a breakdown low tested negative in normal markets; taken only because an exchange-stress event is outside that sample).",
+      "max_hold_h": 24
+    }
+  ],
   "closed": [
     {
       "id": "L1",
