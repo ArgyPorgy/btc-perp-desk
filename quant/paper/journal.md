@@ -433,3 +433,6 @@
 ## 2026-10-30 09:13 UTC — price 77,800
 - 09:12 hourly: SW1a/b BTC longs 77,777 (-0.17R): drifting toward the 77k put wall with Nasdaq futures tumbling (Investing.com) and 15m delta -1.6k. HOLD, stop 76,395.5 (under the 76,472 sweep wick) unchanged: the setup is invalid only below the wick, and 77k is the new put wall (support) between price and the stop. No early exit, no averaging down.
 - ETH 2,225 weak under all EMAs; HYPE 91.7 at its 15m EMA50 with sellers. No trades (rule 14; no shorts against the tested BTC long). HOOD sliding pre-market (watch only).
+
+## 2026-10-30 10:21 UTC — price 77,337
+10:17 UTC hourly. BTC 77,340: SW1a/SW1b held (-0.43R), stop 76,395.5 below the 77k put wall and the 76,472 sweep low; tested one-shot hold, no change. No new 4h signal (08:00 close 78,138.6); daily still BULL (77,967 vs EMA200 76,420), so B20 off. 1h -2,271 BTC taker delta, below all EMAs: weak, but shorting into the 77k put wall with a live tested long is rule 14 (one bet) and bad location (rule 16). ETH 2,222: below EMAs, sitting on the 2,200 put wall; no short into support, no long without a reclaim of 2,240 (call wall). HYPE 91.7: range above 1h EMAs, -512k taker delta in 12h, no edge either way. D1F: no level within reach on any market. News: Bloomberg ties the stock/tech dip to the Binance hack; nothing new. No orders.
