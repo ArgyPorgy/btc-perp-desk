@@ -390,3 +390,8 @@
 - ETH 2,245: X18 (short 2,300) left to expire 00:30; ETH never bounced into it. No chase.
 - HYPE 89.5: holding 88.9-92.5, above its 1h/4h EMAs, 5m buyers +136k; relative strength persists. No trade (rule 19: no counter-trend longs in the exchange crisis; HYPE long would be against BTC's trend).
 - News: Guardian/Investing.com: Binance investigating a reported $5.3B hack; withdrawals halted (23:37). BNB 694.8, sliding again.
+
+## 2026-10-30 01:12 UTC — price 77,230
+- 01:11 hourly: X15 BTC short 77,130 (+0.85R); low 76,739 came within $39 of the 76,700 target. Stop tightened 78,950 -> 78,300 (above the broken 78,233 base low: a reclaim there kills the breakdown), max loss now ~-0.34R. Why now: BNB bouncing 683 -> 701 (+2.6%) and BTC sitting near the 77k strike while 7d gamma is -103M; a squeeze back to the 78k put wall is possible. Target 76,700 unchanged. X18 expired unfilled.
+- News: BBC/Guardian: $2.5bn frozen; CoinDesk: the hack drained reserve wallets backing customer assets; Binance says customer money is safe. Withdrawals still halted.
+- ETH 2,218: new low 2,196 at the 2,200 put wall, 1h delta -224k; no trade (mid-move, no level to sell into). HYPE 90.8: buyers active (+251k 15m), holding 88.5+; no trade (rule 19).
