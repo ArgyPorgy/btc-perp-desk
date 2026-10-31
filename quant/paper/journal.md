@@ -538,3 +538,6 @@
 
 ## 2026-10-31 17:12 UTC — price 77,579
 17:11 UTC hourly. X29 cancelled at expiry and renewed as X30 (same terms, expires 21:12 instead of 2h: ETH 2,250 has ground in 2,242-2,254 for 6h under the 2,256-2,260 cluster; 15m taker +11.8k, OI +0.6% 24h). Scores: ETH -5/9 short 63% (order), long 22% NO. BTC -1/9 (improving: 77,566, 1h taker +37, 7d gamma +11.9M pinning above 77,213): short 56% -15 -15 (correlated with X30) = 26% NO; long 44% -15 (no catalyst/HTF level) = 29% NO. HYPE +1/9 (87.3): long 41% NO; short 29% NO. BBC confirms Binance covered 90% of losses; no tape reaction.
+
+## 2026-10-31 18:13 UTC — price 77,650
+18:11 UTC hourly. X30 CANCELLED (shadow SH10): ETH confluence rose to -3/9 (67% short -15 = 52%, below 60) as ETH broke up to 2,257.5 (15m taker +20.8k, 1h +13.9k, OI +3.2% 24h) right into the order's level - the selling case weakened as price arrived. ETH long 33% -15 (no catalyst/HTF level; buying into the 2,256-2,260 cluster) = 18% NO. BTC -1/9 (77,650, 15m broke up with volume +525; 7d gamma +14.1M pinning, 78k call strike above): short 56% -15 = 41% NO; long 44% -15 (no catalyst; target into the 78k strike) = 29% NO. HYPE +1/9 (87.7): long 41% NO; short 29% NO. Flat. Shadows SH8/SH9: BTC 77,650 vs SH8 target 77,915.

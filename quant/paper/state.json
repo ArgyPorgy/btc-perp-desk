@@ -2,28 +2,7 @@
   "start_equity": 10000.0,
   "equity": 10047.396578347933,
   "risk_pct": 0.5,
-  "orders": [
-    {
-      "id": "X30",
-      "symbol": "ETHUSDT",
-      "book": "scalp",
-      "side": "short",
-      "trigger": "limit",
-      "tf": "4h",
-      "level": 2258.0,
-      "stop": 2269.0,
-      "target": 2241.0,
-      "target_r": null,
-      "oco": null,
-      "note": "X29 renewed (third time; 4h expiry this time to stop the 2h churn while ETH grinds 2,242-2,254). Rule 23: confluence -5/9 = 78% short -15 (no catalyst; 1h level) = 63%. Limit short into 2,256-2,260 (7d gamma flip 2,256, 1h EMA50 2,257, 15m EMA200 2,257, 2,260 put strike), stop 2,269, target 2,241 = 1.55R, 0.2%. Invalidation: acceptance above 2,269.",
-      "conf": 63.0,
-      "risk_pct": 0.2,
-      "max_hold_h": 24,
-      "created_ms": 1793466747610.9153,
-      "arm": null,
-      "expires_ms": 1793481120000
-    }
-  ],
+  "orders": [],
   "positions": [],
   "closed": [
     {
@@ -456,6 +435,18 @@
       "stop": 76183.7,
       "target": 78261.1,
       "why": "SW2b closed early at ~77,355 (+0.69R), same reason as SH8; scores the 2R half.",
+      "result": null,
+      "R": null
+    },
+    {
+      "id": "SH10",
+      "symbol": "ETHUSDT",
+      "side": "short",
+      "entry": 2258.0,
+      "at_ms": 1793470320000,
+      "stop": 2269.0,
+      "target": 2241.0,
+      "why": "X30 cancelled 18:12: ETH confluence improved -5 -> -3 (67% short -15 = 52% < 60, rule 23) as ETH pushed to 2,257.5 on +20.8k 15m taker and OI +3.2%. Caveat: scored as if filled at 2,258; a fall that never reaches 2,258 would overstate it.",
       "result": null,
       "R": null
     }
