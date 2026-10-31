@@ -550,3 +550,6 @@
 
 ## 2026-10-31 21:12 UTC — price 77,410
 21:11 UTC hourly. Flat. All three scores near neutral: BTC -1/9 (77,412; 15m broke down -1,595 BTC taker inside the 77,387-77,734 box, pinned above the 77,200 gamma flip): short 56% -15 (no catalyst/HTF) -15 (target into the 77k wall) = 26% NO; long 44% -15 = 29% NO. ETH -1/9 (2,251): short 56% -15 = 41% NO; long 44% -15 (buying under the 2,256-2,260 cluster) = 29% NO. HYPE +1/9 (87.9): long 56% -15 = 41% NO; short 44% -15 = 29% NO. Shadows SH8/SH9 (168h) and SH10 open. No news.
+
+## 2026-10-31 22:12 UTC — price 77,610
+22:11 UTC hourly. Flat. ETH broke up through the 2,256-2,260 cluster to 2,268.28 (15m taker +27k, now above 15m EMA200 and 1h EMA50): the cancelled X30 short would be 0.5% under water and 0.7 from its 2,269 stop (shadow SH10) - the cancel on the improving score looks right so far. ETH -1/9: long 44% -15 (no catalyst/HTF level; chasing a breakout into the 2,280 call wall) = 29% NO; short 56% -15 = 41% NO. BTC -3/9 (77,668, 7d gamma +17.1M pinning above 77,223; 15m taker -1,060): short 67% -15 (no catalyst/HTF) -15 (target into the 77k wall) = 37% NO; long 33% NO. HYPE +1/9 (88.0): long 41% NO; short 29% NO. FBI blames North Korea for the Binance hack (Bloomberg): no reaction.
