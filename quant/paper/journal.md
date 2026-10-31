@@ -502,3 +502,6 @@
 
 ## 2026-10-31 06:12 UTC — price 77,229
 06:11 UTC hourly. SW2a/SW2b +0.51R (BTC 77,228, 5m ATR 70: dead calm on the 77k put wall); stop 76,183.7, targets 77,915/78,261; held. HYPE 88.2 broke the 88.45 swing low (15m taker -108k, OI -10% 24h): no short at the low after the break, no 4h/1d resistance to sell from, no catalyst (rule 22); no long into a breakdown. ETH 2,241 pinned at 2,240. No news of note.
+
+## 2026-10-31 07:12 UTC — price 77,349
+07:11 UTC hourly. SW2a/SW2b +0.70R (BTC 77,363, back above 5m EMA200, 1h taker turned positive +149 BTC); stop 76,183.7, targets 77,915/78,261 (7d gamma flip now 78,230); held. HYPE 88.2 holding just under the broken 88.45 low, 5m taker positive +41k but 1h -211k; OI -10.5%: no trade (rule 22). ETH 2,242 pinned. No news, no calendar.
