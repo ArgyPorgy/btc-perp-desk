@@ -493,3 +493,6 @@
 
 ## 2026-10-31 03:11 UTC — price 77,276
 03:10 UTC hourly. SW2a/SW2b +0.55R (BTC 77,257), tight Asia range (5m ATR 68), 1h taker -2.2k BTC; stop 76,183.7, targets 77,915/78,261; held. ETH 2,241 pinned at the 2,240 call/put strike; HYPE 89.3 in range with OI -9% 24h: no catalyst, no HTF level, no trade (rule 22). News quiet (BBC: North Korea prime suspect in the Binance hack, already priced).
+
+## 2026-10-31 04:12 UTC — price 77,153
+04:11 UTC hourly. 00:00 4h closed 77,107 (low 77,064): no new signal; daily BULL. SW2a/SW2b +0.49R (BTC 77,217), 1h taker -2.2k BTC, holding the 77k put wall; stop 76,183.7, targets 77,915/78,261; held. Geo: Iran says four tankers on fire after striking mines in Hormuz (Al Jazeera, 16m ago): oil risk into a weekend; BTC +0.1%, no reaction yet. Not a crypto catalyst with a tape reaction, so no trade; the swing stop is the risk control. ETH 2,239 pinned at 2,240; HYPE 89.2 sliding with 15m taker -63k toward the 1h EMA50 88.9 and the 88.45 low: no HTF level or catalyst, no trade (rule 22).
