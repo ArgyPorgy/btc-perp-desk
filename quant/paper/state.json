@@ -4,7 +4,7 @@
   "risk_pct": 0.5,
   "orders": [
     {
-      "id": "X27",
+      "id": "X28",
       "symbol": "ETHUSDT",
       "book": "scalp",
       "side": "short",
@@ -15,13 +15,13 @@
       "target": 2241.0,
       "target_r": null,
       "oco": null,
-      "note": "Rule 23 decision 74%: confluence -7/9 = 89% short (1h/4h EMAs bearish, daily close under EMA200, 12h taker -20k ETH, lower half of the 48h range); -15 no catalyst and the level is 1h, not 4h/1d. Sell the bounce into 2,258-2,260 (1h EMA50 2,259, 7d gamma flip 2,258, 15m EMA200 2,260), stop 2,269 (7 above the 2,261.6 swing high, >2 ATR15m), target 2,241 just above the 2,240 put wall (not through it) = 1.55R. 0.2%. Invalidation: acceptance above 2,269 = the bounce reclaimed the 1h EMA50 and gamma flip.",
-      "conf": 74.0,
+      "note": "X27 re-checked and renewed (rule 12). Rule 23: confluence -5/9 = 78% short -15 (no catalyst; 1h level) = 63%. Sell the bounce into 2,257-2,260 (7d gamma flip 2,257, 1h EMA50 2,258, 15m EMA200 2,259, 2,260 put strike), stop 2,269 (above the 2,254-2,261 highs, >2 ATR15m), target 2,241 above the 2,240 strike = 1.55R, 0.2%. Invalidation: acceptance above 2,269.",
+      "conf": 63.0,
       "risk_pct": 0.2,
       "max_hold_h": 24,
-      "created_ms": 1793445225115.4734,
+      "created_ms": 1793452482630.466,
       "arm": null,
-      "expires_ms": 1793452425115.474
+      "expires_ms": 1793459682630.4678
     }
   ],
   "positions": [],

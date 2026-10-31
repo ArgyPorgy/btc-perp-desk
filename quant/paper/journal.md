@@ -523,3 +523,6 @@
 
 ## 2026-10-31 12:13 UTC — price 77,541
 12:12 UTC hourly. 08:00 4h closed 77,562 (low 77,209): no new signal. X27 ETH limit short 2,258 still pending (ETH 2,246): re-scored with ETH at -5/9 = 78% -15 (no catalyst/1h level) = 63% >= 60: kept, expires 13:13. BTC -3/9 (improved: 15m taker +539, 7d gamma +9.2M above the 77,198 flip = pinned): short 67% -15 (no catalyst/HTF level) -15 (correlated with X27) = 37% NO; long 33% NO. HYPE +1/9 (87.8, new 86.32 low swept, 1h taker -464k): long 56% -15 = 41% NO; short 44% -15 = 29% NO. Yahoo: $643M pulled from bitcoin ETFs after the hack (Friday flows) - headwind, already in price. Shadows SH8/SH9 open (BTC 77,541 vs SH8 target 77,915).
+
+## 2026-10-31 13:14 UTC — price 77,430
+13:13 UTC hourly. X27 EXPIRED unfilled (ETH high 2,254.37, 3.6 short of 2,258). Re-checked: ETH -5/9 = 78% short -15 (no catalyst/1h level) = 63% -> renewed as X28 limit short 2,258, stop 2,269, target 2,241 (1.55R), 0.2%, conf 63, expires 15:15. ETH 15m broke up with volume (+3.4k taker): that is the bounce the order sells; long 22% NO. BTC -3/9: short 67% -15 (no catalyst/HTF) -15 (correlated with X28) = 37% NO; long 33% NO. HYPE +1/9 (87.4, 1h taker -548k): long 56% -15 = 41% NO; short 44% -15 = 29% NO. News: a Nasdaq-listed company may sell $450M BTC citing the hack and quantum fears (CoinDesk): supply overhang, BTC -0.07%.
