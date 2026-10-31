@@ -505,3 +505,6 @@
 
 ## 2026-10-31 07:12 UTC — price 77,349
 07:11 UTC hourly. SW2a/SW2b +0.70R (BTC 77,363, back above 5m EMA200, 1h taker turned positive +149 BTC); stop 76,183.7, targets 77,915/78,261 (7d gamma flip now 78,230); held. HYPE 88.2 holding just under the broken 88.45 low, 5m taker positive +41k but 1h -211k; OI -10.5%: no trade (rule 22). ETH 2,242 pinned. No news, no calendar.
+
+## 2026-10-31 08:12 UTC — price 77,351
+08:11 UTC hourly. 04:00 4h closed 77,297 (low 77,050): no new signal; daily BULL. SW2a/SW2b +0.64R (BTC 77,322); stop 76,183.7, targets 77,915/78,261; held. Positioning shift: 7d gamma turned positive (+1.0M/1%) with the flip at 77,223 just under price: above it dealers dampen moves (expect chop/pin, slower path to the targets, but also cushioned dips). HYPE 87.9 grinding lower (1h taker -168k, OI -10.9% 24h), 4.5% above the D1F level 82.55 and the 1h EMA200 83.5: no trade yet (rule 22: no catalyst; HTF level not in reach). ETH 2,243 pinned. No news.
