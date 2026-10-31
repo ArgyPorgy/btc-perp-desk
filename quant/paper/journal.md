@@ -529,3 +529,6 @@
 
 ## 2026-10-31 14:12 UTC — price 77,494
 14:11 UTC hourly. X28 ETH limit short 2,258 pending (ETH 2,249.5, 15m taker +10.4k pushing into it; the 2,256-2,260 cluster is 7-9 above). Re-scored: -5/9 = 78% -15 = 63%: kept, expires 15:14. BTC -3/9 (77,477, 7d gamma +7.7M above the 77,180 flip = pinned; OI -2.2% 24h): short 67% -15 (no catalyst/HTF) -15 (correlated with X28) = 37% NO; long 33% NO. HYPE +1/9 (86.5, new low area, 1h taker -620k): long 56% -15 = 41% NO; short 44% -15 = 29% NO. Shadows SH8/SH9 open (BTC 77,477; SH8 target 77,915). No news of weight.
+
+## 2026-10-31 15:13 UTC — price 77,380
+15:12 UTC hourly. X28 cancelled 2 min before expiry and renewed as X29 (same terms: limit short 2,258, stop 2,269, target 2,241, 1.55R, 0.2%, conf 63, expires 17:12). ETH 2,246 has spent 4h in 2,241-2,254 under the 2,256-2,260 cluster. Scores: ETH -5/9 short 78% -15 = 63% (order), long 22% NO. BTC -3/9 (77,372, pinned above the 77,196 gamma flip): short 67% -15 -15 (correlated with X29) = 37% NO; long 33% NO. HYPE +1/9 (86.9, new low 86.29, 1h taker -577k): long 41% NO; short 29% NO. News: CZ vs Musk spat; Iran talks via Qatar - no crypto catalyst.
