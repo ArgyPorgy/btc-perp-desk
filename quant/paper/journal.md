@@ -490,3 +490,6 @@
 
 ## 2026-10-31 02:12 UTC — price 77,350
 02:11 UTC hourly. SW2a/SW2b +0.70R (BTC 77,359), quiet Asia drift between 77,240 and 77,460; stop 76,183.7, targets 77,915/78,261; held. OI flat 24h (-0.1%). ETH 2,243 pinned at the 2,240 strike, HYPE 89.8 in range, OI -9% 24h: no catalyst, no HTF level, no trade (rule 22). News quiet (Patriot sale to Ukraine; an 'AI hacking' warning piece on the Binance breach).
+
+## 2026-10-31 03:11 UTC — price 77,276
+03:10 UTC hourly. SW2a/SW2b +0.55R (BTC 77,257), tight Asia range (5m ATR 68), 1h taker -2.2k BTC; stop 76,183.7, targets 77,915/78,261; held. ETH 2,241 pinned at the 2,240 call/put strike; HYPE 89.3 in range with OI -9% 24h: no catalyst, no HTF level, no trade (rule 22). News quiet (BBC: North Korea prime suspect in the Binance hack, already priced).
