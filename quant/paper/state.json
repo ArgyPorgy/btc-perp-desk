@@ -1,38 +1,9 @@
 {
   "start_equity": 10000.0,
-  "equity": 10027.79712461737,
+  "equity": 10047.396578347933,
   "risk_pct": 0.5,
   "orders": [],
-  "positions": [
-    {
-      "id": "SW2a",
-      "symbol": "BTCUSDT",
-      "book": "swing",
-      "side": "long",
-      "entry": 76876.2,
-      "stop": 76183.74,
-      "target": 77914.88999999998,
-      "qty": 0.025342467388846435,
-      "risk_pct": 0.175,
-      "opened_ms": 1793390400000,
-      "note": "Tested S10+S20 sweep-reclaim: 16:00 4h wicked to 76,260 under the 10/20-day low 76,472 and closed 76,876.2 back above it (signal at 20:00). Stop 0.1% under the candle low (tested rule), 1.5R. 0.175% per half (room $209). Re-instated after a desk bug expired the 19:12 order before checking the 20:00 candle; same terms, price still at the entry.",
-      "max_hold_h": 168
-    },
-    {
-      "id": "SW2b",
-      "symbol": "BTCUSDT",
-      "book": "swing",
-      "side": "long",
-      "entry": 76876.2,
-      "stop": 76183.74,
-      "target": 78261.11999999998,
-      "qty": 0.025342467388846435,
-      "risk_pct": 0.175,
-      "opened_ms": 1793390400000,
-      "note": "Tested S10+S20 sweep-reclaim: 16:00 4h wicked to 76,260 under the 10/20-day low 76,472 and closed 76,876.2 back above it (signal at 20:00). Stop 0.1% under the candle low (tested rule), 2R. 0.175% per half (room $209). Re-instated after a desk bug expired the 19:12 order before checking the 20:00 candle; same terms, price still at the entry.",
-      "max_hold_h": 168
-    }
-  ],
+  "positions": [],
   "closed": [
     {
       "id": "L1",
@@ -318,6 +289,44 @@
       "reason": "stop",
       "pnl": -27.24405341899928,
       "R": -1.0798097345132747
+    },
+    {
+      "id": "SW2a",
+      "symbol": "BTCUSDT",
+      "book": "swing",
+      "side": "long",
+      "entry": 76876.2,
+      "stop": 76183.74,
+      "target": 77914.88999999998,
+      "qty": 0.025342467388846435,
+      "risk_pct": 0.175,
+      "opened_ms": 1793390400000,
+      "note": "Tested S10+S20 sweep-reclaim: 16:00 4h wicked to 76,260 under the 10/20-day low 76,472 and closed 76,876.2 back above it (signal at 20:00). Stop 0.1% under the candle low (tested rule), 1.5R. 0.175% per half (room $209). Re-instated after a desk bug expired the 19:12 order before checking the 20:00 candle; same terms, price still at the entry.",
+      "max_hold_h": 168,
+      "exit": 77340.0,
+      "closed_ms": 1793435034101.0525,
+      "reason": "manual",
+      "pnl": 9.79972686528114,
+      "R": 0.558432111602125
+    },
+    {
+      "id": "SW2b",
+      "symbol": "BTCUSDT",
+      "book": "swing",
+      "side": "long",
+      "entry": 76876.2,
+      "stop": 76183.74,
+      "target": 78261.11999999998,
+      "qty": 0.025342467388846435,
+      "risk_pct": 0.175,
+      "opened_ms": 1793390400000,
+      "note": "Tested S10+S20 sweep-reclaim: 16:00 4h wicked to 76,260 under the 10/20-day low 76,472 and closed 76,876.2 back above it (signal at 20:00). Stop 0.1% under the candle low (tested rule), 2R. 0.175% per half (room $209). Re-instated after a desk bug expired the 19:12 order before checking the 20:00 candle; same terms, price still at the entry.",
+      "max_hold_h": 168,
+      "exit": 77340.0,
+      "closed_ms": 1793435035443.3904,
+      "reason": "manual",
+      "pnl": 9.79972686528114,
+      "R": 0.558432111602125
     }
   ],
   "shadow": [
@@ -404,6 +413,30 @@
       "why": "X22 as planned, without my 13:43 stop tightening to 90.60 (stopped 14:10 on a sweep of the equal lows to 90.51).",
       "result": "target",
       "R": 2.4166666666666945
+    },
+    {
+      "id": "SH8",
+      "symbol": "BTCUSDT",
+      "side": "long",
+      "entry": 76876.2,
+      "at_ms": 1793390400000,
+      "stop": 76183.7,
+      "target": 77914.9,
+      "why": "SW2a closed early at ~77,355 (+0.69R): confluence score -5/9 (78% short) and the S10/S20 rebuild shows ~0R overall (confluence check 2026-10-31); this shadow scores the exit.",
+      "result": null,
+      "R": null
+    },
+    {
+      "id": "SH9",
+      "symbol": "BTCUSDT",
+      "side": "long",
+      "entry": 76876.2,
+      "at_ms": 1793390400000,
+      "stop": 76183.7,
+      "target": 78261.1,
+      "why": "SW2b closed early at ~77,355 (+0.69R), same reason as SH8; scores the 2R half.",
+      "result": null,
+      "R": null
     }
   ]
 }

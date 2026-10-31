@@ -106,7 +106,7 @@ def main():
     if SYM != "BTCUSDT":
         print(f"{SYM}: these setups are tested on BTC only and FAIL on ETH/HYPE (market_setups_test.py): context, not trades")
     print(f"{SYM} last closed 4h candle: {stamp(last['T'] + 1)}  close {px(close)}  low {px(last['l'])}")
-    print(f"  daily regime: close {px(closed[-1])} vs EMA200 {px(ema(closed, 200))} -> {'BEAR: B20 shorts live' if bear else 'BULL: shorts off (breakdowns get bought), longs only'}")
+    print(f"  daily regime: close {px(closed[-1])} vs EMA200 {px(ema(closed, 200))} -> {'BEAR: B20 shorts live' if bear else 'BULL: B20 off (scalp direction comes from confluence.py, not this label)'}")
     for name, nd, k, ev in SETUPS:
         lo = low_before(last["t"], nd)
         print(f"  {name}: prior {nd}-day low {px(lo)} ({(close / lo - 1) * 100:+.2f}% away)")

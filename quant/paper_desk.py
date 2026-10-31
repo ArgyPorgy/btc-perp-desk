@@ -147,7 +147,7 @@ def open_position(s, o, entry, at_ms, events):
     qty = s["equity"] * risk_pct / 100 / risk_px
     p = {"id": o["id"], "symbol": sym(o), "book": o.get("book", "swing"), "side": o["side"], "entry": entry, "stop": stop,
          "target": target, "qty": qty, "risk_pct": risk_pct, "opened_ms": at_ms, "note": o.get("note", ""),
-         "max_hold_h": o.get("max_hold_h", 168)}
+         "max_hold_h": o.get("max_hold_h", 168), "conf": o.get("conf")}
     s["positions"].append(p)
     events.append(f"ENTERED {p['book']} {p['side'].upper()} {p['id']} {p['symbol']} @ {px(entry)} | stop {px(stop)} | target {px(target)} | "
                   f"size {qty:.4f} {p['symbol'][:-4]} (risk ${s['equity'] * risk_pct / 100:,.0f}, {risk_pct}%) | {iso(at_ms)}")
@@ -315,6 +315,7 @@ def main():
     a.add_argument("--target", type=float)
     a.add_argument("--target-r", type=float)
     a.add_argument("--expires")
+    a.add_argument("--conf", type=float, help="decision score in %% (lessons rule 23): indicators + evidence - violations")
     a.add_argument("--oco")
     a.add_argument("--max-hold-h", type=int, help="default 168 swing, 24 scalp")
     a.add_argument("--note", default="")
@@ -368,7 +369,7 @@ def main():
         stop = float(args.stop) if args.stop.replace(".", "", 1).isdigit() else args.stop
         o = {"id": args.id, "symbol": args.symbol, "book": args.book, "side": args.side, "trigger": args.trigger,
              "tf": args.tf, "level": args.level, "stop": stop, "target": args.target, "target_r": args.target_r,
-             "oco": args.oco, "note": args.note,
+             "oco": args.oco, "note": args.note, "conf": args.conf,
              "risk_pct": args.risk_pct or (SCALP_RISK if args.book == "scalp" else None),
              "max_hold_h": args.max_hold_h or (24 if args.book == "scalp" else 168),
              "created_ms": parse_time(args.created) if args.created else time.time() * 1000,

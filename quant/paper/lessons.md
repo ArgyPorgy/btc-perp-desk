@@ -61,6 +61,17 @@ the rule goes into **Current rules** too. Skipped or cancelled plan trades are a
     the desk bar (n ≥ 15, both halves ≥ 0, t ≥ 1.5): scalp risk 0.2%, and a scalp needs a catalyst (news repricing:
     X13 and X15, both winners) or HTF location (4h/1d zone, stop beyond it); a bare 15m/1h range edge is not enough.
     The 4h/1d tested setups stay the main engine.
+23. **Decide with one number: indicators first, then evidence, then lessons.** (User, 2026-10-31.) For each side:
+    - base = `confluence.py` % for that side (9 tested indicator checks; long % = (S+9)/18).
+    - +15 a tested setup with t >= 1.5 fires that way (D1F, B20); +5 a marginal one (S10/S20, ~0R in the
+      2026-10-31 rebuild).
+    - +10 a catalyst the tape confirms (price and flow move with the headline).
+    - −15 for each lesson violated: stop on obvious liquidity or inside the zone (16/20/21), R < 1.5, correlated
+      with an open position (14), counter-trend in a live exchange crisis (19), a scalp with neither a catalyst nor
+      4h/1d location (22), a target that runs into a 4h/1d zone or gamma wall (15).
+    Trade only at >= 60%, and record it with `--conf`. Hard veto: never trade against |S| >= 7 (tested −0.17 to
+    −0.22R per trade, t −3.4). The weights are judgment, not tested: review the `--conf` values against results
+    after 20 decisions and re-weight.
 
 ## Mistakes and misses
 | Date (UTC) | What happened | Cost | Lesson → rule |
@@ -86,6 +97,7 @@ the rule goes into **Current rules** too. Skipped or cancelled plan trades are a
 | 2026-10-30 18:35 | **X25** HYPE range-floor long 90.75 stopped at 89.62 (−1.08R, −$27). The rule-21 stop held the 90.19 sweep, then the BTC flush to 76,260 took HYPE to 89.07; it is back at 90.4. | −$27 | Rule 14 in action: SW1a, SW1b and X25 were one bet and died in the same 25-minute BTC flush (−$64). And rule 22: the range-floor buy itself tests negative. |
 | 2026-10-30 19:00 | Day review: five losers since 04:13 (X19, X22, X24, X25, SW1). Test run: every intraday 24h-level pattern loses after fees, in both directions. | day −$94.5 | Rule 22: scalps cut to 0.2% and need a catalyst or HTF location. |
 | 2026-10-30 20:12 | Desk bug: SW2a/SW2b (expiry 20:05) were expired by the 20:12 run before it checked the 20:00 4h candle, which had fired the signal (close 76,876 > 76,472). | none: caught and re-instated at the same terms, price still at the entry | `process()` now evaluates candles that closed before expiry and only then expires the order. An expiry must sit after the trigger candle's close, never before the run that reads it. |
+| 2026-10-31 08:23 | User: the first win is almost given back; why aren't the right trades being taken? Record: 15 closed, 3 targets, 8 stops (all longs), 4 manual; net +$27.80 then. Checks: (1) `confluence_test.py`: trading against a strong indicator score loses (−0.17 to −0.22R, t −3.4), trading with it is ~0R after fees: indicators are a filter, not an entry. (2) At my entries the score was mostly mixed (±5); the three HYPE longs were in line with it and still lost; only X24 (−7) would have been vetoed. (3) S10/S20 rebuilt on data to 2026-10-31: ~0R overall, no score bucket positive: I leaned on a marginal setup. | SW2 closed at +0.56R each (+$19.60), shadows SH8/SH9 | Rule 23: one decision % (indicators base + evidence + catalyst − violations), trade at >= 60%, veto against \|S\| >= 7. setup_scan's 'BULL: longs only' label removed (it biased me against shorts). |
 
 ## Shadow trades (skipped or cancelled plan trades)
 | ID | Trade | Why skipped | Result |

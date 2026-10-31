@@ -149,3 +149,16 @@ Result: no intraday 24h-level pattern has an edge after fees, in either directio
 record (−0.30R per trade) is what this predicts. The positive setups are all 4h/1d (S10/S20 on 10/20-day lows, B20,
 D1F). Desk change: scalp risk 0.35% → 0.2%; scalps need a catalyst or 4h/1d location (lessons rule 22).
 Backlog: test news-repricing continuation (the two scalp winners, X13/X15) once there are enough tagged events.
+
+## 2026-10-31 — indicator confluence score (`confluence_test.py`, live: `confluence.py`)
+Asked by the user: put the indicators first and score them. Nine ±1 checks on each 1h close (EMA50 vs EMA200 on
+1h/4h/1d, close vs EMA50 on 1h/4h, 1d close vs EMA200, 24h return, 12h taker delta, 48h-range half), higher timeframes
+from closed candles only. Entry at the 1h close, stop 1.5 ATR, 2R, 48h exit, taker fees.
+- WITH the score: |S| >= 5 −0.02 to −0.04R (BTC/ETH), |S| = 9 +0.02R: ~breakeven after fees. HYPE noisy (n 50–124).
+- AGAINST the score: −0.17R (|S| >= 5, t −4.0), −0.22R (|S| = 9, t −3.4) on BTC; ETH −0.09 to −0.17R.
+- At my 17 entries since 10-24 the score was mostly ±5; the three HYPE longs were with it (+3 to +7) and lost; X24 at −7.
+- S10/S20 rebuilt (1h data to 2026-10-31, 1-week exit) and split by score at the signal: S > −5 −0.03R (n 85),
+  S = −5 −0.20R (n 67), S <= −7 +0.01R (n 134). Overall ~0R: the setup is marginal at best on recent data.
+Result: the score is a filter (never trade against |S| >= 7), not a signal. Lessons rule 23 combines it with tested
+evidence, confirmed catalysts and lesson checks into one decision % (>= 60% to trade; weights untested, review after 20).
+Backlog: test D1F and B20 by score bucket; search for a trend-continuation entry that is positive WITH the score.
