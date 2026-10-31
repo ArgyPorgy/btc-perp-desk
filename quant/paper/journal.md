@@ -499,3 +499,6 @@
 
 ## 2026-10-31 05:12 UTC — price 77,231
 05:11 UTC hourly. SW2a/SW2b +0.52R (BTC 77,235, quiet on the 77k put wall); stop 76,183.7, targets 77,915/78,261; held. HYPE 88.7 broke under its 1h EMA50 (88.87) and 15m EMA200 with volume (15m taker -157k, 1h -276k), 0.25 above the 88.45 swing low: no short (selling into a swing low after the break is selling the bottom; no catalyst or 4h/1d resistance to sell from, rule 22), no long (falling). ETH 2,240 pinned. CoinDesk: BTC stolen from Binance now exceeds Tesla's holdings (context, no reaction).
+
+## 2026-10-31 06:12 UTC — price 77,229
+06:11 UTC hourly. SW2a/SW2b +0.51R (BTC 77,228, 5m ATR 70: dead calm on the 77k put wall); stop 76,183.7, targets 77,915/78,261; held. HYPE 88.2 broke the 88.45 swing low (15m taker -108k, OI -10% 24h): no short at the low after the break, no 4h/1d resistance to sell from, no catalyst (rule 22); no long into a breakdown. ETH 2,241 pinned at 2,240. No news of note.
