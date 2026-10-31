@@ -484,3 +484,6 @@
 
 ## 2026-10-31 00:13 UTC — price 77,277
 00:12 UTC Sat 31 Oct hourly. Daily closed 77,286.8 above EMA200 76,428.5: regime stays BULL (B20 off). 20:00 4h closed 77,286.8, low 76,543: no new signal; 10/20-day low is now 76,260 (yesterday's sweep). New day: 00:00 balance $10,027.80, daily floor $9,726.96, room $300.83. SW2a/SW2b +0.58R (BTC 77,277), stop 76,183.7, targets 77,915/78,261; 15m taker +1,230 BTC; held. Yesterday (Fri 30 Oct): -$94.5 net. Wins X15 (+1.21R). Losses X19, X22, X24, X25, SW1a/b. Lessons: rules 20 (no stops under equal lows), 21 (1 ATR15m wick room), 22 (intraday levels test negative after fees: scalps 0.2% and need a catalyst or HTF location). ETH 2,245 and HYPE 89.6 (OI -10.8% 24h, deleveraged): no catalyst with tape confirmation and no HTF level in reach; no trade. D1F: no level within reach on any market.
+
+## 2026-10-31 01:12 UTC — price 77,462
+01:11 UTC hourly. SW2a/SW2b +0.84R (BTC 77,457, above 5m EMA200 for the first time since the flush; 15m taker +1,203 BTC); SW2a's 1.5R target 77,915 is 0.6% away, SW2b 78,261 sits just above the 7d gamma flip 78,161. Held, no change (tested one-shot exits). OI +1.1% 24h: the crowd that piled in on the way down has mostly closed. ETH 2,246 and HYPE 89.5 drifting with no catalyst and no HTF level in reach: no trade (rule 22). Quiet Asia session; no calendar events.
