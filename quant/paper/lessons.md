@@ -72,6 +72,8 @@ the rule goes into **Current rules** too. Skipped or cancelled plan trades are a
     Trade only at >= 60%, and record it with `--conf`. Hard veto: never trade against |S| >= 7 (tested −0.17 to
     −0.22R per trade, t −3.4). The weights are judgment, not tested: review the `--conf` values against results
     after 20 decisions and re-weight.
+    Scope: the score decides entries and pending orders. An OPEN position exits on its plan (stop, target, time, or
+    a rule-13 thesis break), not because the score moved: SW2 was cut at +0.56R on a re-score and was +1.0R a day later.
 
 ## Mistakes and misses
 | Date (UTC) | What happened | Cost | Lesson → rule |

@@ -244,7 +244,7 @@ def process(s):
                 x["result"], x["R"] = "stop", -1.0
             elif (b["h"] >= x["target"]) if side == 1 else (b["l"] <= x["target"]):
                 x["result"], x["R"] = "target", abs(x["target"] - x["entry"]) / abs(x["entry"] - x["stop"])
-            elif b["T"] - x["at_ms"] >= 24 * 3600e3:
+            elif b["T"] - x["at_ms"] >= x.get("max_hold_h", 24) * 3600e3:
                 x["result"], x["R"] = "time", (b["c"] - x["entry"]) * side / abs(x["entry"] - x["stop"])
             if x.get("result"):
                 events.append(f"SHADOW {x['id']} {sym(x)} {x['side']} resolved: {x['result']} {x['R']:+.2f}R ({x['why']})")
@@ -339,6 +339,7 @@ def main():
     sh.add_argument("--stop", type=float, required=True)
     sh.add_argument("--target", type=float, required=True)
     sh.add_argument("--why", required=True, help="why it was skipped")
+    sh.add_argument("--max-hold-h", type=float, default=24, help="time exit, hours: 24 for scalps, the plan's hold (168) for swings")
     j = sub.add_parser("journal", help="append an entry (heading with UTC time + price is added)")
     j.add_argument("text", help="entry body; literal \\n becomes a newline")
     args = ap.parse_args()
@@ -416,7 +417,7 @@ def main():
     elif args.cmd == "shadow":
         s.setdefault("shadow", []).append({"id": args.id, "symbol": args.symbol, "side": args.side, "entry": args.entry,
                                            "at_ms": parse_time(args.at), "stop": args.stop, "target": args.target,
-                                           "why": args.why, "result": None, "R": None})
+                                           "why": args.why, "result": None, "R": None, "max_hold_h": args.max_hold_h})
         events.append(f"SHADOW logged {args.id}: {args.side} {args.symbol} @ {px(args.entry)} ({args.why})")
     elif args.cmd == "journal":
         body = args.text.replace("\\n", "\n").strip()

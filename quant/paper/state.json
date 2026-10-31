@@ -424,7 +424,8 @@
       "target": 77914.9,
       "why": "SW2a closed early at ~77,355 (+0.69R): confluence score -5/9 (78% short) and the S10/S20 rebuild shows ~0R overall (confluence check 2026-10-31); this shadow scores the exit.",
       "result": null,
-      "R": null
+      "R": null,
+      "max_hold_h": 168
     },
     {
       "id": "SH9",
@@ -436,7 +437,8 @@
       "target": 78261.1,
       "why": "SW2b closed early at ~77,355 (+0.69R), same reason as SH8; scores the 2R half.",
       "result": null,
-      "R": null
+      "R": null,
+      "max_hold_h": 168
     },
     {
       "id": "SH10",
