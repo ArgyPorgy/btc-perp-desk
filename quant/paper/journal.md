@@ -568,3 +568,6 @@
 
 ## 2026-11-01 03:13 UTC — price 77,738
 03:11 UTC hourly. X31 (HYPE limit 87.30) expires unfilled at 03:12: HYPE held 87.35+ and is 88.1. Not renewed: HYPE score fell to +3/9 (67% long -15 = 52% < 60). DECISIONS: HYPE long 52% NO; short 33% -15 = 18% NO. ETH +1/9 (2,266, 1h taker +44k, OI +4.3%; 2,280 call wall 14 above): long 56% -15 (no catalyst/HTF level) -15 (target into the 2,280 wall) = 26% NO; short 44% -15 = 29% NO. BTC -1/9 (77,750; 7d gamma +30M, pinned 77,102-78,000 call wall): short 56% -15 -15 (target into the 77k wall) = 26% NO; long 44% -15 -15 (78k wall) = 14% NO. Flat. Guardian: Binance 90% covered + FBI names North Korea, no reaction.
+
+## 2026-11-01 04:12 UTC — price 77,684
+04:11 UTC hourly. 00:00 4h closed 77,740 (low 77,465): no signal. Flat. DECISIONS: BTC -1/9 (77,684; 7d gamma +26.5M, pinned 77,090 flip / 77,500 put strike / 78,000): short 56% -15 (no catalyst/HTF) -15 (target into the 77.5k/77k strikes) = 26% NO; long 44% -15 -15 (78k strike) = 14% NO. ETH +1/9 (2,264, 1h taker +50k, OI +4.8%; 2,280 call wall 16 above): long 56% -15 (no catalyst/HTF level) -15 (target into the 2,280 wall) = 26% NO; short 44% -15 = 29% NO. HYPE +3/9 (87.7): long 67% -15 (no catalyst/HTF level) = 52% NO; short 33% -15 = 18% NO. Quiet Sunday Asia.
