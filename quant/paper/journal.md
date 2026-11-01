@@ -592,3 +592,6 @@
 
 ## 2026-11-01 10:12 UTC — price 78,095
 10:11 UTC hourly. X32 HYPE long 88.124 held at -0.01R (HYPE 88.11, stop 86.77, target 90.76); confluence still +7/9, 15m/1h taker +104k/+133k; plan unchanged (open trades run to plan). Binance phase-one withdrawals open (Cointelegraph): BTC +0.16%. DECISIONS: BTC +3/9 (78,106; 1h taker +1,458): long 67% -15 (no catalyst/HTF level) -15 (target into the 78.5k strike) -15 (correlated with X32) = 22% NO; short 33% -15 = 18% NO. ETH +1/9 (2,271, under the 2,280 call wall, OI +6.7%): long 56% -15 -15 -15 = 11% NO; short 44% -15 = 29% NO. HYPE: in X32; no add. SH9 shadow: BTC 155 from its 78,261 target.
+
+## 2026-11-01 11:12 UTC — price 77,959
+11:12 UTC hourly. X32 HYPE long 88.124 held at -0.23R (HYPE 87.82; stop 86.77, target 90.76): confluence +5/9 (from +7), 15m/1h taker still +125k/+129k (price lagging the buying = absorption either way); plan unchanged. DECISIONS: BTC +3/9 (77,959): long 67% -15 (no catalyst/HTF) -15 (78.5k strike) -15 (correlated with X32) = 22% NO; short 33% -15 = 18% NO. ETH +1/9 (2,271, under the 2,280 call wall): long 56% -15 -15 -15 = 11% NO; short 44% -15 = 29% NO. HYPE: in X32. CoinDesk: Binance withdrawals open in phases starting with BTC; no reaction.
