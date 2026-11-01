@@ -613,3 +613,6 @@
 
 ## 2026-11-01 17:13 UTC — price 78,100
 17:12 UTC hourly. X32 HYPE long 88.124 at -0.10R (HYPE 88.0; confluence back to +7/9; 15m taker -134k vs 1h +104k); stop 86.77, target 90.76; held. The Block: $3.64B net outflows from Binance after withdrawals reopened - BTC +0.09%, no stress in price (users moving coins, not dumping). DECISIONS: BTC +3/9 (78,100): long 67% -15 (no catalyst/HTF) -15 (78.5k strike) -15 (correlated with X32) = 22% NO; short 33% -15 = 18% NO. ETH -1/9 (2,268, 1h taker -34k): short 56% -15 -15 (2,260/2,240 strikes) = 26% NO; long 44% -15 -15 = 14% NO. HYPE: in X32. SH9 shadow: BTC 161 from 78,261.
+
+## 2026-11-01 18:12 UTC — price 77,926
+18:11 UTC hourly. X32 HYPE long 88.124 at -0.22R (HYPE 87.82; confluence +5/9; 15m taker -84k, 1h +78k; still inside the 87.1-88.7 day box); stop 86.77, target 90.76; held. DECISIONS: BTC +3/9 (77,924; 15m/1h taker -355/-371): long 67% -15 (no catalyst/HTF) -15 (78k/78.5k strikes) -15 (correlated with X32) = 22% NO; short 33% -15 = 18% NO. ETH -1/9 (2,263): short 56% -15 -15 (2,260/2,240 strikes) = 26% NO; long 44% -15 -15 = 14% NO. HYPE: in X32. Iran-war escalation pieces (FT/Axios): no crypto reaction.
