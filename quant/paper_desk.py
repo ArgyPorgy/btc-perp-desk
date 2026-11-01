@@ -47,6 +47,7 @@ REST = base()
 FEE = 0.0005
 SYMBOLS = ("BTCUSDT", "ETHUSDT", "HYPEUSDT")
 SCALP_RISK, SCALP_DAY_STOP, MAX_OPEN = 0.2, 1.0, 3  # 0.2% until a scalp pattern passes the desk bar (lessons rule 22)
+NOTIONAL = 10000.0  # default position size in USD (user, 2026-11-01): $10k notional = 1x the account; risk = notional x stop distance
 TARGET_PCT, MAX_DD_PCT, DAILY_PCT = 9.0, 3.0, 3.0  # Propr Turbo 1-Step
 
 
@@ -63,7 +64,14 @@ def floor(s):
 def open_risk(s):
     """$ lost if every open position and pending order hit its stop (pending at their own risk %), fees included."""
     r = sum(abs(p["entry"] - p["stop"]) * p["qty"] + FEE * 2 * p["entry"] * p["qty"] for p in s["positions"])
-    return r + sum(s["equity"] * (o.get("risk_pct") or s["risk_pct"]) / 100 * 1.2 for o in s["orders"])
+    return r + sum(pending_risk(s, o) for o in s["orders"])
+
+
+def pending_risk(s, o):
+    """Estimated dollar risk of a pending order: notional x stop distance when both are known, else the % risk."""
+    if o.get("notional") and isinstance(o.get("stop"), (int, float)) and o.get("level"):
+        return o["notional"] * abs(o["level"] - o["stop"]) / o["level"] * 1.2
+    return s["equity"] * (o.get("risk_pct") or s["risk_pct"]) / 100 * 1.2
 import os
 STATE = Path(os.environ.get("PAPER_STATE", Path(__file__).parent / "paper" / "state.json"))
 JOURNAL = STATE.parent / "journal.md"
@@ -143,14 +151,23 @@ def open_position(s, o, entry, at_ms, events):
         events.append(f"SKIPPED {o['id']}: stop {px(stop)} is on the wrong side of (or too close to) entry {px(entry)}")
         return
     target = o.get("target") or entry + side * o["target_r"] * risk_px
-    risk_pct = o.get("risk_pct") or s["risk_pct"]
-    qty = s["equity"] * risk_pct / 100 / risk_px
+    if o.get("notional"):  # fixed position size: the stop distance sets the dollar risk
+        qty = o["notional"] / entry
+        risk_pct = round(qty * risk_px / s["equity"] * 100, 3)
+        room = s["equity"] - floor(s)
+        if qty * risk_px + open_risk(s) > room / 2:
+            events.append(f"SKIPPED {o['id']}: ${o['notional']:,.0f} notional with a {risk_px / entry * 100:.2f}% stop risks "
+                          f"${qty * risk_px:,.0f}; with open risk ${open_risk(s):,.0f} that exceeds half the room (${room / 2:,.0f})")
+            return
+    else:
+        risk_pct = o.get("risk_pct") or s["risk_pct"]
+        qty = s["equity"] * risk_pct / 100 / risk_px
     p = {"id": o["id"], "symbol": sym(o), "book": o.get("book", "swing"), "side": o["side"], "entry": entry, "stop": stop,
          "target": target, "qty": qty, "risk_pct": risk_pct, "opened_ms": at_ms, "note": o.get("note", ""),
          "max_hold_h": o.get("max_hold_h", 168), "conf": o.get("conf")}
     s["positions"].append(p)
     events.append(f"ENTERED {p['book']} {p['side'].upper()} {p['id']} {p['symbol']} @ {px(entry)} | stop {px(stop)} | target {px(target)} | "
-                  f"size {qty:.4f} {p['symbol'][:-4]} (risk ${s['equity'] * risk_pct / 100:,.0f}, {risk_pct}%) | {iso(at_ms)}")
+                  f"size {qty:.4f} {p['symbol'][:-4]} (${qty * entry:,.0f} notional, risk ${qty * risk_px:,.0f}, {risk_pct}%) | {iso(at_ms)}")
     if o.get("oco"):
         for other in [x for x in s["orders"] if x.get("oco") == o["oco"] and x["id"] != o["id"]]:
             s["orders"].remove(other)
@@ -309,7 +326,8 @@ def main():
     a.add_argument("--tf", choices=["5m", "15m", "1h", "4h"], default="4h", help="candle for close_above/close_below")
     a.add_argument("--symbol", default="BTCUSDT", type=str.upper, choices=SYMBOLS)
     a.add_argument("--book", choices=["swing", "scalp"], default="swing")
-    a.add_argument("--risk-pct", type=float, help=f"default: swing = account risk_pct, scalp = {SCALP_RISK}")
+    a.add_argument("--risk-pct", type=float, help="size by %% risk instead of notional (overrides --notional)")
+    a.add_argument("--notional", type=float, help=f"position size in USD (default {NOTIONAL:,.0f}); risk = notional x stop distance")
     a.add_argument("--level", type=float)
     a.add_argument("--stop", required=True, help="price, or low_since:ISO / high_since:ISO")
     a.add_argument("--target", type=float)
@@ -352,7 +370,13 @@ def main():
         if not (args.target or args.target_r):
             sys.exit("give --target or --target-r")
         room = s["equity"] - floor(s)
-        new_risk = s["equity"] * (args.risk_pct or (SCALP_RISK if args.book == "scalp" else s["risk_pct"])) / 100 * 1.2
+        notional = None if args.risk_pct else (args.notional or NOTIONAL)
+        stop_num = float(args.stop) if args.stop.replace(".", "", 1).isdigit() else None
+        ref = args.level or (price_now(args.symbol) if args.trigger == "market" else None)
+        if notional and stop_num and ref:
+            new_risk = notional * abs(ref - stop_num) / ref * 1.2
+        else:
+            new_risk = s["equity"] * (args.risk_pct or (SCALP_RISK if args.book == "scalp" else s["risk_pct"])) / 100 * 1.2
         if room <= 0:
             sys.exit("refused: equity is at or below the max-drawdown / daily-loss floor")
         if open_risk(s) + new_risk > room / 2:
@@ -372,6 +396,7 @@ def main():
              "tf": args.tf, "level": args.level, "stop": stop, "target": args.target, "target_r": args.target_r,
              "oco": args.oco, "note": args.note, "conf": args.conf,
              "risk_pct": args.risk_pct or (SCALP_RISK if args.book == "scalp" else None),
+             "notional": notional,
              "max_hold_h": args.max_hold_h or (24 if args.book == "scalp" else 168),
              "created_ms": parse_time(args.created) if args.created else time.time() * 1000,
              "arm": {"trigger": args.arm_trigger, "level": args.arm_level} if args.arm_trigger else None,

@@ -74,6 +74,12 @@ the rule goes into **Current rules** too. Skipped or cancelled plan trades are a
     after 20 decisions and re-weight.
     Scope: the score decides entries and pending orders. An OPEN position exits on its plan (stop, target, time, or
     a rule-13 thesis break), not because the score moved: SW2 was cut at +0.56R on a re-score and was +1.0R a day later.
+24. **Size: $10,000 notional per trade (user, 2026-11-01), 1x the account, no extra leverage.** The stop distance
+    now sets the dollar risk: a 0.5% stop risks ~$50, a 1% stop ~$100, a 1.5% stop ~$150. `paper_desk.py` refuses
+    (or skips at fill) any order whose risk plus open risk exceeds half the room above the floor (~$150 today), so a
+    wide-stop setup either finds a tighter real invalidation or is skipped; never tighten a stop just to fit (rule 21).
+    Two full stop-outs can use a whole day's room (~$300): at most two positions open at once while room < $400.
+    `--risk-pct` still sizes by % risk when a setup's stop is too wide for $10k.
 
 ## Mistakes and misses
 | Date (UTC) | What happened | Cost | Lesson → rule |
