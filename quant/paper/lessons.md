@@ -123,6 +123,7 @@ Running total: **+1.50R** missed by overriding the plan.
 ## Process wins
 - 2026-10-29: kept every order inside the daily-loss floor; cancelled X4 when BTC broke the other way instead of hoping.
 - 2026-10-29: the news terminal caught the ICE/NYSE Hyperliquid catalyst the hour it moved HYPE.
+- 2026-11-01: rule 23 re-score cancelled X30 (ETH short limit 2,258) at 18:12 when the score improved to 52%; ETH broke up to 2,275 and the shadow SH10 hit its stop (-1R): the cancel saved ~$20. Re-scoring pending orders works; re-scoring open positions (SW2) did not.
 
 ## Review cadence
 - Every run: read **Current rules**; log any new mistake, miss or shadow trade here and in the journal.

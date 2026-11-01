@@ -470,8 +470,8 @@
       "stop": 2269.0,
       "target": 2241.0,
       "why": "X30 cancelled 18:12: ETH confluence improved -5 -> -3 (67% short -15 = 52% < 60, rule 23) as ETH pushed to 2,257.5 on +20.8k 15m taker and OI +3.2%. Caveat: scored as if filled at 2,258; a fall that never reaches 2,258 would overstate it.",
-      "result": null,
-      "R": null
+      "result": "stop",
+      "R": -1.0
     }
   ]
 }
