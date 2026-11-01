@@ -595,3 +595,6 @@
 
 ## 2026-11-01 11:12 UTC — price 77,959
 11:12 UTC hourly. X32 HYPE long 88.124 held at -0.23R (HYPE 87.82; stop 86.77, target 90.76): confluence +5/9 (from +7), 15m/1h taker still +125k/+129k (price lagging the buying = absorption either way); plan unchanged. DECISIONS: BTC +3/9 (77,959): long 67% -15 (no catalyst/HTF) -15 (78.5k strike) -15 (correlated with X32) = 22% NO; short 33% -15 = 18% NO. ETH +1/9 (2,271, under the 2,280 call wall): long 56% -15 -15 -15 = 11% NO; short 44% -15 = 29% NO. HYPE: in X32. CoinDesk: Binance withdrawals open in phases starting with BTC; no reaction.
+
+## 2026-11-01 12:16 UTC — price 77,763
+12:15 UTC hourly. 08:00 4h closed 77,924 (low 77,840): no signal; daily BULL. X32 HYPE long 88.124 held at -0.18R (HYPE 87.7-87.9; stop 86.77, target 90.76); confluence +5/9, 1h taker +146k; plan unchanged. Market dipped (BTC -0.25%, ETH broke under its 15m EMAs to 2,257). DECISIONS: BTC +3/9 (77,800): long 67% -15 (no catalyst/HTF) -15 (78k/78.5k strikes) -15 (correlated with X32) = 22% NO; short 33% -15 = 18% NO. ETH -1/9 (2,257): short 56% -15 (no catalyst/HTF resistance) -15 (target into the 2,240 put wall) = 26% NO; long 44% -15 -15 (correlated) = 14% NO. HYPE: in X32.
