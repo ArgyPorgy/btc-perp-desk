@@ -631,3 +631,6 @@
 
 ## 2026-11-01 22:13 UTC — price 77,793
 22:12 UTC hourly. Flat; equity $10,026.00, room $280.03. DECISIONS: BTC -1/9 (77,789): short 56% -15 (no catalyst/HTF) -15 (target into the 77k/76.8k flip zone) = 26% NO; long 44% -15 -15 (78k strike) = 14% NO. ETH -1/9 (2,261, on the 2,260 put strike): short 56% -15 -15 = 26% NO; long 44% -15 -15 (2,280 wall) = 14% NO. HYPE +1/9 (87.3): long 56% -15 = 41% NO; short 44% -15 = 29% NO. News: US-Canada trade deal 'concept'; Asian stocks set to fall on AI fears. ISM Mon 15:00 UTC.
+
+## 2026-11-01 23:12 UTC — price 78,093
+23:12 UTC hourly. Flat; equity $10,026.00, room $280.03. BTC popped +0.5% to 78,074 (back over 78k; 7d gamma +41M). DECISIONS: BTC -1/9: long 44% -15 (no catalyst/HTF) -15 (78.5k strike 430 above) = 14% NO; short 56% -15 -15 (target into the 77k/76.9k flip) = 26% NO. ETH -3/9 (2,270, popped with BTC to under the 2,280 call wall): short 67% -15 (no catalyst; 1h level) = 52% NO (selling into a pop 10 under the wall would need a clean rejection first); long 33% -15 -15 = 3% NO. HYPE +1/9 (87.7): long 56% -15 = 41% NO; short 44% -15 = 29% NO. Daily close at 00:00: BTC ~78.0k vs EMA200 ~76.4k = BULL stays. SH9 shadow: BTC 187 from 78,261.
