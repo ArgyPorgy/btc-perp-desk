@@ -628,3 +628,6 @@
 
 ## 2026-11-01 21:12 UTC — price 77,887
 21:11 UTC hourly. Flat. Equity $10,026.00, room $280.03. DECISIONS ($10k notional sizing): BTC -1/9 (77,887, 1h taker -885, OI -1.6%): short 56% -15 (no catalyst/HTF) -15 (target into the 77k/76.8k flip zone) = 26% NO; long 44% -15 (no catalyst) -15 (78k/78.5k strikes) = 14% NO. ETH -1/9 (2,264): short 56% -15 -15 (2,260/2,240 strikes) = 26% NO; long 44% -15 -15 (2,280 wall) = 14% NO. HYPE +1/9 (87.1, below its 15m/1h EMAs after the box break): long 56% -15 = 41% NO; short 44% -15 = 29% NO. Calendar: ISM Mon 15:00, JOLTS Tue 15:00 (no entries in the 2h before each). SH9 shadow open (BTC 374 from 78,261).
+
+## 2026-11-01 22:13 UTC — price 77,793
+22:12 UTC hourly. Flat; equity $10,026.00, room $280.03. DECISIONS: BTC -1/9 (77,789): short 56% -15 (no catalyst/HTF) -15 (target into the 77k/76.8k flip zone) = 26% NO; long 44% -15 -15 (78k strike) = 14% NO. ETH -1/9 (2,261, on the 2,260 put strike): short 56% -15 -15 = 26% NO; long 44% -15 -15 (2,280 wall) = 14% NO. HYPE +1/9 (87.3): long 56% -15 = 41% NO; short 44% -15 = 29% NO. News: US-Canada trade deal 'concept'; Asian stocks set to fall on AI fears. ISM Mon 15:00 UTC.
