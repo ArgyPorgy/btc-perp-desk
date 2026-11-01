@@ -1,25 +1,9 @@
 {
   "start_equity": 10000.0,
-  "equity": 10047.396578347933,
+  "equity": 10026.003979151965,
   "risk_pct": 0.5,
   "orders": [],
-  "positions": [
-    {
-      "id": "X32",
-      "symbol": "HYPEUSDT",
-      "book": "scalp",
-      "side": "long",
-      "entry": 88.124,
-      "stop": 86.77,
-      "target": 90.76,
-      "qty": 14.841058461370665,
-      "risk_pct": 0.2,
-      "opened_ms": 1793524347805.0708,
-      "note": "Rule 23 decision 74%: confluence +7/9 STRONG BULL (EMAs up on 1h/4h/1d, above 1h/4h EMA50 and daily EMA200, 24h return +, 12h taker +; only the 48h-range half is -) = 89% long; 4h/1d location: inside the 4h bull FVG 88.0-93.0, at the top of the daily bull FVG 81.9-88.55; -15 the stop sits inside that daily FVG (can't go beyond 81.9 on a scalp). Stop 86.77 = 1 ATR15m under the 87.10 day low (rule 21); target 90.76 = 2R, clears the 89.46/90.2 1h highs and stays under the 4h bear OB 93.76-95.27 (rule 15). 15m taker +104k. 0.2%. Invalidation: trade through 86.77.",
-      "max_hold_h": 24,
-      "conf": 74.0
-    }
-  ],
+  "positions": [],
   "closed": [
     {
       "id": "L1",
@@ -343,6 +327,26 @@
       "reason": "manual",
       "pnl": 9.79972686528114,
       "R": 0.558432111602125
+    },
+    {
+      "id": "X32",
+      "symbol": "HYPEUSDT",
+      "book": "scalp",
+      "side": "long",
+      "entry": 88.124,
+      "stop": 86.77,
+      "target": 90.76,
+      "qty": 14.841058461370665,
+      "risk_pct": 0.2,
+      "opened_ms": 1793524347805.0708,
+      "note": "Rule 23 decision 74%: confluence +7/9 STRONG BULL (EMAs up on 1h/4h/1d, above 1h/4h EMA50 and daily EMA200, 24h return +, 12h taker +; only the 48h-range half is -) = 89% long; 4h/1d location: inside the 4h bull FVG 88.0-93.0, at the top of the daily bull FVG 81.9-88.55; -15 the stop sits inside that daily FVG (can't go beyond 81.9 on a scalp). Stop 86.77 = 1 ATR15m under the 87.10 day low (rule 21); target 90.76 = 2R, clears the 89.46/90.2 1h highs and stays under the 4h bear OB 93.76-95.27 (rule 15). 15m taker +104k. 0.2%. Invalidation: trade through 86.77.",
+      "max_hold_h": 24,
+      "conf": 74.0,
+      "exit": 86.77,
+      "closed_ms": 1793562300000,
+      "reason": "stop",
+      "pnl": -21.39259919596735,
+      "R": -1.0645841949778436
     }
   ],
   "shadow": [
