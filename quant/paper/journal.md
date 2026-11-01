@@ -580,3 +580,6 @@
 
 ## 2026-11-01 06:12 UTC — price 77,932
 06:11 UTC hourly. SH8 resolved at target (+1.5R): holding SW2a would have paid +1.5R vs the +0.56R I took = ~0.94R given up; lessons row added (open trades run to plan). SH9 (2R, 78,261) open. DECISIONS: BTC +1/9 (77,902, 15m taker +873; 7d gamma +40.2M with BOTH the call and put wall at 78,000 = hard pin): long 56% -15 (no catalyst/HTF) -15 (target into the 78k wall 98 above) = 26% NO; short 44% -15 = 29% NO. ETH +1/9 (2,271, 9 under the 2,280 call wall): long 56% -15 -15 (2,280 wall) = 26% NO; short 44% -15 = 29% NO. HYPE +3/9 (88.1): long 67% -15 = 52% NO; short 18% NO. Next top-impact data: ISM Manufacturing Mon 15:00 UTC (no entries 13:00-15:00 Monday).
+
+## 2026-11-01 07:12 UTC — price 77,892
+07:11 UTC hourly. Flat. Binance says withdrawals are resuming (Yahoo SG): BTC -0.08%, no tape reaction, no catalyst points. DECISIONS: BTC +3/9 (77,892; 1h back above EMA50, 15m taker +765; but call AND put wall both at 78,000, 7d gamma +39M = hard pin 108 above): long 67% -15 (no catalyst/HTF level) -15 (target into the 78k wall) = 37% NO; short 33% -15 = 18% NO. ETH +1/9 (2,267, OI +5.9%, sitting on the 2,266 gamma flip): long 56% -15 -15 (2,280 strike) = 26% NO; short 44% -15 = 29% NO. HYPE +1/9 (87.8): long 56% -15 = 41% NO; short 44% -15 = 29% NO. SH9 shadow: BTC 369 from its 78,261 target.
