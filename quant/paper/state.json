@@ -2,28 +2,7 @@
   "start_equity": 10000.0,
   "equity": 10047.396578347933,
   "risk_pct": 0.5,
-  "orders": [
-    {
-      "id": "X31",
-      "symbol": "HYPEUSDT",
-      "book": "scalp",
-      "side": "long",
-      "trigger": "limit",
-      "tf": "4h",
-      "level": 87.3,
-      "stop": 86.0,
-      "target": 89.3,
-      "target_r": null,
-      "oco": null,
-      "note": "Rule 23: HYPE confluence +5/9 = 78% long -15 (no catalyst; the 86.3-89.5 range is 1h, not 4h/1d) = 63%. Buy a pullback into the lower half of the 86.29-89.46 day range: limit 87.30, stop 86.00 (1 ATR15m under the 86.29 low, rule 21), target 89.30 under the 89.46 range high = 1.54R. 0.2%. Invalidation: trade through 86.00 = the range low failed. Against: 15m taker -12.7k.",
-      "conf": 63.0,
-      "risk_pct": 0.2,
-      "max_hold_h": 24,
-      "created_ms": 1793495565303.9158,
-      "arm": null,
-      "expires_ms": 1793502765303.9177
-    }
-  ],
+  "orders": [],
   "positions": [],
   "closed": [
     {
