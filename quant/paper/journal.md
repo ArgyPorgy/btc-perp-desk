@@ -601,3 +601,6 @@
 
 ## 2026-11-01 13:15 UTC — price 77,951
 13:15 UTC hourly. X32 HYPE long 88.124 at +0.03R (HYPE 88.17, back above 15m EMA50/200 and 1h EMA50; 1h taker +216k); stop 86.77, target 90.76; held. DECISIONS: BTC +1/9 (77,950): long 56% -15 (no catalyst/HTF) -15 (78k/78.5k strikes) -15 (correlated with X32) = 11% NO; short 44% -15 = 29% NO. ETH -1/9 (2,264; 15m/1h taker -23k/-41k): short 56% -15 (no catalyst/HTF resistance) -15 (target into the 2,240 put wall) = 26% NO; long 44% -15 -15 (correlated) = 14% NO. HYPE: in X32 (score +3/9 now).
+
+## 2026-11-01 14:16 UTC — price 77,968
+14:16 UTC hourly. X32 HYPE long 88.124 at +0.01R (HYPE 88.14-88.2; confluence +5/9, 1h taker +208k); stop 86.77, target 90.76; held. DECISIONS: BTC +3/9 (77,966): long 67% -15 (no catalyst/HTF) -15 (78k/78.5k strikes) -15 (correlated with X32) = 22% NO; short 33% -15 = 18% NO. ETH -1/9 (2,268; 15m/1h taker -18k/-35k, under the 2,280 call wall): short 56% -15 (no catalyst/HTF resistance) -15 (target into the 2,260/2,240 put strikes) = 26% NO; long 44% -15 -15 (correlated) = 14% NO. HYPE: in X32. No crypto news.
