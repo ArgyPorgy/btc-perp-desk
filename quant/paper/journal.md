@@ -664,3 +664,6 @@
 
 ## 2026-11-02 09:19 UTC — price 78,177
 09:19 UTC hourly. Flat; equity $9,962.89, room $237.67. DECISIONS: BTC +1/9 (78,206; 15m/1h taker +2,094/+3,299, OI -3.4% 24h = short covering): long 56% -15 (no catalyst/HTF level) = 41% NO; short 44% -15 = 29% NO. ETH +1/9 (2,297, 3 under the 2,300 call wall, on the 2,291 flip): long 56% -15 -15 (2,300 wall) = 26% NO; short 44% -15 = 29% NO. HYPE +1/9 (86.6, inside the 4h bear FVG 86.28-87.38; 1h taker -130k): long blocked (rule 25); short 44% -15 (no catalyst) = 29% NO. Week ahead (CoinDesk): midterms Tue, jobs report Fri; ISM today 15:00 UTC (no entries 13:00-15:00).
+
+## 2026-11-02 10:16 UTC — price 77,964
+10:15 UTC hourly. Flat; equity $9,962.89, room $237.67. DECISIONS: BTC -1/9 (77,945, under 15m/1h EMAs again; 1h taker +3.5k but price fading = absorption; OI -3.9%): short 56% -15 (no catalyst/HTF resistance) = 41% NO; long 44% -15 = 29% NO. ETH -1/9 (2,286, on the 2,290 flip, under the 2,300 call wall): short 56% -15 = 41% NO; long 44% -15 -15 (2,300 wall) = 14% NO. HYPE +1/9 (85.9, 1h taker -201k): long blocked (rule 25); short 44% -15 (no catalyst; into the 1h EMA200 84.91) = 29% NO. US futures up, oil -4% on US-Iran deal hopes. ISM 15:00 UTC (no entries 13:00-15:00).
