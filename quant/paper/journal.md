@@ -655,3 +655,6 @@
 
 ## 2026-11-02 06:17 UTC — price 78,257
 06:16 UTC hourly. Flat; equity $9,962.89 (-0.37%), room $237.67 (cap $118.83). DECISIONS: BTC +3/9 (78,265; call AND put wall both 78,000, 7d gamma +70.7M = hard pin 265 below): long 67% -15 (no catalyst/HTF) -15 (78.5k strike) = 37% NO; short 33% -15 -15 (78k wall) = 3% NO. ETH +3/9 (2,287, faded from 2,318; 15m taker -54k; 2,280 call/put wall 7 below): long 67% -15 -15 (2,300 strike) = 37% NO; short 33% -15 -15 (2,280 wall) = 3% NO. HYPE +1/9 (87.5): long blocked (rule 25 until 2026-11-03 04:55); short 44% -15 = 29% NO. Bloomberg: BTC resilience masks jitters. ISM 15:00 UTC (no entries 13:00-15:00).
+
+## 2026-11-02 07:24 UTC — price 78,104
+07:23 UTC hourly. HYPE dropped to 85.25 (now 85.6), breaking the 86.30 swing low with 15m/1h taker -187k/-138k: the rule-25 cooldown kept the desk out of a third HYPE long. Flat; equity $9,962.89, room $237.67. DECISIONS: HYPE +1/9 (score lags the break): long blocked (rule 25); short 44% -15 (no catalyst/HTF resistance; selling after a 3% drop into the 1h EMA200 84.86) = 29% NO. BTC +3/9 (78,114; 78k call/put pin, 7d gamma +81.6M): long 67% -15 -15 (79k strike/pin) = 37% NO; short 33% -15 -15 (78k wall) = 3% NO. ETH +3/9 (2,284, 4 above the 2,280 pin; 15m taker -47k): long 67% -15 -15 = 37% NO; short 33% -15 -15 = 3% NO. Oil -3% on Iran peace-talk hopes.
