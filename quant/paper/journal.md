@@ -703,3 +703,6 @@
 
 ## 2026-11-02 22:12 UTC — price 76,874
 22:11 UTC hourly. X36 (ETH short on a 15m close below 2,236) pending; ETH bounced to 2,259 (15m taker +25.6k), 2,236 not retested. Re-scored -7/9 = 74%: kept to 23:11. DECISIONS: BTC -5/9 (76,865; 7d gamma -11.9M): short 78% -15 (no catalyst/HTF) -15 (76.27k 20-day low / 76k put wall) -15 (correlated with X36) = 33% NO; long 22% NO. HYPE -1/9 (84.5, bounce off 82.84 into the 1h EMA200 84.9): long blocked (rule 25); short 56% -15 -15 (correlated) = 26% NO. Apple beat; no crypto catalyst.
+
+## 2026-11-02 23:12 UTC — price 76,836
+23:11 UTC hourly. X36 cancelled at expiry (2,236 never closed below; ETH 2,256 in a 2,236-2,261 box) and renewed as X37 (same terms, conf 63 as ETH eased to -5/9 = 78% -15), expires 01:11. DECISIONS: BTC -5/9 (76,823; 7d gamma -13.8M): short 78% -15 (no catalyst/HTF) -15 (76.27k 20-day low / 76k put wall) -15 (correlated with X37) = 33% NO; long 22% NO. HYPE -1/9 (84.4): long blocked (rule 25, ends 04:55); short 56% -15 -15 (correlated) = 26% NO. Daily close at 00:00: BTC ~76.8k vs EMA200 ~76.4k = BULL holds by 0.5%; a close under it would turn B20 on. Kim Yo-jong denies the FBI's North Korea claim (The Block).
