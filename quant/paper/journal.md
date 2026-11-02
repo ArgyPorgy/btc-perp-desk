@@ -700,3 +700,6 @@
 
 ## 2026-11-02 21:11 UTC — price 76,836
 21:10 UTC hourly. X35 cancelled 3 min before expiry (ETH 2,250, never retraced to 2,262). Pattern: X34 and X35 both called the move (targets reached) but the bounce limits were too far to fill. ORDER: X36 ETH short on a 15m close below 2,236 (the day low), stop 2,249, 2R target (~2,205, above the 2,200 put wall), $10k notional (~$60 risk), conf 74, expires 23:12. DECISIONS: ETH -7/9: short 74% (X36); long vetoed. BTC -5/9 (76,791, 7d gamma -9.5M): short 78% -15 (no catalyst/HTF) -15 (76.27k 20-day low / 76k put wall) -15 (correlated with X36) = 33% NO; long 22% NO. HYPE -1/9 (83.5): long blocked (rule 25); short 56% -15 -15 = 26% NO.
+
+## 2026-11-02 22:12 UTC — price 76,874
+22:11 UTC hourly. X36 (ETH short on a 15m close below 2,236) pending; ETH bounced to 2,259 (15m taker +25.6k), 2,236 not retested. Re-scored -7/9 = 74%: kept to 23:11. DECISIONS: BTC -5/9 (76,865; 7d gamma -11.9M): short 78% -15 (no catalyst/HTF) -15 (76.27k 20-day low / 76k put wall) -15 (correlated with X36) = 33% NO; long 22% NO. HYPE -1/9 (84.5, bounce off 82.84 into the 1h EMA200 84.9): long blocked (rule 25); short 56% -15 -15 (correlated) = 26% NO. Apple beat; no crypto catalyst.
