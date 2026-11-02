@@ -4,25 +4,25 @@
   "risk_pct": 0.5,
   "orders": [
     {
-      "id": "X34",
+      "id": "X35",
       "symbol": "ETHUSDT",
       "book": "scalp",
       "side": "short",
       "trigger": "limit",
       "tf": "4h",
-      "level": 2279.0,
-      "stop": 2291.0,
-      "target": 2255.0,
+      "level": 2262.0,
+      "stop": 2275.0,
+      "target": 2236.0,
       "target_r": null,
       "oco": null,
-      "note": "Rule 23 decision 63%: ETH confluence -5/9 = 78% short (1h/4h EMAs down, daily under EMA200, broke the 2,277 swing low with volume, 15m/1h taker -12.5k/-15.9k); -15 no catalyst and the level is 1h. Sell the retest of the broken low: limit 2,279 = the 2,277 broken low + 2,279 gamma flip + 2,280 strike; stop 2,291 = 1 ATR15m (10.5) above that cluster and above the 15m EMA50 2,284 (rule 21); target 2,255 = 2R, just under the 2,260 day low, far above the 2,200 put wall. $10k notional: 0.53% stop = ~$53 risk. Invalidation: acceptance back above 2,291.",
-      "conf": 63.0,
+      "note": "Rule 23 decision 74%: ETH confluence -7/9 STRONG BEAR = 89% short (all EMAs down, daily under EMA200, broke the 2,277 low and made 2,243, 15m/1h taker -23k/-32k); -15 no catalyst / 1h level. X34 (2,279) expired unfilled as ETH never retraced that far; this one sells the nearer bounce zone: limit 2,262 = under the 2,264 bounce high and the 2,260 strike; stop 2,275 = 1 ATR15m above 2,264 and at the 15m EMA50 (rule 21); target 2,236 = 2R, under the 2,243 low, far above the 2,200 put wall. $10k notional: 0.57% stop = ~$57 risk.",
+      "conf": 74.0,
       "risk_pct": 0.2,
       "notional": 10000.0,
       "max_hold_h": 24,
-      "created_ms": 1793638122376.675,
+      "created_ms": 1793646824664.1194,
       "arm": null,
-      "expires_ms": 1793645322376.6758
+      "expires_ms": 1793654024664.1208
     }
   ],
   "positions": [],

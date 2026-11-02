@@ -691,3 +691,6 @@
 
 ## 2026-11-02 18:12 UTC — price 77,261
 18:11 UTC hourly. X34 ETH limit short 2,279 still unfilled (ETH dipped to 2,243.2, now 2,264; 15m EMA50 2,279 = the order level). Re-scored: -7/9 = 89% -15 = 74%: kept to 18:48. BTC wicked to 76,800 and is back at 77,270 (15m taker -3.6k; on the 77,112 flip): short 67% -15 (no catalyst/HTF) -15 (76.8k low / 76k put wall) -15 (correlated with X34) = 22% NO; long 33% -15 = 18% NO. HYPE +1/9 (84.4, under the 1h EMA200 84.95; low 83.62; 1h taker -384k): long blocked (rule 25); short 44% -15 -15 (correlated) = 14% NO. Decrypt: a Brazilian exchange hit for $40M.
+
+## 2026-11-02 19:13 UTC — price 76,964
+19:12 UTC hourly. X34 EXPIRED unfilled (ETH never retraced to 2,279; high ~2,264, now 2,248 - the target zone). ORDER: X35 ETH limit short 2,262, stop 2,275, target 2,236 (2R), $10k notional (~$57 risk), conf 74, expires 21:13. Why: ETH -7/9 STRONG BEAR = 89% short, -15 no catalyst / 1h level; nearer retest zone (2,260 strike, 2,264 bounce high). No market short at 2,248 (5 above the 2,243 low). BTC -3/9 (76,950, under the 77,077 flip; 7d gamma turned negative -5.6M = moves extend): short 67% -15 (no catalyst/HTF) -15 (76.8k low / 76k put wall) -15 (correlated with X35) = 22% NO; long 33% -15 = 18% NO. HYPE +1/9 (83.5, new low 83.32, 1h taker -415k): long blocked (rule 25); short 44% -15 -15 (correlated) = 14% NO.
