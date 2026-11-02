@@ -640,3 +640,6 @@
 
 ## 2026-11-02 01:12 UTC — price 78,350
 01:12 UTC hourly. Flat; room $300.78. ETH broke through the 2,280 call wall to 2,289.9 on +73k 15m taker (score still -1/9: the 1h/4h EMAs lag). DECISIONS: ETH long 44% -15 (no catalyst/HTF level) -15 (target into the 2,300 strike 14 above) = 14% NO (no chasing a wall break); short 56% -15 (selling into a breakout with +73k buying) -15 = 26% NO. BTC +3/9 (78,334; 15m taker +1,820; 7d gamma +54.5M): long 67% -15 (no catalyst/HTF) -15 (78.5k strike 150 above) = 37% NO; short 33% -15 = 18% NO. HYPE +1/9 (88.2, back above 15m/1h EMAs): long 56% -15 = 41% NO; short 44% -15 = 29% NO.
+
+## 2026-11-02 02:12 UTC — price 78,409
+02:11 UTC hourly. Flat; room $300.78. DECISIONS: BTC +3/9 (78,385; 15m taker +839; put wall moved up to 78,000 = support right under price, call wall 82k, 78.5k strike 115 above): long 67% -15 (no catalyst/HTF) -15 (target into the 78.5k strike) = 37% NO; short 33% -15 = 18% NO. ETH +1/9 (2,292, high 2,298; call wall now 2,300 just above, 15m/1h taker +21k/+17k): long 56% -15 (no catalyst/HTF) -15 (target into the 2,300 call wall) = 26% NO; short 44% -15 (into buying) = 29% NO. HYPE +1/9 (87.8): long 56% -15 = 41% NO; short 44% -15 = 29% NO. THORChain halted swaps (block reorg bug), slowing the Binance hackers (Cointelegraph).
