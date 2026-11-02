@@ -80,6 +80,9 @@ the rule goes into **Current rules** too. Skipped or cancelled plan trades are a
     wide-stop setup either finds a tighter real invalidation or is skipped; never tighten a stop just to fit (rule 21).
     Two full stop-outs can use a whole day's room (~$300): at most two positions open at once while room < $400.
     `--risk-pct` still sizes by % risk when a setup's stop is too wide for $10k.
+25. **Cooldown: two consecutive stop-outs in the same market and direction = no new trade that way for 24h.**
+    (X32 + X33, HYPE longs at +7/9, 2026-11-01/02.) A repeating loss in one market says the read is wrong there,
+    whatever the score says. HYPE longs are off until 2026-11-03 04:55 UTC.
 
 ## Mistakes and misses
 | Date (UTC) | What happened | Cost | Lesson → rule |
@@ -108,6 +111,7 @@ the rule goes into **Current rules** too. Skipped or cancelled plan trades are a
 | 2026-10-31 08:23 | User: the first win is almost given back; why aren't the right trades being taken? Record: 15 closed, 3 targets, 8 stops (all longs), 4 manual; net +$27.80 then. Checks: (1) `confluence_test.py`: trading against a strong indicator score loses (−0.17 to −0.22R, t −3.4), trading with it is ~0R after fees: indicators are a filter, not an entry. (2) At my entries the score was mostly mixed (±5); the three HYPE longs were in line with it and still lost; only X24 (−7) would have been vetoed. (3) S10/S20 rebuilt on data to 2026-10-31: ~0R overall, no score bucket positive: I leaned on a marginal setup. | SW2 closed at +0.56R each (+$19.60), shadows SH8/SH9 | Rule 23: one decision % (indicators base + evidence + catalyst − violations), trade at >= 60%, veto against \|S\| >= 7. setup_scan's 'BULL: longs only' label removed (it biased me against shorts). |
 | 2026-11-01 06:11 | **SW2a early exit scored**: shadow SH8 hit its 77,914.9 target (+1.5R) at ~06:00; I had closed SW2a at +0.56R on a rule-23 re-score. SH9 (the 2R half) still open. | ~0.94R (~$17) on SW2a; SH9 (the 2R half) hit 78,261 at ~00:00 Nov 2 = another ~1.44R (~$26): the early exit cost ~2.4R (~$43) in total | Confirms the rule-23 scope note: the score decides entries and pending orders; open tested trades run to their stop/target. |
 | 2026-11-01 19:45 | **X32** HYPE long 88.124 stopped at 86.77 (−1.06R, −$21). First rule-23 trade (conf 74): confluence +7/9 with 4h/1d location (4h bull FVG, top of the daily FVG). But the market entry was mid-box (87.10–88.68 all day), the score faded +7 → +3 over 10 hours, and the box low broke: low 86.62, 0.15 through the rule-21 stop, then back to 87.0. | −$21 | One sample, no new rule. Note for the rule-23 review: a strong score does not fix a mid-range entry; prefer a limit at the box edge (as X31 tried) over a market fill in the middle. |
+| 2026-11-02 04:55 | **X33** HYPE long 88.45 (limit on the retest of the broken 88.39 high) stopped at 87.98 (−1.19R, −$63.11). First $10k-notional trade. Filled 04:25, the breakout failed within 30 min (high 88.998, back to 87.8). Second HYPE long in a row at confluence +7/9 to stop out (X32, X33): HYPE's 1h range (86.6–89.0) keeps reversing at both edges, and the score's EMAs are slow to show it. Fees on $10k notional cost ~0.19R at a 0.53% stop. | −$63 | Rule 25: after two consecutive stop-outs in the same market and direction, stand aside from that market-direction for 24h. |
 
 ## Shadow trades (skipped or cancelled plan trades)
 | ID | Trade | Why skipped | Result |
