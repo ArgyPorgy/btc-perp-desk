@@ -676,3 +676,6 @@
 
 ## 2026-11-02 13:30 UTC — price 77,653
 13:29 UTC hourly. Entry freeze (ISM Manufacturing 15:00 UTC, fcst 54.5): no new orders until 15:00 per the 2h rule. Flat; equity $9,962.89, room $237.67. Scores for the record: BTC -3/9 (77,670; short 67% -15 -15 = 37%), ETH -1/9 (2,284; short 41%), HYPE +1/9 (85.5; long blocked by rule 25, short 29%). US futures up as oil falls.
+
+## 2026-11-02 14:30 UTC — price 77,862
+14:30 UTC hourly. Entry freeze until 15:00 (ISM Manufacturing). Flat; equity $9,962.89, room $237.67. Scores: BTC -3/9 (77,818; 1h taker +4.1k absorbed under the 1h EMA50; short 67% -15 (no catalyst/HTF) -15 (77.2k flip/77.6k low) = 37%), ETH -1/9 (2,285; short 41%, long 14%), HYPE +1/9 (86.0; long blocked by rule 25, short 29%). Next run (15:10) reads the ISM reaction: a tape-confirmed move counts as a catalyst (+10).
