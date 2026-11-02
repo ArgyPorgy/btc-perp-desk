@@ -2,7 +2,29 @@
   "start_equity": 10000.0,
   "equity": 10026.003979151965,
   "risk_pct": 0.5,
-  "orders": [],
+  "orders": [
+    {
+      "id": "X33",
+      "symbol": "HYPEUSDT",
+      "book": "scalp",
+      "side": "long",
+      "trigger": "limit",
+      "tf": "4h",
+      "level": 88.45,
+      "stop": 87.98,
+      "target": 89.39,
+      "target_r": null,
+      "oco": null,
+      "note": "Rule 23 decision 74%: confluence +7/9 STRONG BULL = 89% long; 4h/1d location (inside the 4h bull FVG 88.0-93.0, just above the daily bull FVG top 88.55); -15 the stop sits inside the daily FVG. HYPE broke the 88.39 day high with volume (15m taker +34k). X32 lesson applied: no market fill mid-move; limit on the retest of the broken 88.39-88.45 level. Stop 87.98 = 1 ATR15m under 88.39 (rule 21); target 89.39 = 2R, under the 89.46 prior high and far under the 4h bear OB 93.76. $10k notional (rule 24): 0.53% stop = ~$53 risk. Invalidation: back under 87.98 = breakout failed.",
+      "conf": 74.0,
+      "risk_pct": 0.2,
+      "notional": 10000.0,
+      "max_hold_h": 24,
+      "created_ms": 1793592735740.9143,
+      "arm": null,
+      "expires_ms": 1793599935740.9153
+    }
+  ],
   "positions": [],
   "closed": [
     {
