@@ -679,3 +679,6 @@
 
 ## 2026-11-02 14:30 UTC — price 77,862
 14:30 UTC hourly. Entry freeze until 15:00 (ISM Manufacturing). Flat; equity $9,962.89, room $237.67. Scores: BTC -3/9 (77,818; 1h taker +4.1k absorbed under the 1h EMA50; short 67% -15 (no catalyst/HTF) -15 (77.2k flip/77.6k low) = 37%), ETH -1/9 (2,285; short 41%, long 14%), HYPE +1/9 (86.0; long blocked by rule 25, short 29%). Next run (15:10) reads the ISM reaction: a tape-confirmed move counts as a catalyst (+10).
+
+## 2026-11-02 15:44 UTC — price 77,912
+15:43 UTC hourly. ISM Manufacturing released 15:00 (actual not in the feed); reaction small: BTC +0.15% (77,580-78,237 range held), ETH 2,275-2,303, no tape-confirmed move = no catalyst points. Entry freeze lifted. Flat; equity $9,962.89, room $237.67. DECISIONS: BTC -3/9 (77,887, under 15m/1h EMAs): short 67% -15 (no catalyst/HTF) -15 (target into the 77.58k low / 77.16k flip) = 37% NO; long 33% -15 = 18% NO. ETH -1/9 (2,288 on the 2,279 flip, 2,300 wall above): short 56% -15 = 41% NO; long 44% -15 -15 = 14% NO. HYPE +1/9 (86.0, 85.1-86.6 box): long blocked (rule 25 until 04:55 Tue); short 44% -15 = 29% NO. JOLTS Tue 15:00 (freeze 13:00-15:00).
