@@ -456,8 +456,8 @@
       "stop": 76183.7,
       "target": 78261.1,
       "why": "SW2b closed early at ~77,355 (+0.69R), same reason as SH8; scores the 2R half.",
-      "result": null,
-      "R": null,
+      "result": "target",
+      "R": 1.9998555956678827,
       "max_hold_h": 168
     },
     {
