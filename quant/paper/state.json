@@ -2,7 +2,29 @@
   "start_equity": 10000.0,
   "equity": 9962.893182091479,
   "risk_pct": 0.5,
-  "orders": [],
+  "orders": [
+    {
+      "id": "X34",
+      "symbol": "ETHUSDT",
+      "book": "scalp",
+      "side": "short",
+      "trigger": "limit",
+      "tf": "4h",
+      "level": 2279.0,
+      "stop": 2291.0,
+      "target": 2255.0,
+      "target_r": null,
+      "oco": null,
+      "note": "Rule 23 decision 63%: ETH confluence -5/9 = 78% short (1h/4h EMAs down, daily under EMA200, broke the 2,277 swing low with volume, 15m/1h taker -12.5k/-15.9k); -15 no catalyst and the level is 1h. Sell the retest of the broken low: limit 2,279 = the 2,277 broken low + 2,279 gamma flip + 2,280 strike; stop 2,291 = 1 ATR15m (10.5) above that cluster and above the 15m EMA50 2,284 (rule 21); target 2,255 = 2R, just under the 2,260 day low, far above the 2,200 put wall. $10k notional: 0.53% stop = ~$53 risk. Invalidation: acceptance back above 2,291.",
+      "conf": 63.0,
+      "risk_pct": 0.2,
+      "notional": 10000.0,
+      "max_hold_h": 24,
+      "created_ms": 1793638122376.675,
+      "arm": null,
+      "expires_ms": 1793645322376.6758
+    }
+  ],
   "positions": [],
   "closed": [
     {
