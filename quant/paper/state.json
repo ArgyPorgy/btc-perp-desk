@@ -4,7 +4,7 @@
   "risk_pct": 0.5,
   "orders": [
     {
-      "id": "X37",
+      "id": "X38",
       "symbol": "ETHUSDT",
       "book": "scalp",
       "side": "short",
@@ -15,14 +15,14 @@
       "target": null,
       "target_r": 2.0,
       "oco": null,
-      "note": "X36 renewed (rule 12). Rule 23: ETH confluence -5/9 (from -7) = 78% short -15 (no catalyst / 1h level) = 63%. Short on a 15m close below the 2,236 day low; stop 2,249 = 1 ATR15m above it (rule 21); 2R from the fill (~2,206), above the 2,200 put wall. $10k notional, ~$60 risk. Invalidation: back above 2,249.",
-      "conf": 63.0,
+      "note": "X37 renewed (rule 12). Rule 23: ETH -7/9 STRONG BEAR = 89% short -15 (no catalyst / 1h level) = 74%. Short on a 15m close below the 2,236 day low; stop 2,249 = 1 ATR15m above (rule 21); 2R from the fill (~2,206), above the 2,200 put wall. $10k notional, ~$60 risk.",
+      "conf": 74.0,
       "risk_pct": 0.2,
       "notional": 10000.0,
       "max_hold_h": 24,
-      "created_ms": 1793661144805.5413,
+      "created_ms": 1793668353878.7446,
       "arm": null,
-      "expires_ms": 1793668344805.5422
+      "expires_ms": 1793675553878.746
     }
   ],
   "positions": [],
