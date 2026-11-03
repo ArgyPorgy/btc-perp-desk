@@ -513,6 +513,19 @@
       "why": "X30 cancelled 18:12: ETH confluence improved -5 -> -3 (67% short -15 = 52% < 60, rule 23) as ETH pushed to 2,257.5 on +20.8k 15m taker and OI +3.2%. Caveat: scored as if filled at 2,258; a fall that never reaches 2,258 would overstate it.",
       "result": "stop",
       "R": -1.0
+    },
+    {
+      "id": "SH11",
+      "symbol": "HYPEUSDT",
+      "side": "long",
+      "entry": 84.08,
+      "at_ms": 1793664000000,
+      "stop": 77.62,
+      "target": 97.01,
+      "why": "D1F signal (daily close 84.08 retested the flipped 82.55 above a rising SMA100) skipped: rule 25 cooldown on HYPE longs until 04:55; and rule 23 = confluence -1/9 44% +15 (tested D1F) -15 (2R target 97.01 runs through the 4h bear OB 93.76-95.27) = 44%; capping the target under the OB makes it 1.46R. Scores D1F-on-HYPE against the filters (30-day hold).",
+      "result": null,
+      "R": null,
+      "max_hold_h": 720.0
     }
   ]
 }
