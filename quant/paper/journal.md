@@ -721,3 +721,6 @@
 
 ## 2026-11-03 04:12 UTC — price 76,890
 04:11 UTC hourly. 00:00 4h closed 76,909 (low 76,520): no S10/S20 (20-day low 76,270 held). D1F HYPE signal still printing (yesterday's close); shadow SH11 tracks it, HYPE 83.2 (-0.14R on the shadow). X39 (ETH short on a 15m close below 2,236) pending; ETH 2,251, -7/9 = 74%. DECISIONS: BTC -5/9 (76,843; 15m taker -1.9k; 7d gamma -19.1M): short 78% -15 (no catalyst/HTF) -15 (76.27k 20-day low / 76k put wall) -15 (correlated with X39) = 33% NO; long 22% NO. HYPE -1/9 (83.2, new low 82.60): long blocked (rule 25 until 04:55); short 56% -15 -15 = 26% NO. Qeshm strike coverage spreading (BBC/USA Today); BTC flat.
+
+## 2026-11-03 05:12 UTC — price 76,830
+05:11 UTC hourly. Rule-25 cooldown on HYPE longs ended 04:55. D1F HYPE re-checked (price 83.66 is within 0.25R of the 84.08 signal close): rule 23 = -1/9 44% +15 (D1F) -15 (2R target 97.01 runs through the 4h bear OB 93.76-95.27) = 44% NO; shadow SH11 keeps scoring it. X39 (ETH short on a 15m close below 2,236) pending; ETH eased to -5/9 = 78% -15 = 63%, still >= 60: kept to 07:12. DECISIONS: BTC -5/9 (76,784; 7d gamma -21.3M): short 78% -15 (no catalyst/HTF) -15 (76.27k / 76k put wall) -15 (correlated with X39) = 33% NO; long 22% NO. HYPE -1/9: long 44% (+15 D1F -15 OB) = 44% NO; short 56% -15 -15 (correlated) = 26% NO. JOLTS 15:00 (freeze 13:00-15:00).
