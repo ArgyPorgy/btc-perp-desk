@@ -2,7 +2,29 @@
   "start_equity": 10000.0,
   "equity": 9962.893182091479,
   "risk_pct": 0.5,
-  "orders": [],
+  "orders": [
+    {
+      "id": "X40",
+      "symbol": "ETHUSDT",
+      "book": "scalp",
+      "side": "short",
+      "trigger": "limit",
+      "tf": "4h",
+      "level": 2280.0,
+      "stop": 2300.5,
+      "target": 2241.0,
+      "target_r": null,
+      "oco": null,
+      "note": "Bounce short into 7d gamma flip 2,278 / 15m bear FVG 2,277-2,284 / weekly VWAP 2,274, under 4h EMA50 2,293.7 in a 4h downtrend (3x down BOS, daily below EMA200). Stop 1 ATR(15m) above 4h EMA50. Target in front of the 15m bull OB 2,234.6-2,239.7. Rule 23: 78% short -15 (stop inside the 4h bear FVG 2,256-2,323 / 15m bear OB) = 63%. Expires before the 13:00 JOLTS/election freeze.",
+      "conf": 63.0,
+      "risk_pct": 0.2,
+      "notional": 10000.0,
+      "max_hold_h": 24,
+      "created_ms": 1793693736831.5513,
+      "arm": null,
+      "expires_ms": 1793709900000
+    }
+  ],
   "positions": [],
   "closed": [
     {
