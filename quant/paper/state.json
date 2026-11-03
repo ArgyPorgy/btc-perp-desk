@@ -2,29 +2,7 @@
   "start_equity": 10000.0,
   "equity": 9962.893182091479,
   "risk_pct": 0.5,
-  "orders": [
-    {
-      "id": "X41",
-      "symbol": "ETHUSDT",
-      "book": "scalp",
-      "side": "short",
-      "trigger": "limit",
-      "tf": "4h",
-      "level": 2288.0,
-      "stop": 2310.5,
-      "target": 2245.0,
-      "target_r": null,
-      "oco": null,
-      "note": "Replaces X40. Bounce short just under the 7d gamma flip 2,290 and the 4h EMA50 2,293.7, in a 4h downtrend (3x down BOS, daily below EMA200). Stop 1 ATR(15m) above the 15m bear OB 2,296.6-2,303.5, the 7d call wall 2,300 and prior-day VAH 2,304. Target 2,245 in front of the 15m bull OB 2,234.6-2,239.7 (put wall 2,220 below). Rule 23: 78% short -15 (stop still inside the 4h bear FVG 2,256-2,323) = 63%. Expires before the 13:00 freeze.",
-      "conf": 63.0,
-      "risk_pct": 0.2,
-      "notional": 10000.0,
-      "max_hold_h": 24,
-      "created_ms": 1793697136087.4849,
-      "arm": null,
-      "expires_ms": 1793709900000
-    }
-  ],
+  "orders": [],
   "positions": [],
   "closed": [
     {
@@ -539,6 +517,19 @@
       "result": null,
       "R": null,
       "max_hold_h": 4.0
+    },
+    {
+      "id": "SH13",
+      "symbol": "ETHUSDT",
+      "side": "short",
+      "entry": 2288.0,
+      "at_ms": 1793700780000,
+      "stop": 2310.5,
+      "target": 2245.0,
+      "why": "X41 cancelled 10:13 on re-score (rule 23): ETH confluence improved -5 -> -3 (1h close back above EMA50; 67% short) -15 (stop inside the 4h bear FVG 2,256-2,323) = 52% < 60, with 15m/1h taker buying (+11.5k / +7.4k) and the 7d flip down at 2,277. Same pattern as SH10. Caveat: scored as if filled at 2,288.",
+      "result": null,
+      "R": null,
+      "max_hold_h": 3.0
     }
   ]
 }
