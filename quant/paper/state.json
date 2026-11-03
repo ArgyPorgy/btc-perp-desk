@@ -4,25 +4,25 @@
   "risk_pct": 0.5,
   "orders": [
     {
-      "id": "SW3",
+      "id": "X42",
       "symbol": "HYPEUSDT",
-      "book": "swing",
+      "book": "scalp",
       "side": "long",
       "trigger": "limit",
       "tf": "4h",
-      "level": 84.6,
-      "stop": 77.62,
-      "target": 97.09,
+      "level": 85.65,
+      "stop": 84.8,
+      "target": 87.85,
       "target_r": null,
       "oco": null,
-      "note": "D1F HYPE (daily close 84.11 retested the flipped 82.55 above a rising SMA100; tested: HYPE +0.60R n=9, BTC +0.32R t1.5). Limit on the pullback to the breakout retest (1h EMA200 84.81 / 4h EMA50 84.76), within 0.25R of the signal entry 84.08. D1F stop 77.62 / 2R target 97.09 = 1.79R from 84.6. Rule 23: confluence +7/9 89% +15 (D1F) -15 (target through 4h bear OB 93.76-95.27) -15 (stop inside 1d bull OB 75.13-80.55) = 74%. --risk-pct 0.5 because the tested stop (8.3%) is too wide for $10k (rule 24). Counts from 15:00 (after the JOLTS freeze).",
-      "conf": 74.0,
-      "risk_pct": 0.5,
-      "notional": null,
-      "max_hold_h": 720,
-      "created_ms": 1793718000000,
+      "note": "Pullback long with HYPE confluence +9/9 (100%): limit at the 1h EMA50 85.64 / 15m EMA200 85.54, inside the 4h bull FVG 79.56-87.33 and 1d bull FVG 81.9-88.55 (4h/1d location). Stop 84.8: 1 ATR(15m) under the 1h EMA50, below the 1h EMA200 84.86. Target 87.85 (2.6R) in front of the range high 87.9 and the 1h bear OB 87.97-89.07. Rule 23: 100 with no violations. D1F SW3 cancelled for it (shadow SH14).",
+      "conf": 100.0,
+      "risk_pct": 0.2,
+      "notional": 10000.0,
+      "max_hold_h": 24,
+      "created_ms": 1793722485259.4858,
       "arm": null,
-      "expires_ms": 1793750400000
+      "expires_ms": 1793736000000
     }
   ],
   "positions": [],
@@ -552,6 +552,19 @@
       "result": "time",
       "R": 0.3568888888888978,
       "max_hold_h": 3.0
+    },
+    {
+      "id": "SH14",
+      "symbol": "HYPEUSDT",
+      "side": "long",
+      "entry": 84.6,
+      "at_ms": 1793722500000,
+      "stop": 77.62,
+      "target": 97.09,
+      "why": "SW3 (D1F HYPE limit 84.6, 74%) cancelled 16:15 to make room under the $131 cap for X42, a $10k HYPE pullback long scoring ~100% (confluence 9/9) that is likelier to fill (1.1% below vs 2.3%). Both are HYPE longs so they could not run together. Caveat: scored as if filled at 84.6; a rally that never comes back to 84.6 overstates it.",
+      "result": null,
+      "R": null,
+      "max_hold_h": 720.0
     }
   ]
 }
