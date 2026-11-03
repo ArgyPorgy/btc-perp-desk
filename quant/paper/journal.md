@@ -718,3 +718,6 @@
 
 ## 2026-11-03 03:12 UTC — price 76,887
 03:11 UTC hourly. X38 renewed as X39 (same terms, 4h expiry to 07:12; ETH 2,253 in a 2,243-2,265 box, -7/9 = 74%). Binance began the second withdrawal phase (Cointelegraph); BTC +0.25%. DECISIONS: BTC -5/9 (76,892, new low 76,520; 7d gamma -17.4M, top strikes 76k/77k): short 78% -15 (no catalyst/HTF) -15 (target into the 76.27k 20-day low / 76k put wall) -15 (correlated with X39) = 33% NO; long 22% NO; a sweep below 76,270 with a 4h close back above would be S10/S20 (+5 = 27% long against this score, still NO). HYPE -1/9 (83.2; 15m taker -116k): long blocked (rule 25 until 04:55); short 56% -15 -15 = 26% NO. SH11 shadow open.
+
+## 2026-11-03 04:12 UTC — price 76,890
+04:11 UTC hourly. 00:00 4h closed 76,909 (low 76,520): no S10/S20 (20-day low 76,270 held). D1F HYPE signal still printing (yesterday's close); shadow SH11 tracks it, HYPE 83.2 (-0.14R on the shadow). X39 (ETH short on a 15m close below 2,236) pending; ETH 2,251, -7/9 = 74%. DECISIONS: BTC -5/9 (76,843; 15m taker -1.9k; 7d gamma -19.1M): short 78% -15 (no catalyst/HTF) -15 (76.27k 20-day low / 76k put wall) -15 (correlated with X39) = 33% NO; long 22% NO. HYPE -1/9 (83.2, new low 82.60): long blocked (rule 25 until 04:55); short 56% -15 -15 = 26% NO. Qeshm strike coverage spreading (BBC/USA Today); BTC flat.
