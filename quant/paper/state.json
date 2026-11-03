@@ -2,7 +2,29 @@
   "start_equity": 10000.0,
   "equity": 9962.893182091479,
   "risk_pct": 0.5,
-  "orders": [],
+  "orders": [
+    {
+      "id": "SW3",
+      "symbol": "HYPEUSDT",
+      "book": "swing",
+      "side": "long",
+      "trigger": "limit",
+      "tf": "4h",
+      "level": 84.6,
+      "stop": 77.62,
+      "target": 97.09,
+      "target_r": null,
+      "oco": null,
+      "note": "D1F HYPE (daily close 84.11 retested the flipped 82.55 above a rising SMA100; tested: HYPE +0.60R n=9, BTC +0.32R t1.5). Limit on the pullback to the breakout retest (1h EMA200 84.81 / 4h EMA50 84.76), within 0.25R of the signal entry 84.08. D1F stop 77.62 / 2R target 97.09 = 1.79R from 84.6. Rule 23: confluence +7/9 89% +15 (D1F) -15 (target through 4h bear OB 93.76-95.27) -15 (stop inside 1d bull OB 75.13-80.55) = 74%. --risk-pct 0.5 because the tested stop (8.3%) is too wide for $10k (rule 24). Counts from 15:00 (after the JOLTS freeze).",
+      "conf": 74.0,
+      "risk_pct": 0.5,
+      "notional": null,
+      "max_hold_h": 720,
+      "created_ms": 1793718000000,
+      "arm": null,
+      "expires_ms": 1793750400000
+    }
+  ],
   "positions": [],
   "closed": [
     {
@@ -514,8 +536,8 @@
       "stop": 2300.5,
       "target": 2241.0,
       "why": "X40 cancelled 09:12 and replaced by X41: the 7d call wall is 2,300 (it was 2,300 at placement too) and the stop 2,300.5 sat 0.5 above it, on obvious liquidity and short of 1 ATR(15m) beyond that level (rules 20/21), so the re-score is 78 -15 (stop inside 4h FVG) -15 (stop on liquidity) = 48%. Caveat: scored as if filled at 2,280; a fall that never reaches 2,280 overstates it.",
-      "result": null,
-      "R": null,
+      "result": "time",
+      "R": 0.0014634146341561019,
       "max_hold_h": 4.0
     },
     {
@@ -527,8 +549,8 @@
       "stop": 2310.5,
       "target": 2245.0,
       "why": "X41 cancelled 10:13 on re-score (rule 23): ETH confluence improved -5 -> -3 (1h close back above EMA50; 67% short) -15 (stop inside the 4h bear FVG 2,256-2,323) = 52% < 60, with 15m/1h taker buying (+11.5k / +7.4k) and the 7d flip down at 2,277. Same pattern as SH10. Caveat: scored as if filled at 2,288.",
-      "result": null,
-      "R": null,
+      "result": "time",
+      "R": 0.3568888888888978,
       "max_hold_h": 3.0
     }
   ]
