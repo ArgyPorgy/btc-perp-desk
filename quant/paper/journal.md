@@ -715,3 +715,6 @@
 
 ## 2026-11-03 02:12 UTC — price 76,958
 02:11 UTC hourly. X38 (ETH short on a 15m close below 2,236) pending; ETH 2,254 in a 2,248-2,263 box; -7/9 = 74%, kept to 03:12. NEWS: AP confirms US 'defensive strikes' on Iranian targets in the Strait of Hormuz; BTC -0.3% (76,968): a drift, not a repricing - no catalyst points. DECISIONS: BTC -5/9 (1h taker -4.4k; 7d gamma -15M): short 78% -15 (no catalyst/HTF) -15 (target into the 76.6k low / 76.27k 20-day low / 76k put wall) -15 (correlated with X38) = 33% NO; long 22% NO. HYPE -1/9 (83.9; 15m taker -68k): long blocked (rule 25 until 04:55); short 56% -15 -15 (correlated) = 26% NO. SH11 shadow (D1F HYPE 84.08) open, -0.03R.
+
+## 2026-11-03 03:12 UTC — price 76,887
+03:11 UTC hourly. X38 renewed as X39 (same terms, 4h expiry to 07:12; ETH 2,253 in a 2,243-2,265 box, -7/9 = 74%). Binance began the second withdrawal phase (Cointelegraph); BTC +0.25%. DECISIONS: BTC -5/9 (76,892, new low 76,520; 7d gamma -17.4M, top strikes 76k/77k): short 78% -15 (no catalyst/HTF) -15 (target into the 76.27k 20-day low / 76k put wall) -15 (correlated with X39) = 33% NO; long 22% NO; a sweep below 76,270 with a 4h close back above would be S10/S20 (+5 = 27% long against this score, still NO). HYPE -1/9 (83.2; 15m taker -116k): long blocked (rule 25 until 04:55); short 56% -15 -15 = 26% NO. SH11 shadow open.
