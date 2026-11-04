@@ -559,6 +559,19 @@
       "result": null,
       "R": null,
       "max_hold_h": 720.0
+    },
+    {
+      "id": "SH15",
+      "symbol": "ETHUSDT",
+      "side": "short",
+      "entry": 2276.0,
+      "at_ms": 1793751180000,
+      "stop": 2300.0,
+      "target": 2240.0,
+      "why": "ETH short at market scored 63% (78 -15 stop inside the 4h bear FVG) but did not fit: ~$105 risk + X42's $109 open > $131 cap (rule 24). Stop 1 ATR(15m) above the 4h EMA50 2,292 / 1h EMA200 2,293; target 2,240 (1.5R) at the 15m bull OBs, above the 2,200 put wall.",
+      "result": null,
+      "R": null,
+      "max_hold_h": 24.0
     }
   ]
 }
