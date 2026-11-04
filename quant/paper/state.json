@@ -599,8 +599,8 @@
       "stop": 75614.4,
       "target": 78121.8,
       "why": "S20/S10 fired on the 00-04 4h candle (wick 75,690 < 20-day low 76,270 < close 76,450); the scanner missed it until 04:15 (data-gap bug, fixed). Skipped on rule 23: confluence -5/9 long 22% +5 (marginal S20) -15 (2R target 78,122 runs into the 78k call wall) = 12%; the S10/S20 rebuild at S=-5 was -0.20R (n=67).",
-      "result": null,
-      "R": null,
+      "result": "target",
+      "R": 2.0,
       "max_hold_h": 168.0
     }
   ]
