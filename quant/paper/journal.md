@@ -847,3 +847,6 @@
 
 ## 2026-11-04 22:13 UTC — price 80,401
 22:12 run. Quiet consolidation: BTC 80,384 (+5/9) on the 80k put wall (7d gamma +159M), ETH 2,423 (+5/9) above the 2,400 wall, HYPE 83.7 (-1/9) below its 15m-1h EMAs on the 4h EMA200. Flat, equity $9,853.70, room $153.70, cap $76.85; scalp book closed until 00:00, HYPE longs off until 00:15; no swing setup. Scores: BTC long 78 -15 (target into 80.55-82k bear OBs / 82k call wall) = 63% (blocked), short 22%; ETH long 78% (blocked), short 22%; HYPE long 44% OFF, short 56 -15 (into the 4h EMA200 / 1d EMA50) = 41%. No trade. BOE decision 12:00 tomorrow (GBP, not a US top-impact freeze).
+
+## 2026-11-04 23:13 UTC — price 80,411
+23:12 run. BTC 80,380 (+5/9) on the 80k put wall, small -0.5% dip in the last 25 min; ETH 2,425 (+5/9) above the 2,400 wall; HYPE 83.8 (-1/9) below its 15m-1h EMAs. Flat, equity $9,853.70, room $153.70, cap $76.85; scalp book closed until 00:00 (desk refuses scalp orders at add time until then), HYPE longs off until 00:15; no swing setup. Scores: BTC long 78 -15 (target into the 80.55-82k bear OBs / 82k call wall) = 63% (blocked), short 22%; ETH long 78% (blocked), short 22%; HYPE long 44% OFF, short 56 -15 (into the 4h EMA200 / 1d EMA50) = 41%. No trade. Next run (00:10): daily closes, scalps reopen, re-score the ETH 2,400 and BTC 80k pullback longs with rule-26 stops sized to the cap.
