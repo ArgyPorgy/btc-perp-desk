@@ -82,7 +82,14 @@ the rule goes into **Current rules** too. Skipped or cancelled plan trades are a
     `--risk-pct` still sizes by % risk when a setup's stop is too wide for $10k.
 25. **Cooldown: two consecutive stop-outs in the same market and direction = no new trade that way for 24h.**
     (X32 + X33, HYPE longs at +7/9, 2026-11-01/02.) A repeating loss in one market says the read is wrong there,
-    whatever the score says. HYPE longs are off until 2026-11-03 04:55 UTC.
+    whatever the score says. HYPE longs were off until 2026-11-03 04:55 UTC; X33 + X42 make it
+    two again: **HYPE longs off until 2026-11-05 00:15 UTC.**
+26. **Location means the edge of a 4h/1d zone or a level, not "somewhere inside a wide zone".** (X42, 2026-11-04.)
+    A long counts as having 4h/1d location only if the entry is within 1 ATR(1h) of a 4h/1d zone's edge or of a
+    4h/1d EMA/level that held; being inside an 8-point-wide 4h FVG is no location. And the stop goes 1 ATR(15m)
+    beyond the OUTERMOST nearby level (X40 lesson), checked against the order's whole level list before placing.
+    The confluence % is a filter that backtests ~breakeven WITH the trend (research log 2026-10-31), so a high
+    score alone never carries an untested scalp past 60%: HYPE longs at +7 to +9 are now 0 for 3 (X32, X33, X42).
 
 ## Mistakes and misses
 | Date (UTC) | What happened | Cost | Lesson → rule |
@@ -113,6 +120,7 @@ the rule goes into **Current rules** too. Skipped or cancelled plan trades are a
 | 2026-11-01 19:45 | **X32** HYPE long 88.124 stopped at 86.77 (−1.06R, −$21). First rule-23 trade (conf 74): confluence +7/9 with 4h/1d location (4h bull FVG, top of the daily FVG). But the market entry was mid-box (87.10–88.68 all day), the score faded +7 → +3 over 10 hours, and the box low broke: low 86.62, 0.15 through the rule-21 stop, then back to 87.0. | −$21 | One sample, no new rule. Note for the rule-23 review: a strong score does not fix a mid-range entry; prefer a limit at the box edge (as X31 tried) over a market fill in the middle. |
 | 2026-11-02 04:55 | **X33** HYPE long 88.45 (limit on the retest of the broken 88.39 high) stopped at 87.98 (−1.19R, −$63.11). First $10k-notional trade. Filled 04:25, the breakout failed within 30 min (high 88.998, back to 87.8). Second HYPE long in a row at confluence +7/9 to stop out (X32, X33): HYPE's 1h range (86.6–89.0) keeps reversing at both edges, and the score's EMAs are slow to show it. Fees on $10k notional cost ~0.19R at a 0.53% stop. | −$63 | Rule 25: after two consecutive stop-outs in the same market and direction, stand aside from that market-direction for 24h. |
 | 2026-11-03 09:12 | **X40** ETH short limit 2,280, stop 2,300.5: stop measured from the 4h EMA50 only, landing 0.5 above the 7d call wall 2,300 (a round number and gamma wall where stops cluster). Caught before fill, cancelled, re-placed as X41 (2,288 / 2,310.5). Shadow SH12 scores it. | $0 (caught) | Before placing a stop, list every level near it (gamma walls, round numbers, OBs, prior-day VAH/VAL) and put the stop at least 1 ATR(15m) beyond the outermost one (extends rule 21). |
+| 2026-11-04 00:15 | **X42** HYPE long 85.65 (pullback limit, placed 16:15 at confluence +9/9 = "100%") stopped at 84.80 (−1.10R, −$109.19). Filled 18:45 as the score cooled to +5; chopped between the 1h EMA50 and EMA200 for 5h, then broke down on the midterm-night risk-off (BTC −0.6%, HYPE to 83.1, 15m taker −111k). Mistakes: (1) scored "4h/1d location" for being inside the wide 4h bull FVG 79.56–87.33 and 1d FVG 81.9–88.55, which is no location; honestly it scored 85% (−15), still taken, but (2) the stop 84.80 sat only 0.09 below the 1h EMA200 84.89, the very X40 mistake from that morning (stop measured from the nearer level, not 1 ATR beyond the outermost); (3) third HYPE long at +7 to +9 to stop out. Cancelling the tested D1F SW3 for it is scored by SH14. | −$109 | Rule 25 cooldown again (HYPE longs off until 2026-11-05 00:15). Rule 26: location = within 1 ATR(1h) of a 4h/1d zone edge or level; a high confluence score alone never carries an untested scalp. |
 
 ## Shadow trades (skipped or cancelled plan trades)
 | ID | Trade | Why skipped | Result |
