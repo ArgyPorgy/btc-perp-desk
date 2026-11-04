@@ -820,3 +820,6 @@
 
 ## 2026-11-04 13:12 UTC — price 78,398
 13:12 run. ENTRY FREEZE 13:00-15:00 (ISM Services 15:00). Flat, equity $9,853.70, room $153.70, cap $76.85; scalp book closed until 00:00, HYPE longs off until 00:15. BTC 78,392 back at the 1h EMA200 78,437 (+3/9: long 67 -15 into the 1h bear OB -15 freeze/scalps closed = 37%, short 33 -15 = 18%); ETH 2,318 above the daily EMA200 (+3/9: long 67 -15 into 4h bear OB/2,350 call wall -15 = 37%, short 18%); HYPE 84.8 (+3/9, cooled from +7) lost the 1h EMA200 84.89 on 15m taker -145k (long OFF, short 33 -15 counter to 4h/1d trend = 18%). No trade. News: RUNE +10% as North Korean hackers launder Binance loot through THORChain; yields lower.
+
+## 2026-11-04 14:14 UTC — price 78,324
+14:14 run. Still inside the 13:00-15:00 freeze (ISM Services 15:00). Flat, equity $9,853.70, room $153.70, cap $76.85; scalp book closed until 00:00, HYPE longs off until 00:15. BTC 78,257 under the 1h EMA200 78,436 (+3/9: long 67 -15 into the 1h bear OB -15 freeze = 37%, short 33 -15 = 18%); ETH 2,316 (+3/9: long 37%, short 18%); HYPE 84.5 (+1/9, below the 1h EMA200; long OFF 56%, short 44 -15 counter to 4h/1d trend = 29%). No trade. News: US trade deficit elevated in September; no crypto reaction.
