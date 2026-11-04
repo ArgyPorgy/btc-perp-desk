@@ -586,9 +586,22 @@
       "stop": 2250.0,
       "target": 2207.5,
       "why": "ETH market short scored 74% (confluence -7/9 89% -15 target inside the 1d bull FVG to 2,222) after the 1h down BOS through 2,236 / 4h range low; refused by the scalp day stop (scalp book -$109 today > 1%, X42). Not re-booked as a swing: no tested swing setup fires (B20 needs a BTC daily close under the EMA200 first).",
+      "result": "stop",
+      "R": -1.0,
+      "max_hold_h": 24.0
+    },
+    {
+      "id": "SH17",
+      "symbol": "BTCUSDT",
+      "side": "long",
+      "entry": 76450.2,
+      "at_ms": 1793764800000,
+      "stop": 75614.4,
+      "target": 78121.8,
+      "why": "S20/S10 fired on the 00-04 4h candle (wick 75,690 < 20-day low 76,270 < close 76,450); the scanner missed it until 04:15 (data-gap bug, fixed). Skipped on rule 23: confluence -5/9 long 22% +5 (marginal S20) -15 (2R target 78,122 runs into the 78k call wall) = 12%; the S10/S20 rebuild at S=-5 was -0.20R (n=67).",
       "result": null,
       "R": null,
-      "max_hold_h": 24.0
+      "max_hold_h": 168.0
     }
   ]
 }

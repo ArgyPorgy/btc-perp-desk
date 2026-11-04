@@ -69,9 +69,12 @@ def main():
         if b["T"] < since or i == 0:
             continue
         for name, nd, k, ev in SETUPS:
-            prior = [x["l"] for x in h1 if b["t"] - nd * 86400e3 <= x["t"] < b["t"]]
-            if len(prior) < nd * 24 - 2:
+            win = [x for x in h1 if b["t"] - nd * 86400e3 <= x["t"] < b["t"]]
+            # need the whole window covered (first bar within 2h of its start); a bar-count check silently
+            # skipped the 2026-11-04 00:00 S20 because the data shim is missing one day (2026-10-28) of 1h bars
+            if not win or win[0]["t"] > b["t"] - nd * 86400e3 + 2 * 3600e3:
                 continue
+            prior = [x["l"] for x in win]
             level = min(prior)
             if b["l"] < level < b["c"]:
                 stop = b["l"] * 0.999
