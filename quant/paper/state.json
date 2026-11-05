@@ -2,30 +2,24 @@
   "start_equity": 10000.0,
   "equity": 9853.701705150439,
   "risk_pct": 0.5,
-  "orders": [
+  "orders": [],
+  "positions": [
     {
       "id": "X45",
       "symbol": "ETHUSDT",
       "book": "scalp",
       "side": "long",
-      "trigger": "limit",
-      "tf": "4h",
-      "level": 2392.0,
+      "entry": 2392.0,
       "stop": 2378.5,
       "target": 2420.0,
-      "target_r": null,
-      "oco": null,
+      "qty": 4.1806020066889635,
+      "risk_pct": 0.573,
+      "opened_ms": 1793882100000,
       "note": "Re-place of X44 (expired 11:00 unfilled, low 2,406). Pullback long, ETH confluence +5/9 (78%): entry 2,392 at the bottom edge of the 1h/15m bull FVG 2,388-2,427, under the 2,400 gamma wall, within 1 ATR(1h) of the 4h EMA200 ~2,403 (rule 26). Stop 2,378.5 = 1 ATR(15m) under the FVG bottom 2,388, above the 15m bull FVG 2,358-2,378. Target 2,420 (2.07R) under the 2,428-2,435 bear FVGs. Rule 23: 78, no violations. Expires 20:00.",
-      "conf": 78.0,
-      "risk_pct": 0.2,
-      "notional": 10000.0,
       "max_hold_h": 24,
-      "created_ms": 1793877180659.8489,
-      "arm": null,
-      "expires_ms": 1793908800000
+      "conf": 78.0
     }
   ],
-  "positions": [],
   "closed": [
     {
       "id": "L1",
