@@ -859,3 +859,6 @@
 
 ## 2026-11-05 02:12 UTC — price 80,779
 02:12 run. X44 (ETH long limit 2,392) pending: ETH 2,432 (+7/9), 5m range low 2,406; kept to 11:00. BTC turned +7/9 (STRONG BULL, long 89%) at 80,774 in the 80.06-80.94k range (7d gamma +170M, walls 81k/82k): long 89 -15 (correlated with X44) -15 (target into the 81k/82k walls and the 80.55-82k bear OBs) = 59%, and a rule-26 stop under the 1h FVG bottom 79,650 exceeds the $76.85 cap ($68 already pending) -> no trade; short 11% (no shorts). ETH short 11%. HYPE 84.4 (+3/9): long 67 -15 (no 4h/1d location under its 1h EMAs) -15 (correlated / cap used) = 37%, short 33 -15 = 18%. Equity $9,853.70, room $153.70. No new trade.
+
+## 2026-11-05 03:12 UTC — price 80,516
+03:11 run. X44 (ETH long limit 2,392) pending: ETH 2,427 (+7/9), range 2,406-2,444; kept to 11:00. BTC 80,515 (+7/9) ranging 80.2-80.9k above the 80k put wall; long 89 -15 (correlated with X44) -15 (target into the 81-82k walls / bear OBs) = 59% and the cap is used; short 11%. ETH short 11%. HYPE 84.0 (+3/9) under its 1h EMAs: long 67 -15 (no location) -15 (correlated / cap used) = 37%, short 33 -15 = 18%. Equity $9,853.70, room $153.70, pending $68. No new trade. Oil down a 4th day on Iran-war exit hopes.
