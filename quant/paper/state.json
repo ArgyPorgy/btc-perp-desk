@@ -2,7 +2,29 @@
   "start_equity": 10000.0,
   "equity": 9853.701705150439,
   "risk_pct": 0.5,
-  "orders": [],
+  "orders": [
+    {
+      "id": "X44",
+      "symbol": "ETHUSDT",
+      "book": "scalp",
+      "side": "long",
+      "trigger": "limit",
+      "tf": "4h",
+      "level": 2392.0,
+      "stop": 2378.5,
+      "target": 2420.0,
+      "target_r": null,
+      "oco": null,
+      "note": "Pullback long, ETH confluence +7/9 (89%). Entry 2,392 at the bottom edge of the 1h/15m bull FVG 2,388-2,428, under the 2,400 gamma wall and within 1 ATR(1h) of the 4h EMA200 2,402.6 (4h location, rule 26). Stop 2,378.5 = 1 ATR(15m) 9.4 under the outermost nearby level (FVG bottom 2,388), above the next 15m bull FVG 2,358-2,377. Target 2,420 (2.07R) under the 2,425-2,438 5m bear FVGs. Rule 23: 89 with no violations. Expires 11:00 before the BOE (12:00) / claims (13:30).",
+      "conf": 89.0,
+      "risk_pct": 0.2,
+      "notional": 10000.0,
+      "max_hold_h": 24,
+      "created_ms": 1793837600652.8796,
+      "arm": null,
+      "expires_ms": 1793876400000
+    }
+  ],
   "positions": [],
   "closed": [
     {
