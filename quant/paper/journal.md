@@ -874,3 +874,6 @@
 
 ## 2026-11-05 07:13 UTC — price 80,646
 07:13 run. X44 (ETH long limit 2,392) pending; ETH score eased +7 -> +5/9 (78%) at 2,429 (range 2,406-2,436, 1h taker -17k); re-score 78% with no violations, kept to 11:00. 7d ETH put wall moved to 2,420, flip 2,309. BTC 80,699 (+7/9): long 89 -15 (correlated with X44) -15 (target into the 81k/82k walls) = 59%, cap used; short 11%. ETH short 22 -15 (counter-trend) = 7%. HYPE 83.4 (-1/9): long 44 -15 = 29%, short 56 -15 (into the daily EMA50 82.9) = 41%. Equity $9,853.70, room $153.70, pending $68. No new trade.
+
+## 2026-11-05 08:13 UTC — price 80,542
+08:13 run (zoom-out: 4h/1d). 4h 04-08 closed 80,364 (low 80,292) just under the 4h EMA200 80,452; BTC 80,529 (+5/9) ranging above the 80k area and the daily EMA50 80,110, OI -4% 24h. ETH 2,422 (+5/9) above the daily EMA50 2,413 and 4h EMA200 2,403, 1h taker -37k. HYPE 83.4 (-1/9) under the 4h EMA200 83.59, above the daily EMA50 82.89. X44 (ETH long limit 2,392) pending, 78%, kept to 11:00. Equity $9,853.70, room $153.70, pending $68. Scores: BTC long 78 -15 (correlated) -15 (target into the 81k/82k walls) = 48%, short 22%; ETH short 22 -15 = 7%; HYPE long 44 -15 = 29%, short 56 -15 (into the daily EMA50) = 41%. No new trade. BOE 12:00 (GBP).
