@@ -868,3 +868,6 @@
 
 ## 2026-11-05 05:13 UTC — price 80,449
 05:12 run. X44 (ETH long limit 2,392) pending: ETH 2,426 (+7/9), range 2,406-2,436; kept to 11:00. BTC 80,486 (+7/9) flat in 80.2-80.9k, OI -3.5% 24h; long 89 -15 (correlated with X44) -15 (target into the 81-82k walls) = 59% and the cap is used; short 11%. ETH short 11%. HYPE 83.7 (+3/9) under its 1h EMAs/4h EMA200 with 15m/1h taker buying (+311k/+284k): long 67 -15 (no location above the daily EMA50 82.9) -15 (correlated / cap) = 37%, short 33 -15 = 18%. Equity $9,853.70, room $153.70, pending $68. No new trade. News: South Korea expands naval ops near Hormuz; Russia-Iran missile launcher deal.
+
+## 2026-11-05 06:12 UTC — price 80,464
+06:12 run. X44 (ETH long limit 2,392) pending: ETH 2,423 (+7/9), range 2,406-2,436, 1h taker turning -26.6k; kept to 11:00. BTC 80,430 (+7/9) in 80.2-80.9k, OI -4.1% 24h; long 89 -15 (correlated with X44) -15 (target into the 81-82k walls) = 59%, cap used; short 11%. ETH short 11%. HYPE 83.4 (-1/9) under the 4h EMA200: long 44 -15 (correlated / no location above the daily EMA50 82.9) = 29%, short 56 -15 (into the daily EMA50 / 1d bull FVG) = 41%. Equity $9,853.70, room $153.70, pending $68. No new trade. News: gold past $4,130 on a weaker dollar; Binance/Polymarket seek a Polygon hard fork for $6.8M of stolen crypto.
