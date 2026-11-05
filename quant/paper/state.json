@@ -632,8 +632,8 @@
       "stop": 75435.5,
       "target": 77129.0,
       "why": "S20/S10 fired on the 12-16 4h candle (wick 75,511 < 20-day low 75,690 < close 76,000) in an S&P -3% AI-chip sell-off. Skipped on rule 23: confluence -3/9 long 33% +5 (marginal S20) -15 (2R target 77,129 runs through the daily EMA200 76,461 from below and into the 4h bear OB 77,972+) = 23%; rebuild bucket S>-5 was -0.03R (n=85). Size would have been --risk-pct (stop 0.74% = $74 at $10k > $43.65 cap). Compare SH17 (+2R at S=-5).",
-      "result": null,
-      "R": null,
+      "result": "stop",
+      "R": -1.0,
       "max_hold_h": 168.0
     }
   ]
