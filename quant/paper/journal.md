@@ -880,3 +880,6 @@
 
 ## 2026-11-05 09:12 UTC — price 80,370
 09:12 run. X44 (ETH long limit 2,392) pending: ETH 2,415 (+5/9, 78%) drifting toward it (range low 2,406; 15m broke down on -13k taker, OI -3.2% 24h); re-score 78%, no violations, kept to 11:00. BTC 80,393 (+5/9) in 80.29-80.76k: long 78 -15 (correlated) -15 (target into the 81k/82k walls) = 48%, short 22%. ETH short 22 -15 = 7%. HYPE 83.5 (-1/9): long 44 -15 = 29%, short 56 -15 (into the daily EMA50 82.9) = 41%. Equity $9,853.70, room $153.70, pending $68. No new trade. News: BTC/ETH ETFs +$128M; Bloomberg on the Binance hack; Eric Trump's American Bitcoin $126M Q3 profit.
+
+## 2026-11-05 10:13 UTC — price 80,396
+10:12 run. X44 (ETH long limit 2,392) pending, expires 11:00: ETH 2,418 (+5/9), low so far 2,406.1 (14 above the fill); 78%, kept. BTC 80,435 (+5/9) range 80.26-80.76k, OI -5.3% 24h: long 78 -15 (correlated) -15 (target into the 81k/82k walls) = 48%, short 22%. ETH short 22 -15 = 7%. HYPE 82.9 (-1/9) broke the 83.03 low on 5m taker -61k, now under its daily EMA50 82.89: long 44 -15 (no location) = 29%, short 56 -15 (into the 1d bull FVG/OB area 75-80.5 and the 80.88 swing low; counter to daily uptrend) = 41%. Equity $9,853.70, room $153.70, pending $68. No new trade. BOE 12:00.
