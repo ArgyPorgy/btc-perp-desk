@@ -877,3 +877,6 @@
 
 ## 2026-11-05 08:13 UTC — price 80,542
 08:13 run (zoom-out: 4h/1d). 4h 04-08 closed 80,364 (low 80,292) just under the 4h EMA200 80,452; BTC 80,529 (+5/9) ranging above the 80k area and the daily EMA50 80,110, OI -4% 24h. ETH 2,422 (+5/9) above the daily EMA50 2,413 and 4h EMA200 2,403, 1h taker -37k. HYPE 83.4 (-1/9) under the 4h EMA200 83.59, above the daily EMA50 82.89. X44 (ETH long limit 2,392) pending, 78%, kept to 11:00. Equity $9,853.70, room $153.70, pending $68. Scores: BTC long 78 -15 (correlated) -15 (target into the 81k/82k walls) = 48%, short 22%; ETH short 22 -15 = 7%; HYPE long 44 -15 = 29%, short 56 -15 (into the daily EMA50) = 41%. No new trade. BOE 12:00 (GBP).
+
+## 2026-11-05 09:12 UTC — price 80,370
+09:12 run. X44 (ETH long limit 2,392) pending: ETH 2,415 (+5/9, 78%) drifting toward it (range low 2,406; 15m broke down on -13k taker, OI -3.2% 24h); re-score 78%, no violations, kept to 11:00. BTC 80,393 (+5/9) in 80.29-80.76k: long 78 -15 (correlated) -15 (target into the 81k/82k walls) = 48%, short 22%. ETH short 22 -15 = 7%. HYPE 83.5 (-1/9): long 44 -15 = 29%, short 56 -15 (into the daily EMA50 82.9) = 41%. Equity $9,853.70, room $153.70, pending $68. No new trade. News: BTC/ETH ETFs +$128M; Bloomberg on the Binance hack; Eric Trump's American Bitcoin $126M Q3 profit.
