@@ -541,8 +541,8 @@
       "stop": 77.62,
       "target": 97.01,
       "why": "D1F signal (daily close 84.08 retested the flipped 82.55 above a rising SMA100) skipped: rule 25 cooldown on HYPE longs until 04:55; and rule 23 = confluence -1/9 44% +15 (tested D1F) -15 (2R target 97.01 runs through the 4h bear OB 93.76-95.27) = 44%; capping the target under the OB makes it 1.46R. Scores D1F-on-HYPE against the filters (30-day hold).",
-      "result": null,
-      "R": null,
+      "result": "stop",
+      "R": -1.0,
       "max_hold_h": 720.0
     },
     {
@@ -580,8 +580,8 @@
       "stop": 77.62,
       "target": 97.09,
       "why": "SW3 (D1F HYPE limit 84.6, 74%) cancelled 16:15 to make room under the $131 cap for X42, a $10k HYPE pullback long scoring ~100% (confluence 9/9) that is likelier to fill (1.1% below vs 2.3%). Both are HYPE longs so they could not run together. Caveat: scored as if filled at 84.6; a rally that never comes back to 84.6 overstates it.",
-      "result": null,
-      "R": null,
+      "result": "stop",
+      "R": -1.0,
       "max_hold_h": 720.0
     },
     {
