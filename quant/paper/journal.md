@@ -928,3 +928,6 @@
 
 ## 2026-11-06 02:12 UTC — price 76,115
 02:11 run. Range: BTC 76,082 (-7/9) in 75.85-76.4k above the 75,144 low, B20 armed (needs a 4h close < 75,143.5); SH19 ~0R. ETH 2,240 (-5/9) pinned at the 2,240/2,250 walls; HYPE 77.8 (-3/9), OI +18%. Flat, equity $9,787.29, room $87.29, cap $43.65. Scores unchanged: BTC short 74% (no rule-21 stop fits the cap; B20 not triggered), long 11% (forbidden); ETH short 63% (stop ~2.5% over the cap), long 22%; HYPE short 52%, long 33%. No trade. NFP 13:30 (freeze 11:30-13:30).
+
+## 2026-11-06 03:12 UTC — price 76,098
+03:12 run. Tight range: BTC 76,076 (-7/9) in 75.95-76.26k above the 75,144 low, B20 armed (4h close < 75,143.5), SH19 ~0R; ETH 2,240 (-5/9) at the 2,240/2,250 walls; HYPE 77.9 (-3/9), OI +17%. Asian equities lower after Wall Street's AI rout. Flat, equity $9,787.29, room $87.29, cap $43.65. Scores: BTC short 74% (no rule-21 stop fits the cap; B20 not triggered), long 11% (forbidden); ETH short 63% (stop over the cap), long 22%; HYPE short 52%, long 33%. No trade. NFP 13:30 (freeze 11:30-13:30).
