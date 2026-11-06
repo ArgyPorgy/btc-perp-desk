@@ -4,25 +4,25 @@
   "risk_pct": 0.5,
   "orders": [
     {
-      "id": "SW6",
+      "id": "SW7",
       "symbol": "BTCUSDT",
       "book": "swing",
       "side": "short",
       "trigger": "close_below",
       "tf": "4h",
       "level": 74800.0,
-      "stop": "high_since:2026-11-06T16:00",
+      "stop": "high_since:2026-11-06T20:00",
       "target": null,
       "target_r": 1.5,
       "oco": null,
-      "note": "B20 (tested, bear regime): short on the 20:00 4h close if below the new 20-day low 74,800 (post-NFP wick). Stop = high of the 16-20 4h candle, target 1.5R, --risk-pct 0.35 (tested stop too wide for $10k under the $43.65 cap). Rule 23: -7/9 89% +15 (B20) -15 (target through the 74k put wall / 74.9k swing low) = 89%. Replaces SW5 (16:00 close 75,819 did not trigger).",
+      "note": "B20 (tested, bear regime): short on the 00:00 4h close if below the 20-day low 74,800. Stop = high of the 20-00 4h candle, target 1.5R, --risk-pct 0.35 (tested stop too wide for $10k under the $43.65 cap). Rule 23: -7/9 89% +15 (B20) -15 (target through the 74k put wall / 74.9k swing low) = 89%. Replaces SW6 (20:00 close 75,860 did not trigger).",
       "conf": 89.0,
       "risk_pct": 0.35,
       "notional": null,
       "max_hold_h": 168,
-      "created_ms": 1793981682968.8625,
+      "created_ms": 1793996000276.2263,
       "arm": null,
-      "expires_ms": 1793997000000
+      "expires_ms": 1794011400000
     }
   ],
   "positions": [],
