@@ -2,29 +2,7 @@
   "start_equity": 10000.0,
   "equity": 9787.291797123684,
   "risk_pct": 0.5,
-  "orders": [
-    {
-      "id": "SW4",
-      "symbol": "BTCUSDT",
-      "book": "swing",
-      "side": "short",
-      "trigger": "close_below",
-      "tf": "4h",
-      "level": 75143.5,
-      "stop": "high_since:2026-11-06T04:00",
-      "target": null,
-      "target_r": 1.5,
-      "oco": null,
-      "note": "B20 (tested: bear regime + 4h close below the 20-day low, +0.32R n=33, t 1.6, 1.5R target): daily closed 76,049.5 < EMA200 76,461 (BEAR); triggers on a 4h close below the 20-day low 75,143.5. Stop = high of the 04-08 4h candle (B20: above the signal candle's high). --risk-pct 0.35 (~$34; $41 with the desk's pending buffer): the tested stop is too wide for $10k under the $43.65 cap (rule 24). Rule 23: confluence -7/9 89% +15 (B20) -15 (target runs through the 75k put wall / 74.9k swing low) = 89%. Expires 11:30 (NFP freeze).",
-      "conf": 89.0,
-      "risk_pct": 0.35,
-      "notional": null,
-      "max_hold_h": 168,
-      "created_ms": 1793949416524.7573,
-      "arm": null,
-      "expires_ms": 1793964600000
-    }
-  ],
+  "orders": [],
   "positions": [],
   "closed": [
     {
