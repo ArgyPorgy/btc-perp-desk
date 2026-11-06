@@ -4,25 +4,25 @@
   "risk_pct": 0.5,
   "orders": [
     {
-      "id": "SW5",
+      "id": "SW6",
       "symbol": "BTCUSDT",
       "book": "swing",
       "side": "short",
       "trigger": "close_below",
       "tf": "4h",
-      "level": 75158.0,
-      "stop": "high_since:2026-11-06T12:00",
+      "level": 74800.0,
+      "stop": "high_since:2026-11-06T16:00",
       "target": null,
       "target_r": 1.5,
       "oco": null,
-      "note": "B20 (tested, bear regime: daily 76,050 < EMA200 76,461): short on the 16:00 4h close if it is below the 20-day low 75,158 (scanner level). Stop = high of the 12-16 4h candle (B20 rule), target 1.5R (B20 spec), --risk-pct 0.35 (tested stop too wide for $10k under the $43.65 cap). Counts from 13:30 (after the NFP freeze); only the 16:00 close can trigger it. Rule 23: -7/9 89% +15 (B20) -15 (target through the 74-75k put walls / 74.9k swing low) = 89%.",
+      "note": "B20 (tested, bear regime): short on the 20:00 4h close if below the new 20-day low 74,800 (post-NFP wick). Stop = high of the 16-20 4h candle, target 1.5R, --risk-pct 0.35 (tested stop too wide for $10k under the $43.65 cap). Rule 23: -7/9 89% +15 (B20) -15 (target through the 74k put wall / 74.9k swing low) = 89%. Replaces SW5 (16:00 close 75,819 did not trigger).",
       "conf": 89.0,
       "risk_pct": 0.35,
       "notional": null,
       "max_hold_h": 168,
-      "created_ms": 1793971800000,
+      "created_ms": 1793981682968.8625,
       "arm": null,
-      "expires_ms": 1793982600000
+      "expires_ms": 1793997000000
     }
   ],
   "positions": [],
@@ -669,6 +669,19 @@
       "why": "S20/S10 fired on the 20-00 4h candle (wick 75,143.5 < 20-day low 75,511 < close 76,049.5) but BTC confluence is -7/9 (STRONG BEAR): never trade against |S|>=7 (rule 23); the daily also closed below the EMA200 (76,049 < 76,461 = BEAR regime). Rebuild bucket S<=-7 was +0.01R (n=134). Third S20 shadow in 3 days (SH17 +2R, SH18 -1R).",
       "result": "stop",
       "R": -1.0,
+      "max_hold_h": 168.0
+    },
+    {
+      "id": "SH20",
+      "symbol": "BTCUSDT",
+      "side": "long",
+      "entry": 75818.9,
+      "at_ms": 1793980800000,
+      "stop": 74725.3,
+      "target": 78006.1,
+      "why": "S20/S10 fired on the 12-16 4h candle (post-NFP wick 74,800 < 20-day low 75,158 < close 75,819) but BTC confluence is -7/9: never trade against |S|>=7 (rule 23). Fourth S20 in 3 days (SH17 +2R, SH18 -1R, SH19 -1R).",
+      "result": null,
+      "R": null,
       "max_hold_h": 168.0
     }
   ]
