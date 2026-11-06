@@ -991,3 +991,6 @@
 
 ## 2026-11-06 22:12 UTC — price 75,976
 22:12 run. BTC 76,014 (-5/9) ticking up to the 7d gamma flip 76,048 (5m taker +1.3k), under the daily EMA200 76,455 (daily close in 1h48m); SW7 (B20 on the 00:00 4h close < 74,800) pending, 1.6% away; SH20 +0.2R. ETH 2,240 (-5/9) on +31.9k 15m taker; HYPE 78.7 (-1/9). Flat, equity $9,787.29, room $87.29, pending $41 (cap used). Scores: BTC short 78 -15 = 63% (non-B20, no stop fits), long 22% -15 = 7%; ETH short 78 -15 -15 (correlated with SW7) = 48%, long 22%; HYPE short 56 -15 -15 = 26%, long 44%. No new trade.
+
+## 2026-11-06 23:12 UTC — price 75,876
+23:12 run. BTC 75,870 (-5/9) flat in 75.65-76.19k under the daily EMA200 76,455 (daily close in 48 min); SW7 (B20 on the 00:00 4h close < 74,800, 1.4% away) pending; SH20 ~0R. ETH 2,237 (-5/9); HYPE 78.6 (-1/9). Flat, equity $9,787.29, room $87.29, pending $41 (cap used). Scores: BTC short 78 -15 = 63% (non-B20, no stop fits), long 7%; ETH short 78 -15 -15 = 48%, long 22%; HYPE short 26%, long 44%. No new trade. Midnight: daily close vs EMA200 (BEAR regime), SW7 resolves, re-place B20 if still armed.
