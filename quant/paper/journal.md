@@ -979,3 +979,6 @@
 
 ## 2026-11-06 18:13 UTC — price 75,734
 18:12 run. BTC 75,713 (-7/9) in 75.47-76.1k, 1.2% above SW6's trigger (B20 on a 20:00 4h close < 74,800); SH20 -0.1R. ETH 2,224 (-7/9); HYPE 78.2 (-1/9, OI flat now). Binance reopening more withdrawals; hackers swapping loot into BTC. Flat, equity $9,787.29, room $87.29, pending $41 (cap used). Scores: BTC short non-B20 63% (no stop fits), long 11% (forbidden); ETH short 89 -15 -15 (correlated with SW6) = 59%, long 11% (forbidden); HYPE short 56 -15 (into the 1d bull OB) = 41%, long 44%. No new trade.
+
+## 2026-11-06 19:12 UTC — price 75,734
+19:12 run. BTC 75,782 (-7/9) in 75.47-75.97k, 1.3% above SW6's trigger (B20 on the 20:00 4h close < 74,800); SH20 ~0R. Fed's Daly: more hikes likely; BTC ETFs -$430M. ETH 2,230 (-7/9); HYPE 78.4 (-1/9). Flat, equity $9,787.29, room $87.29, pending $41 (cap used). Scores: BTC short non-B20 63% (no stop fits), long 11% (forbidden); ETH short 59% (correlated with SW6), long 11% (forbidden); HYPE short 56 -15 = 41%, long 44%. No new trade. 20:00: if no B20 trigger, re-place for the 00:00 close (it also needs the daily still under the EMA200).
