@@ -925,3 +925,6 @@
 
 ## 2026-11-06 01:13 UTC — price 76,228
 01:13 run. Quiet after the regime flip: BTC 76,166 (-7/9 STRONG BEAR) ranging 75.8-76.4k above the 75,144 low; B20 armed (BEAR regime) and waits for a 4h close under 75,143.5; SH19 (S20 long vs -7/9) ~+0.1R. ETH 2,242 (-5/9) at the 2,240-2,250 walls; HYPE 77.4 (-3/9), OI +18%. Flat, equity $9,787.29, room $87.29, cap $43.65. Scores: BTC short 89 -15 (into the 75.1k low / 75k put wall) = 74%, no $10k rule-21 stop fits the cap (15m bear OB 76,166-76,980 + ATR = 77,310, 1.5%) and B20 not triggered -> no trade; long 11% (forbidden). ETH short 78 -15 (into the 2,200-2,240 walls) = 63%, stop above the 15m bear OB 2,253.8-2,285.5 + ATR (~2,298, 2.5%) over the cap; long 22%. HYPE short 67 -15 (into the 1d bull OB 75.1-80.5) = 52%, long 33%. No trade. NFP 13:30 (freeze 11:30-13:30).
+
+## 2026-11-06 02:12 UTC — price 76,115
+02:11 run. Range: BTC 76,082 (-7/9) in 75.85-76.4k above the 75,144 low, B20 armed (needs a 4h close < 75,143.5); SH19 ~0R. ETH 2,240 (-5/9) pinned at the 2,240/2,250 walls; HYPE 77.8 (-3/9), OI +18%. Flat, equity $9,787.29, room $87.29, cap $43.65. Scores unchanged: BTC short 74% (no rule-21 stop fits the cap; B20 not triggered), long 11% (forbidden); ETH short 63% (stop ~2.5% over the cap), long 22%; HYPE short 52%, long 33%. No trade. NFP 13:30 (freeze 11:30-13:30).
