@@ -976,3 +976,6 @@
 
 ## 2026-11-06 17:12 UTC — price 75,989
 17:12 run. BTC 75,995 (-7/9) recovering from the 74,800 wick, at the 7d gamma flip 75,935 under the daily EMA200 76,451; SW6 (B20 below 74,800 on the 20:00 close) pending; SH20 (S20 vs -7/9) +0.16R. ETH 2,235 (-7/9); HYPE 78.6 (-5/9) on +68.6k 15m taker. Flat, equity $9,787.29, room $87.29, pending $41 (cap used). Scores: BTC short non-B20 63% (no stop fits), long 11% (forbidden); ETH short 89 -15 -15 (correlated with SW6) = 59%, long 11% (forbidden); HYPE short 78 -15 -15 = 48%, long 22%. No new trade.
+
+## 2026-11-06 18:13 UTC — price 75,734
+18:12 run. BTC 75,713 (-7/9) in 75.47-76.1k, 1.2% above SW6's trigger (B20 on a 20:00 4h close < 74,800); SH20 -0.1R. ETH 2,224 (-7/9); HYPE 78.2 (-1/9, OI flat now). Binance reopening more withdrawals; hackers swapping loot into BTC. Flat, equity $9,787.29, room $87.29, pending $41 (cap used). Scores: BTC short non-B20 63% (no stop fits), long 11% (forbidden); ETH short 89 -15 -15 (correlated with SW6) = 59%, long 11% (forbidden); HYPE short 56 -15 (into the 1d bull OB) = 41%, long 44%. No new trade.
