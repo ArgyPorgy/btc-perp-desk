@@ -943,3 +943,6 @@
 
 ## 2026-11-06 07:16 UTC — price 75,415
 07:15 run. BTC 75,379 (-7/9) in 75.33-75.76k, 0.3% above the 20-day low 75,143.5 (B20 armed; 4h closes at 08:00), 7d gamma -95M, put wall 75k; SH19 -0.7R. ETH 2,221 (-7/9) above the 2,205 low, walls 2,200/2,220; HYPE 77.5 (-3/9). BTC/ETH ETFs +$252.5M (end of 6 days of outflows). Flat, equity $9,787.29, room $87.29, cap $43.65. Scores: BTC short 74% (no rule-21 stop fits; B20 not fired), long 11% (forbidden); ETH short 74% (stop over the cap), long 11% (forbidden); HYPE short 52%, long 33%. No trade. NFP 13:30 (freeze 11:30-13:30).
+
+## 2026-11-06 07:17 UTC — price 75,376
+07:20 ORDER SW4 (B20 short, tested): BTC short on a 4h close below the 20-day low 75,143.5 (BEAR regime since the 11-05 daily close 76,049.5 < EMA200 76,461), stop = high of the 04-08 4h candle (B20 rule), target 1.5R (B20 spec), --risk-pct 0.35 (~$34; the tested stop ~1% is too wide for $10k under the $43.65 cap), expires 11:30 before the NFP freeze; rule 23 = 89 +15 (B20) -15 (target through the 75k put wall / 74.9k swing low) = 89%. First try at 0.4%/2R was refused by the desk ($47 with its pending buffer > $44); fixed to the B20 spec 1.5R and 0.35%.
