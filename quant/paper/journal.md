@@ -961,3 +961,6 @@
 
 ## 2026-11-06 12:18 UTC — price 76,121
 12:17 run (zoom-out; NFP freeze until 13:30). 4h 08-12 closed 76,118 (low 75,441), above the 20-day low 75,158: no B20. BTC 76,114 (-5/9), on the daily EMA200 76,458 from below; dealer gamma ~flat (-0.1M), flip 76,043. ETH 2,242 (-5/9); HYPE 78.6 (-5/9). Equity futures steadier ('rout pauses'). SH19 ~+0.1R. Flat, equity $9,787.29, room $87.29, cap $43.65. Scores (freeze applies): BTC short 78 -15 = 63% (no rule-21 $10k stop fits), long 22% -15 = 7%; ETH short 78 -15 = 63%, long 22%; HYPE short 78 -15 (into the 1d bull OB 75.1-80.5) = 63% (stop above the 79.3 1h range high + ATR ~79.65, 1.3% = $130 > cap), long 22%. No trade. After NFP: B20 for the 16:00 close if still under the EMA200.
+
+## 2026-11-06 13:20 UTC — price 75,965
+13:20 run (NFP freeze until 13:30). BTC 75,930 (-7/9) under the daily EMA200 76,458, 15m taker -2.1k; ETH 2,242 (-7/9); HYPE 78.7 (-5/9). SH19 -0.1R. ORDER SW5 (B20 short, tested): BTC short on the 16:00 4h close below the 20-day low 75,158, stop = 12-16 candle high, 1.5R, --risk-pct 0.35, counts from 13:30, expires 16:30; 89%. Other scores: BTC short (non-B20) 63% no stop fits, long 11% (forbidden); ETH short 89 -15 = 74% (stop over the cap), long 11% (forbidden); HYPE short 78 -15 (into the 1d bull OB) = 63% (stop over the cap), long 22%. Equity $9,787.29, room $87.29.
