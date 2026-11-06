@@ -635,6 +635,19 @@
       "result": "stop",
       "R": -1.0,
       "max_hold_h": 168.0
+    },
+    {
+      "id": "SH19",
+      "symbol": "BTCUSDT",
+      "side": "long",
+      "entry": 76049.5,
+      "at_ms": 1793923200000,
+      "stop": 75068.4,
+      "target": 78011.8,
+      "why": "S20/S10 fired on the 20-00 4h candle (wick 75,143.5 < 20-day low 75,511 < close 76,049.5) but BTC confluence is -7/9 (STRONG BEAR): never trade against |S|>=7 (rule 23); the daily also closed below the EMA200 (76,049 < 76,461 = BEAR regime). Rebuild bucket S<=-7 was +0.01R (n=134). Third S20 shadow in 3 days (SH17 +2R, SH18 -1R).",
+      "result": null,
+      "R": null,
+      "max_hold_h": 168.0
     }
   ]
 }
