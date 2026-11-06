@@ -937,3 +937,6 @@
 
 ## 2026-11-06 05:12 UTC — price 75,609
 05:12 run. Grinding lower in tight ranges: BTC 75,590 (-7/9) in 75.54-75.95k, 0.6% above the 20-day low 75,143.5 (B20 armed for a 4h close below it; next 08:00), 7d gamma -68M; SH19 -0.5R. ETH 2,227 (-5/9) under the 2,240 put wall, toward the 2,205 low; HYPE 77.8 (-3/9), OI +20%. Flat, equity $9,787.29, room $87.29, cap $43.65. Scores: BTC short 74% (no rule-21 stop fits; B20 not fired), long 11% (forbidden); ETH short 63% (stop over the cap), long 22%; HYPE short 52%, long 33%. No trade. NFP 13:30 (freeze 11:30-13:30).
+
+## 2026-11-06 06:13 UTC — price 75,433
+06:12 run. Grinding lower: BTC 75,432 (-7/9) in 75.33-75.82k, 0.4% above the 20-day low 75,143.5 (B20 armed; next 4h close 08:00), 7d gamma -83M (short gamma; a break can run), put wall 75k; SH19 -0.6R. ETH turned -7/9 (STRONG BEAR) at 2,218 under the 2,225 swing low, walls at 2,200; HYPE 77.4 (-3/9). Flat, equity $9,787.29, room $87.29, cap $43.65. Scores: BTC short 89 -15 (into the 75.1k low / 75k put wall) = 74% (no rule-21 stop fits; B20 not fired), long 11% (forbidden); ETH short 89 -15 (into the 2,200 walls / 2,205 low) = 74% (stop above the 15m EMA50 2,251 + ATR ~2,260, 1.9%, over the cap), long 11% (forbidden); HYPE short 52%, long 33%. No trade. NFP 13:30 (freeze 11:30-13:30).
