@@ -985,3 +985,6 @@
 
 ## 2026-11-06 20:13 UTC — price 75,842
 20:13 run (zoom-out: 4h/1d). 4h 16-20 closed 75,860 (low 75,368), above the 20-day low 74,800: SW6 (B20) did not trigger; cancelled; re-placed as ORDER SW7 for the 00:00 close (< 74,800, stop = 20-00 high, 1.5R, 0.35%, expires 00:30, 89%). BTC 75,885 (-7/9) under the daily EMA200 76,455 (daily close at 00:00 decides whether BEAR holds); SH20 ~0R. ETH 2,233 (-7/9); HYPE 78.6 (-1/9), OI 7d +31%. Flat, equity $9,787.29, room $87.29, pending $41 (cap used). Scores: BTC short non-B20 63% (no stop fits), long 11% (forbidden); ETH short 59% (correlated with SW7), long 11% (forbidden); HYPE short 41%, long 44%. No new trade. Next week: Nvidia earnings, Fed decision.
+
+## 2026-11-06 21:13 UTC — price 75,858
+21:12 run. Quiet Friday evening: BTC 75,857 (-7/9) in 75.67-75.98k, 1.4% above SW7's trigger (B20 on the 00:00 4h close < 74,800), under the daily EMA200 76,455; SH20 ~0R. ETH 2,230 (-7/9); HYPE 78.4 (-3/9). Flat, equity $9,787.29, room $87.29, pending $41 (cap used). Scores: BTC short non-B20 63% (no stop fits), long 11% (forbidden); ETH short 59% (correlated with SW7), long 11% (forbidden); HYPE short 67 -15 -15 = 37%, long 33%. No new trade.
