@@ -997,3 +997,6 @@
 
 ## 2026-11-07 00:12 UTC — price 75,912
 00:12 run (new UTC day, Saturday; 4h/1d checked). Daily closed 75,816 < EMA200 76,455: BEAR regime holds (2nd daily close below). 4h 20-00 closed 75,816 > 74,800: SW7 (B20) no trigger, cancelled; ORDER SW8: B20 on the 04:00 close < 74,800, stop = 00-04 high, 1.5R, 0.35%, expires 04:30, 89%. No D1F signals. BTC 75,916 (-7/9); ETH 2,242 (-5/9), daily under its EMA200 2,313; HYPE 78.6 (-1/9), still above its daily EMA200 69.3. SH20 ~0R. Flat, equity $9,787.29 (= today's 00:00 balance), static floor binding, room $87.29, pending $41 (cap used). Scores: BTC short non-B20 63% (no stop fits), long 11% (forbidden); ETH short 78 -15 -15 (correlated with SW8) = 48%, long 22%; HYPE short 56 -15 -15 = 26%, long 44%. No new trade. News: two missiles struck Qeshm Island; Trump briefed on a new Iran campaign window.
+
+## 2026-11-07 01:12 UTC — price 75,884
+01:12 run. Weekend quiet: BTC 75,887 (-7/9) in a 75.77-75.97k range (5m ATR 0.06%), SW8 (B20 on the 04:00 close < 74,800, 1.4% away) pending; SH20 ~0R. ETH 2,241 (-7/9); HYPE 78.9 (-3/9). Flat, equity $9,787.29, room $87.29, pending $41 (cap used). Scores: BTC short non-B20 63% (no stop fits), long 11% (forbidden); ETH short 89 -15 -15 (correlated with SW8) = 59%, long 11% (forbidden); HYPE short 67 -15 -15 = 37%, long 33%. No new trade.
