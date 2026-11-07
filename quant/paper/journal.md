@@ -1012,3 +1012,6 @@
 
 ## 2026-11-07 05:12 UTC — price 75,899
 05:12 run. Dead weekend tape: BTC 75,886 (-5/9) in 75.75-75.89k (5m ATR 0.05%); SW9 (B20 on the 08:00 close < 74,800, 1.4% away) pending; SH20 ~0R. ETH 2,245 (-3/9); HYPE 79.1 (-1/9) rejected at its 1h EMA50 79.64. Flat, equity $9,787.29, room $87.29, pending $41 (cap used). Scores: BTC short 78 -15 = 63% (non-B20, no stop fits), long 22% -15 = 7%; ETH short 37%, long 33%; HYPE short 26%, long 44%. No new trade.
+
+## 2026-11-07 06:12 UTC — price 76,008
+06:12 run. Dead weekend tape: BTC 75,998 (-5/9) in 75.82-76.01k (5m ATR 0.04%), 7d walls both at 76k (pin); SW9 (B20 on the 08:00 close < 74,800, 1.6% away) pending; SH20 +0.2R. ETH 2,246 (-3/9) pinned at the 2,240 walls; HYPE 79.4 (-1/9) under its 1h EMA50 79.63. Flat, equity $9,787.29, room $87.29, pending $41 (cap used). Scores: BTC short 63% (non-B20, no stop fits), long 7%; ETH short 37%, long 33%; HYPE short 26%, long 44%. No new trade.
