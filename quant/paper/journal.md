@@ -1003,3 +1003,6 @@
 
 ## 2026-11-07 02:12 UTC — price 76,059
 02:12 run. Weekend drift up: BTC 76,052 (-7/9) at the 7d gamma flip 76,137, under the daily EMA200 76,455; SW8 (B20 on the 04:00 close < 74,800, 1.7% away) pending; SH20 +0.2R. ETH 2,249 (-3/9) on +28.9k 1h taker; HYPE 79.2 (-1/9). New US strike on Iran; China vows to retaliate against sanctions. Flat, equity $9,787.29, room $87.29, pending $41 (cap used). Scores: BTC short non-B20 63% (no stop fits), long 11% (forbidden); ETH short 67 -15 -15 = 37%, long 33%; HYPE short 56 -15 -15 = 26%, long 44%. No new trade.
+
+## 2026-11-07 03:12 UTC — price 76,046
+03:12 run. Dead-quiet weekend tape: BTC 76,046 (-7/9) in 75.9-76.06k (5m ATR 0.04%); SW8 (B20 on the 04:00 close < 74,800, 1.6% away) pending; SH20 +0.2R. ETH 2,249 (-3/9); HYPE 79.5 (-1/9) broke up on +104k 15m taker toward its 1h EMA50 79.69. More 'minor' US strikes on Iran. Flat, equity $9,787.29, room $87.29, pending $41 (cap used). Scores: BTC short non-B20 63% (no stop fits), long 11% (forbidden); ETH short 37%, long 33%; HYPE long 44 (no 4h/1d location: under the 1h EMA50/EMA200 and 4h EMAs) = 44%, short 56 -15 -15 = 26%. No new trade.
