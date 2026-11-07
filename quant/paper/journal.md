@@ -1006,3 +1006,6 @@
 
 ## 2026-11-07 03:12 UTC — price 76,046
 03:12 run. Dead-quiet weekend tape: BTC 76,046 (-7/9) in 75.9-76.06k (5m ATR 0.04%); SW8 (B20 on the 04:00 close < 74,800, 1.6% away) pending; SH20 +0.2R. ETH 2,249 (-3/9); HYPE 79.5 (-1/9) broke up on +104k 15m taker toward its 1h EMA50 79.69. More 'minor' US strikes on Iran. Flat, equity $9,787.29, room $87.29, pending $41 (cap used). Scores: BTC short non-B20 63% (no stop fits), long 11% (forbidden); ETH short 37%, long 33%; HYPE long 44 (no 4h/1d location: under the 1h EMA50/EMA200 and 4h EMAs) = 44%, short 56 -15 -15 = 26%. No new trade.
+
+## 2026-11-07 04:12 UTC — price 75,835
+04:12 run (zoom-out: 4h/1d). 4h 00-04 closed 75,857 (low 75,750): no B20; SW8 cancelled, re-placed as ORDER SW9 for the 08:00 close (< 74,800, stop = 04-08 high, 1.5R, 0.35%, expires 08:30, 89%). BTC 75,835 (-7/9), daily under its EMA200 76,448, 4h/1d all EMAs overhead; SH20 ~0R. ETH 2,242 (-3/9); HYPE 79.6 (-1/9) testing its 1h EMA50 79.68 and 15m EMA200 79.67 from below. Trump confirms new strikes on Qeshm; Xi-Trump-Putin meeting under discussion. Flat, equity $9,787.29, room $87.29, pending $41 (cap used). Scores: BTC short non-B20 63% (no stop fits), long 11% (forbidden); ETH short 37%, long 33%; HYPE long 44% (under its 1h/4h EMAs, no location), short 26%. No new trade.
