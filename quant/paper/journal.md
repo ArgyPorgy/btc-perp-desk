@@ -1015,3 +1015,6 @@
 
 ## 2026-11-07 06:12 UTC — price 76,008
 06:12 run. Dead weekend tape: BTC 75,998 (-5/9) in 75.82-76.01k (5m ATR 0.04%), 7d walls both at 76k (pin); SW9 (B20 on the 08:00 close < 74,800, 1.6% away) pending; SH20 +0.2R. ETH 2,246 (-3/9) pinned at the 2,240 walls; HYPE 79.4 (-1/9) under its 1h EMA50 79.63. Flat, equity $9,787.29, room $87.29, pending $41 (cap used). Scores: BTC short 63% (non-B20, no stop fits), long 7%; ETH short 37%, long 33%; HYPE short 26%, long 44%. No new trade.
+
+## 2026-11-07 07:13 UTC — price 75,975
+07:10 UTC run. Flat, equity $9,787.29, room $87.29 (cap $43.65, SW9 pending $41.11 so ~$2.5 free: any new order is a hard block). Scores: BTC -3/9 at 75,988 (short 67%/long 33%), ETH -3/9 at 2,246 (67/33), HYPE -1/9 at 79.14 (56/44). Rule 23: BTC short 67 base, non-B20, no location (mid-range at the 76,000 gamma wall), correlated with SW9 -15 -> 52, and no rule-21 stop fits the cap: no. ETH short 67, correlated with SW9 -15, scalp with no location or catalyst -15 -> 37: no. HYPE 56/44: no. News: Trump confirms US strikes in Iran (2m ago), BTC +0.01%: tape not confirming, no catalyst credit. SW9 (B20 short on 4h close < 74,800) stays for the 08:00 close; BTC is 1.6% above the level, so it most likely expires and gets re-placed for 12:00 while the daily stays below the EMA200 (76,455). SH20 shadow still open. Next zoom-out 08:10.
