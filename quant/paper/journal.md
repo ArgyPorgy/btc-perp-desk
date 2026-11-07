@@ -1009,3 +1009,6 @@
 
 ## 2026-11-07 04:12 UTC — price 75,835
 04:12 run (zoom-out: 4h/1d). 4h 00-04 closed 75,857 (low 75,750): no B20; SW8 cancelled, re-placed as ORDER SW9 for the 08:00 close (< 74,800, stop = 04-08 high, 1.5R, 0.35%, expires 08:30, 89%). BTC 75,835 (-7/9), daily under its EMA200 76,448, 4h/1d all EMAs overhead; SH20 ~0R. ETH 2,242 (-3/9); HYPE 79.6 (-1/9) testing its 1h EMA50 79.68 and 15m EMA200 79.67 from below. Trump confirms new strikes on Qeshm; Xi-Trump-Putin meeting under discussion. Flat, equity $9,787.29, room $87.29, pending $41 (cap used). Scores: BTC short non-B20 63% (no stop fits), long 11% (forbidden); ETH short 37%, long 33%; HYPE long 44% (under its 1h/4h EMAs, no location), short 26%. No new trade.
+
+## 2026-11-07 05:12 UTC — price 75,899
+05:12 run. Dead weekend tape: BTC 75,886 (-5/9) in 75.75-75.89k (5m ATR 0.05%); SW9 (B20 on the 08:00 close < 74,800, 1.4% away) pending; SH20 ~0R. ETH 2,245 (-3/9); HYPE 79.1 (-1/9) rejected at its 1h EMA50 79.64. Flat, equity $9,787.29, room $87.29, pending $41 (cap used). Scores: BTC short 78 -15 = 63% (non-B20, no stop fits), long 22% -15 = 7%; ETH short 37%, long 33%; HYPE short 26%, long 44%. No new trade.
