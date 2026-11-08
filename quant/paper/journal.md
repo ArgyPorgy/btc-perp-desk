@@ -1084,3 +1084,6 @@
 
 ## 2026-11-08 05:12 UTC — price 75,852
 05:11 UTC run. Flat, equity $9,787.29, room $87.29 (cap $43.65). BTC back to -3/9 (short 67%/long 33%) -> B20 re-armed as SW15: short on the 08:00 4h close below 74,810.8, stop high_since 04:00, 1.5R, --risk-pct 0.35, expires 08:30; rule 23: 67 +15 -15 (put wall 74,000) = 67%. BTC long 33% -15 counter-trend (Binance hack fallout) -15 no location (mid range 75,531-76,217) = 3%: no. ETH -5/9 at 2,236 (78/22): short -15 correlated with SW15 -15 no 4h/1d location = 48%; long 22%: no. HYPE -5/9 at 77.2 (78/22): short -15 correlated -15 no 4h/1d edge = 48%; long 22%: no. News: XRP -7% w/w, Ukraine, Hormuz: BTC flat, no catalyst. SH20 shadow open, price 75,850 vs entry 75,819.
+
+## 2026-11-08 06:12 UTC — price 75,775
+06:11 UTC run. Flat, equity $9,787.29, room $87.29 (cap $43.65, SW15 pending $41.11: any other order is a hard block). Scores: BTC -3/9 at 75,762 (short 67%/long 33%): SW15 B20 67 +15 -15 (put wall 74,000) = 67%, kept for the 08:00 4h close (needs < 74,810.8, 1.3% below); long 33% -15 counter-trend -15 no location = 3%: no. ETH -5/9 at 2,234 (78/22): short -15 correlated with SW15 -15 no 4h/1d location = 48%; long 22%: no. HYPE -5/9 at 77.3 (78/22): short -15 correlated -15 no 4h/1d edge = 48%; long 22%: no. News quiet, calendar quiet. SH20 shadow open, price 75,762 vs entry 75,819.
