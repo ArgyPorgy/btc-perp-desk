@@ -1075,3 +1075,6 @@
 
 ## 2026-11-08 02:12 UTC — price 75,695
 02:10 UTC run. Flat, equity $9,787.29, room $87.29 (cap $43.65, SW14 pending $41.11: any other order is a hard block). Scores all -5/9 (short 78%/long 22%). BTC 75,695: SW14 B20 78 +15 -15 (put wall 74,000) = 78%, kept for the 04:00 4h close (needs < 74,810.8, 1.2% below); long 22% -15 counter-trend (Binance hack fallout) = 7%: no. ETH 2,232: short -15 correlated with SW14 -15 no 4h/1d location = 48%; long 22%: no. HYPE 77.5: short -15 correlated -15 no 4h/1d edge = 48%; long 22%: no. HOOD: weekend, watch only (Robinhood cash-balance piece). News: tariffs/AI after the midterms, oil: BTC -0.1%, no catalyst. SH20 shadow open, price 75,695 vs entry 75,819.
+
+## 2026-11-08 03:12 UTC — price 75,838
+03:10 UTC run. Flat, equity $9,787.29, room $87.29 (cap $43.65, SW14 pending $41.11: any other order is a hard block). Scores all -5/9 (short 78%/long 22%). BTC 75,838: SW14 B20 78 +15 -15 (put wall 74,000) = 78%, kept for the 04:00 4h close (needs < 74,810.8, 1.4% below); long 22% -15 counter-trend (Binance hack fallout) = 7%: no. ETH 2,238: short -15 correlated with SW14 -15 no 4h/1d location = 48%; long 22%: no. HYPE 77.7: short -15 correlated -15 no 4h/1d edge = 48%; long 22%: no. News: BoC, Saudi GDP -3.8%: BTC +0.1-0.2%, no catalyst. SH20 shadow open, price 75,838 vs entry 75,819.
