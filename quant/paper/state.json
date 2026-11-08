@@ -2,7 +2,29 @@
   "start_equity": 10000.0,
   "equity": 9787.291797123684,
   "risk_pct": 0.5,
-  "orders": [],
+  "orders": [
+    {
+      "id": "SW18",
+      "symbol": "BTCUSDT",
+      "book": "swing",
+      "side": "short",
+      "trigger": "close_below",
+      "tf": "4h",
+      "level": 74810.8,
+      "stop": "high_since:2026-11-08T12:00",
+      "target": null,
+      "target_r": 1.5,
+      "oco": null,
+      "note": "B20 (tested; BEAR regime: daily 75,836 < EMA200 76,448): short on the 16:00 4h close if below the 20-day low 74,810.8. Stop = 12-16 candle high, 1.5R, --risk-pct 0.35. Rule 23: -3/9 67% +15 B20 -15 target through the 74,000 put wall = 67%. Re-armed after the 13:13 pause (BTC was -1/9 = 56%).",
+      "conf": 67.0,
+      "risk_pct": 0.35,
+      "notional": null,
+      "max_hold_h": 168,
+      "created_ms": 1794147130849.1682,
+      "arm": null,
+      "expires_ms": 1794155400000
+    }
+  ],
   "positions": [],
   "closed": [
     {
