@@ -2,29 +2,7 @@
   "start_equity": 10000.0,
   "equity": 9787.291797123684,
   "risk_pct": 0.5,
-  "orders": [
-    {
-      "id": "SW19",
-      "symbol": "BTCUSDT",
-      "book": "swing",
-      "side": "short",
-      "trigger": "close_below",
-      "tf": "4h",
-      "level": 74810.8,
-      "stop": "high_since:2026-11-08T16:00",
-      "target": null,
-      "target_r": 1.5,
-      "oco": null,
-      "note": "B20 (tested; BEAR regime: daily 75,836 < EMA200 76,448): short on the 20:00 4h close if below the 20-day low 74,810.8. Stop = 16-20 candle high, 1.5R, --risk-pct 0.35. Rule 23: -3/9 67% +15 B20 -15 target through the 74,000 put wall = 67%. Re-armed after the 15:11 pause.",
-      "conf": 67.0,
-      "risk_pct": 0.35,
-      "notional": null,
-      "max_hold_h": 168,
-      "created_ms": 1794157935669.8716,
-      "arm": null,
-      "expires_ms": 1794169800000
-    }
-  ],
+  "orders": [],
   "positions": [],
   "closed": [
     {
@@ -683,6 +661,19 @@
       "result": null,
       "R": null,
       "max_hold_h": 168.0
+    },
+    {
+      "id": "SH21",
+      "symbol": "ETHUSDT",
+      "side": "short",
+      "entry": 2230.8,
+      "at_ms": 1794165180000,
+      "stop": 2246.5,
+      "target": 2207.3,
+      "why": "Rule 23: ETH -7/9 STRONG BEAR short 89% -15 scalp with no 4h/1d location (mid 4h range, 2,205 4h low 3.5 ATR(1h) below) = 74% >= 60, uncorrelated once SW19 was cancelled. Blocked by sizing: no tested setup, and the rule-21/26 stop 1 ATR(15m) over the 2,242.5 15m range high = 2,246.5 is 0.70% = ~$70 at $10k > $43.65 cap; --risk-pct is reserved for tested setups. Target 1.5R = 2,207.3 (above the 2,205 4h low). Tracks what the cap-block costs.",
+      "result": null,
+      "R": null,
+      "max_hold_h": 24.0
     }
   ]
 }
