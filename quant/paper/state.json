@@ -680,8 +680,8 @@
       "stop": 74725.3,
       "target": 78006.1,
       "why": "S20/S10 fired on the 12-16 4h candle (post-NFP wick 74,800 < 20-day low 75,158 < close 75,819) but BTC confluence is -7/9: never trade against |S|>=7 (rule 23). Fourth S20 in 3 days (SH17 +2R, SH18 -1R, SH19 -1R).",
-      "result": null,
-      "R": null,
+      "result": "stop",
+      "R": -1.0,
       "max_hold_h": 168.0
     },
     {
@@ -693,8 +693,8 @@
       "stop": 2246.5,
       "target": 2207.3,
       "why": "Rule 23: ETH -7/9 STRONG BEAR short 89% -15 scalp with no 4h/1d location (mid 4h range, 2,205 4h low 3.5 ATR(1h) below) = 74% >= 60, uncorrelated once SW19 was cancelled. Blocked by sizing: no tested setup, and the rule-21/26 stop 1 ATR(15m) over the 2,242.5 15m range high = 2,246.5 is 0.70% = ~$70 at $10k > $43.65 cap; --risk-pct is reserved for tested setups. Target 1.5R = 2,207.3 (above the 2,205 4h low). Tracks what the cap-block costs.",
-      "result": null,
-      "R": null,
+      "result": "target",
+      "R": 1.4968152866242213,
       "max_hold_h": 24.0
     },
     {
@@ -706,8 +706,8 @@
       "stop": 76.67,
       "target": 75.5,
       "why": "Rule 23: HYPE -5/9 short 78% on the break of the 76.24 4h range low (price 76.17-76.2 = at the 4h edge, so location counts) -15 correlated with pending BTC SW20 = 63% >= 60. Blocked: no tested setup on HYPE, and the rule-21/26 stop 1 ATR(15m) over the broken 76.42 1h low = 76.67 is 0.62% = ~$62 at $10k > $43.65 cap (and SW20 already uses $41 of it). Target 1.5R = 75.5; daily HYPE is still above its EMA200 (69.4), next daily low 74.41.",
-      "result": null,
-      "R": null,
+      "result": "target",
+      "R": 1.4893617021276693,
       "max_hold_h": 24.0
     }
   ]
