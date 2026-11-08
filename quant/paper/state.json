@@ -2,7 +2,29 @@
   "start_equity": 10000.0,
   "equity": 9787.291797123684,
   "risk_pct": 0.5,
-  "orders": [],
+  "orders": [
+    {
+      "id": "SW20",
+      "symbol": "BTCUSDT",
+      "book": "swing",
+      "side": "short",
+      "trigger": "close_below",
+      "tf": "4h",
+      "level": 74810.8,
+      "stop": "high_since:2026-11-08T20:00",
+      "target": null,
+      "target_r": 1.5,
+      "oco": null,
+      "note": "B20 (tested; BEAR regime: daily 75,836 < EMA200 76,448): short on the 00:00 4h close (= daily close) if below the 20-day low 74,810.8. Stop = 20-00 candle high, 1.5R, --risk-pct 0.35. Rule 23: -5/9 78% +15 B20 -15 target through the 74,000 put wall = 78%. Re-armed after the 19:13 pause.",
+      "conf": 78.0,
+      "risk_pct": 0.35,
+      "notional": null,
+      "max_hold_h": 168,
+      "created_ms": 1794172365271.6443,
+      "arm": null,
+      "expires_ms": 1794184200000
+    }
+  ],
   "positions": [],
   "closed": [
     {
@@ -671,6 +693,19 @@
       "stop": 2246.5,
       "target": 2207.3,
       "why": "Rule 23: ETH -7/9 STRONG BEAR short 89% -15 scalp with no 4h/1d location (mid 4h range, 2,205 4h low 3.5 ATR(1h) below) = 74% >= 60, uncorrelated once SW19 was cancelled. Blocked by sizing: no tested setup, and the rule-21/26 stop 1 ATR(15m) over the 2,242.5 15m range high = 2,246.5 is 0.70% = ~$70 at $10k > $43.65 cap; --risk-pct is reserved for tested setups. Target 1.5R = 2,207.3 (above the 2,205 4h low). Tracks what the cap-block costs.",
+      "result": null,
+      "R": null,
+      "max_hold_h": 24.0
+    },
+    {
+      "id": "SH22",
+      "symbol": "HYPEUSDT",
+      "side": "short",
+      "entry": 76.2,
+      "at_ms": 1794172260000,
+      "stop": 76.67,
+      "target": 75.5,
+      "why": "Rule 23: HYPE -5/9 short 78% on the break of the 76.24 4h range low (price 76.17-76.2 = at the 4h edge, so location counts) -15 correlated with pending BTC SW20 = 63% >= 60. Blocked: no tested setup on HYPE, and the rule-21/26 stop 1 ATR(15m) over the broken 76.42 1h low = 76.67 is 0.62% = ~$62 at $10k > $43.65 cap (and SW20 already uses $41 of it). Target 1.5R = 75.5; daily HYPE is still above its EMA200 (69.4), next daily low 74.41.",
       "result": null,
       "R": null,
       "max_hold_h": 24.0
