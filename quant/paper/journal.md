@@ -1147,3 +1147,6 @@
 
 ## 2026-11-09 02:12 UTC — price 75,196
 02:11 UTC run. Flat, equity $9,787.29, room $87.29 (cap $43.65, SW21 pending $41.11: any other order is a hard block). Scores: BTC -5/9 at 75,217 (short 78%/long 22%): SW21 B20 78 +15 -15 (72,000 strike in the target path) = 78%, kept for the 04:00 4h close (needs < 73,385, 2.4% below); long 22 +5 S20 -15 (target through the 75,978 flip / daily EMA200) = 12%: no (SH23 +0.27R). ETH -7/9 STRONG BEAR at 2,145 (89/11): short -15 correlated -15 no level = 59%; long forbidden. HYPE -5/9 at 75.0 (78/22): short -15 correlated -15 no level = 48%; long 22%: no. News: Trump/Vance on the Iran war, oil: BTC flat, no catalyst.
+
+## 2026-11-09 03:12 UTC — price 75,099
+03:10 UTC run. Flat, equity $9,787.29, room $87.29 (cap $43.65, SW21 pending $41.11: any other order is a hard block). Scores: BTC -5/9 at 75,108 (short 78%/long 22%): SW21 B20 78 +15 -15 (72,000 strike in the target path) = 78%, kept for the 04:00 4h close (needs < 73,385, 2.3% below); long 22 +5 S20 -15 = 12%: no (SH23 +0.19R). ETH -7/9 STRONG BEAR at 2,143 (89/11): short -15 correlated -15 no level = 59%; long forbidden. HYPE -5/9 at 74.7 (78/22): short -15 correlated -15 no level (74.41 daily low just below) = 48%; long 22%: no. News: Trump 'highly unlikely' to go to war with Iran, Qatar mediation, gold +1% on softer oil: BTC -0.2%, no catalyst.
