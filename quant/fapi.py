@@ -173,9 +173,15 @@ def archive_klines(sym, interval, a_ms, b_ms):
                 month_done.add(ym)
                 continue
             next_month = (d.replace(day=28) + timedelta(days=4)).replace(day=1)
-            if (today - next_month).days > 7:  # long published and still missing: not listed yet (no dailies either)
-                month_done.add(ym)
-                continue
+            if (today - next_month).days > 7:
+                # Long published and still missing: either the symbol was not listed yet (no dailies either), or
+                # Binance is late with the monthly file (dailies exist). Probe the month's last daily: skipping the
+                # month on age alone dropped all of 2026-10 on 11-09 (monthly not yet published) and broke every
+                # indicator on 1h/4h/1d (a 745-hour hole; daily EMA200 76,448 -> 74,609).
+                last_day = next_month - timedelta(days=1)
+                if _vision_csv(f"daily/klines/{sym}/{interval}/{sym}-{interval}-{last_day}.zip") is None:
+                    month_done.add(ym)
+                    continue
         rows = _vision_csv(f"daily/klines/{sym}/{interval}/{sym}-{interval}-{d}.zip")
         if rows is None:
             if (today - d).days <= 3:  # not published yet

@@ -4,25 +4,25 @@
   "risk_pct": 0.5,
   "orders": [
     {
-      "id": "SW20",
+      "id": "SW21",
       "symbol": "BTCUSDT",
       "book": "swing",
       "side": "short",
       "trigger": "close_below",
       "tf": "4h",
-      "level": 74810.8,
-      "stop": "high_since:2026-11-08T20:00",
+      "level": 73385.0,
+      "stop": "high_since:2026-11-09T00:00",
       "target": null,
       "target_r": 1.5,
       "oco": null,
-      "note": "B20 (tested; BEAR regime: daily 75,836 < EMA200 76,448): short on the 00:00 4h close (= daily close) if below the 20-day low 74,810.8. Stop = 20-00 candle high, 1.5R, --risk-pct 0.35. Rule 23: -5/9 78% +15 B20 -15 target through the 74,000 put wall = 78%. Re-armed after the 19:13 pause.",
+      "note": "B20 (tested; BEAR regime: daily 11-08 close 74,818 < EMA200 76,432): short on the 04:00 4h close if below the NEW 20-day low 73,385 (the 11-08 21:xx liquidation wick). Stop = 00-04 candle high, 1.5R, --risk-pct 0.35. Rule 23: -5/9 78% +15 B20 -15 (put wall 74,000 sits above, 72,000 gamma strike in the target path) = 78%. SW20 expired: the 00:00 close 74,818.1 missed the 74,810.8 line by 7 points.",
       "conf": 78.0,
       "risk_pct": 0.35,
       "notional": null,
       "max_hold_h": 168,
-      "created_ms": 1794172365271.6443,
+      "created_ms": 1794183317066.8494,
       "arm": null,
-      "expires_ms": 1794184200000
+      "expires_ms": 1794198600000
     }
   ],
   "positions": [],
@@ -709,6 +709,19 @@
       "result": "target",
       "R": 1.4893617021276693,
       "max_hold_h": 24.0
+    },
+    {
+      "id": "SH23",
+      "symbol": "BTCUSDT",
+      "side": "long",
+      "entry": 74818.1,
+      "at_ms": 1794182400000,
+      "stop": 73311.6,
+      "target": 77831.1,
+      "why": "S20/S10 fired on the 20-00 4h candle ($1B-liquidation wick 73,385 < 20-day low 74,810.8 < close 74,818.1). Skipped on rule 23: BTC confluence -5/9 long 22% +5 (marginal S20) -15 (2R target 77,831 runs through the gamma flip 75,824, the daily EMA200 76,415 and the 1h EMA200 77,127) = 12%; rebuild bucket S=-5 was -0.20R (n=67). Daily regime BEAR (74,818 < EMA200 76,432). Fifth S20 shadow since 11-04 (SH17 +2R, SH18 -1R, SH19 -1R, SH20 -1R).",
+      "result": null,
+      "R": null,
+      "max_hold_h": 168.0
     }
   ]
 }
