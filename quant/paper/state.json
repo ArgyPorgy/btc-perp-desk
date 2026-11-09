@@ -2,29 +2,7 @@
   "start_equity": 10000.0,
   "equity": 9787.291797123684,
   "risk_pct": 0.5,
-  "orders": [
-    {
-      "id": "SW25",
-      "symbol": "BTCUSDT",
-      "book": "swing",
-      "side": "short",
-      "trigger": "close_below",
-      "tf": "4h",
-      "level": 73333.0,
-      "stop": "high_since:2026-11-09T12:00",
-      "target": null,
-      "target_r": 1.5,
-      "oco": null,
-      "note": "B20 (tested; BEAR regime: daily 74,824 < EMA200 76,432): short on the 16:00 4h close if below the 20-day low 73,333. Stop = 12-16 candle high, 1.5R, --risk-pct 0.35. Rule 23: -7/9 89% +15 B20 -15 (72,000 strike in the target path) = 89%. Replaces SW24 (12:00 close 74,333 did not trigger).",
-      "conf": 89.0,
-      "risk_pct": 0.35,
-      "notional": null,
-      "max_hold_h": 168,
-      "created_ms": 1794226773931.0083,
-      "arm": null,
-      "expires_ms": 1794241800000
-    }
-  ],
+  "orders": [],
   "positions": [],
   "closed": [
     {
@@ -734,6 +712,19 @@
       "why": "Rule 23: HYPE -5/9 short 78% on the break of the daily swing low 74.41 and the 73.73 liquidation low (5m/15m broke down with volume; at a 1d edge = location) -15 correlated with pending BTC SW22 = 63% >= 60. Blocked: untested on HYPE, and the rule-21/26 stop 1 ATR(15m) over the broken 74.05 = 74.52 is 1.66% = ~$166 at $10k > $43.65 cap (SW22 holds $41 of it anyway). Target 1.5R = 71.47. Fourth cap-blocked with-trend short tracked (SH15, SH21, SH22 all won 1.5R).",
       "result": "stop",
       "R": -1.0,
+      "max_hold_h": 24.0
+    },
+    {
+      "id": "SH25",
+      "symbol": "ETHUSDT",
+      "side": "short",
+      "entry": 2135.0,
+      "at_ms": 1794240900000,
+      "stop": 2161.7,
+      "target": 2095.0,
+      "why": "Rule 23: ETH -7/9 STRONG BEAR short 89% -15 no 4h/1d location (mid 2,050-2,227) = 74% >= 60, uncorrelated once SW25 expired. Blocked: no tested setup, and the rule-21 stop 1 ATR(15m) over the 2,150.9 15m high = 2,161.7 is 1.25% = ~$125 at $10k > $43.65 cap. Target 1.5R = 2,095. Fifth cap-blocked with-trend short tracked (3W/1L so far).",
+      "result": null,
+      "R": null,
       "max_hold_h": 24.0
     }
   ]
