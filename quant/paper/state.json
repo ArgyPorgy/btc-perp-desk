@@ -4,25 +4,25 @@
   "risk_pct": 0.5,
   "orders": [
     {
-      "id": "SW26",
+      "id": "SW27",
       "symbol": "BTCUSDT",
       "book": "swing",
       "side": "short",
       "trigger": "close_below",
       "tf": "4h",
       "level": 73333.0,
-      "stop": "high_since:2026-11-09T16:00",
+      "stop": "high_since:2026-11-09T20:00",
       "target": null,
       "target_r": 1.5,
       "oco": null,
-      "note": "B20 (tested; BEAR regime: daily 74,824 < EMA200 76,432): short on the 20:00 4h close if below the 20-day low 73,333. Stop = 16-20 candle high, 1.5R, --risk-pct 0.35. Rule 23: -5/9 78% +15 B20 -15 (72,000 strike) = 78%. Re-armed after the 16:15 pause (BTC was -1/9).",
-      "conf": 78.0,
+      "note": "B20 (tested; BEAR regime: daily 74,824 < EMA200 76,432): short on the 00:00 4h close (= daily close) if below the 20-day low 73,333. Stop = 20-00 candle high, 1.5R, --risk-pct 0.35. Rule 23: -3/9 67% +15 B20 -15 (72,000 strike) = 67%. Replaces SW26 (20:00 close 74,852 did not trigger). Not inside the CPI freeze (Tue 11:30-13:30).",
+      "conf": 67.0,
       "risk_pct": 0.35,
       "notional": null,
       "max_hold_h": 168,
-      "created_ms": 1794244479211.6096,
+      "created_ms": 1794255213082.2832,
       "arm": null,
-      "expires_ms": 1794256200000
+      "expires_ms": 1794270600000
     }
   ],
   "positions": [],
