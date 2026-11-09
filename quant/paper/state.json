@@ -732,8 +732,8 @@
       "stop": 74.52,
       "target": 71.47,
       "why": "Rule 23: HYPE -5/9 short 78% on the break of the daily swing low 74.41 and the 73.73 liquidation low (5m/15m broke down with volume; at a 1d edge = location) -15 correlated with pending BTC SW22 = 63% >= 60. Blocked: untested on HYPE, and the rule-21/26 stop 1 ATR(15m) over the broken 74.05 = 74.52 is 1.66% = ~$166 at $10k > $43.65 cap (SW22 holds $41 of it anyway). Target 1.5R = 71.47. Fourth cap-blocked with-trend short tracked (SH15, SH21, SH22 all won 1.5R).",
-      "result": null,
-      "R": null,
+      "result": "stop",
+      "R": -1.0,
       "max_hold_h": 24.0
     }
   ]
