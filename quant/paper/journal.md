@@ -1267,3 +1267,6 @@
 
 ## 2026-11-10 18:13 UTC — price 73,180
 18:13 UTC run. SW31 B20 short open: entry 73,177.4, now 73,175 (+0.00R), stop 74,898.7, target 70,595.4; holding (bounce from 72,688 to 73,390, still below the broken 73,333/73,459 and all EMAs). Equity $9,787.29 realised, room $87.29, risk in use $35.71 of $43.65 (no new orders). Scores: BTC -7/9 (89/11): short on; long forbidden. ETH -7/9 at 2,025 (89/11): short 74% (correlated) but cap hard-blocked and duplicates SW31; long forbidden. HYPE -5/9 at 70.7 (78/22), new low 70.35: short 63% (correlated), hard-blocked; long 22%: no. News: 'Fed Chair Warsh free to unleash his inner hawk' (Bloomberg); petrol down but inflation elevated: no change.
+
+## 2026-11-10 19:15 UTC — price 73,356
+19:14 UTC run. SW31 B20 short open: entry 73,177.4, now 73,321 (-0.08R, -$2.85), stop 74,898.7, target 70,595.4; holding (5m range 72,755-73,649; price testing the broken 73,333 from below). Equity $9,787.29 realised, room $87.29, risk $35.71 of $43.65 (no new orders). Scores: BTC -7/9 (89/11): short on; long forbidden. ETH -7/9 at 2,040 (89/11): short 74% correlated, cap hard-blocked; long forbidden. HYPE -5/9 at 71.5 (78/22): short 63% correlated, hard-blocked; long 22%: no. News: BoC says further hikes may be needed; oil at two-month lows: no change. OI BTC +3.7% 24h.
