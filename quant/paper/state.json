@@ -768,6 +768,19 @@
       "result": "target",
       "R": 1.4999999999999722,
       "max_hold_h": 24.0
+    },
+    {
+      "id": "SH28",
+      "symbol": "BTCUSDT",
+      "side": "long",
+      "entry": 73440.5,
+      "at_ms": 1794340800000,
+      "stop": 72615.3,
+      "target": 75090.9,
+      "why": "S20/S10 fired on the 16-20 4h candle (wick 72,688 < 20-day low 72,809.5 < close 73,440.5). Forbidden: BTC confluence -7/9 (STRONG BEAR), never trade against |S|>=7 (rule 23); also opposite to the open SW31 B20 short. S20 longs against BTC <= -5 so far: SH17 +2, SH18/19/20/23 -1 each = -2R.",
+      "result": null,
+      "R": null,
+      "max_hold_h": 168.0
     }
   ]
 }
