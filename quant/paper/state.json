@@ -723,6 +723,19 @@
       "stop": 2161.7,
       "target": 2095.0,
       "why": "Rule 23: ETH -7/9 STRONG BEAR short 89% -15 no 4h/1d location (mid 2,050-2,227) = 74% >= 60, uncorrelated once SW25 expired. Blocked: no tested setup, and the rule-21 stop 1 ATR(15m) over the 2,150.9 15m high = 2,161.7 is 1.25% = ~$125 at $10k > $43.65 cap. Target 1.5R = 2,095. Fifth cap-blocked with-trend short tracked (3W/1L so far).",
+      "result": "target",
+      "R": 1.4981273408239801,
+      "max_hold_h": 24.0
+    },
+    {
+      "id": "SH26",
+      "symbol": "ETHUSDT",
+      "side": "short",
+      "entry": 2096.0,
+      "at_ms": 1794301860000,
+      "stop": 2115.2,
+      "target": 2067.2,
+      "why": "Rule 23: ETH -7/9 STRONG BEAR short 89% -15 no 4h/1d location (broke the 2,107 15m low with volume, 2,050 4h low below) = 74% >= 60, nothing pending so uncorrelated. Blocked: untested on ETH, and the rule-21 stop 1 ATR(15m) over the broken 2,107.3 = 2,115.2 is 0.92% = ~$92 at $10k > $43.65 cap. Target 1.5R = 2,067.2. Note: CPI 13:30 lands inside the window. Sixth cap-blocked with-trend short tracked (4W/1L so far).",
       "result": null,
       "R": null,
       "max_hold_h": 24.0
