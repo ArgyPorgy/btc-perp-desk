@@ -739,6 +739,19 @@
       "result": null,
       "R": null,
       "max_hold_h": 24.0
+    },
+    {
+      "id": "SH27",
+      "symbol": "BTCUSDT",
+      "side": "short",
+      "entry": 74382.4,
+      "at_ms": 1794305520000,
+      "stop": 74906.0,
+      "target": 73597.0,
+      "why": "Rule 23: BTC -5/9 short 78% (non-B20) -15 no 4h/1d location (mid 74,137-74,976) = 63% >= 60, nothing pending. Blocked: no tested setup fires (B20 needs a 4h close < 73,333; the 12:00 window is inside the CPI freeze) and the rule-26 stop 1 ATR(15m) over the outermost nearby level (15m EMA50 74,718) = 74,906 is 0.70% = ~$70 at $10k > $43.65 cap. Target 1.5R = 73,597. CPI 13:30 inside the window. Seventh cap-blocked with-trend short tracked.",
+      "result": null,
+      "R": null,
+      "max_hold_h": 24.0
     }
   ]
 }
