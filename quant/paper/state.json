@@ -778,6 +778,19 @@
       "stop": 72615.3,
       "target": 75090.9,
       "why": "S20/S10 fired on the 16-20 4h candle (wick 72,688 < 20-day low 72,809.5 < close 73,440.5). Forbidden: BTC confluence -7/9 (STRONG BEAR), never trade against |S|>=7 (rule 23); also opposite to the open SW31 B20 short. S20 longs against BTC <= -5 so far: SH17 +2, SH18/19/20/23 -1 each = -2R.",
+      "result": "stop",
+      "R": -1.0,
+      "max_hold_h": 168.0
+    },
+    {
+      "id": "SH29",
+      "symbol": "BTCUSDT",
+      "side": "short",
+      "entry": 71682.7,
+      "at_ms": 1794499200000,
+      "stop": 73196.1,
+      "target": 69412.6,
+      "why": "B20 fired on the 12-16 4h close 71,682.7 < 20-day low 72,691 (BEAR). Rule 23: BTC -7/9 short 89% +15 B20 -15 correlated with open SW31 -15 target beyond the 70,000 gamma strike = 74% >= 60. Blocked: cap $43.65, $35.71 used by SW31, $7.94 free vs ~$34 needed at --risk-pct 0.35. Also missed 11:13-17:11 runs (worker restarts); at 18:11 price 71,844 was still within 0.25R of entry.",
       "result": null,
       "R": null,
       "max_hold_h": 168.0
