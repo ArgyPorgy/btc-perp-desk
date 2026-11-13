@@ -804,8 +804,8 @@
       "stop": 71001.9,
       "target": 72281.3,
       "why": "S20/S10 fired on the 20-00 4h candle (wick 71,073 < 20-day low 71,200 < close 71,428.4). Forbidden: BTC confluence -7/9 (never trade against |S|>=7, rule 23) and opposite the open SW31 short; S20 longs vs BTC <= -5 so far -3R over 6. Stop 71,001.9 also sits just under the 71,073 sweep low (liquidity).",
-      "result": null,
-      "R": null,
+      "result": "stop",
+      "R": -1.0,
       "max_hold_h": 96.0
     }
   ]
