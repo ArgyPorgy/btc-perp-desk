@@ -2,30 +2,24 @@
   "start_equity": 10000.0,
   "equity": 9837.24449045872,
   "risk_pct": 0.5,
-  "orders": [
+  "orders": [],
+  "positions": [
     {
       "id": "SW32",
       "symbol": "BTCUSDT",
       "book": "swing",
       "side": "short",
-      "trigger": "close_below",
-      "tf": "4h",
-      "level": 71200.0,
-      "stop": "high_since:2026-11-13T00:00",
-      "target": null,
-      "target_r": 1.5,
-      "oco": null,
-      "note": "B20 (tested; BEAR regime: daily 71,428 < EMA200 76,322): short on the 00-04 4h close if below the 20-day low 71,200 (price 69,972 now). Stop high_since 00:00 (71,493.6 so far), 1.5R target. Rule 23: BTC -7/9 short 89% +15 B20 -15 target through the 68,000 gamma strike = 89%. Flat after SW31 (+1.46R); cap $68.62.",
-      "conf": 89.0,
+      "entry": 68927.1,
+      "stop": 71565.0936,
+      "target": 64970.109600000025,
+      "qty": 0.013051720715549,
       "risk_pct": 0.35,
-      "notional": null,
+      "opened_ms": 1794542400000,
+      "note": "B20 (tested; BEAR regime: daily 71,428 < EMA200 76,322): short on the 00-04 4h close if below the 20-day low 71,200 (price 69,972 now). Stop high_since 00:00 (71,493.6 so far), 1.5R target. Rule 23: BTC -7/9 short 89% +15 B20 -15 target through the 68,000 gamma strike = 89%. Flat after SW31 (+1.46R); cap $68.62.",
       "max_hold_h": 168,
-      "created_ms": 1794539530811.718,
-      "arm": null,
-      "expires_ms": 1794543000000
+      "conf": 89.0
     }
   ],
-  "positions": [],
   "closed": [
     {
       "id": "L1",
@@ -817,8 +811,8 @@
       "stop": 73196.1,
       "target": 69412.6,
       "why": "B20 fired on the 12-16 4h close 71,682.7 < 20-day low 72,691 (BEAR). Rule 23: BTC -7/9 short 89% +15 B20 -15 correlated with open SW31 -15 target beyond the 70,000 gamma strike = 74% >= 60. Blocked: cap $43.65, $35.71 used by SW31, $7.94 free vs ~$34 needed at --risk-pct 0.35. Also missed 11:13-17:11 runs (worker restarts); at 18:11 price 71,844 was still within 0.25R of entry.",
-      "result": null,
-      "R": null,
+      "result": "target",
+      "R": 1.4999999999999856,
       "max_hold_h": 168.0
     },
     {
