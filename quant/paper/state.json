@@ -1,25 +1,31 @@
 {
   "start_equity": 10000.0,
-  "equity": 9787.291797123684,
+  "equity": 9837.24449045872,
   "risk_pct": 0.5,
-  "orders": [],
-  "positions": [
+  "orders": [
     {
-      "id": "SW31",
+      "id": "SW32",
       "symbol": "BTCUSDT",
       "book": "swing",
       "side": "short",
-      "entry": 73177.4,
-      "stop": 74898.72389999998,
-      "target": 70595.41415000001,
-      "qty": 0.019900683009126355,
+      "trigger": "close_below",
+      "tf": "4h",
+      "level": 71200.0,
+      "stop": "high_since:2026-11-13T00:00",
+      "target": null,
+      "target_r": 1.5,
+      "oco": null,
+      "note": "B20 (tested; BEAR regime: daily 71,428 < EMA200 76,322): short on the 00-04 4h close if below the 20-day low 71,200 (price 69,972 now). Stop high_since 00:00 (71,493.6 so far), 1.5R target. Rule 23: BTC -7/9 short 89% +15 B20 -15 target through the 68,000 gamma strike = 89%. Flat after SW31 (+1.46R); cap $68.62.",
+      "conf": 89.0,
       "risk_pct": 0.35,
-      "opened_ms": 1794326400000,
-      "note": "B20 (tested; BEAR regime: daily 75,327 < EMA200 76,421): short on the 16:00 4h close if below the 20-day low 73,333. Stop = 12-16 candle high, 1.5R, --risk-pct 0.35. Rule 23: -7/9 89% +15 B20 +10 catalyst (hot CPI 0.4% vs 0.3%, core above forecast; BTC -1.1% to 73,459 on the print = tape confirmed) -15 (72,000 strike in the target path) = 99%. Post-CPI, freeze over.",
+      "notional": null,
       "max_hold_h": 168,
-      "conf": 99.0
+      "created_ms": 1794539530811.718,
+      "arm": null,
+      "expires_ms": 1794543000000
     }
   ],
+  "positions": [],
   "closed": [
     {
       "id": "L1",
@@ -423,6 +429,26 @@
       "reason": "stop",
       "pnl": -66.40990802675586,
       "R": -1.1766851851851852
+    },
+    {
+      "id": "SW31",
+      "symbol": "BTCUSDT",
+      "book": "swing",
+      "side": "short",
+      "entry": 73177.4,
+      "stop": 74898.72389999998,
+      "target": 70595.41415000001,
+      "qty": 0.019900683009126355,
+      "risk_pct": 0.35,
+      "opened_ms": 1794326400000,
+      "note": "B20 (tested; BEAR regime: daily 75,327 < EMA200 76,421): short on the 16:00 4h close if below the 20-day low 73,333. Stop = 12-16 candle high, 1.5R, --risk-pct 0.35. Rule 23: -7/9 89% +15 B20 +10 catalyst (hot CPI 0.4% vs 0.3%, core above forecast; BTC -1.1% to 73,459 on the print = tape confirmed) -15 (72,000 strike in the target path) = 99%. Post-CPI, freeze over.",
+      "max_hold_h": 168,
+      "conf": 99.0,
+      "exit": 70595.41415000001,
+      "closed_ms": 1794538800000,
+      "reason": "target",
+      "pnl": 49.95269333503473,
+      "R": 1.4582377220957654
     }
   ],
   "shadow": [
