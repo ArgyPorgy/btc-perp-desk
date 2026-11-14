@@ -878,8 +878,8 @@
       "stop": 66333.7,
       "target": 68731.0,
       "why": "S20/S10 fired on the 04-08 4h candle (wick 66,400.1 < 20-day low 66,564.9 < close 67,132.8). Forbidden: BTC confluence -7/9 (never trade against |S|>=7, rule 23) and opposite SW32/SW33; S20 longs vs BTC <= -5 so far -5R over 8.",
-      "result": null,
-      "R": null,
+      "result": "stop",
+      "R": -1.0,
       "max_hold_h": 96.0
     }
   ]
