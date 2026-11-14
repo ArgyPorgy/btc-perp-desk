@@ -870,8 +870,8 @@
       "stop": 70.13,
       "target": 65.06,
       "why": "Cap-blocked with-trend short: HYPE broke its 69.42 range low with volume (15m taker -418k, 4h broke down). Rule 23: HYPE -5/9 short 78% -15 correlated with SW32/SW33 = 63% >= 60 (location = the range-low break). Stop 70.13 = 69.42 + 1 ATR(15m) 0.71 (rule 21), 1.5R target 65.06. Blocked: $4.72 cap left vs ~$300 at $10k notional.",
-      "result": null,
-      "R": null,
+      "result": "target",
+      "R": 1.4975369458128032,
       "max_hold_h": 48.0
     },
     {
