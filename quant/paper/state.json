@@ -881,6 +881,19 @@
       "result": "stop",
       "R": -1.0,
       "max_hold_h": 96.0
+    },
+    {
+      "id": "SH34",
+      "symbol": "BTCUSDT",
+      "side": "short",
+      "entry": 65714.3,
+      "at_ms": 1794672000000,
+      "stop": 67367.3,
+      "target": 63234.8,
+      "why": "B20 fired on the 12-16 4h close 65,714.3 < 20-day low 66,400.1 (BEAR). Rule 23: BTC -7/9 short 89% +15 B20 -15 correlated with SW32/SW33 -15 target through the 65,000 put wall = 74% >= 60. Blocked: cap $68.62 with $63.90 in SW32+SW33 ($4.72 free).",
+      "result": null,
+      "R": null,
+      "max_hold_h": 168.0
     }
   ]
 }
