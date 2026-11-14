@@ -18,6 +18,21 @@
       "note": "B20 (tested; BEAR regime: daily 71,428 < EMA200 76,322): short on the 00-04 4h close if below the 20-day low 71,200 (price 69,972 now). Stop high_since 00:00 (71,493.6 so far), 1.5R target. Rule 23: BTC -7/9 short 89% +15 B20 -15 target through the 68,000 gamma strike = 89%. Flat after SW31 (+1.46R); cap $68.62.",
       "max_hold_h": 168,
       "conf": 89.0
+    },
+    {
+      "id": "SW33",
+      "symbol": "BTCUSDT",
+      "book": "swing",
+      "side": "short",
+      "entry": 66700.1,
+      "stop": 68489.1,
+      "target": 64016.600000000006,
+      "qty": 0.015396469856503309,
+      "risk_pct": 0.28,
+      "opened_ms": 1794629542232.0452,
+      "note": "B20 (tested; BEAR regime: daily 68,287 < EMA200 76,242): 04:00 4h close 66,722.3 < 20-day low 67,445; taken at market ~66.8k (within 0.25R of the signal close). Stop 68,489.1 = high since the 00:00 4h open, 1.5R target. Rule 23: BTC -7/9 short 89% +15 B20 -15 correlated with SW32 -15 target through the 65,000 strike / 65,483 D1F level = 74%. --risk-pct 0.28 (below the usual 0.35) so SW32+SW33 fit the cap of half the room; both stopped still leaves equity above $9,700.",
+      "max_hold_h": 168,
+      "conf": 74.0
     }
   ],
   "closed": [
