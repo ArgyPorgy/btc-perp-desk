@@ -1492,3 +1492,6 @@
 
 ## 2026-11-14 04:13 UTC — price 66,551
 04:13 UTC correction to the 04:11 entry: the HYPE short scores 63% (78 -15 correlated; the 69.42 range-low break is location), so it is a cap-blocked with-trend >= 60% short and gets logged like SH21/SH22 - logged as shadow SH32 (short 68.1, stop 70.13 = 69.42 + 1 ATR(15m), target 65.06, 1.5R). Not logging it would have broken the cap-blocked tally.
+
+## 2026-11-14 05:12 UTC — price 67,151
+05:11 UTC run. Bounce off 66,400 to 67,230 (5m taker +853; 15m/1h still under their EMAs, 1h taker -4.2k; 67,445 broken 20-day low now overhead). SW32 B20 short: entry 68,927.1, now 67,157 (+0.67R, +$23.11), stop 71,565.1, target 64,970.1. SW33 B20 short: entry 66,700.1, now 67,157 (-0.26R, -$7.03), stop 68,489.1, target 64,016.6. Holding both; net +$16.08. Shadow SH32 (HYPE short 68.1) -0.4R on the bounce to 69.1. Equity $9,837.24, room $137.24, risk $63.90 of $68.62 -> nothing else fits. Scores (rule 23): BTC -7/9 long 11% / short 89% -> two shorts held; longs forbidden. ETH -7/9 long 11% / short 89%: longs forbidden; short 89 -15 correlated -15 target into the 1,875 low / 1,800 put wall = 59% -> no trade. HYPE -5/9 long 22% / short 78%: long 7%; short = SH32 (cap-blocked). News: Witt - Bitcoin reserve can't buy without Congress (impact 3; BTC +0.6% over the hour, it's the bounce - no credit); Trump/Xi/Putin summit.
