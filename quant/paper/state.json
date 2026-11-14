@@ -1,24 +1,9 @@
 {
   "start_equity": 10000.0,
-  "equity": 9837.24449045872,
+  "equity": 9888.016229541483,
   "risk_pct": 0.5,
   "orders": [],
   "positions": [
-    {
-      "id": "SW32",
-      "symbol": "BTCUSDT",
-      "book": "swing",
-      "side": "short",
-      "entry": 68927.1,
-      "stop": 71565.0936,
-      "target": 64970.109600000025,
-      "qty": 0.013051720715549,
-      "risk_pct": 0.35,
-      "opened_ms": 1794542400000,
-      "note": "B20 (tested; BEAR regime: daily 71,428 < EMA200 76,322): short on the 00-04 4h close if below the 20-day low 71,200 (price 69,972 now). Stop high_since 00:00 (71,493.6 so far), 1.5R target. Rule 23: BTC -7/9 short 89% +15 B20 -15 target through the 68,000 gamma strike = 89%. Flat after SW31 (+1.46R); cap $68.62.",
-      "max_hold_h": 168,
-      "conf": 89.0
-    },
     {
       "id": "SW33",
       "symbol": "BTCUSDT",
@@ -458,6 +443,26 @@
       "reason": "target",
       "pnl": 49.95269333503473,
       "R": 1.4582377220957654
+    },
+    {
+      "id": "SW32",
+      "symbol": "BTCUSDT",
+      "book": "swing",
+      "side": "short",
+      "entry": 68927.1,
+      "stop": 71565.0936,
+      "target": 64970.109600000025,
+      "qty": 0.013051720715549,
+      "risk_pct": 0.35,
+      "opened_ms": 1794542400000,
+      "note": "B20 (tested; BEAR regime: daily 71,428 < EMA200 76,322): short on the 00-04 4h close if below the 20-day low 71,200 (price 69,972 now). Stop high_since 00:00 (71,493.6 so far), 1.5R target. Rule 23: BTC -7/9 short 89% +15 B20 -15 target through the 68,000 gamma strike = 89%. Flat after SW31 (+1.46R); cap $68.62.",
+      "max_hold_h": 168,
+      "conf": 89.0,
+      "exit": 64970.109600000025,
+      "closed_ms": 1794675600000,
+      "reason": "target",
+      "pnl": 50.771739082763006,
+      "R": 1.4746213922581162
     }
   ],
   "shadow": [
