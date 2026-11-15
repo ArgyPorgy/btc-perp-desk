@@ -1,25 +1,9 @@
 {
   "start_equity": 10000.0,
-  "equity": 9928.326368535763,
+  "equity": 9892.318229447752,
   "risk_pct": 0.5,
   "orders": [],
-  "positions": [
-    {
-      "id": "SW34",
-      "symbol": "BTCUSDT",
-      "book": "swing",
-      "side": "short",
-      "entry": 64124.8,
-      "stop": 65919.4536,
-      "target": 61432.81960000002,
-      "qty": 0.01936259024575849,
-      "risk_pct": 0.35,
-      "opened_ms": 1794700800000,
-      "note": "B20 (tested; BEAR regime: daily 68,280 < EMA200 76,241): short on the 20-00 4h close if below the 20-day low 64,956.5 (price 63,476). Stop high_since 20:00 (65,853.6 so far), 1.5R target. Rule 23: BTC -7/9 short 89% +15 B20, no wall in the target path (strikes 65k/64k are above) = 104% -> conf 89. Flat after SW33 (+1.46R); cap $114.16.",
-      "max_hold_h": 168,
-      "conf": 89.0
-    }
-  ],
+  "positions": [],
   "closed": [
     {
       "id": "L1",
@@ -483,6 +467,26 @@
       "reason": "target",
       "pnl": 40.310138994280834,
       "R": 1.4634665455561766
+    },
+    {
+      "id": "SW34",
+      "symbol": "BTCUSDT",
+      "book": "swing",
+      "side": "short",
+      "entry": 64124.8,
+      "stop": 65919.4536,
+      "target": 61432.81960000002,
+      "qty": 0.01936259024575849,
+      "risk_pct": 0.35,
+      "opened_ms": 1794700800000,
+      "note": "B20 (tested; BEAR regime: daily 68,280 < EMA200 76,241): short on the 20-00 4h close if below the 20-day low 64,956.5 (price 63,476). Stop high_since 20:00 (65,853.6 so far), 1.5R target. Rule 23: BTC -7/9 short 89% +15 B20, no wall in the target path (strikes 65k/64k are above) = 104% -> conf 89. Flat after SW33 (+1.46R); cap $114.16.",
+      "max_hold_h": 168,
+      "conf": 89.0,
+      "exit": 65919.4536,
+      "closed_ms": 1794736800000,
+      "reason": "stop",
+      "pnl": -36.008139088011326,
+      "R": -1.036231017952434
     }
   ],
   "shadow": [
@@ -945,6 +949,32 @@
       "result": null,
       "R": null,
       "max_hold_h": 96.0
+    },
+    {
+      "id": "SH37",
+      "symbol": "ETHUSDT",
+      "side": "short",
+      "entry": 1830.0,
+      "at_ms": 1794737460000,
+      "stop": 1872.5,
+      "target": 1766.25,
+      "why": "Cap-blocked with-trend short: ETH -7/9 short 89% -15 no location (mid 1,709-1,858, squeezing) = 74% >= 60 (flat book, no correlation). Rule-21 stop 1,858 + 1 ATR(15m) 14.5 = 1,872.5 (2.3%) = ~$230 at $10k > $96 cap.",
+      "result": null,
+      "R": null,
+      "max_hold_h": 48.0
+    },
+    {
+      "id": "SH38",
+      "symbol": "BTCUSDT",
+      "side": "short",
+      "entry": 65512.0,
+      "at_ms": 1794737460000,
+      "stop": 66551.0,
+      "target": 63953.5,
+      "why": "Cap-blocked with-trend short: BTC -5/9 short 78% -15 no location (mid 61,931-66,123, no B20) = 63% >= 60. Rule-21 stop 66,123 + 1 ATR(15m) 428 = 66,551 (1.6%) = ~$160 at $10k > $96 cap.",
+      "result": null,
+      "R": null,
+      "max_hold_h": 48.0
     }
   ]
 }
