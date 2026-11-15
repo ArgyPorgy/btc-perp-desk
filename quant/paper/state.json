@@ -2,30 +2,24 @@
   "start_equity": 10000.0,
   "equity": 9928.326368535763,
   "risk_pct": 0.5,
-  "orders": [
+  "orders": [],
+  "positions": [
     {
       "id": "SW34",
       "symbol": "BTCUSDT",
       "book": "swing",
       "side": "short",
-      "trigger": "close_below",
-      "tf": "4h",
-      "level": 64956.5,
-      "stop": "high_since:2026-11-14T20:00",
-      "target": null,
-      "target_r": 1.5,
-      "oco": null,
-      "note": "B20 (tested; BEAR regime: daily 68,280 < EMA200 76,241): short on the 20-00 4h close if below the 20-day low 64,956.5 (price 63,476). Stop high_since 20:00 (65,853.6 so far), 1.5R target. Rule 23: BTC -7/9 short 89% +15 B20, no wall in the target path (strikes 65k/64k are above) = 104% -> conf 89. Flat after SW33 (+1.46R); cap $114.16.",
-      "conf": 89.0,
+      "entry": 64124.8,
+      "stop": 65919.4536,
+      "target": 61432.81960000002,
+      "qty": 0.01936259024575849,
       "risk_pct": 0.35,
-      "notional": null,
+      "opened_ms": 1794700800000,
+      "note": "B20 (tested; BEAR regime: daily 68,280 < EMA200 76,241): short on the 20-00 4h close if below the 20-day low 64,956.5 (price 63,476). Stop high_since 20:00 (65,853.6 so far), 1.5R target. Rule 23: BTC -7/9 short 89% +15 B20, no wall in the target path (strikes 65k/64k are above) = 104% -> conf 89. Flat after SW33 (+1.46R); cap $114.16.",
       "max_hold_h": 168,
-      "created_ms": 1794694393355.6123,
-      "arm": null,
-      "expires_ms": 1794701400000
+      "conf": 89.0
     }
   ],
-  "positions": [],
   "closed": [
     {
       "id": "L1",
