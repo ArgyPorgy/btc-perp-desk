@@ -975,6 +975,19 @@
       "result": null,
       "R": null,
       "max_hold_h": 48.0
+    },
+    {
+      "id": "SH39",
+      "symbol": "HYPEUSDT",
+      "side": "short",
+      "entry": 67.2,
+      "at_ms": 1794759060000,
+      "stop": 69.49,
+      "target": 63.77,
+      "why": "Cap-blocked with-trend short: HYPE -5/9 short 78% -15 no location (67.2 mid 60.0-68.99, under 1h EMA50 67.79) = 63% >= 60. Rule-26 stop over the outermost level 68.987 + 1 ATR(15m) 0.50 = 69.49 (3.4%, ~$341 at $10k) vs cap $96; not a tested setup, no --risk-pct. Target 1.5R 63.77 (above the 60.0 low). Correlated in direction with SH37/SH38.",
+      "result": null,
+      "R": null,
+      "max_hold_h": 48.0
     }
   ]
 }
