@@ -932,6 +932,19 @@
       "result": "stop",
       "R": -1.0,
       "max_hold_h": 96.0
+    },
+    {
+      "id": "SH36",
+      "symbol": "BTCUSDT",
+      "side": "long",
+      "entry": 64787.3,
+      "at_ms": 1794715200000,
+      "stop": 61869.2,
+      "target": 70623.6,
+      "why": "S20/S10 fired on the 00-04 4h candle (wick 61,931.1 < 20-day low 63,272.2 < close 64,787.3 - the capitulation V). Forbidden: BTC confluence -7/9 (rule 23) and opposite SW34; S20 longs vs BTC <= -5 so far -7R over 10. Notable as the first sweep with a +4.6% reclaim close.",
+      "result": null,
+      "R": null,
+      "max_hold_h": 96.0
     }
   ]
 }
