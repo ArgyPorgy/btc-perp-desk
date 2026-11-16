@@ -972,8 +972,8 @@
       "stop": 66551.0,
       "target": 63953.5,
       "why": "Cap-blocked with-trend short: BTC -5/9 short 78% -15 no location (mid 61,931-66,123, no B20) = 63% >= 60. Rule-21 stop 66,123 + 1 ATR(15m) 428 = 66,551 (1.6%) = ~$160 at $10k > $96 cap.",
-      "result": null,
-      "R": null,
+      "result": "target",
+      "R": 1.5,
       "max_hold_h": 48.0
     },
     {
