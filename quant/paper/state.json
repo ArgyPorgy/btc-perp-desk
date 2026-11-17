@@ -1,25 +1,9 @@
 {
   "start_equity": 10000.0,
-  "equity": 9892.318229447752,
+  "equity": 9706.507428563405,
   "risk_pct": 0.5,
   "orders": [],
-  "positions": [
-    {
-      "id": "X46",
-      "symbol": "ETHUSDT",
-      "book": "scalp",
-      "side": "short",
-      "entry": 1792.46,
-      "stop": 1830.2,
-      "target": 1735.85,
-      "qty": 5.518850199975314,
-      "risk_pct": 2.105,
-      "opened_ms": 1794911206922.4326,
-      "note": "FULL PORT (user 2026-11-17). ETH -7/9 short 89% +10 catalyst (Binance hackers moved $63M ETH; ETH broke the 1,800 put wall w/ volume, taker -34k, while BTC flat) -15 no 4h/1d location = 84%. Stop over the 5m range high 1,821.8 + ATR(15m) 8.4 = 1,830.2; target 1.5R. Invalidated by a reclaim of 1,822. Stop-out (~2%) fails this account - user accepts.",
-      "max_hold_h": 24,
-      "conf": 84.0
-    }
-  ],
+  "positions": [],
   "closed": [
     {
       "id": "L1",
@@ -503,6 +487,26 @@
       "reason": "stop",
       "pnl": -36.008139088011326,
       "R": -1.036231017952434
+    },
+    {
+      "id": "X46",
+      "symbol": "ETHUSDT",
+      "book": "scalp",
+      "side": "short",
+      "entry": 1792.46,
+      "stop": 1830.2,
+      "target": 1735.85,
+      "qty": 5.518850199975314,
+      "risk_pct": 2.105,
+      "opened_ms": 1794911206922.4326,
+      "note": "FULL PORT (user 2026-11-17). ETH -7/9 short 89% +10 catalyst (Binance hackers moved $63M ETH; ETH broke the 1,800 put wall w/ volume, taker -34k, while BTC flat) -15 no 4h/1d location = 84%. Stop over the 5m range high 1,821.8 + ATR(15m) 8.4 = 1,830.2; target 1.5R. Invalidated by a reclaim of 1,822. Stop-out (~2%) fails this account - user accepts.",
+      "max_hold_h": 24,
+      "conf": 84.0,
+      "exit": 1824.32,
+      "closed_ms": 1794924988015.9795,
+      "reason": "manual",
+      "pnl": -185.81080088434632,
+      "R": -0.892114202437729
     }
   ],
   "shadow": [
