@@ -3,8 +3,10 @@
 Prop rules (Propr Turbo 1-Step, propr.xyz/rules, checked 2026-10-29): pass at +9% ($10,900). FAIL on either:
   max drawdown 3%, STATIC: equity below $9,700 (3% under the $10,000 start; the floor never moves, profit adds room)
   daily loss 3%: equity below 97% of the balance at 00:00 UTC (recomputed daily).
-The binding floor is the higher of the two. Swing risk 0.5%, scalp 0.35%, and the risk of everything open or pending
-may never exceed half the room above that floor. Orders that would break it are refused.
+The binding floor is the higher of the two. FULL-PORT MODE (user, 2026-11-17): every trade uses the whole account
+(notional = equity x LEVERAGE, 1x), one position at a time; the stop and target manage it and the half-room risk cap is
+off, so a stop-out can fail the account. Then `new-account` archives it and starts a fresh $10,000 account.
+With FULL_PORT = False the old rails apply: risk of everything open or pending <= half the room above the floor.
 
 Two books share one account:
   swing  tested setups (S10/S20/B20 on BTC), 0.5% risk, 4h triggers, managed on 1h candles.
@@ -48,6 +50,8 @@ FEE = 0.0005
 SYMBOLS = ("BTCUSDT", "ETHUSDT", "HYPEUSDT")
 SCALP_RISK, SCALP_DAY_STOP, MAX_OPEN = 0.2, 1.0, 3  # 0.2% until a scalp pattern passes the desk bar (lessons rule 22)
 NOTIONAL = 10000.0  # default position size in USD (user, 2026-11-01): $10k notional = 1x the account; risk = notional x stop distance
+FULL_PORT = True  # user, 2026-11-17: full port every trade (notional = equity x LEVERAGE), managed by SL/TP; no half-room cap
+LEVERAGE = 1.0  # 1x; more is the desk's call (user) - kept at 1x
 TARGET_PCT, MAX_DD_PCT, DAILY_PCT = 9.0, 3.0, 3.0  # Propr Turbo 1-Step
 
 
@@ -151,7 +155,16 @@ def open_position(s, o, entry, at_ms, events):
         events.append(f"SKIPPED {o['id']}: stop {px(stop)} is on the wrong side of (or too close to) entry {px(entry)}")
         return
     target = o.get("target") or entry + side * o["target_r"] * risk_px
-    if o.get("notional"):  # fixed position size: the stop distance sets the dollar risk
+    if o.get("full_port"):  # the whole account at fill: notional = equity x leverage, one position at a time
+        if s["positions"]:
+            events.append(f"SKIPPED {o['id']}: full-port mode allows one position at a time ({s['positions'][0]['id']} is open)")
+            return
+        if s["equity"] - floor(s) <= 0:
+            events.append(f"SKIPPED {o['id']}: the account has failed (equity at or below the floor); run new-account")
+            return
+        qty = s["equity"] * LEVERAGE / entry
+        risk_pct = round(qty * risk_px / s["equity"] * 100, 3)
+    elif o.get("notional"):  # fixed position size: the stop distance sets the dollar risk
         qty = o["notional"] / entry
         risk_pct = round(qty * risk_px / s["equity"] * 100, 3)
         room = s["equity"] - floor(s)
@@ -278,7 +291,9 @@ def report(s, events):
     room = s["equity"] - floor(s)
     static, daily = s["start_equity"] * (1 - MAX_DD_PCT / 100), day_start_balance(s) * (1 - DAILY_PCT / 100)
     print(f"floor ${floor(s):,.2f} ({'daily: 97% of 00:00 balance' if daily >= static else 'static: start - 3%'}; static ${static:,.0f}, daily ${daily:,.2f}): "
-          f"room ${room:,.2f} | open+pending risk ${open_risk(s):,.2f} (cap ${room / 2:,.2f})"
+          f"room ${room:,.2f} | open+pending risk ${open_risk(s):,.2f} "
+          + (f"(FULL PORT {LEVERAGE:g}x: ${s['equity'] * LEVERAGE:,.0f} per trade, one at a time, no risk cap)" if FULL_PORT
+             else f"(cap ${room / 2:,.2f})")
           + ("   *** ACCOUNT FAILED ***" if room <= 0 else ""))
     print("open positions:" if s["positions"] else "open positions: none")
     for p in s["positions"]:
@@ -358,6 +373,8 @@ def main():
     sh.add_argument("--target", type=float, required=True)
     sh.add_argument("--why", required=True, help="why it was skipped")
     sh.add_argument("--max-hold-h", type=float, default=24, help="time exit, hours: 24 for scalps, the plan's hold (168) for swings")
+    na = sub.add_parser("new-account", help="archive a failed (or finished) account and start a fresh $10,000 one")
+    na.add_argument("--why", required=True)
     j = sub.add_parser("journal", help="append an entry (heading with UTC time + price is added)")
     j.add_argument("text", help="entry body; literal \\n becomes a newline")
     args = ap.parse_args()
@@ -370,7 +387,8 @@ def main():
         if not (args.target or args.target_r):
             sys.exit("give --target or --target-r")
         room = s["equity"] - floor(s)
-        notional = None if args.risk_pct else (args.notional or NOTIONAL)
+        full_port = FULL_PORT and not args.risk_pct and not args.notional
+        notional = None if args.risk_pct else (args.notional or (s["equity"] * LEVERAGE if full_port else NOTIONAL))
         stop_num = float(args.stop) if args.stop.replace(".", "", 1).isdigit() else None
         ref = args.level or (price_now(args.symbol) if args.trigger == "market" else None)
         if notional and stop_num and ref:
@@ -378,8 +396,13 @@ def main():
         else:
             new_risk = s["equity"] * (args.risk_pct or (SCALP_RISK if args.book == "scalp" else s["risk_pct"])) / 100 * 1.2
         if room <= 0:
-            sys.exit("refused: equity is at or below the max-drawdown / daily-loss floor")
-        if open_risk(s) + new_risk > room / 2:
+            sys.exit("refused: equity is at or below the max-drawdown / daily-loss floor (account failed: run new-account)")
+        if full_port and (s["positions"] or s["orders"]):
+            sys.exit("refused: full-port mode trades one position at a time; cancel the pending order or wait for the open one to close")
+        if full_port and new_risk / 1.2 + FEE * 2 * notional > room:
+            print(f"WARNING: full port ${notional:,.0f} with this stop risks ~${new_risk / 1.2 + FEE * 2 * notional:,.0f} incl. fees, "
+                  f"more than the ${room:,.0f} room: a stop-out FAILS this account (user accepts this in full-port mode)")
+        if not full_port and open_risk(s) + new_risk > room / 2:
             sys.exit(f"refused: open+pending risk ${open_risk(s):,.0f} + this ${new_risk:,.0f} would exceed half the room "
                      f"above the drawdown floor (${room / 2:,.0f}); cancel something or size down with --risk-pct")
         if args.book == "scalp":
@@ -396,7 +419,7 @@ def main():
              "tf": args.tf, "level": args.level, "stop": stop, "target": args.target, "target_r": args.target_r,
              "oco": args.oco, "note": args.note, "conf": args.conf,
              "risk_pct": args.risk_pct or (SCALP_RISK if args.book == "scalp" else None),
-             "notional": notional,
+             "notional": notional, "full_port": full_port,
              "max_hold_h": args.max_hold_h or (24 if args.book == "scalp" else 168),
              "created_ms": parse_time(args.created) if args.created else time.time() * 1000,
              "arm": {"trigger": args.arm_trigger, "level": args.arm_level} if args.arm_trigger else None,
@@ -444,6 +467,17 @@ def main():
                                            "at_ms": parse_time(args.at), "stop": args.stop, "target": args.target,
                                            "why": args.why, "result": None, "R": None, "max_hold_h": args.max_hold_h})
         events.append(f"SHADOW logged {args.id}: {args.side} {args.symbol} @ {px(args.entry)} ({args.why})")
+    elif args.cmd == "new-account":
+        if s["positions"]:
+            sys.exit("refused: close the open position first")
+        arch = STATE.parent / "accounts"
+        arch.mkdir(exist_ok=True)
+        n = len(list(arch.glob("account_*.json"))) + 1
+        s["ended_ms"], s["ended_why"] = time.time() * 1000, args.why
+        (arch / f"account_{n}.json").write_text(json.dumps(s, indent=2))
+        events.append(f"NEW ACCOUNT: account {n} archived at ${s['equity']:,.2f} ({args.why}); fresh $10,000 account started")
+        s = {"start_equity": 10000.0, "equity": 10000.0, "risk_pct": 0.5, "orders": [], "positions": [], "closed": [],
+             "shadow": [], "account_no": n + 1, "started_ms": time.time() * 1000}
     elif args.cmd == "journal":
         body = args.text.replace("\\n", "\n").strip()
         head = f"## {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')} — price {price_now():,.0f}"

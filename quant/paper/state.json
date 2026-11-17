@@ -3,7 +3,23 @@
   "equity": 9892.318229447752,
   "risk_pct": 0.5,
   "orders": [],
-  "positions": [],
+  "positions": [
+    {
+      "id": "X46",
+      "symbol": "ETHUSDT",
+      "book": "scalp",
+      "side": "short",
+      "entry": 1792.46,
+      "stop": 1830.2,
+      "target": 1735.85,
+      "qty": 5.518850199975314,
+      "risk_pct": 2.105,
+      "opened_ms": 1794911206922.4326,
+      "note": "FULL PORT (user 2026-11-17). ETH -7/9 short 89% +10 catalyst (Binance hackers moved $63M ETH; ETH broke the 1,800 put wall w/ volume, taker -34k, while BTC flat) -15 no 4h/1d location = 84%. Stop over the 5m range high 1,821.8 + ATR(15m) 8.4 = 1,830.2; target 1.5R. Invalidated by a reclaim of 1,822. Stop-out (~2%) fails this account - user accepts.",
+      "max_hold_h": 24,
+      "conf": 84.0
+    }
+  ],
   "closed": [
     {
       "id": "L1",
@@ -959,8 +975,8 @@
       "stop": 1872.5,
       "target": 1766.25,
       "why": "Cap-blocked with-trend short: ETH -7/9 short 89% -15 no location (mid 1,709-1,858, squeezing) = 74% >= 60 (flat book, no correlation). Rule-21 stop 1,858 + 1 ATR(15m) 14.5 = 1,872.5 (2.3%) = ~$230 at $10k > $96 cap.",
-      "result": null,
-      "R": null,
+      "result": "time",
+      "R": 0.7105882352941187,
       "max_hold_h": 48.0
     },
     {
