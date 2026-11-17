@@ -1021,6 +1021,19 @@
       "result": null,
       "R": null,
       "max_hold_h": 24.0
+    },
+    {
+      "id": "SH41",
+      "symbol": "BTCUSDT",
+      "side": "short",
+      "entry": 63709.0,
+      "at_ms": 1794939060000,
+      "stop": 64473.0,
+      "target": 62563.0,
+      "why": "Blocked by the scalp day stop (X46). BTC -7/9 short 89% -15 no 4h/1d location = 74%: under the 64,000 put wall (overhead now) after the 63,300 low; stop over the 5m range high 64,118 + ATR(15m) 355 = 64,473; 1.5R 62,563 (above the 61,956 20-day low).",
+      "result": null,
+      "R": null,
+      "max_hold_h": 24.0
     }
   ]
 }
