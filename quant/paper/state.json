@@ -1034,6 +1034,19 @@
       "result": null,
       "R": null,
       "max_hold_h": 24.0
+    },
+    {
+      "id": "SH42",
+      "symbol": "HYPEUSDT",
+      "side": "short",
+      "entry": 67.8,
+      "at_ms": 1794946260000,
+      "stop": 70.25,
+      "target": 64.13,
+      "why": "Blocked by the scalp day stop (X46). HYPE -5/9 short 78% -15 no 4h/1d location = 63%: under its 1d EMA200 69.43 and 15m/1h EMAs; stop over the 15m range high 69.67 + ATR(15m) 0.58 = 70.25; 1.5R 64.13 (above the 64.83 1h swing low? no - through it; 60.0 day low below).",
+      "result": null,
+      "R": null,
+      "max_hold_h": 24.0
     }
   ]
 }
