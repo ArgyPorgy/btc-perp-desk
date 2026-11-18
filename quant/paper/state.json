@@ -1034,8 +1034,8 @@
       "stop": 1842.2,
       "target": 1683.4,
       "why": "Planned X47 (ETH short on a 15m close < 1,795, full port, 85%) refused at 15:14 by the desk's scalp day stop after X46. The 15:45-16:00 candle closed 1,778.69; low 1,750.05 in the next. Stop 1,842.2, target 1.5R 1,683.4.",
-      "result": null,
-      "R": null,
+      "result": "time",
+      "R": 0.21020311761927474,
       "max_hold_h": 24.0
     },
     {
