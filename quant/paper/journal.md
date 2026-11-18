@@ -1780,3 +1780,6 @@
 
 ## 2026-11-18 02:12 UTC — price 64,419
 02:10 UTC run. Flat. Equity $9,706.51, room $6.51; full port available. BTC 64,460 drifting down inside 64,104-64,838 (64,000 put wall below); ETH 1,806 back to -7/9 just over the 1,800 wall (hard veto on longs); HYPE 68.9. Scores (rule 23): BTC -5/9 long 22% / short 78%: short 78 -15 no location -15 target through the 64,000 put wall (0.7% below) = 48%; long 7% -> no trade. ETH -7/9 long 11% / short 89%: short 89 -15 no location -15 target through the 1,800 put wall (0.3% below) = 59% -> no trade; long vetoed. Plan noted: an ETH 15m close below ~1,795 (wall and range low broken) would lift the short to ~74% - entry AT the break per the X46 lesson, stop beyond the outermost nearby level + 1 ATR(15m). HYPE -1/9 long 44% / short 56%: short 56 -15 no location = 41%; long 29% -> no trade. Blackout 17:00-19:00 UTC (FOMC minutes). News: APEC preview, Gaza ceasefire warning; BTC -0.2..-0.5%, no credit. SH40 at -0.43R.
+
+## 2026-11-18 02:12 UTC — price 64,430
+02:12 UTC ORDER UPDATE - NEW: X47 ETH SHORT, trigger 15m close below 1,795, FULL PORT (equity x 1x at the fill), stop 1,830 (outermost nearby level 1,821.3 + ATR(15m) 8.6), target 1.5R (~1,742 from 1,795), --conf 74, expires 15:00 UTC. Entry at the break, not after it (X46 lesson). A stop-out fails this account.
