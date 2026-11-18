@@ -1,25 +1,9 @@
 {
   "start_equity": 10000.0,
-  "equity": 9706.507428563405,
+  "equity": 10002.546401055912,
   "risk_pct": 0.5,
   "orders": [],
-  "positions": [
-    {
-      "id": "X47",
-      "symbol": "ETHUSDT",
-      "book": "scalp",
-      "side": "short",
-      "entry": 1792.38,
-      "stop": 1830.0,
-      "target": 1735.9500000000003,
-      "qty": 5.4154294449633475,
-      "risk_pct": 2.099,
-      "opened_ms": 1795005900000,
-      "note": "FULL PORT. ETH -7/9 short 89% -15 no 4h/1d location = 74% once a 15m close below 1,795 breaks the 1,800 put wall and the 1,796 range low (entry AT the break - X46 lesson). Stop over the outermost nearby level 1,821.3 + ATR(15m) 8.6 = 1,830; target 1.5R. Re-check the score at the fill; expires 15:00 UTC (FOMC-minutes blackout from 17:00). A stop-out fails this account (user accepts).",
-      "max_hold_h": 24,
-      "conf": 74.0
-    }
-  ],
+  "positions": [],
   "closed": [
     {
       "id": "L1",
@@ -523,6 +507,26 @@
       "reason": "manual",
       "pnl": -185.81080088434632,
       "R": -0.892114202437729
+    },
+    {
+      "id": "X47",
+      "symbol": "ETHUSDT",
+      "book": "scalp",
+      "side": "short",
+      "entry": 1792.38,
+      "stop": 1830.0,
+      "target": 1735.9500000000003,
+      "qty": 5.4154294449633475,
+      "risk_pct": 2.099,
+      "opened_ms": 1795005900000,
+      "note": "FULL PORT. ETH -7/9 short 89% -15 no 4h/1d location = 74% once a 15m close below 1,795 breaks the 1,800 put wall and the 1,796 range low (entry AT the break - X46 lesson). Stop over the outermost nearby level 1,821.3 + ATR(15m) 8.6 = 1,830; target 1.5R. Re-check the score at the fill; expires 15:00 UTC (FOMC-minutes blackout from 17:00). A stop-out fails this account (user accepts).",
+      "max_hold_h": 24,
+      "conf": 74.0,
+      "exit": 1735.9500000000003,
+      "closed_ms": 1795020000000,
+      "reason": "target",
+      "pnl": 296.038972492507,
+      "R": 1.4531056618819773
     }
   ],
   "shadow": [
