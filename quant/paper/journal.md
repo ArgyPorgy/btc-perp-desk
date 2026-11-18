@@ -1783,3 +1783,6 @@
 
 ## 2026-11-18 02:12 UTC — price 64,430
 02:12 UTC ORDER UPDATE - NEW: X47 ETH SHORT, trigger 15m close below 1,795, FULL PORT (equity x 1x at the fill), stop 1,830 (outermost nearby level 1,821.3 + ATR(15m) 8.6), target 1.5R (~1,742 from 1,795), --conf 74, expires 15:00 UTC. Entry at the break, not after it (X46 lesson). A stop-out fails this account.
+
+## 2026-11-18 03:12 UTC — price 64,493
+03:11 UTC run. Flat; X47 (ETH short on a 15m close < 1,795, full port, stop 1,830, 1.5R) pending, expires 15:00 UTC - re-checked (rule 12): ETH still -7/9 at 1,808.5, range low 1,796.05 intact, reason unchanged -> keep. Equity $9,706.51, room $6.51. Scores (rule 23): BTC -7/9 long 11% / short 89%: short 89 -15 no location -15 target through the 64,000 put wall -15 correlated with pending X47 = 44%; long vetoed. ETH -7/9: covered by X47 (59% now with the wall in the target's path; 74% at the trigger). HYPE +1/9 long 56% / short 44%: long 56 -15 no location (68.8, under the 1d EMA200 69.45) = 41%; short 44 -15 = 29% -> no trade. Blackout 17:00-19:00 UTC (FOMC minutes). News: none fresh; BTC flat. SH40 at -0.47R.
