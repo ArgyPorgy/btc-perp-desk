@@ -1090,6 +1090,19 @@
       "result": "stop",
       "R": -1.0,
       "max_hold_h": 24.0
+    },
+    {
+      "id": "SH43",
+      "symbol": "BTCUSDT",
+      "side": "short",
+      "entry": 62708.6,
+      "at_ms": 1795111800000,
+      "stop": 63750.0,
+      "target": 61145.0,
+      "why": "Rule 23 59%: 89 short -15 correlated with pending SW41 (B20, the one full-port slot) -15 target through the 20-day low 61,956/61k gamma. Tests whether cancelling a pending B20 for a strong-score scalp would pay.",
+      "result": null,
+      "R": null,
+      "max_hold_h": 24.0
     }
   ]
 }
