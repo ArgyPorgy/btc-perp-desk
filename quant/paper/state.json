@@ -4,26 +4,26 @@
   "risk_pct": 0.5,
   "orders": [
     {
-      "id": "SW37",
+      "id": "SW38",
       "symbol": "BTCUSDT",
       "book": "swing",
       "side": "short",
       "trigger": "close_below",
       "tf": "4h",
       "level": 61956.3,
-      "stop": "high_since:2026-11-19T00:00:00Z",
+      "stop": "high_since:2026-11-19T04:00:00Z",
       "target": null,
       "target_r": 1.5,
       "oco": null,
-      "note": "B20 re-placed for the 00:00-04:00 candle (SW36 expired unfired; 00:00 close 63,035.1, low 62,009.3). Bear regime, 4h close below the prior 20-day low 61,956.3. FULL PORT. BTC -7/9 short 89 +15 tested = 100% (capped). Stop = high since the 00:00 4h open x1.001; target 1.5R.",
+      "note": "B20 re-placed for the 04:00-08:00 candle (SW37 expired unfired; 04:00 close 63,170.0, low 62,354.2). Bear regime, 4h close below the prior 20-day low 61,956.3. FULL PORT. BTC -7/9 short 89 +15 tested = 100% (capped). Stop = high since the 04:00 4h open x1.001; target 1.5R.",
       "conf": 100.0,
       "risk_pct": null,
       "notional": 10002.546401055912,
       "full_port": true,
       "max_hold_h": 168,
-      "created_ms": 1795047170553.891,
+      "created_ms": 1795061546494.1233,
       "arm": null,
-      "expires_ms": 1795061100000
+      "expires_ms": 1795075500000
     }
   ],
   "positions": [],
@@ -1009,8 +1009,8 @@
       "stop": 61869.2,
       "target": 70623.6,
       "why": "S20/S10 fired on the 00-04 4h candle (wick 61,931.1 < 20-day low 63,272.2 < close 64,787.3 - the capitulation V). Forbidden: BTC confluence -7/9 (rule 23) and opposite SW34; S20 longs vs BTC <= -5 so far -7R over 10. Notable as the first sweep with a +4.6% reclaim close.",
-      "result": null,
-      "R": null,
+      "result": "time",
+      "R": -0.44576950755628675,
       "max_hold_h": 96.0
     },
     {
