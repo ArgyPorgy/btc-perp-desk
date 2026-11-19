@@ -1855,3 +1855,6 @@
 
 ## 2026-11-19 02:12 UTC — price 62,809
 02:11 UTC run. Flat; SW37 (B20: BTC 4h close < 61,956.3 at 04:00, full port, stop high since 00:00, 1.5R, conf 100) pending - BTC 62,730 (1.2% above), -7/9, 1h taker -7.8k -> keep. Equity $10,002.55, room $300.08. Scores (rule 23): BTC -7/9 long 11% / short 89%: B20 pending; long vetoed. ETH -9/9 long 0% / short 100%: short 100 -15 no location -15 late -15 correlated with SW37 = 55%; long vetoed. HYPE -5/9 long 22% / short 78%: short 78 -15 no location -15 correlated = 48%; long 7% -> no trade. News: Mideast push to avert all-out war as Israel urges Iran strikes, Trump-Xi-Putin summit; BTC -0.4..-0.8% over the hour, no credit.
+
+## 2026-11-19 03:12 UTC — price 62,436
+03:11 UTC run. Flat; SW37 (B20: BTC 4h close < 61,956.3 at 04:00, full port, stop high since 00:00, 1.5R, conf 100) pending - BTC 62,445 (0.8% above the trigger), -7/9, 1h taker -8.9k -> keep. Equity $10,002.55, room $300.08. Scores (rule 23): BTC -7/9 long 11% / short 89%: B20 pending; long vetoed. ETH -9/9 long 0% / short 100%: short 100 -15 no location -15 late -15 correlated with SW37 = 55%; long vetoed. HYPE -5/9 long 22% / short 78%: short 78 -15 no location -15 correlated = 48%; long 7% -> no trade. News: Trump-Putin-Xi Shenzhen previews, 'the Fed worries about an AI bust'; BTC -0.1..-0.2%, no credit. 04:10: B20 verdict at the 04:00 close.
