@@ -4,26 +4,26 @@
   "risk_pct": 0.5,
   "orders": [
     {
-      "id": "SW38",
+      "id": "SW39",
       "symbol": "BTCUSDT",
       "book": "swing",
       "side": "short",
       "trigger": "close_below",
       "tf": "4h",
       "level": 61956.3,
-      "stop": "high_since:2026-11-19T04:00:00Z",
+      "stop": "high_since:2026-11-19T08:00:00Z",
       "target": null,
       "target_r": 1.5,
       "oco": null,
-      "note": "B20 re-placed for the 04:00-08:00 candle (SW37 expired unfired; 04:00 close 63,170.0, low 62,354.2). Bear regime, 4h close below the prior 20-day low 61,956.3. FULL PORT. BTC -7/9 short 89 +15 tested = 100% (capped). Stop = high since the 04:00 4h open x1.001; target 1.5R.",
+      "note": "B20 re-placed for the 08:00-12:00 candle (SW38 expired unfired; 08:00 close 63,714.3). Bear regime, 4h close below the prior 20-day low 61,956.3. FULL PORT. BTC -7/9 short 89 +15 tested = 100% (capped). Stop = high since the 08:00 4h open x1.001; target 1.5R.",
       "conf": 100.0,
       "risk_pct": null,
       "notional": 10002.546401055912,
       "full_port": true,
       "max_hold_h": 168,
-      "created_ms": 1795061546494.1233,
+      "created_ms": 1795076029519.5405,
       "arm": null,
-      "expires_ms": 1795075500000
+      "expires_ms": 1795089900000
     }
   ],
   "positions": [],
