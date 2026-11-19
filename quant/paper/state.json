@@ -1103,6 +1103,19 @@
       "result": null,
       "R": null,
       "max_hold_h": 24.0
+    },
+    {
+      "id": "SH44",
+      "symbol": "ETHUSDT",
+      "side": "short",
+      "entry": 1746.4,
+      "at_ms": 1795126260000,
+      "stop": 1778.2,
+      "target": 1698.7,
+      "why": "ETH -9/9 short 100 -15 correlated with pending SW42 (B20, holds the one full-port slot) -15 target into the 1,731/1,710 lows = 70: passes the bar but the slot stays with the tested B20 (100). Stop over the 5m range high 1,766.78 + ATR(15m) 11.4; 1.5R 1,698.7.",
+      "result": null,
+      "R": null,
+      "max_hold_h": 24.0
     }
   ]
 }
