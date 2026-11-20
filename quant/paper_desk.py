@@ -303,6 +303,14 @@ def process(s):
         for b in klines("5m", x["at_ms"], sym(x)):
             if b["t"] < x["at_ms"]:
                 continue
+            if x.get("limit") and not x.get("filled"):  # a resting limit only counts once price trades at its entry
+                if b["l"] <= x["entry"] <= b["h"]:
+                    x["filled"] = b["T"] + 1
+                elif b["T"] - x["at_ms"] >= x.get("max_hold_h", 24) * 3600e3:
+                    x["result"], x["R"] = "no fill", 0.0
+                    events.append(f"SHADOW {x['id']} {sym(x)} {x['side']} resolved: limit {px(x['entry'])} never filled (0R)")
+                    break
+                continue
             if (b["l"] <= x["stop"]) if side == 1 else (b["h"] >= x["stop"]):
                 x["result"], x["R"] = "stop", -1.0
             elif (b["h"] >= x["target"]) if side == 1 else (b["l"] <= x["target"]):
@@ -409,6 +417,7 @@ def main():
     sh.add_argument("--target", type=float, required=True)
     sh.add_argument("--why", required=True, help="why it was skipped")
     sh.add_argument("--max-hold-h", type=float, default=24, help="time exit, hours: 24 for scalps, the plan's hold (168) for swings")
+    sh.add_argument("--limit", action="store_true", help="the plan was a resting limit: it only counts once price trades at --entry")
     na = sub.add_parser("new-account", help="archive a failed (or finished) account and start a fresh $10,000 one")
     na.add_argument("--why", required=True)
     j = sub.add_parser("journal", help="append an entry (heading with UTC time + price is added)")
@@ -502,7 +511,8 @@ def main():
     elif args.cmd == "shadow":
         s.setdefault("shadow", []).append({"id": args.id, "symbol": args.symbol, "side": args.side, "entry": args.entry,
                                            "at_ms": parse_time(args.at), "stop": args.stop, "target": args.target,
-                                           "why": args.why, "result": None, "R": None, "max_hold_h": args.max_hold_h})
+                                           "why": args.why, "result": None, "R": None, "max_hold_h": args.max_hold_h,
+                                           "limit": args.limit})
         events.append(f"SHADOW logged {args.id}: {args.side} {args.symbol} @ {px(args.entry)} ({args.why})")
     elif args.cmd == "new-account":
         if s["positions"]:

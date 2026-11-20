@@ -1184,7 +1184,8 @@
       "why": "SW44 passive retest LIMIT cancelled: it broke rule 27 (no passive pullback limits; tag the level, then a 15m close back below it). Shadow only resolves if 61,000 trades.",
       "result": null,
       "R": null,
-      "max_hold_h": 72.0
+      "max_hold_h": 72.0,
+      "limit": true
     }
   ]
 }
