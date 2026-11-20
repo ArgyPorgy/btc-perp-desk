@@ -1936,3 +1936,6 @@
 
 ## 2026-11-20 05:12 UTC — price 61,558
 05:11 UTC Nov 20 run. SW43 BTC short 62,000 now +0.51R at 61,503 (stop 62,983, target 60,525.5); call wall dropped to 62,000 (now overhead resistance at the entry), put wall 61,000; BTC ranging 61,350-62,254. Holding (rule 28: no soft exits). Rule 23 (one full-port slot, held by SW43): BTC long 0; ETH short 100 -15 correlated -15 target into the 1,710 20-day low/1,700 put wall = 70 (ETH 1,724, new low 1,717; no slot); ETH long 0; HYPE short 89 -15 correlated -15 into 64.5/60.0 = 59 (HYPE broke its 65.06 1h low); HYPE long 11. Shadows SH43/SH44/SH45 open. Equity $9,903.53, room $201.06.
+
+## 2026-11-20 06:13 UTC — price 61,913
+06:12 UTC Nov 20 run. SW43 BTC short 62,000 at +0.14R (BTC 61,864, bounced off 61,350; 5m/15m delta flat). Stop 62,983, target 60,525.5; holding (rule 28). Gamma: call and put walls both at 62,000 now - the entry level is the magnet/pin. Rule 23 (one full-port slot, held by SW43): BTC long 0; ETH short 100 -15 correlated -15 target into the 1,717/1,710 lows = 70 (no slot); ETH long 0; HYPE short 89 -15 correlated -15 into 64.5/60.0 = 59; HYPE long 11. News: an openPR 'Fed Binance hack warning' piece is a promotional article, not a confirmed exchange event; ignored. Shadows SH43/44/45 open. Equity $9,903.53, room $201.06.
