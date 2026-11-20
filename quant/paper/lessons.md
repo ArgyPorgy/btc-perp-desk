@@ -141,6 +141,7 @@ the rule goes into **Current rules** too. Skipped or cancelled plan trades are a
 | ID | Trade | Why skipped | Result |
 |---|---|---|---|
 | S1 | BTC long 80,409 (15m close > 80,350 at 14:15), stop 79,990, target 81,037.5 | Cancelled on the backtest, not re-placed, then skipped as "chasing" | **+1.50R** (target hit in the 14:30 candle, high 81,525) |
+| SH43 (2026-11-19) | BTC short 62,708.6 at 59% (89 short -15 correlated with the pending B20 SW41 -15 target through the 20-day low), stop 63,750, target 61,145 | Full port's one slot was held for the pending B20 | **+1.50R** (target 2026-11-20 ~15:00) while the B20 that kept the slot (SW42) lost -1.11R. One data point that a pending (unfilled) order maybe should not cost a strong-score trade the -15 'correlated' deduction; watch for more before changing rule 23. |
 
 Running total: **+1.50R** missed by overriding the plan.
 

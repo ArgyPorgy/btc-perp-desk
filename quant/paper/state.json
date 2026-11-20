@@ -1113,8 +1113,8 @@
       "stop": 63750.0,
       "target": 61145.0,
       "why": "Rule 23 59%: 89 short -15 correlated with pending SW41 (B20, the one full-port slot) -15 target through the 20-day low 61,956/61k gamma. Tests whether cancelling a pending B20 for a strong-score scalp would pay.",
-      "result": null,
-      "R": null,
+      "result": "target",
+      "R": 1.5014403687343925,
       "max_hold_h": 24.0
     },
     {
