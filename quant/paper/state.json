@@ -1182,6 +1182,19 @@
       "result": null,
       "R": null,
       "max_hold_h": 168.0
+    },
+    {
+      "id": "SH47",
+      "symbol": "BTCUSDT",
+      "side": "long",
+      "entry": 58522.5,
+      "at_ms": 1795204800000,
+      "stop": 57217.0,
+      "target": 61256.0,
+      "why": "User-asked sweep-and-reclaim long at the 16-20 4h close: swept the 57,759 yearly low (57,695.3), funding flipped -0.0008%, OI -3.4% (35,098->33,888), stop 57,695-1 ATR(15m) 478 = 57,217 fits. NOT taken: the 4h closed 58,522.5 - above 58,030 but under the 58,726 broken low and 59,000, still a red candle (59,444->58,522), and BTC confluence -9/9 (rule 23: never trade against 7/9+). TP1 61,256 = broken 20-day low (2.1R).",
+      "result": null,
+      "R": null,
+      "max_hold_h": 72.0
     }
   ]
 }
