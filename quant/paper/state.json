@@ -1129,6 +1129,19 @@
       "result": null,
       "R": null,
       "max_hold_h": 24.0
+    },
+    {
+      "id": "SH45",
+      "symbol": "BTCUSDT",
+      "side": "long",
+      "entry": 62123.7,
+      "at_ms": 1795147200000,
+      "stop": 61195.3,
+      "target": 63980.4,
+      "why": "Forbidden S20/S10 long (4h wick 61,256.6 under the 61,388 low, close 62,123.7) against BTC -9/9 (never trade against 7/9+) and opposite to open SW43. Tracks the S20-longs-vs-BTC<=-5 tally (-7.45R over 11).",
+      "result": null,
+      "R": null,
+      "max_hold_h": 168.0
     }
   ]
 }
