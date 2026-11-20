@@ -2,30 +2,7 @@
   "start_equity": 10000.0,
   "equity": 10129.269108385957,
   "risk_pct": 0.5,
-  "orders": [
-    {
-      "id": "SW44",
-      "symbol": "BTCUSDT",
-      "book": "swing",
-      "side": "short",
-      "trigger": "limit",
-      "tf": "4h",
-      "level": 61000.0,
-      "stop": 61926.0,
-      "target": null,
-      "target_r": 1.5,
-      "oco": null,
-      "note": "Retest short of the broken 61,000 strike / 61,175-61,257 lows after the 15:00 flush to 60,031 (SW43 template). Rule 23: BTC -9/9 short 100 -15 target 59,611 through the 60,000 strike = 85 (at market 60,080 it is 70 with -15 chasing a 1,900-pt hour). Stop 61,926 = 4h low 61,520 + ATR(15m) 406 (rule 26); risk 1.52% < room 4.2%.",
-      "conf": 85.0,
-      "risk_pct": null,
-      "notional": 10129.269108385957,
-      "full_port": true,
-      "max_hold_h": 72,
-      "created_ms": 1795188368864.112,
-      "arm": null,
-      "expires_ms": 1795217100000
-    }
-  ],
+  "orders": [],
   "positions": [],
   "closed": [
     {
@@ -1192,6 +1169,19 @@
       "stop": 57217.0,
       "target": 61256.0,
       "why": "User-asked sweep-and-reclaim long at the 16-20 4h close: swept the 57,759 yearly low (57,695.3), funding flipped -0.0008%, OI -3.4% (35,098->33,888), stop 57,695-1 ATR(15m) 478 = 57,217 fits. NOT taken: the 4h closed 58,522.5 - above 58,030 but under the 58,726 broken low and 59,000, still a red candle (59,444->58,522), and BTC confluence -9/9 (rule 23: never trade against 7/9+). TP1 61,256 = broken 20-day low (2.1R).",
+      "result": null,
+      "R": null,
+      "max_hold_h": 72.0
+    },
+    {
+      "id": "SH48",
+      "symbol": "BTCUSDT",
+      "side": "short",
+      "entry": 61000.0,
+      "at_ms": 1795212720000,
+      "stop": 61926.0,
+      "target": 59611.0,
+      "why": "SW44 passive retest LIMIT cancelled: it broke rule 27 (no passive pullback limits; tag the level, then a 15m close back below it). Shadow only resolves if 61,000 trades.",
       "result": null,
       "R": null,
       "max_hold_h": 72.0
