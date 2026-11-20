@@ -1,25 +1,32 @@
 {
   "start_equity": 10000.0,
-  "equity": 9903.526644508744,
+  "equity": 10129.269108385957,
   "risk_pct": 0.5,
-  "orders": [],
-  "positions": [
+  "orders": [
     {
-      "id": "SW43",
+      "id": "SW44",
       "symbol": "BTCUSDT",
       "book": "swing",
       "side": "short",
-      "entry": 62000.0,
-      "stop": 62983.0,
-      "target": 60525.5,
-      "qty": 0.15973430071788297,
-      "risk_pct": 1.585,
-      "opened_ms": 1795143300000,
-      "note": "Retest short of the broken 20-day low 61,956 / 62,000 gamma strike after the B20 stop-hunt (SW42 stopped at 62,500 on a 62,621.5 squeeze, then BTC fell to 61,257). Rule 23: BTC -9/9 short 100 -15 target 60,525 through the 61,000 put wall = 85 (no setup bonus: the retest variant backtests +0.20R t=1.3, not tested). Stop 62,983 = squeeze high 62,621.5 + ATR(15m) 361 (rule 26); risk 1.59% < room 2.03%, so a stop-out leaves the account alive. Limit, not a chase (X46/X47).",
+      "trigger": "limit",
+      "tf": "4h",
+      "level": 61000.0,
+      "stop": 61926.0,
+      "target": null,
+      "target_r": 1.5,
+      "oco": null,
+      "note": "Retest short of the broken 61,000 strike / 61,175-61,257 lows after the 15:00 flush to 60,031 (SW43 template). Rule 23: BTC -9/9 short 100 -15 target 59,611 through the 60,000 strike = 85 (at market 60,080 it is 70 with -15 chasing a 1,900-pt hour). Stop 61,926 = 4h low 61,520 + ATR(15m) 406 (rule 26); risk 1.52% < room 4.2%.",
+      "conf": 85.0,
+      "risk_pct": null,
+      "notional": 10129.269108385957,
+      "full_port": true,
       "max_hold_h": 72,
-      "conf": 85.0
+      "created_ms": 1795188368864.112,
+      "arm": null,
+      "expires_ms": 1795217100000
     }
   ],
+  "positions": [],
   "closed": [
     {
       "id": "L1",
@@ -563,6 +570,26 @@
       "reason": "stop",
       "pnl": -99.01975654716865,
       "R": -1.1129226164561894
+    },
+    {
+      "id": "SW43",
+      "symbol": "BTCUSDT",
+      "book": "swing",
+      "side": "short",
+      "entry": 62000.0,
+      "stop": 62983.0,
+      "target": 60525.5,
+      "qty": 0.15973430071788297,
+      "risk_pct": 1.585,
+      "opened_ms": 1795143300000,
+      "note": "Retest short of the broken 20-day low 61,956 / 62,000 gamma strike after the B20 stop-hunt (SW42 stopped at 62,500 on a 62,621.5 squeeze, then BTC fell to 61,257). Rule 23: BTC -9/9 short 100 -15 target 60,525 through the 61,000 put wall = 85 (no setup bonus: the retest variant backtests +0.20R t=1.3, not tested). Stop 62,983 = squeeze high 62,621.5 + ATR(15m) 361 (rule 26); risk 1.59% < room 2.03%, so a stop-out leaves the account alive. Limit, not a chase (X46/X47).",
+      "max_hold_h": 72,
+      "conf": 85.0,
+      "exit": 60525.5,
+      "closed_ms": 1795188000000,
+      "reason": "target (resting TP; first traded 15:15-15:20 5m, low 60,185; booked at the target, not at market)",
+      "pnl": 225.74246387721394,
+      "R": 1.4376777721261444
     }
   ],
   "shadow": [
@@ -1126,8 +1153,8 @@
       "stop": 1778.2,
       "target": 1698.7,
       "why": "ETH -9/9 short 100 -15 correlated with pending SW42 (B20, holds the one full-port slot) -15 target into the 1,731/1,710 lows = 70: passes the bar but the slot stays with the tested B20 (100). Stop over the 5m range high 1,766.78 + ATR(15m) 11.4; 1.5R 1,698.7.",
-      "result": null,
-      "R": null,
+      "result": "target",
+      "R": 1.5000000000000036,
       "max_hold_h": 24.0
     },
     {

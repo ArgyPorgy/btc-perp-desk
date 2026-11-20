@@ -246,10 +246,11 @@ def process(s):
     for o in [o for o in s["orders"] if o.get("expires_ms") and now > o["expires_ms"]]:
         s["orders"].remove(o)
         events.append(f"EXPIRED {o['id']} (no trigger by {iso(o['expires_ms'])})")
-    # 2) open positions vs closed candles: 1h for swings, 5m for scalps
+    # 2) open positions vs closed 5m candles (swings too, since 2026-11-20: on 1h candles a stop or target
+    #    that traded early in the hour was only booked at the hour's close - SW42, SW43)
     for p in list(s["positions"]):
         side = 1 if p["side"] == "long" else -1
-        tf, ms = ("5m", 300e3) if p.get("book") == "scalp" else ("1h", 3600e3)
+        tf, ms = "5m", 300e3
         for b in klines(tf, p["opened_ms"] - ms, sym(p)):
             if b["t"] < p["opened_ms"]:
                 continue  # candles from the one opening at/after the fill (a limit's fill candle counts: stop first)
