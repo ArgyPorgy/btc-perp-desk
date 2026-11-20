@@ -1,25 +1,32 @@
 {
   "start_equity": 10000.0,
-  "equity": 10002.546401055912,
+  "equity": 9903.526644508744,
   "risk_pct": 0.5,
-  "orders": [],
-  "positions": [
+  "orders": [
     {
-      "id": "SW42",
+      "id": "SW43",
       "symbol": "BTCUSDT",
       "book": "swing",
       "side": "short",
-      "entry": 61949.1,
-      "stop": 62500.13769999999,
-      "target": 61122.54345000001,
-      "qty": 0.16146395026006694,
-      "risk_pct": 0.89,
-      "opened_ms": 1795132800000,
-      "note": "B20 re-placed for the 20:00-00:00 candle (SW41 expired unfired; 20:00 close 62,341.0, low 62,188.0). BTC 62,126, 0.27% above the 20-day low. Rule 23: 89 short +15 B20 = 100 (capped).",
-      "max_hold_h": 168,
-      "conf": 100.0
+      "trigger": "limit",
+      "tf": "4h",
+      "level": 62000.0,
+      "stop": 62983.0,
+      "target": null,
+      "target_r": 1.5,
+      "oco": null,
+      "note": "Retest short of the broken 20-day low 61,956 / 62,000 gamma strike after the B20 stop-hunt (SW42 stopped at 62,500 on a 62,621.5 squeeze, then BTC fell to 61,257). Rule 23: BTC -9/9 short 100 -15 target 60,525 through the 61,000 put wall = 85 (no setup bonus: the retest variant backtests +0.20R t=1.3, not tested). Stop 62,983 = squeeze high 62,621.5 + ATR(15m) 361 (rule 26); risk 1.59% < room 2.03%, so a stop-out leaves the account alive. Limit, not a chase (X46/X47).",
+      "conf": 85.0,
+      "risk_pct": null,
+      "notional": 9903.526644508744,
+      "full_port": true,
+      "max_hold_h": 72,
+      "created_ms": 1795140787895.4446,
+      "arm": null,
+      "expires_ms": 1795176300000
     }
   ],
+  "positions": [],
   "closed": [
     {
       "id": "L1",
@@ -543,6 +550,26 @@
       "reason": "target",
       "pnl": 296.038972492507,
       "R": 1.4531056618819773
+    },
+    {
+      "id": "SW42",
+      "symbol": "BTCUSDT",
+      "book": "swing",
+      "side": "short",
+      "entry": 61949.1,
+      "stop": 62500.13769999999,
+      "target": 61122.54345000001,
+      "qty": 0.16146395026006694,
+      "risk_pct": 0.89,
+      "opened_ms": 1795132800000,
+      "note": "B20 re-placed for the 20:00-00:00 candle (SW41 expired unfired; 20:00 close 62,341.0, low 62,188.0). BTC 62,126, 0.27% above the 20-day low. Rule 23: 89 short +15 B20 = 100 (capped).",
+      "max_hold_h": 168,
+      "conf": 100.0,
+      "exit": 62500.13769999999,
+      "closed_ms": 1795140000000,
+      "reason": "stop",
+      "pnl": -99.01975654716865,
+      "R": -1.1129226164561894
     }
   ],
   "shadow": [
