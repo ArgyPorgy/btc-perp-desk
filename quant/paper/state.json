@@ -2,31 +2,24 @@
   "start_equity": 10000.0,
   "equity": 10002.546401055912,
   "risk_pct": 0.5,
-  "orders": [
+  "orders": [],
+  "positions": [
     {
       "id": "SW42",
       "symbol": "BTCUSDT",
       "book": "swing",
       "side": "short",
-      "trigger": "close_below",
-      "tf": "4h",
-      "level": 61956.3,
-      "stop": "high_since:2026-11-19T20:00:00Z",
-      "target": null,
-      "target_r": 1.5,
-      "oco": null,
+      "entry": 61949.1,
+      "stop": 62500.13769999999,
+      "target": 61122.54345000001,
+      "qty": 0.16146395026006694,
+      "risk_pct": 0.89,
+      "opened_ms": 1795132800000,
       "note": "B20 re-placed for the 20:00-00:00 candle (SW41 expired unfired; 20:00 close 62,341.0, low 62,188.0). BTC 62,126, 0.27% above the 20-day low. Rule 23: 89 short +15 B20 = 100 (capped).",
-      "conf": 100.0,
-      "risk_pct": null,
-      "notional": 10002.546401055912,
-      "full_port": true,
       "max_hold_h": 168,
-      "created_ms": 1795119119018.2273,
-      "arm": null,
-      "expires_ms": 1795133100000
+      "conf": 100.0
     }
   ],
-  "positions": [],
   "closed": [
     {
       "id": "L1",
