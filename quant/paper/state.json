@@ -1169,6 +1169,19 @@
       "result": "stop",
       "R": -1.0,
       "max_hold_h": 168.0
+    },
+    {
+      "id": "SH46",
+      "symbol": "BTCUSDT",
+      "side": "short",
+      "entry": 59444.4,
+      "at_ms": 1795190400000,
+      "stop": 62217.2,
+      "target": 55285.3,
+      "why": "B20 re-signal at the 16:00 close (59,444 < 61,256.6) inside the tested 3-day cooldown after SW42 (the backtest skips it), and its 4.7% stop exceeds the 4.2% room: a stop-out would fail the account. Missed live during the 16-18 worker restart.",
+      "result": null,
+      "R": null,
+      "max_hold_h": 168.0
     }
   ]
 }

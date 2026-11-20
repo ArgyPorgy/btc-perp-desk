@@ -52,6 +52,11 @@ SCALP_RISK, SCALP_DAY_STOP, MAX_OPEN = 0.2, 1.0, 3  # 0.2% until a scalp pattern
 NOTIONAL = 10000.0  # default position size in USD (user, 2026-11-01): $10k notional = 1x the account; risk = notional x stop distance
 FULL_PORT = True  # user, 2026-11-17: full port every trade (notional = equity x LEVERAGE), managed by SL/TP; no half-room cap
 LEVERAGE = 1.0  # 1x; more is the desk's call (user) - kept at 1x
+# Exit management (user, 2026-11-20; lessons rule 29): at TP1 (the order's target) close TP1_FRAC of the position and move the
+# stop to breakeven; the runner then trails TRAIL_R x the original risk behind the best price, with no fixed TP2.
+# Backtest on B20 (n=36): fixed 1.5R +0.35R/trade; 50% at 1.5R + BE + 1R trail +0.43R (t 2.0). --fixed-target opts out.
+TP1_FRAC = 0.5
+TRAIL_R = 1.0
 TARGET_PCT, MAX_DD_PCT, DAILY_PCT = 9.0, 3.0, 3.0  # Propr Turbo 1-Step
 
 
@@ -177,7 +182,8 @@ def open_position(s, o, entry, at_ms, events):
         qty = s["equity"] * risk_pct / 100 / risk_px
     p = {"id": o["id"], "symbol": sym(o), "book": o.get("book", "swing"), "side": o["side"], "entry": entry, "stop": stop,
          "target": target, "qty": qty, "risk_pct": risk_pct, "opened_ms": at_ms, "note": o.get("note", ""),
-         "max_hold_h": o.get("max_hold_h", 168), "conf": o.get("conf")}
+         "max_hold_h": o.get("max_hold_h", 168), "conf": o.get("conf"),
+         "manage": o.get("manage", "tp1_trail"), "orig_qty": qty, "orig_stop": stop, "partials": [], "checked_ms": at_ms}
     s["positions"].append(p)
     events.append(f"ENTERED {p['book']} {p['side'].upper()} {p['id']} {p['symbol']} @ {px(entry)} | stop {px(stop)} | target {px(target)} | "
                   f"size {qty:.4f} {p['symbol'][:-4]} (${qty * entry:,.0f} notional, risk ${qty * risk_px:,.0f}, {risk_pct}%) | {iso(at_ms)}")
@@ -190,12 +196,27 @@ def open_position(s, o, entry, at_ms, events):
 def close_position(s, p, exit_px, at_ms, reason, events):
     side = 1 if p["side"] == "long" else -1
     pnl = (exit_px - p["entry"]) * side * p["qty"] - FEE * (p["entry"] + exit_px) * p["qty"]
-    risk_usd = abs(p["entry"] - p.get("orig_stop", p["stop"])) * p["qty"]
     s["equity"] += pnl
+    total = pnl + sum(x["pnl"] for x in p.get("partials", []))  # partials were added to equity when taken
+    risk_usd = abs(p["entry"] - p.get("orig_stop", p["stop"])) * p.get("orig_qty", p["qty"])
     s["positions"].remove(p)
-    s["closed"].append({**p, "exit": exit_px, "closed_ms": at_ms, "reason": reason, "pnl": pnl, "R": pnl / risk_usd})
-    events.append(f"CLOSED {p.get('book', 'swing')} {p['side'].upper()} {p['id']} {sym(p)} @ {px(exit_px)} ({reason}) | PnL ${pnl:+,.2f} = {pnl / risk_usd:+.2f}R | "
-                  f"equity ${s['equity']:,.2f} | {iso(at_ms)}")
+    s["closed"].append({**p, "exit": exit_px, "closed_ms": at_ms, "reason": reason, "pnl": total, "R": total / risk_usd})
+    part = f" (runner ${pnl:+,.2f} + partials ${total - pnl:+,.2f})" if p.get("partials") else ""
+    events.append(f"CLOSED {p.get('book', 'swing')} {p['side'].upper()} {p['id']} {sym(p)} @ {px(exit_px)} ({reason}) | PnL ${total:+,.2f}{part} = "
+                  f"{total / risk_usd:+.2f}R | equity ${s['equity']:,.2f} | {iso(at_ms)}")
+
+
+def take_tp1(s, p, b, events):
+    """TP1 hit: close TP1_FRAC at the target, stop to breakeven, the runner trails from here on."""
+    side = 1 if p["side"] == "long" else -1
+    q = p["qty"] * TP1_FRAC
+    pnl = (p["target"] - p["entry"]) * side * q - FEE * (p["entry"] + p["target"]) * q
+    s["equity"] += pnl
+    p["partials"].append({"px": p["target"], "qty": q, "pnl": pnl, "at_ms": b["T"] + 1})
+    p["qty"] -= q
+    p["tp1_done"], p["best"], p["stop"] = True, p["target"], p["entry"]
+    events.append(f"TP1 {p['id']} {sym(p)}: closed {TP1_FRAC:.0%} @ {px(p['target'])} (${pnl:+,.2f}); stop -> breakeven {px(p['entry'])}, "
+                  f"runner {p['qty']:.4f} trails {TRAIL_R:g}R | equity ${s['equity']:,.2f} | {iso(b['T'] + 1)}")
 
 
 def process(s):
@@ -251,17 +272,28 @@ def process(s):
     for p in list(s["positions"]):
         side = 1 if p["side"] == "long" else -1
         tf, ms = "5m", 300e3
+        risk_px = abs(p["entry"] - p.get("orig_stop", p["stop"]))
         for b in klines(tf, p["opened_ms"] - ms, sym(p)):
-            if b["t"] < p["opened_ms"]:
-                continue  # candles from the one opening at/after the fill (a limit's fill candle counts: stop first)
+            if b["t"] < max(p["opened_ms"], p.get("checked_ms", 0)):
+                continue  # candles from the one opening at/after the fill (a limit's fill candle counts: stop first); each candle once
+            p["checked_ms"] = b["T"] + 1
             stop_hit = b["l"] <= p["stop"] if side == 1 else b["h"] >= p["stop"]
-            tgt_hit = b["h"] >= p["target"] if side == 1 else b["l"] <= p["target"]
             if stop_hit:
-                close_position(s, p, p["stop"], b["T"] + 1, "stop", events)
+                why = "stop" if not p.get("tp1_done") else ("breakeven stop" if p["stop"] == p["entry"] else "trailing stop")
+                close_position(s, p, p["stop"], b["T"] + 1, why, events)
                 break
-            if tgt_hit:
-                close_position(s, p, p["target"], b["T"] + 1, "target", events)
-                break
+            fav = b["h"] if side == 1 else b["l"]
+            if p.get("tp1_done"):  # runner: trail TRAIL_R x the original risk behind the best price (from the next candle)
+                p["best"] = max(p["best"], fav) if side == 1 else min(p["best"], fav)
+                trail = p["best"] - side * TRAIL_R * risk_px
+                if (trail - p["stop"]) * side > 0:
+                    p["stop"] = trail
+            elif (fav - p["target"]) * side >= 0:
+                if p.get("manage", "fixed") == "tp1_trail":
+                    take_tp1(s, p, b, events)
+                else:
+                    close_position(s, p, p["target"], b["T"] + 1, "target", events)
+                    break
             if b["T"] - p["opened_ms"] >= p["max_hold_h"] * 3600e3:
                 close_position(s, p, b["c"], b["T"] + 1, "time limit", events)
                 break
@@ -299,9 +331,11 @@ def report(s, events):
     print("open positions:" if s["positions"] else "open positions: none")
     for p in s["positions"]:
         side = 1 if p["side"] == "long" else -1
-        u = (prices[sym(p)] - p["entry"]) * side * p["qty"]
-        r = u / (abs(p["entry"] - p.get("orig_stop", p["stop"])) * p["qty"])
-        print(f"  {p['id']} [{p.get('book', 'swing')}] {sym(p)} {p['side'].upper()} entry {px(p['entry'])} stop {px(p['stop'])} target {px(p['target'])} "
+        u = (prices[sym(p)] - p["entry"]) * side * p["qty"] + sum(x["pnl"] for x in p.get("partials", []))
+        r = u / (abs(p["entry"] - p.get("orig_stop", p["stop"])) * p.get("orig_qty", p["qty"]))
+        tgt = (f"TP1 {px(p['target'])} TAKEN, runner {p['qty']:.4f} trailing {TRAIL_R:g}R (best {px(p['best'])})" if p.get("tp1_done")
+               else f"{'TP1' if p.get('manage') == 'tp1_trail' else 'target'} {px(p['target'])}")
+        print(f"  {p['id']} [{p.get('book', 'swing')}] {sym(p)} {p['side'].upper()} entry {px(p['entry'])} stop {px(p['stop'])} {tgt} "
               f"| unrealised ${u:+,.2f} ({r:+.2f}R) | since {iso(p['opened_ms'])} | {p['note']}")
     print("pending orders:" if s["orders"] else "pending orders: none")
     for o in s["orders"]:
@@ -347,7 +381,8 @@ def main():
     a.add_argument("--level", type=float)
     a.add_argument("--stop", required=True, help="price, or low_since:ISO / high_since:ISO")
     a.add_argument("--target", type=float)
-    a.add_argument("--target-r", type=float)
+    a.add_argument("--target-r", type=float, help="TP1 in R: 50%% closes there, stop to breakeven, the rest trails 1R")
+    a.add_argument("--fixed-target", action="store_true", help="close everything at the target (no TP1/trail)")
     a.add_argument("--expires")
     a.add_argument("--conf", type=float, help="decision score in %% (lessons rule 23): indicators + evidence - violations")
     a.add_argument("--oco")
@@ -418,6 +453,7 @@ def main():
         stop = float(args.stop) if args.stop.replace(".", "", 1).isdigit() else args.stop
         o = {"id": args.id, "symbol": args.symbol, "book": args.book, "side": args.side, "trigger": args.trigger,
              "tf": args.tf, "level": args.level, "stop": stop, "target": args.target, "target_r": args.target_r,
+             "manage": "fixed" if args.fixed_target else "tp1_trail",
              "oco": args.oco, "note": args.note, "conf": args.conf,
              "risk_pct": args.risk_pct or (SCALP_RISK if args.book == "scalp" else None),
              "notional": notional, "full_port": full_port,
