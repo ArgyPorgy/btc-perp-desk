@@ -1139,8 +1139,8 @@
       "stop": 61195.3,
       "target": 63980.4,
       "why": "Forbidden S20/S10 long (4h wick 61,256.6 under the 61,388 low, close 62,123.7) against BTC -9/9 (never trade against 7/9+) and opposite to open SW43. Tracks the S20-longs-vs-BTC<=-5 tally (-7.45R over 11).",
-      "result": null,
-      "R": null,
+      "result": "stop",
+      "R": -1.0,
       "max_hold_h": 168.0
     }
   ]
