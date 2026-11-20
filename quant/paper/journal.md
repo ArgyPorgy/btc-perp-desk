@@ -1948,3 +1948,6 @@
 
 ## 2026-11-20 09:12 UTC — price 61,704
 09:11 UTC Nov 20 run. SW43 BTC short 62,000 at +0.27R (BTC 61,739; tight 5m range 61,476-62,030, ATR(5m) 113 - low-vol drift under the 15m EMA50 62,003). Stop 62,983, target 60,525.5; holding (rule 28). Rule 23 (one full-port slot, held by SW43): BTC long 0; ETH short 100 -15 correlated -15 into 1,717/1,710 = 70 (no slot); ETH long 0; HYPE short 78 -15 correlated -15 = 48; HYPE long 22 -15 exchange-hack backdrop = 7. Shadows SH43/44/45 open. Equity $9,903.53, room $201.06.
+
+## 2026-11-20 10:11 UTC — price 61,753
+10:11 UTC Nov 20 run. SW43 BTC short 62,000 at +0.26R (BTC 61,747; quiet 61,441-62,032 range for 7h). Stop 62,983, target 60,525.5; holding (rule 28; 168h is not the limit - max hold 72h, until Nov 23 02:55). Rule 23 (one full-port slot, held by SW43): BTC long 0; ETH short 100 -15 correlated -15 into 1,717/1,710 = 70 (no slot); ETH long 0; HYPE short 78 -15 correlated -15 = 48 (CFTC: no special exemptions for Hyperliquid/onchain venues - mildly bearish, reverses yesterday's pop); HYPE long 22 -15 exchange-hack backdrop = 7. Shadows SH43/44/45 open. Equity $9,903.53, room $201.06.
