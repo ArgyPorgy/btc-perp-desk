@@ -1,30 +1,9 @@
 {
   "start_equity": 10000.0,
-  "equity": 10129.269108385957,
+  "equity": 9856.279250635234,
   "risk_pct": 0.5,
   "orders": [],
-  "positions": [
-    {
-      "id": "SW45",
-      "symbol": "BTCUSDT",
-      "book": "swing",
-      "side": "short",
-      "entry": 57661.4,
-      "stop": 59157.0,
-      "target": 55418.0,
-      "qty": 0.17566810914036005,
-      "risk_pct": 2.594,
-      "opened_ms": 1795249800000,
-      "note": "Rule-27 retest short: the broken 57,695 sweep low / 58,000 was tagged (07:00 high 58,636 after the 55,100 flush squeeze); entry = a 15m close back below 57,695, stop 59,157 = tag high + ATR(15m) 521 (~2.6% risk, inside the 3.0% room). TP1 1.5R (~55,390) closes 50%, stop to BE, runner trails 1R (rule 29). Rule 23: BTC -9/9 short 100 -15 TP1 into the 55,100 low = 85; squeeze fading (1h delta -6,104).",
-      "max_hold_h": 72,
-      "conf": 85.0,
-      "manage": "tp1_trail",
-      "orig_qty": 0.17566810914036005,
-      "orig_stop": 59157.0,
-      "partials": [],
-      "checked_ms": 1795259400000
-    }
-  ],
+  "positions": [],
   "closed": [
     {
       "id": "L1",
@@ -588,6 +567,31 @@
       "reason": "target (resting TP; first traded 15:15-15:20 5m, low 60,185; booked at the target, not at market)",
       "pnl": 225.74246387721394,
       "R": 1.4376777721261444
+    },
+    {
+      "id": "SW45",
+      "symbol": "BTCUSDT",
+      "book": "swing",
+      "side": "short",
+      "entry": 57661.4,
+      "stop": 59157.0,
+      "target": 55418.0,
+      "qty": 0.17566810914036005,
+      "risk_pct": 2.594,
+      "opened_ms": 1795249800000,
+      "note": "Rule-27 retest short: the broken 57,695 sweep low / 58,000 was tagged (07:00 high 58,636 after the 55,100 flush squeeze); entry = a 15m close back below 57,695, stop 59,157 = tag high + ATR(15m) 521 (~2.6% risk, inside the 3.0% room). TP1 1.5R (~55,390) closes 50%, stop to BE, runner trails 1R (rule 29). Rule 23: BTC -9/9 short 100 -15 TP1 into the 55,100 low = 85; squeeze fading (1h delta -6,104).",
+      "max_hold_h": 72,
+      "conf": 85.0,
+      "manage": "tp1_trail",
+      "orig_qty": 0.17566810914036005,
+      "orig_stop": 59157.0,
+      "partials": [],
+      "checked_ms": 1795264800000,
+      "exit": 59157.0,
+      "closed_ms": 1795264800000,
+      "reason": "stop",
+      "pnl": -272.9898577507234,
+      "R": -1.039054025140412
     }
   ],
   "shadow": [
@@ -1217,8 +1221,8 @@
       "stop": 59269.1,
       "target": 52846.6,
       "why": "B20 signal at the 04:00 close (56,700 < the 57,695.3 20-day low) inside the tested 3-day cooldown (SW42 Nov 20); its 4.5% stop exceeds the 3.0% room (a stop-out fails the account); BTC already 55,923 by the run (late). Tracks cooldown B20s (with SH46).",
-      "result": null,
-      "R": null,
+      "result": "stop",
+      "R": -1.0,
       "max_hold_h": 168.0,
       "limit": false
     },
