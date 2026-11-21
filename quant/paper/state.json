@@ -1169,8 +1169,8 @@
       "stop": 57217.0,
       "target": 61256.0,
       "why": "User-asked sweep-and-reclaim long at the 16-20 4h close: swept the 57,759 yearly low (57,695.3), funding flipped -0.0008%, OI -3.4% (35,098->33,888), stop 57,695-1 ATR(15m) 478 = 57,217 fits. NOT taken: the 4h closed 58,522.5 - above 58,030 but under the 58,726 broken low and 59,000, still a red candle (59,444->58,522), and BTC confluence -9/9 (rule 23: never trade against 7/9+). TP1 61,256 = broken 20-day low (2.1R).",
-      "result": null,
-      "R": null,
+      "result": "stop",
+      "R": -1.0,
       "max_hold_h": 72.0
     },
     {
@@ -1186,6 +1186,20 @@
       "R": null,
       "max_hold_h": 72.0,
       "limit": true
+    },
+    {
+      "id": "SH49",
+      "symbol": "BTCUSDT",
+      "side": "short",
+      "entry": 56700.1,
+      "at_ms": 1795233600000,
+      "stop": 59269.1,
+      "target": 52846.6,
+      "why": "B20 signal at the 04:00 close (56,700 < the 57,695.3 20-day low) inside the tested 3-day cooldown (SW42 Nov 20); its 4.5% stop exceeds the 3.0% room (a stop-out fails the account); BTC already 55,923 by the run (late). Tracks cooldown B20s (with SH46).",
+      "result": null,
+      "R": null,
+      "max_hold_h": 168.0,
+      "limit": false
     }
   ]
 }
