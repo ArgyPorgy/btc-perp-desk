@@ -2050,3 +2050,6 @@
 
 ## 2026-11-21 21:12 UTC — price 60,439
 21:11 UTC Nov 21 run. Account 2 flat, $10,000, room $300. Dead Saturday-night tape: BTC 60,420 (5m range 60,159-60,490, ATR(5m) 88), funding -0.006%, OI -4.4% 24h. Confluence BTC/ETH/HYPE all -1/9 (long 44 / short 56). Rule 23: BTC long 44 -15 no location = 29 / short 56 -15 no location = 41; ETH long 44 -15 = 29 / short 56 -15 = 41; HYPE long 44 -15 = 29 / short 56 -15 = 41. No trade. Watch unchanged: rule-27 short on a tag of 60,970-61,256 + 15m close back below; long pullback to 58,000-58,600 (flag the user).
+
+## 2026-11-21 22:11 UTC — price 60,235
+22:11 UTC Nov 21 run. Account 2 flat, $10,000, room $300. Still dead: BTC 60,240 (5m range 60,166-60,542), funding -0.006%, OI -4.6% 24h. Confluence BTC/ETH/HYPE all -1/9. News: Russian-linked cargo ship ablaze in the Baltic after a drone strike. Rule 23: BTC long 44 -15 no location = 29 / short 56 -15 no location = 41; ETH 29 / 41; HYPE 29 / 41. No trade. Watch unchanged (rule-27 short on a tag of 60,970-61,256; long pullback to 58,000-58,600 -> flag the user).
