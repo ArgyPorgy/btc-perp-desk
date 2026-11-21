@@ -98,6 +98,13 @@ the rule goes into **Current rules** too. Skipped or cancelled plan trades are a
 28. **The stop IS the invalidation.** (SW2a 2026-10-31 cut at +0.56R on a re-score, +1.5R a day later; X46 2026-11-17 cut at -0.89R on a soft 'reclaim of 1,822' line that sat inside the stop's 1-ATR buffer, then ETH fell 1.3% within the hour.) Never name an invalidation inside the stop's buffer; an open trade exits on its stop, target, time limit, or a real thesis break (rule 13: the leader breaks, the catalyst reverses, a 4h/1d level flips) - not on a 15m EMA cross or a confluence re-score.
 29. **Scale out and trail: TP1 50% + breakeven, then trail the runner** (user, 2026-11-20, after SW43 took its whole target at 60,525.5 and BTC kept falling to 58,7xx). Every new trade: the order's target is TP1 (>= 1.5R); at TP1 close 50%, move the stop to breakeven (a free trade), and trail the other 50% 1R (of the original risk) behind the best price, no fixed TP2; paper_desk.py does this automatically on 5m candles (`--fixed-target` opts out). Backtest on B20 (n=36, 2020-2026, 1h bars, stop-first): fixed 1.5R +0.35R/trade (t 1.8); 50% at 1.5R + BE + 3R +0.42R; **50% at 1.5R + BE + 1R trail +0.43R (t 2.0)**; 100% BE at 1.5R + 1R trail +0.52R (t 2.0, more variance). SW43 replayed under this rule: +2.2R open with the runner's stop locked at 59,709, against +1.44R taken.
 
+
+## Accounts (Propr Turbo 1-Step: +9% = $10,900; static floor $9,700; daily floor 97% of the 00:00 balance; the higher floor binds)
+| # | Opened | Closed | Result | Why it ended | What to carry forward |
+|---|---|---|---|---|---|
+| 1 | 2026-10 | 2026-11-21 14:2x UTC | **BLOWN** (retired on the user's call) at $9,856.28 (-1.44%; peak $10,129.27 = +1.29% on 2026-11-20) | Full port (rule 24) from 2026-11-17: X46 -0.89R, X47 +1.45R, SW42 -1.11R, SW43 +1.44R, SW45 -1.04R. SW45 (a rule-27 retest short into the 55,100 capitulation low, funding negative) left $30.89 to the daily floor; no valid stop fit, so the account was done. | Full port leaves room for about one ~2.5% stop: every trade has to be an A setup. Context beats mechanics - no shorts into a capitulation sweep with negative funding (proposed rule 30). Take TP1 + trail (rule 29). |
+| 2 | 2026-11-21 14:2x UTC | - | live: $10,000, floor $9,700, room $300 | - | Same rules (user): full port 1x, rule 23 scoring, rules 26-29, proposed rule 30 tracked. |
+
 ## Mistakes and misses
 | Date (UTC) | What happened | Cost | Lesson → rule |
 |---|---|---|---|
