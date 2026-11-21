@@ -2047,3 +2047,6 @@
 
 ## 2026-11-21 20:11 UTC — price 60,353
 20:11 UTC run (zoom-out at the 16-20 4h close: BTC 60,331.2, low 59,750). Account 2 flat, $10,000, room $300. Quiet Saturday: BTC 60,370 in a 59,655-60,970 range, funding -0.004% (shorts still paying), OI -5.8% 24h; still under the 4h EMA50 63,786 / 1d EMA200 75,215. Confluence BTC -1/9, ETH -1/9, HYPE -3/9. Proposed rule-30 window (12h after the 08:00 sweep-and-reclaim) has expired. Rule 23: BTC long 44 -15 no location (mid-range) = 29 / short 56 -15 no location = 41; ETH long 44 -15 = 29 / short 56 -15 = 41; HYPE long 33 -15 = 18 / short 67 -15 = 52. No trade. Watch: a tag of 60,970-61,256 and a 15m close back below (rule-27 short, stop over the tag + ATR); or a pullback to 58,000-58,600 that holds (long, needs the capitulation exception -> flag the user).
+
+## 2026-11-21 21:12 UTC — price 60,439
+21:11 UTC Nov 21 run. Account 2 flat, $10,000, room $300. Dead Saturday-night tape: BTC 60,420 (5m range 60,159-60,490, ATR(5m) 88), funding -0.006%, OI -4.4% 24h. Confluence BTC/ETH/HYPE all -1/9 (long 44 / short 56). Rule 23: BTC long 44 -15 no location = 29 / short 56 -15 no location = 41; ETH long 44 -15 = 29 / short 56 -15 = 41; HYPE long 44 -15 = 29 / short 56 -15 = 41. No trade. Watch unchanged: rule-27 short on a tag of 60,970-61,256 + 15m close back below; long pullback to 58,000-58,600 (flag the user).
