@@ -2,7 +2,31 @@
   "start_equity": 10000.0,
   "equity": 10129.269108385957,
   "risk_pct": 0.5,
-  "orders": [],
+  "orders": [
+    {
+      "id": "SW45",
+      "symbol": "BTCUSDT",
+      "book": "swing",
+      "side": "short",
+      "trigger": "close_below",
+      "tf": "15m",
+      "level": 57695.0,
+      "stop": 59157.0,
+      "target": null,
+      "target_r": 1.5,
+      "manage": "tp1_trail",
+      "oco": null,
+      "note": "Rule-27 retest short: the broken 57,695 sweep low / 58,000 was tagged (07:00 high 58,636 after the 55,100 flush squeeze); entry = a 15m close back below 57,695, stop 59,157 = tag high + ATR(15m) 521 (~2.6% risk, inside the 3.0% room). TP1 1.5R (~55,390) closes 50%, stop to BE, runner trails 1R (rule 29). Rule 23: BTC -9/9 short 100 -15 TP1 into the 55,100 low = 85; squeeze fading (1h delta -6,104).",
+      "conf": 85.0,
+      "risk_pct": null,
+      "notional": 10129.269108385957,
+      "full_port": true,
+      "max_hold_h": 72,
+      "created_ms": 1795248738858.0632,
+      "arm": null,
+      "expires_ms": 1795262700000
+    }
+  ],
   "positions": [],
   "closed": [
     {
@@ -1196,6 +1220,20 @@
       "stop": 59269.1,
       "target": 52846.6,
       "why": "B20 signal at the 04:00 close (56,700 < the 57,695.3 20-day low) inside the tested 3-day cooldown (SW42 Nov 20); its 4.5% stop exceeds the 3.0% room (a stop-out fails the account); BTC already 55,923 by the run (late). Tracks cooldown B20s (with SH46).",
+      "result": null,
+      "R": null,
+      "max_hold_h": 168.0,
+      "limit": false
+    },
+    {
+      "id": "SH50",
+      "symbol": "BTCUSDT",
+      "side": "long",
+      "entry": 57959.6,
+      "at_ms": 1795248000000,
+      "stop": 55044.9,
+      "target": 63789.0,
+      "why": "Forbidden S20/S10 long (4h wick 55,100 under the 56,334 low, close 57,959.6) against BTC -9/9; S20 longs vs BTC <= -5 are -8.45R/12. Tracks the tally.",
       "result": null,
       "R": null,
       "max_hold_h": 168.0,
