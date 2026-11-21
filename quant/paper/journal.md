@@ -2023,3 +2023,6 @@
 
 ## 2026-11-21 10:12 UTC — price 57,977
 10:11 UTC Nov 21 run. SW45 BTC short 57,661.4 at -0.26R (BTC 58,044, back above the 57,695 trigger in a slow weekend grind; 15m delta +1,594 BTC, range 57,352-58,119, still under the 58,636 tag high). Stop 59,157, TP1 55,418; holding (rule 28: the stop is the invalidation). Funding -0.0063%. News: IRGC downed a US drone over Hormuz. Rule 23 (one full-port slot, held by SW45): BTC long 0 (-9/9); ETH short 100 -15 correlated -15 squeeze = 70, no slot; ETH long 0; HYPE short 89 -15 -15 = 59; HYPE long 11. Equity $10,129.27, room $303.88 (SW45 risk $263).
+
+## 2026-11-21 11:12 UTC — price 57,982
+11:11 UTC Nov 21 run. SW45 BTC short 57,661.4 at -0.21R (BTC 57,975; tight weekend range 57,813-58,200, ATR(5m) 140). Stop 59,157, TP1 55,418; holding (rule 28). Funding -0.0047%, OI flat. Rule 23 (one full-port slot, held by SW45): BTC long 0 (-9/9); ETH short 100 -15 correlated -15 grinding up (15m delta +56k) = 70, no slot; ETH long 0; HYPE short 89 -15 -15 = 59; HYPE long 11. Equity $10,129.27, room $303.88. Shadows SH49/SH50 open.
