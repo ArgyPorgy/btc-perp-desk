@@ -2020,3 +2020,6 @@
 
 ## 2026-11-21 09:12 UTC — price 57,907
 09:11 UTC Nov 21 run. ORDER UPDATE: SW45 FILLED - the 08:15-08:30 15m closed 57,661.4 (< 57,695): BTC SHORT 0.1757 BTC full port ($10,129, 1x), stop 59,157, TP1 55,418 (50% off, BE, 1R trail), risk $263 (2.59%) vs room $303.88. Now -0.14R at 57,877 (5m/15m deltas +394/+1,842 BTC, chop 57,341-58,296 under the 58,636 tag high). Holding (rule 28). News: tanker hit near Hormuz; Saudi intercepts Houthi missiles. Rule 23 for anything else (one full-port slot, SW45 holds it): BTC long 0; ETH short 100 -15 correlated -15 squeeze (15m delta +118k) = 70 but no slot; ETH long 0; HYPE short 89 -15 correlated -15 = 59; HYPE long 11. Shadows SH49/SH50 open.
+
+## 2026-11-21 10:12 UTC — price 57,977
+10:11 UTC Nov 21 run. SW45 BTC short 57,661.4 at -0.26R (BTC 58,044, back above the 57,695 trigger in a slow weekend grind; 15m delta +1,594 BTC, range 57,352-58,119, still under the 58,636 tag high). Stop 59,157, TP1 55,418; holding (rule 28: the stop is the invalidation). Funding -0.0063%. News: IRGC downed a US drone over Hormuz. Rule 23 (one full-port slot, held by SW45): BTC long 0 (-9/9); ETH short 100 -15 correlated -15 squeeze = 70, no slot; ETH long 0; HYPE short 89 -15 -15 = 59; HYPE long 11. Equity $10,129.27, room $303.88 (SW45 risk $263).
