@@ -1996,3 +1996,6 @@
 
 ## 2026-11-21 01:12 UTC — price 59,118
 01:11 UTC Nov 21 run. Flat, equity $10,129.27, room $303.88. Quiet Saturday Asia: BTC 59,058 in a 58,824-59,137 5m range (ATR(5m) 110), funding -0.0074%, OI -3.7% 24h. Long blocked by BTC -9/9 (awaiting the user's call; SH47 shadow ~+0.4R). Short plan (tag 59,800-60,000, 15m close back below 59,360) not triggered. Rule 23: BTC long 0 / short 100 -15 into the 57,695 low -15 no rule-27 trigger = 70 (no entry); ETH long 0 / short 100 -15 into 1,579 -15 crowded (funding -0.020%, OI +5.2%) = 70 (no trigger); HYPE long 11 / short 89 -15 -15 = 59. No trade.
+
+## 2026-11-21 02:12 UTC — price 59,042
+02:11 UTC Nov 21 run. Flat, equity $10,129.27, room $303.88. Dead weekend tape: BTC 59,037 in a 58,880-59,210 5m range (ATR(5m) 95), funding -0.0073%, OI flat; no headlines >= impact 2 in the last hour. Long blocked by BTC -9/9 (awaiting the user's call; SH47 ~+0.4R). Short plan (tag 59,800-60,000 then a 15m close back below 59,360) not triggered. Rule 23: BTC long 0 / short 100 -15 into the 57,695 low -15 no rule-27 trigger = 70 (no entry); ETH long 0 / short 100 -15 into 1,579 -15 crowded (funding -0.019%) = 70 (no trigger); HYPE long 11 / short 89 -15 -15 = 59. No trade.
