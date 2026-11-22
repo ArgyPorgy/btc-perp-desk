@@ -2101,3 +2101,6 @@
 
 ## 2026-11-22 14:12 UTC — price 60,750
 14:11 UTC Nov 22 run. Account 2 flat, $10,000, room $300. BTC 60,712 in a 60,453-60,942 5m range after the 61,645 rejection; funding +0.0025%, OI flat 24h. SH51 shadow short (60,906) slightly in profit. Confluence BTC -1/9, ETH -1/9, HYPE +1/9. Rule 23: BTC short 56 -15 no location = 41 / long 44 -15 no location = 29; ETH short 56 -15 = 41 / long 44 -15 = 29; HYPE long 56 -15 no location = 41 / short 44 -15 = 29. No trade.
+
+## 2026-11-22 15:12 UTC — price 60,846
+15:11 UTC Nov 22 run. Account 2 flat, $10,000, room $300. BTC 60,806 in the 60,422-61,645 range; funding +0.002%, OI -1.0% 24h; SH51 shadow short (60,906) ~+0.1R. Confluence BTC -1/9, ETH -1/9, HYPE +1/9. Rule 23: BTC short 56 -15 no location = 41 / long 44 -15 = 29; ETH short 56 -15 = 41 / long 44 -15 = 29; HYPE long 56 -15 = 41 / short 44 -15 = 29. No trade.
