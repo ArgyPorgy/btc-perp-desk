@@ -2122,3 +2122,6 @@
 
 ## 2026-11-22 21:12 UTC — price 60,928
 21:11 UTC Nov 22 run. Account 2 flat, $10,000, room $300. BTC 60,875 in the 60,500-61,384 range (15m delta +2,334 BTC), funding +0.003%, OI flat; SH51 shadow short (60,906) ~0R. News: Trump threatens Iran strikes in the new year (no tape reaction, -0.02%); an openPR promo piece ignored. Confluence BTC -1/9, ETH -1/9, HYPE +1/9. Rule 23: BTC short 56 -15 no location = 41 / long 44 -15 = 29; ETH short 56 -15 = 41 / long 44 -15 = 29; HYPE long 56 -15 = 41 / short 44 -15 = 29. No trade.
+
+## 2026-11-22 22:12 UTC — price 60,886
+22:11 UTC Nov 22 run. Account 2 flat, $10,000, room $300. BTC 60,887 in the 60,500-61,384 range (dead Sunday tape, ATR(5m) 97), funding +0.003%, OI flat; SH51 shadow short (60,906) ~0R. Confluence BTC -1/9, ETH -1/9, HYPE -1/9. Rule 23: BTC/ETH/HYPE short 56 -15 no location = 41 / long 44 -15 = 29. No trade. Weekly close at 00:00.
