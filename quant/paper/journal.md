@@ -2065,3 +2065,6 @@
 
 ## 2026-11-22 02:11 UTC — price 60,015
 02:11 UTC Nov 22 run. Account 2 flat, $10,000, room $300. Dead tape: BTC 60,051 (5m range 59,978-60,316), funding ~0, OI -6.0% 24h. Confluence BTC -5/9 (slipped back below the 1h EMA50), ETH -3/9, HYPE -3/9. Rule 23: BTC long 22 -15 no location = 7 / short 78 -15 no location (mid-range, 60,970 not tagged) = 63 but -15 rule-27 (no tag-and-reject entry) = 48; ETH long 33 -15 = 18 / short 67 -15 = 52; HYPE long 33 -15 = 18 / short 67 -15 = 52. No trade. Watch unchanged.
+
+## 2026-11-22 03:11 UTC — price 59,357
+03:10 UTC Nov 22 run. Account 2 flat, $10,000, room $300. BTC slipped out of the 59,952-60,542 range to 59,330 (15m broke down w/ volume, delta -2,131 BTC), funding ~0, OI -3.8% 24h; ETH 1,667 and HYPE 60.6 followed. Confluence BTC/ETH/HYPE all -5/9 (long 22 / short 78). Rule 23: BTC short 78 -15 late (mid-breakdown) -15 target into the 58,000-59,000 weekly zone / Nov 21 hammer body = 48; BTC long 22 = 22 (the 58,000-58,600 long watch zone is 1.2% lower; it would need a tag + 15m close back above, and the capitulation exception -> flag the user). ETH short 78 -15 -15 into 1,617-1,640 = 48 / long 22; HYPE short 78 -15 -15 into 58-59 = 48 / long 22. No trade.
