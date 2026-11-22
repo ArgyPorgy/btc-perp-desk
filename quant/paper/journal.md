@@ -2062,3 +2062,6 @@
 
 ## 2026-11-22 01:11 UTC — price 60,199
 01:11 UTC Nov 22 run. Account 2 flat, $10,000, room $300. Dead Sunday Asia: BTC 60,192 (5m range 60,117-60,320, ATR(5m) 69), funding -0.002%, OI -5.5% 24h; no headlines. Confluence BTC -1/9, ETH -3/9, HYPE -1/9. Rule 23: BTC long 44 -15 no location = 29 / short 56 -15 = 41; ETH long 33 -15 = 18 / short 67 -15 = 52; HYPE long 44 -15 = 29 / short 56 -15 = 41. No trade. Watch unchanged.
+
+## 2026-11-22 02:11 UTC — price 60,015
+02:11 UTC Nov 22 run. Account 2 flat, $10,000, room $300. Dead tape: BTC 60,051 (5m range 59,978-60,316), funding ~0, OI -6.0% 24h. Confluence BTC -5/9 (slipped back below the 1h EMA50), ETH -3/9, HYPE -3/9. Rule 23: BTC long 22 -15 no location = 7 / short 78 -15 no location (mid-range, 60,970 not tagged) = 63 but -15 rule-27 (no tag-and-reject entry) = 48; ETH long 33 -15 = 18 / short 67 -15 = 52; HYPE long 33 -15 = 18 / short 67 -15 = 52. No trade. Watch unchanged.
