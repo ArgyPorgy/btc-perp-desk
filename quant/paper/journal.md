@@ -2098,3 +2098,6 @@
 
 ## 2026-11-22 13:13 UTC — price 60,703
 13:12 UTC Nov 22 run. Account 2 flat, $10,000, room $300. BTC poked 61,645 (new high, short of the 61,956-62,000 level) and faded to 60,735 (5m/15m delta -1,765/-1,496 BTC); SH51 shadow short (60,906) back near entry. Funding +0.004%, OI +0.7% 24h. Confluence BTC -1/9, ETH -1/9, HYPE +1/9. Rule 23: BTC short 56 -15 no rule-27 trigger at 62k (not tagged) = 41 / long 44 -15 no location (mid 59.2-61.6k) = 29; ETH short 56 -15 = 41 / long 44 -15 = 29; HYPE long 56 -15 late = 41 / short 44 -15 = 29. No trade.
+
+## 2026-11-22 14:12 UTC — price 60,750
+14:11 UTC Nov 22 run. Account 2 flat, $10,000, room $300. BTC 60,712 in a 60,453-60,942 5m range after the 61,645 rejection; funding +0.0025%, OI flat 24h. SH51 shadow short (60,906) slightly in profit. Confluence BTC -1/9, ETH -1/9, HYPE +1/9. Rule 23: BTC short 56 -15 no location = 41 / long 44 -15 no location = 29; ETH short 56 -15 = 41 / long 44 -15 = 29; HYPE long 56 -15 no location = 41 / short 44 -15 = 29. No trade.
