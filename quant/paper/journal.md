@@ -2080,3 +2080,6 @@
 
 ## 2026-11-22 07:12 UTC — price 59,093
 07:11 UTC Nov 22 run. Account 2 flat, $10,000, room $300. BTC 59,116 holding above the 58,731 low (long watch zone 58,000-58,600 untagged); funding +0.004%, OI -4.9% 24h; no headlines. Confluence BTC -3/9, ETH -5/9, HYPE -3/9. Rule 23: BTC short 67 -15 into the 58-59k weekly zone -15 no rule-27 trigger = 37 / long 33 -15 no location = 18; ETH short 78 -15 -15 = 48 / long 22; HYPE short 67 -15 -15 = 37 / long 33 -15 = 18. No trade.
+
+## 2026-11-22 08:11 UTC — price 59,162
+08:11 UTC run (zoom-out at the 04-08 4h close: BTC 59,136.5, low 58,731). Account 2 flat, $10,000, room $300. Sunday chop: BTC 59,174 holding the 58,731 low above the 58,000-58,600 watch zone; 4h/1d still under every EMA (1d EMA200 75,054, -21%); funding +0.003%, OI -4.7% 24h. News: Korean exchanges halt CYBER transfers on a suspected bridge exploit (small). Confluence BTC -5/9, ETH -5/9, HYPE -3/9. Rule 23: BTC short 78 -15 into the 58-59k weekly zone -15 no rule-27 trigger = 48 / long 22; ETH short 78 -15 -15 = 48 / long 22; HYPE short 67 -15 -15 = 37 / long 33. No trade.
