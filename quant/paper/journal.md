@@ -2113,3 +2113,6 @@
 
 ## 2026-11-22 18:11 UTC — price 60,690
 18:10 UTC Nov 22 run. Account 2 flat, $10,000, room $300. BTC 60,690 in the 60,422-61,645 range (5m broke down w/ volume, delta -600 BTC); funding +0.002%, OI flat; SH51 shadow short (60,906) ~+0.3R. Confluence BTC -1/9, ETH -1/9, HYPE +1/9. Rule 23: BTC short 56 -15 no location = 41 / long 44 -15 = 29; ETH 41 / 29; HYPE long 56 -15 = 41 / short 44 -15 = 29. No trade.
+
+## 2026-11-22 19:11 UTC — price 60,711
+19:11 UTC Nov 22 run. Account 2 flat, $10,000, room $300. BTC 60,694 in a tight 60,500-60,941 range; funding +0.001%, OI flat. News: Chainflip losses reach $12M (122.9 BTC theft) - protocol-level, not an exchange crisis. SH51 shadow short (60,906) ~+0.25R. Confluence BTC -1/9, ETH -1/9, HYPE +1/9. Rule 23: BTC short 56 -15 no location = 41 / long 44 -15 = 29; ETH 41 / 29; HYPE long 56 -15 = 41 / short 44 -15 = 29. No trade.
