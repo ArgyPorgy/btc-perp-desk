@@ -2104,3 +2104,6 @@
 
 ## 2026-11-22 15:12 UTC — price 60,846
 15:11 UTC Nov 22 run. Account 2 flat, $10,000, room $300. BTC 60,806 in the 60,422-61,645 range; funding +0.002%, OI -1.0% 24h; SH51 shadow short (60,906) ~+0.1R. Confluence BTC -1/9, ETH -1/9, HYPE +1/9. Rule 23: BTC short 56 -15 no location = 41 / long 44 -15 = 29; ETH short 56 -15 = 41 / long 44 -15 = 29; HYPE long 56 -15 = 41 / short 44 -15 = 29. No trade.
+
+## 2026-11-22 16:12 UTC — price 61,010
+16:11 UTC run (zoom-out at the 12-16 4h close: BTC 60,857.8, low 60,422.2). Account 2 flat, $10,000, room $300. BTC 61,003 holding the upper half of the 60,422-61,645 range; 1h above its EMA50 (60,184), 4h EMA50 63,152 / 1d EMA200 75,072 overhead; funding +0.002%, OI flat. SH51 shadow short (60,906) ~-0.1R. Confluence BTC -1/9, ETH -1/9, HYPE +1/9. News: Saudi Arabia warns Iran after an attack on Bahrain. Rule 23: BTC short 56 -15 no location = 41 / long 44 -15 no location = 29; ETH short 56 -15 = 41 / long 44 -15 = 29; HYPE long 56 -15 = 41 / short 44 -15 = 29. No trade. Watch: rule-27 short at 61,956-62,000 (tag + 15m close back below); pullback long that holds 60,000-60,400 (re-score).
