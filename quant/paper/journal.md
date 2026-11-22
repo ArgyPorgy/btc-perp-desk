@@ -2074,3 +2074,6 @@
 
 ## 2026-11-22 05:11 UTC — price 59,070
 05:10 UTC Nov 22 run. Account 2 flat, $10,000, room $300. BTC 59,089 grinding lower (15m broke down w/ volume, delta -1,285 BTC), 0.8% above the 58,000-58,600 long watch zone; funding +0.004%, OI -4.6% 24h. Confluence BTC -5/9, ETH -5/9, HYPE -3/9. Rule 23: BTC short 78 -15 late -15 target into the 58,000-59,000 weekly zone = 48 / long 22 (watch zone not tagged); ETH short 78 -15 -15 into 1,617-1,634 = 48 / long 22; HYPE short 67 -15 -15 into 58-59 = 37 / long 33. No trade. If BTC tags 58,000-58,600 and a 15m closes back above, flag the user (capitulation-exception long).
+
+## 2026-11-22 06:12 UTC — price 59,100
+06:11 UTC Nov 22 run. Account 2 flat, $10,000, room $300. BTC dipped to 58,731 (just above the 58,000-58,600 long watch zone - not tagged) and bounced to 59,146 (5m/15m delta +1,109/+1,133 BTC); funding +0.005%, OI -3.7% 24h. Confluence BTC -5/9, ETH -5/9, HYPE -3/9. Rule 23: BTC short 78 -15 into the 58,000-59,000 weekly zone -15 no rule-27 trigger = 48 / long 22 (zone not tagged); ETH short 78 -15 -15 = 48 / long 22; HYPE short 67 -15 -15 = 37 / long 33. No trade. Calendar: Mon 23 Nov 14:45 UTC US flash manufacturing PMI (medium).
