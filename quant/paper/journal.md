@@ -2125,3 +2125,6 @@
 
 ## 2026-11-22 22:12 UTC — price 60,886
 22:11 UTC Nov 22 run. Account 2 flat, $10,000, room $300. BTC 60,887 in the 60,500-61,384 range (dead Sunday tape, ATR(5m) 97), funding +0.003%, OI flat; SH51 shadow short (60,906) ~0R. Confluence BTC -1/9, ETH -1/9, HYPE -1/9. Rule 23: BTC/ETH/HYPE short 56 -15 no location = 41 / long 44 -15 = 29. No trade. Weekly close at 00:00.
+
+## 2026-11-22 23:12 UTC — price 60,900
+23:11 UTC Nov 22 run. Account 2 flat, $10,000, room $300. BTC 60,871 in the 60,550-61,384 range into the weekly close; funding +0.002%, OI flat; SH51 shadow short (60,906) ~0R. Confluence BTC/ETH/HYPE all -1/9. Rule 23: BTC/ETH/HYPE short 56 -15 no location = 41 / long 44 -15 = 29. No trade. Weekly + daily close at 00:00.
