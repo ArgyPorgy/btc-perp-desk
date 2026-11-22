@@ -2119,3 +2119,6 @@
 
 ## 2026-11-22 20:12 UTC — price 60,700
 20:11 UTC run (zoom-out at the 16-20 4h close: BTC 60,710.6, low 60,500). Account 2 flat, $10,000, room $300. Quiet Sunday evening: BTC 60,734 in the 60,422-61,645 range (4h 'in range'), under the 4h EMA50 63,046 / 1d EMA200 75,069; funding +0.0015%, OI flat. SH51 shadow short (60,906) ~+0.2R. Confluence BTC -1/9, ETH -1/9, HYPE +1/9. Rule 23: BTC short 56 -15 no location = 41 / long 44 -15 = 29; ETH 41 / 29; HYPE long 56 -15 = 41 / short 44 -15 = 29. No trade. Watch: rule-27 short at 61,956-62,000; pullback long holding 60,000-60,400 (re-score); the weekly close at 00:00 Monday.
+
+## 2026-11-22 21:12 UTC — price 60,928
+21:11 UTC Nov 22 run. Account 2 flat, $10,000, room $300. BTC 60,875 in the 60,500-61,384 range (15m delta +2,334 BTC), funding +0.003%, OI flat; SH51 shadow short (60,906) ~0R. News: Trump threatens Iran strikes in the new year (no tape reaction, -0.02%); an openPR promo piece ignored. Confluence BTC -1/9, ETH -1/9, HYPE +1/9. Rule 23: BTC short 56 -15 no location = 41 / long 44 -15 = 29; ETH short 56 -15 = 41 / long 44 -15 = 29; HYPE long 56 -15 = 41 / short 44 -15 = 29. No trade.
