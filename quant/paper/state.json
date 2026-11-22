@@ -5,7 +5,22 @@
   "orders": [],
   "positions": [],
   "closed": [],
-  "shadow": [],
+  "shadow": [
+    {
+      "id": "SH51",
+      "symbol": "BTCUSDT",
+      "side": "short",
+      "entry": 60906.0,
+      "at_ms": 1795345200000,
+      "stop": 61712.0,
+      "target": 59697.0,
+      "why": "Rule-27 short watch fired (tag of 60,970-61,256 to 61,368, 15m close back below 60,970) but scored 56% (BTC -1/9, no deductions, no setup bonus) < 60 - not taken. Stop 61,368 + ATR(15m) 344; 1.5R 59,697.",
+      "result": null,
+      "R": null,
+      "max_hold_h": 24.0,
+      "limit": false
+    }
+  ],
   "account_no": 2,
   "started_ms": 1795271977401.4463
 }
