@@ -2131,3 +2131,6 @@
 
 ## 2026-11-23 00:12 UTC — price 61,247
 00:11 UTC Nov 23 run: daily + weekly close + zoom-out. Nov 22 daily: C 61,240 (+1.8%, inside-day range 58,731-61,645 above the Nov 21 hammer); weekly candle Nov 16-22: O 65,310 L 55,100 C 61,240 - a red week (the 7th straight) with a long lower wick off the 55,100 capitulation low. Still under every 4h/1d EMA (1d EMA200 74,936, -18%). Funding ~0, OI +1.1% 24h. DAY RECAP Nov 22: account 2 flat all day (no setup >= 60%); shadow SH51 (56% rule-27 short 60,906) still open ~-0.2R. New day: floor $9,700, room $300. Rule 23: BTC/ETH/HYPE short 56 -15 no location = 41 / long 44 -15 = 29. No trade. CALENDAR: Wed 25 Nov 13:30 UTC Core PCE m/m + prelim GDP q/q (top impact) -> no new entries 11:30-13:30 UTC Wed. News: tankers ablaze in Hormuz; Fusionist ACE bridge exploit (small).
+
+## 2026-11-23 01:12 UTC — price 60,966
+01:11 UTC Nov 23 run. Account 2 flat, $10,000, room $300. BTC 60,939 in the 60,550-61,645 range (poked 61,440), funding ~0, OI +0.8% 24h; SH51 shadow short (60,906) ~0R. News: Dow futures +700 / Nasdaq futures +3% after the correction (risk-on open for Monday); Korea stocks fall on AI-bubble fears. Confluence BTC/ETH/HYPE all -1/9. Rule 23: BTC/ETH/HYPE short 56 -15 no location = 41 / long 44 -15 = 29 (a futures-led catalyst not yet confirmed by the crypto tape: BTC -0.4% m60). No trade.
