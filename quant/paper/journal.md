@@ -2164,3 +2164,6 @@
 
 ## 2026-11-23 11:12 UTC — price 61,300
 11:12 UTC Nov 23 run. Account 2 flat, $10,000, room $300. BTC 61,315 in the 61,100-61,941 range, funding ~0, OI -1.5% 24h. HYPE 64.1 (high 64.45) grinding toward its 1h EMA200 65.2 / 4h EMA50 65.1 with negative funding and OI -2.7% (short covering). Confluence BTC -1/9, ETH -1/9, HYPE +1/9. Rule 23: BTC short 56 -15 no location = 41 / long 44 -15 = 29; ETH 41 / 29; HYPE long 56 -15 late -15 target into 65.1-65.2 = 26 / short 44 -15 = 29. No trade. Watch HYPE at 65.1-66.1 (4h EMA50 + range high 66.12): a rule-27 rejection short if HYPE confluence turns negative again.
+
+## 2026-11-23 12:15 UTC — price 61,311
+12:14 UTC run (zoom-out at the 08-12 4h close: BTC 61,395.3, low 61,100). Account 2 flat, $10,000, room $300. BTC 61,283 in a tight 4h range (61,100-61,943) under the 4h EMA50 62,811 / 1d EMA200 74,937; funding ~0, OI flat. ETH OI +6% 24h with negative funding at 1,721 (shorts building under 1,752). HYPE 64.0 under its 4h EMA50 65.11 / 66.10 range high, OI -3.7% (short covering). US equities set to rebound from the AI selloff. Confluence BTC -1/9, ETH -1/9, HYPE +1/9. Rule 23: BTC short 56 -15 no location = 41 / long 44 -15 = 29; ETH 41 / 29; HYPE long 56 -15 late -15 into 65.1-66.1 = 26 / short 44 -15 = 29. No trade. US flash PMI 14:45 (medium).
