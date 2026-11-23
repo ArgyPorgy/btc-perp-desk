@@ -2185,3 +2185,6 @@
 
 ## 2026-11-23 18:12 UTC — price 61,498
 18:11 UTC Nov 23 run. SW46 HYPE long 66.135 at -0.55R (HYPE 65.12, just under the 1h EMA200 65.25; 15m delta -112k HYPE) as BTC fades to 61,487 (15m delta -4,942 BTC; BTC/ETH confluence slipped to -3/9). Stop 64.3, TP1 68.888; holding (rule 28: the stop is the invalidation - 64.3 sits under the 64.49 broken range high and the 4h EMA50; a dip to the EMAs is inside the plan). HYPE confluence still +3/9 (long 67), funding +0.009%. News: new US Iran-related sanctions. Rule 23 (slot held by SW46): BTC short 67 -15 correlated-opposite (long HYPE vs short BTC hedges the slot... one position only) = n/a; ETH n/a. Equity $10,000 (unrealised -$154), room $300.
+
+## 2026-11-23 19:12 UTC — price 61,546
+19:11 UTC Nov 23 run. SW46 HYPE long 66.135 at -0.60R (HYPE 65.03, low 64.90, hugging the 1h EMA200 65.25 / 4h EMA50 ~65.3; 15m delta -53k). Stop 64.3, TP1 68.888; holding (rule 28). BTC 61,479 range-bound (61,200-61,825), BTC/ETH confluence -3/9; HYPE still +3/9, funding +0.007%, OI -3.2%. Equity $10,000 (unrealised -$168), room $300 (a stop-out costs ~$287 with fees and leaves ~$13).
