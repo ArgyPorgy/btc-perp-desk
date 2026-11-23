@@ -2155,3 +2155,6 @@
 
 ## 2026-11-23 08:13 UTC — price 61,299
 08:13 UTC run (zoom-out at the 04-08 4h close: BTC 61,429.5, low 61,027.1). Account 2 flat, $10,000, room $300. BTC 61,266 in a tight 4h range (60,340-61,943) under the 4h EMA50 62,869 / 1d EMA200 74,937; funding ~0, OI flat. ETH OI +6.4% 24h at 1,718 with negative funding (shorts adding). News: India's Sensex -1,000 on the AI rout. Confluence BTC -1/9, ETH -1/9, HYPE +1/9. Rule 23: BTC short 56 -15 no location = 41 / long 44 -15 = 29; ETH 41 / 29; HYPE long 56 -15 = 41 / short 44 -15 = 29. No trade. PCE/GDP blackout Wed 11:30-13:30 UTC.
+
+## 2026-11-23 09:12 UTC — price 61,576
+09:11 UTC Nov 23 run. Account 2 flat, $10,000, room $300. BTC 61,532 in the 61,027-61,943 range, funding ~0, OI flat. HYPE broke 63.47 to 63.67 (5m/15m broke up w/ volume, negative funding) - first push toward its 4h EMA50 65.12. Confluence BTC -1/9, ETH -1/9, HYPE +1/9. Rule 23: BTC short 56 -15 no location = 41 / long 44 -15 = 29; ETH 41 / 29; HYPE long 56 -15 late (on the breakout) -15 target into the 4h EMA50 65.1 / 66 range high = 26 / short 44 -15 = 29. No trade.
