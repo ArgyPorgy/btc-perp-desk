@@ -2197,3 +2197,6 @@
 
 ## 2026-11-23 22:12 UTC — price 61,244
 22:11 UTC Nov 23 run. Account 3 flat, $10,000, room $300 (user's call on a ~1.4% stop cap still pending). BTC 61,232 in a tight 61,041-61,442 range, funding +0.006%, OI -7.8% 24h. News: Binance obtains a $6.5B freezing order on the stolen crypto. Confluence BTC -3/9, ETH -5/9, HYPE -3/9. Rule 23: BTC short 67 -15 no location = 52 / long 33 -15 = 18; ETH short 78 -15 no location -15 into the 1,705-1,712 lows = 48 / long 22; HYPE short 67 -15 = 52 / long 3. No trade.
+
+## 2026-11-23 23:13 UTC — price 61,336
+23:12 UTC Nov 23 run. Account 3 flat, $10,000, room $300. ETH confluence -9/9 (all factors bearish): ETH broke the 1,712 low to 1,702 (5m/15m delta -27k/-40k), now 1,716 retesting it from below. ORDER UPDATE: NEW SW47 ETH SHORT - tag 1,720 then a 15m close below 1,712; full port 1x; stop 1,738 (~1.5%); TP1 1.5R ~1,673 + rule-29 trail; conf 85; expires 04:05. Rule 23: ETH short 100 -15 TP1 through 1,695 = 85 / long 0 (never vs -9/9); BTC short 67 -15 no location -15 correlated with SW47 = 37 / long 33 -15 = 18; HYPE short 67 -15 -15 correlated = 37 / long 3. BTC 61,340 (-3/9) range-bound; stocks had their best day since 2025 on Nvidia/Huang while crypto lags. Daily close at 00:00.
