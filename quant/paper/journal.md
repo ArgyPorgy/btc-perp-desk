@@ -2158,3 +2158,6 @@
 
 ## 2026-11-23 09:12 UTC — price 61,576
 09:11 UTC Nov 23 run. Account 2 flat, $10,000, room $300. BTC 61,532 in the 61,027-61,943 range, funding ~0, OI flat. HYPE broke 63.47 to 63.67 (5m/15m broke up w/ volume, negative funding) - first push toward its 4h EMA50 65.12. Confluence BTC -1/9, ETH -1/9, HYPE +1/9. Rule 23: BTC short 56 -15 no location = 41 / long 44 -15 = 29; ETH 41 / 29; HYPE long 56 -15 late (on the breakout) -15 target into the 4h EMA50 65.1 / 66 range high = 26 / short 44 -15 = 29. No trade.
+
+## 2026-11-23 10:11 UTC — price 61,370
+10:10 UTC Nov 23 run. Account 2 flat, $10,000, room $300. BTC rejected 61,941 again (a double top $15 under the 61,956-62,000 zone) and sits at 61,359; funding ~0, OI -1.5% 24h. HYPE 63.8 (high 64.17) with negative funding and OI -2.7% (shorts covering into the breakout). Confluence BTC -1/9, ETH -1/9, HYPE +1/9. Rule 23: BTC short 56 (location: double top under 62k; no rule-27 tag of the zone) = 56 < 60 / long 44 -15 no location = 29; ETH short 56 -15 = 41 / long 44 -15 = 29; HYPE long 56 -15 late -15 into the 4h EMA50 65.1 = 26 / short 44 -15 = 29. No trade.
