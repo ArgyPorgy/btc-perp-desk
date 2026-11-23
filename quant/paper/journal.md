@@ -2194,3 +2194,6 @@
 
 ## 2026-11-23 21:12 UTC — price 61,327
 21:11 UTC Nov 23 run. Account 3 flat, $10,000, room $300 (awaiting the user's call on a ~1.4% stop cap for full port). BTC 61,327 back in the old 60,727-61,943 range after the squeeze round-trip; funding +0.006%, OI -6.8% 24h. News: Fed's Williams sees higher rates 'over time'; US seeks $1.1B of the Binance-hack crypto. Confluence BTC -3/9, ETH -5/9, HYPE -3/9. Rule 23: BTC short 67 -15 no location = 52 / long 33 -15 = 18; ETH short 78 -15 no location -15 into 1,712 = 48 / long 22; HYPE short 67 -15 = 52 / long 33 -15 -15 (BTC disagrees) = 3. No trade. PCE/GDP Wed 13:30 (blackout 11:30-13:30).
+
+## 2026-11-23 22:12 UTC — price 61,244
+22:11 UTC Nov 23 run. Account 3 flat, $10,000, room $300 (user's call on a ~1.4% stop cap still pending). BTC 61,232 in a tight 61,041-61,442 range, funding +0.006%, OI -7.8% 24h. News: Binance obtains a $6.5B freezing order on the stolen crypto. Confluence BTC -3/9, ETH -5/9, HYPE -3/9. Rule 23: BTC short 67 -15 no location = 52 / long 33 -15 = 18; ETH short 78 -15 no location -15 into the 1,705-1,712 lows = 48 / long 22; HYPE short 67 -15 = 52 / long 3. No trade.
