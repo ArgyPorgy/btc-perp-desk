@@ -2143,3 +2143,6 @@
 
 ## 2026-11-23 04:12 UTC — price 61,254
 04:11 UTC run (zoom-out at the 00-04 4h close: BTC 61,262.6, low 60,339.6). Account 2 flat, $10,000, room $300. EVENT: shadow SH51 (the 56% rule-27 short 60,906, skipped as < 60) STOPPED -1R as BTC spiked to 61,943 - the 60% bar saved a full-port loss (~$270). BTC then fell back to 61,246; the 61,943 high stopped $13 short of the 61,956-62,000 short watch zone (not a tag) and price is now 700 pts below it (no late entry). ETH broke 1,730 to 1,752 (15m delta +69k). Funding ~0, OI -1.0% 24h. Confluence BTC/ETH/HYPE all -1/9. Rule 23: BTC short 56 -15 no location = 41 / long 44 -15 = 29; ETH long 44 -15 late = 29 / short 56 -15 against the breakout = 41; HYPE short 56 -15 = 41 / long 44 -15 = 29. No trade. PCE/GDP blackout Wed 11:30-13:30 UTC.
+
+## 2026-11-23 05:12 UTC — price 61,160
+05:11 UTC Nov 23 run. Account 2 flat, $10,000, room $300. BTC 61,182 in the 60,340-61,943 range (1h delta +3,613 BTC), funding +0.0035%, OI flat. News: CoinDesk - the market rout killed 50bp December Fed hike bets (mildly supportive; no tape reaction, +0.07%). Confluence BTC/ETH/HYPE all -1/9. Rule 23: BTC/ETH/HYPE short 56 -15 no location = 41 / long 44 -15 = 29. No trade. Watch: rule-27 short on a tag of 61,956-62,000 + 15m close back below; pullback long holding 60,000-60,400 (re-score).
