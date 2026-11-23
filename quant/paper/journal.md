@@ -2137,3 +2137,6 @@
 
 ## 2026-11-23 02:12 UTC — price 60,822
 02:11 UTC Nov 23 run. Account 2 flat, $10,000, room $300. BTC 60,730 drifting in the range (15m delta -1,057 BTC) despite US futures jumping after the correction (no crypto confirmation); funding ~0, OI flat; SH51 shadow short (60,906) ~+0.2R. Confluence BTC/ETH/HYPE all -1/9. Rule 23: BTC/ETH/HYPE short 56 -15 no location = 41 / long 44 -15 = 29. No trade.
+
+## 2026-11-23 03:12 UTC — price 61,037
+03:11 UTC Nov 23 run. Account 2 flat, $10,000, room $300. BTC dipped to 60,340 (below the 60,550 swing low) and bounced to 60,950 - range chop 60,340-61,645; funding ~0, OI -1.3% 24h; SH51 shadow short (60,906) ~0R. Confluence BTC -1/9, ETH -1/9, HYPE -3/9. Rule 23: BTC short 56 -15 no location = 41 / long 44 -15 = 29; ETH 41 / 29; HYPE short 67 -15 no location = 52 / long 33 -15 = 18. No trade.
