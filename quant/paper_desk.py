@@ -240,7 +240,21 @@ def process(s):
                     break
             if not o.get("armed_ms"):
                 continue
-        start = o.get("armed_ms") or o["created_ms"]
+        if o.get("tag") and not o.get("tagged_ms"):  # lessons rule 27: the level must be TAGGED before the close trigger counts
+            for b in klines("5m", max(o["created_ms"], o.get("armed_ms") or 0) - 300e3, sym(o)):
+                if b["t"] < max(o["created_ms"], o.get("armed_ms") or 0):
+                    continue
+                if b["t"] >= end:
+                    break
+                if (o["side"] == "long" and b["l"] <= o["tag"]) or (o["side"] == "short" and b["h"] >= o["tag"]):
+                    o["tagged_ms"] = b["T"] + 1
+                    o["tag_extreme"] = b["l"] if o["side"] == "long" else b["h"]
+                    events.append(f"TAGGED {o['id']}: {sym(o)} traded {px(o['tag'])} at {iso(b['T'] + 1)}; now waiting for a {o.get('tf', '4h')} "
+                                  f"{o['trigger'].replace('_', ' ')} {px(o['level'])}")
+                    break
+            if not o.get("tagged_ms"):
+                continue
+        start = max(o.get("armed_ms") or 0, o.get("tagged_ms") or 0) or o["created_ms"]
         if o["trigger"] == "limit":  # fills at the level when a 5m candle (opened after placement) trades through it
             for b in klines("5m", start - 300e3, sym(o)):
                 if b["t"] < start:
@@ -398,6 +412,7 @@ def main():
     a.add_argument("--note", default="")
     a.add_argument("--arm-trigger", choices=["close_above", "close_below"], help="order only arms after this 4h close")
     a.add_argument("--arm-level", type=float)
+    a.add_argument("--tag", type=float, help="rule 27: the close trigger only counts after price first trades this level (low <= tag for longs, high >= tag for shorts)")
     a.add_argument("--created", help="ISO time the order counts from (default now)")
     c = sub.add_parser("cancel")
     c.add_argument("id")
@@ -469,6 +484,7 @@ def main():
              "max_hold_h": args.max_hold_h or (24 if args.book == "scalp" else 168),
              "created_ms": parse_time(args.created) if args.created else time.time() * 1000,
              "arm": {"trigger": args.arm_trigger, "level": args.arm_level} if args.arm_trigger else None,
+             "tag": args.tag,
              "expires_ms": parse_time(args.expires) if args.expires else
                            (time.time() * 1000 + 2 * 3600e3 if args.book == "scalp" and args.trigger != "market" else None)}  # lessons rule 12: every scalp order goes stale
         if args.trigger == "market":
