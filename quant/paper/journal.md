@@ -2167,3 +2167,6 @@
 
 ## 2026-11-23 12:15 UTC — price 61,311
 12:14 UTC run (zoom-out at the 08-12 4h close: BTC 61,395.3, low 61,100). Account 2 flat, $10,000, room $300. BTC 61,283 in a tight 4h range (61,100-61,943) under the 4h EMA50 62,811 / 1d EMA200 74,937; funding ~0, OI flat. ETH OI +6% 24h with negative funding at 1,721 (shorts building under 1,752). HYPE 64.0 under its 4h EMA50 65.11 / 66.10 range high, OI -3.7% (short covering). US equities set to rebound from the AI selloff. Confluence BTC -1/9, ETH -1/9, HYPE +1/9. Rule 23: BTC short 56 -15 no location = 41 / long 44 -15 = 29; ETH 41 / 29; HYPE long 56 -15 late -15 into 65.1-66.1 = 26 / short 44 -15 = 29. No trade. US flash PMI 14:45 (medium).
+
+## 2026-11-23 13:17 UTC — price 61,229
+13:16 UTC Nov 23 run. Account 2 flat, $10,000, room $300. BTC 61,225 in the 61,030-61,941 range, funding ~0, OI flat. News: Strategy bought 457 BTC ($30M); tech futures +3% while DXY tops 104 (20-month high); Iran vows 'all available means' against the US blockade. No tape reaction. Confluence BTC -1/9, ETH -1/9, HYPE +1/9. Rule 23: BTC short 56 -15 no location = 41 / long 44 -15 = 29; ETH 41 / 29; HYPE long 56 -15 late -15 into 65.1-66.1 = 26 / short 44 -15 = 29. No trade. US flash PMI 14:45 (medium).
