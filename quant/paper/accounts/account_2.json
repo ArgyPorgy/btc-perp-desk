@@ -1,0 +1,54 @@
+{
+  "start_equity": 10000.0,
+  "equity": 9712.675965827473,
+  "risk_pct": 0.5,
+  "orders": [],
+  "positions": [],
+  "closed": [
+    {
+      "id": "SW46",
+      "symbol": "HYPEUSDT",
+      "book": "swing",
+      "side": "long",
+      "entry": 66.135,
+      "stop": 64.3,
+      "target": 68.88750000000002,
+      "qty": 151.20586678763135,
+      "risk_pct": 2.775,
+      "opened_ms": 1795453200000,
+      "note": "Rule-27 pullback long: HYPE must TAG 65.4 (4h EMA50 65.27 / 1h EMA200 65.26 retest after the squeeze to 69.75) and then a 15m must close back above 65.8. Stop 64.3 (under the broken 64.49 range high, > 1 ATR(15m) 0.83 below the EMAs; ~2.3% risk < 3% room). TP1 1.5R ~68.0 (below the 69.75/70.21 highs) -> 50% off, BE, 1R trail (rule 29). Rule 23: HYPE +3/9 long 67 +10 catalyst (risk-on tape: NVDA/tech squeeze, OI flush) = 77, no deductions.",
+      "max_hold_h": 72,
+      "conf": 77.0,
+      "manage": "tp1_trail",
+      "orig_qty": 151.20586678763135,
+      "orig_stop": 64.3,
+      "partials": [],
+      "checked_ms": 1795462800000,
+      "exit": 64.3,
+      "closed_ms": 1795462800000,
+      "reason": "stop",
+      "pnl": -287.32403417252704,
+      "R": -1.0355408719346046
+    }
+  ],
+  "shadow": [
+    {
+      "id": "SH51",
+      "symbol": "BTCUSDT",
+      "side": "short",
+      "entry": 60906.0,
+      "at_ms": 1795345200000,
+      "stop": 61712.0,
+      "target": 59697.0,
+      "why": "Rule-27 short watch fired (tag of 60,970-61,256 to 61,368, 15m close back below 60,970) but scored 56% (BTC -1/9, no deductions, no setup bonus) < 60 - not taken. Stop 61,368 + ATR(15m) 344; 1.5R 59,697.",
+      "result": "stop",
+      "R": -1.0,
+      "max_hold_h": 24.0,
+      "limit": false
+    }
+  ],
+  "account_no": 2,
+  "started_ms": 1795271977401.4463,
+  "ended_ms": 1795464751542.9622,
+  "ended_why": "Account 2 BLOWN: SW46 HYPE long stopped -1.04R (-$287.32) at 19:40 UTC Nov 23; equity $9,712.68 = $12.68 above the static $9,700 floor, which never moves - no stop can fit, so the account cannot trade again. Rules unchanged (user, 2026-11-21: blow the account, start a new one, same rules)."
+}
