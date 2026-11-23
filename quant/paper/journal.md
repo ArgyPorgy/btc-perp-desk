@@ -2149,3 +2149,6 @@
 
 ## 2026-11-23 06:12 UTC — price 61,713
 06:11 UTC Nov 23 run. Account 2 flat, $10,000, room $300. BTC 61,682 pressing the 61,943 high (1h delta +3,119 BTC), 0.4% under the 61,956-62,000 watch zone and 2% under the 1h EMA200 63,005; funding +0.003%, OI +1.5% 24h. Confluence BTC -1/9, ETH -1/9, HYPE +1/9. Note: at BTC -1/9 the rule-27 short at 62k would score only 56 (same as SH51, which stopped -1R) - it needs the confluence back to -3/9 or worse, or a tested setup, to clear 60. Rule 23: BTC short 56 -15 no trigger = 41 / long 44 -15 late into 62k = 29; ETH 41 / 29; HYPE long 56 -15 late = 41 / short 44 -15 = 29. No trade.
+
+## 2026-11-23 07:15 UTC — price 61,498
+07:14 UTC Nov 23 run. Account 2 flat, $10,000, room $300. BTC 61,509 under the 61,943 high (5m range 61,352-61,814), funding ~0, OI flat. News: Iranian attacks in Hormuz/Gulf the highest since the war began (no tape reaction); BTC/ETH ETFs bleeding, SOL ETFs +$4.4M. Confluence BTC -1/9, ETH -1/9, HYPE +1/9. Rule 23: BTC short 56 -15 no location = 41 / long 44 -15 = 29; ETH 41 / 29; HYPE long 56 -15 = 41 / short 44 -15 = 29. No trade.
