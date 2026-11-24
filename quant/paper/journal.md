@@ -2209,3 +2209,6 @@
 
 ## 2026-11-24 02:13 UTC — price 60,860
 02:11 UTC Nov 24 run. ORDER UPDATE: SW47 TAGGED 1,720 at 01:15 and FILLED on the 01:45-02:00 15m close below 1,712: ETH SHORT 5.8656 ETH @ 1,704.9 (full port $10,000, 1x), stop 1,738, TP1 1,655.1 (1.5R; 50% off + BE + 1R trail, rule 29), risk $194 (1.94%) vs room $300. Now +0.04R at 1,703.6 (ETH low 1,690.2; 15m delta -27k ETH). BTC rolled over to 60,920 (-7/9; 15m broke down w/ volume) - with the trade. Holding (rule 28). Fed's Williams signals further hikes. Rule 23 (slot held by SW47): BTC short 89 -15 correlated = 74 but one position only; HYPE short 67 -15 correlated = 52. Equity $10,000.
+
+## 2026-11-24 03:12 UTC — price 59,924
+03:11 UTC Nov 24 run. SW47 ETH short 1,704.9 at +0.77R (ETH 1,679, low 1,667.7; 15m delta -52k ETH). Stop 1,738, TP1 1,655.1 (50% off + BE + trail). BTC broke down to 59,852 (low 59,536; -9/9, 15m broke down w/ volume) - BTC, ETH -9/9, HYPE -5/9 all aligned with the short. Holding (rule 28). Equity $10,000 (unrealised +$150), room $300. CB consumer confidence 15:00 (medium).
