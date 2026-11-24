@@ -2212,3 +2212,6 @@
 
 ## 2026-11-24 03:12 UTC — price 59,924
 03:11 UTC Nov 24 run. SW47 ETH short 1,704.9 at +0.77R (ETH 1,679, low 1,667.7; 15m delta -52k ETH). Stop 1,738, TP1 1,655.1 (50% off + BE + trail). BTC broke down to 59,852 (low 59,536; -9/9, 15m broke down w/ volume) - BTC, ETH -9/9, HYPE -5/9 all aligned with the short. Holding (rule 28). Equity $10,000 (unrealised +$150), room $300. CB consumer confidence 15:00 (medium).
+
+## 2026-11-24 04:13 UTC — price 60,388
+04:12 UTC Tue 24 Nov (4h close zoom-out). SW47 ETH short open: 1,697.9 vs entry 1,704.9, +0.21R (high-water +0.77R at 1,667.7 low); stop 1,738, TP1 1,655.1 untouched, no management change (rule 28: stop is the only invalidation). 4h 00-04 closed BTC 60,304 (low 59,419), ETH ~1,698; all three below 4h/1d EMA50/200, daily regime BEAR (B20 live, no new signal; S20 last fired Sat 21 Nov). D1F: no unretested flips. Scores - BTC long 0% / short 100% but one-position rule (FULL PORT) and correlated with SW47 -> no trade; ETH long 0% / short 100% = held via SW47, no add; HYPE long 22% -15 alt-long rule (BTC long side 0, below 4h EMA50) = 7% / short 78% -15 correlated -15 no location (mid 20-bar range 62.1-64.5) = 48%. No new entries. Funding: BTC +0.004%, ETH -0.003%, HYPE +0.009%; BTC OI -4.9% 24h. News: no top-impact items; next blackout Wed 25 Nov 11:30-13:30 UTC (PCE/GDP).
