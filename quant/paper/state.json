@@ -2,33 +2,29 @@
   "start_equity": 10000.0,
   "equity": 10107.853487756216,
   "risk_pct": 0.5,
-  "orders": [
+  "orders": [],
+  "positions": [
     {
       "id": "SW49",
       "symbol": "BTCUSDT",
       "book": "swing",
       "side": "short",
-      "trigger": "close_below",
-      "tf": "15m",
-      "level": 59650.0,
+      "entry": 59127.2,
       "stop": 60615.0,
-      "target": null,
-      "target_r": 1.5,
-      "manage": "tp1_trail",
-      "oco": null,
+      "target": 56895.49999999999,
+      "qty": 0.17095099189131596,
+      "risk_pct": 2.516,
+      "opened_ms": 1795627800000,
       "note": "Rule-27 short at a HIGHER level (proposed rule 31 after SW48): BTC -9/9 squeezed to 59,450; must TAG 59,650 (1h EMA50 / 15m EMA200) then 15m close back below. Stop 60,615 = 60,085 1h range high + 1 ATR(15m) 530. TP1 1.5R, BE + 1R trail. Conf 100 -15 judgment (fresh bullish tape catalyst: HYPE ETF inclusion) = 85.",
-      "conf": 85.0,
-      "risk_pct": null,
-      "notional": 10107.853487756216,
-      "full_port": true,
       "max_hold_h": 168,
-      "created_ms": 1795626764090.1648,
-      "arm": null,
-      "tag": 59650.0,
-      "expires_ms": 1795662000000
+      "conf": 85.0,
+      "manage": "tp1_trail",
+      "orig_qty": 0.17095099189131596,
+      "orig_stop": 60615.0,
+      "partials": [],
+      "checked_ms": 1795630200000
     }
   ],
-  "positions": [],
   "closed": [
     {
       "id": "SW47",

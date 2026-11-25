@@ -57,6 +57,7 @@ LEVERAGE = 1.0  # 1x; more is the desk's call (user) - kept at 1x
 # Backtest on B20 (n=36): fixed 1.5R +0.35R/trade; 50% at 1.5R + BE + 1R trail +0.43R (t 2.0). --fixed-target opts out.
 TP1_FRAC = 0.5
 TRAIL_R = 1.0
+MAX_SLIP_R = 0.35  # rule-27 tag orders fill only on a close within 0.35x the planned risk past the level (no chase)
 TARGET_PCT, MAX_DD_PCT, DAILY_PCT = 9.0, 3.0, 3.0  # Propr Turbo 1-Step
 
 
@@ -274,6 +275,18 @@ def process(s):
             if b["T"] > end:
                 break
             hit = (o["trigger"] == "close_above" and b["c"] > o["level"]) or (o["trigger"] == "close_below" and b["c"] < o["level"])
+            if hit and o.get("tag") and isinstance(o["stop"], (int, float)):
+                # rule 27 retest orders: no chase. A close far past the level stretches the stop (SW48 filled 250 and
+                # SW49 523 below the level -> 2.0% / 2.5% risk). Only fill while the close is within MAX_SLIP_R of the
+                # planned risk (level -> stop); otherwise keep waiting for a close nearer the level (or expiry).
+                planned = abs(o["stop"] - o["level"])
+                slip = abs(b["c"] - o["level"])
+                if planned > 0 and slip > MAX_SLIP_R * planned:
+                    if not o.get("slip_noted"):
+                        o["slip_noted"] = True
+                        events.append(f"NO FILL {o['id']}: {tf} close {px(b['c'])} is {slip / planned:.2f}R past the level "
+                                      f"{px(o['level'])} (max {MAX_SLIP_R}R) - waiting for a close nearer the level")
+                    continue
             if hit:
                 s["orders"].remove(o)
                 open_position(s, o, b["c"], b["T"] + 1, events)
