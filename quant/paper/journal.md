@@ -2293,3 +2293,6 @@
 
 ## 2026-11-25 06:12 UTC — price 59,244
 06:10 UTC Wed 25 Nov. SW47 runner (2.9328 ETH, TP1 half +$140.86 booked): ETH 1,660.4 coiling 1,652-1,663 above the 1,648 low; trail stop 1,681.2 unchanged (best 1,648.0), locks ~+$69. Equity $10,140.86, room $440.86. Scores - BTC long 11% / short 89% but the runner occupies the one FULL PORT slot and is correlated -> no trade; ETH long 0% / short 100% = held via runner; HYPE long 11% -15 alt-long rule = 0% / short 89% -15 correlated -15 no location (59.3 mid 58.6-59.6) = 59% -> no trade. No new entries. News: oil slides despite Hormuz threats; nothing crypto-moving. No new entries 11:30-13:30 UTC (Core PCE + prelim GDP 13:30).
+
+## 2026-11-25 07:12 UTC — price 59,349
+07:11 UTC Wed 25 Nov. SW47 runner (2.9328 ETH, TP1 half +$140.86 booked): ETH 1,662.5, still in the 1,648-1,671 range under 15m EMA50 1,668; trail stop 1,681.2 unchanged (best 1,648.0), locks ~+$69. Equity $10,140.86, room $440.86. Scores - BTC long 11% / short 89% but the runner occupies the one FULL PORT slot and is correlated -> no trade; ETH long 0% / short 100% = held via runner; HYPE long 11% -15 alt-long rule = 0% / short 89% -15 correlated -15 no location (59.3 mid 58.6-59.6) = 59% -> no trade. No new entries. News: BTC ETF outflows, S.Korea stablecoin bill; nothing top-impact. No new entries 11:30-13:30 UTC (Core PCE + prelim GDP 13:30).
