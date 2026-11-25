@@ -1,16 +1,42 @@
 {
   "start_equity": 10000.0,
-  "equity": 10140.861991600485,
+  "equity": 10323.771907957253,
   "risk_pct": 0.5,
-  "orders": [],
-  "positions": [
+  "orders": [
+    {
+      "id": "SW48",
+      "symbol": "BTCUSDT",
+      "book": "swing",
+      "side": "short",
+      "trigger": "close_below",
+      "tf": "15m",
+      "level": 58420.0,
+      "stop": 59330.0,
+      "target": null,
+      "target_r": 1.5,
+      "manage": "tp1_trail",
+      "oco": null,
+      "note": "Rule-27 retest short: BTC -9/9 flushed through the 58,420 move low to 57,258 on PCE/tariffs/Nasdaq -3%; must TAG 58,420 then 15m close back below. Stop 59,330 = 58,896 swing high + 1 ATR(15m) 434. TP1 1.5R, BE + 1R trail (rule 29). Conf 100: -9/9 + catalyst the tape confirms, no violations (not chasing - retest entry; funding +0.004% / OI +4% = not a crowded short).",
+      "conf": 100.0,
+      "risk_pct": null,
+      "notional": 10323.771907957253,
+      "full_port": true,
+      "max_hold_h": 168,
+      "created_ms": 1795619633211.3655,
+      "arm": null,
+      "tag": 58420.0,
+      "expires_ms": 1795662000000
+    }
+  ],
+  "positions": [],
+  "closed": [
     {
       "id": "SW47",
       "symbol": "ETHUSDT",
       "book": "swing",
       "side": "short",
       "entry": 1704.86,
-      "stop": 1655.72,
+      "stop": 1640.8200000000002,
       "target": 1655.1499999999996,
       "qty": 2.93279213542461,
       "risk_pct": 1.944,
@@ -29,12 +55,16 @@
           "at_ms": 1795571700000
         }
       ],
-      "checked_ms": 1795615800000,
+      "checked_ms": 1795618800000,
       "tp1_done": true,
-      "best": 1622.58
+      "best": 1607.68,
+      "exit": 1640.8200000000002,
+      "closed_ms": 1795618800000,
+      "reason": "trailing stop",
+      "pnl": 323.77190795725164,
+      "R": 1.6656179088714496
     }
   ],
-  "closed": [],
   "shadow": [],
   "account_no": 3,
   "started_ms": 1795464751543.1753
