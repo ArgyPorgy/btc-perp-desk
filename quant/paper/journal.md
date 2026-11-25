@@ -2341,3 +2341,6 @@
 
 ## 2026-11-25 22:11 UTC — price 60,118
 22:10 UTC Wed 25 Nov. SW49 BTC short: 60,148 vs entry 59,127.2, -0.69R (-$175); range 59,767-60,490, stop 60,615 (125 above the high) / TP1 56,895.5 untouched, no change (rule 28). Funding +0.010% with OI -0.3% on the hour - the bounce is stalling under the 60,490-60,676 highs. Equity $10,107.85, room $407.85 (stop-out leaves ~$154). Scores - BTC long 44% / short 56% = held via SW49; ETH long 44% / short 56% -15 correlated = 41% -> no trade; HYPE long 56% -15 alt-long rule (BTC long 44 < 50, below 4h EMA50) = 41% / short 44% -15 correlated = 29% -> no trade. No new entries. News: Russian strike on Kyiv, India trade-deal pressure; nothing crypto-moving.
+
+## 2026-11-25 23:12 UTC — price 60,188
+23:11 UTC Wed 25 Nov. SW49 BTC short: 60,169 vs entry 59,127.2, -0.70R (-$178); quiet 59,912-60,362 range under the 60,490 high, stop 60,615 / TP1 56,895.5 untouched, no change (rule 28). Equity $10,107.85, room $407.85 (stop-out leaves ~$154). Daily balance resets 00:00 UTC (floor stays $9,700 static). Scores - BTC long 44% / short 56% = held via SW49; ETH long 44% / short 56% -15 correlated = 41% -> no trade; HYPE long 56% -15 alt-long rule (BTC long 44 < 50, below 4h EMA50) = 41% / short 44% -15 correlated = 29% -> no trade. No new entries. News: tariff commentary only.
