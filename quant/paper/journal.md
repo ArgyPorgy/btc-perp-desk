@@ -2344,3 +2344,6 @@
 
 ## 2026-11-25 23:12 UTC — price 60,188
 23:11 UTC Wed 25 Nov. SW49 BTC short: 60,169 vs entry 59,127.2, -0.70R (-$178); quiet 59,912-60,362 range under the 60,490 high, stop 60,615 / TP1 56,895.5 untouched, no change (rule 28). Equity $10,107.85, room $407.85 (stop-out leaves ~$154). Daily balance resets 00:00 UTC (floor stays $9,700 static). Scores - BTC long 44% / short 56% = held via SW49; ETH long 44% / short 56% -15 correlated = 41% -> no trade; HYPE long 56% -15 alt-long rule (BTC long 44 < 50, below 4h EMA50) = 41% / short 44% -15 correlated = 29% -> no trade. No new entries. News: tariff commentary only.
+
+## 2026-11-25 23:12 UTC — price 60,158
+23:15 UTC correction to the 23:11 entry: the floor does NOT stay $9,700 at midnight. day_start_balance counts closed P&L only, so the Nov 26 00:00 balance is $10,107.85 (SW47 +$323.77, SW48 -$215.92) and the daily floor becomes 97% of that = $9,804.61, above the static $9,700. Room drops from $407.85 to ~$303. SW49's stop (~$264 with fees) still fits, but a stop-out on Nov 26 would leave ~$39 of room for the rest of that day (no full-port stop fits), and ~$143 from Nov 27 00:00 when the daily floor falls back under the static floor. No change to SW49 (rule 28).
