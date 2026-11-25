@@ -1,6 +1,6 @@
 {
   "start_equity": 10000.0,
-  "equity": 10000.0,
+  "equity": 10140.861991600485,
   "risk_pct": 0.5,
   "orders": [],
   "positions": [
@@ -10,9 +10,9 @@
       "book": "swing",
       "side": "short",
       "entry": 1704.86,
-      "stop": 1738.0,
+      "stop": 1683.3300000000002,
       "target": 1655.1499999999996,
-      "qty": 5.86558427084922,
+      "qty": 2.93279213542461,
       "risk_pct": 1.944,
       "opened_ms": 1795485600000,
       "note": "Rule-27 retest short: ETH -9/9 broke the 1,712 low to 1,702 and is back at 1,716; must TAG 1,720 (retest of the broken low / 5m range 1,725) then a 15m must close back below 1,712. Stop 1,738 (5m range high 1,725 + ATR(15m) 11.3; ~1.5% risk, ~$150 of the $300 room). TP1 1.5R ~1,673 (50% off, BE, 1R trail, rule 29). Rule 23: ETH short 100 -15 TP1 through the 1,695 low = 85. Funding -0.008% (shorts paying) - not a capitulation sweep (no 20-day-low reclaim), so rule 30 does not apply.",
@@ -21,8 +21,17 @@
       "manage": "tp1_trail",
       "orig_qty": 5.86558427084922,
       "orig_stop": 1738.0,
-      "partials": [],
-      "checked_ms": 1795569000000
+      "partials": [
+        {
+          "px": 1655.1499999999996,
+          "qty": 2.93279213542461,
+          "pnl": 140.8619916004841,
+          "at_ms": 1795571700000
+        }
+      ],
+      "checked_ms": 1795572600000,
+      "tp1_done": true,
+      "best": 1650.19
     }
   ],
   "closed": [],
