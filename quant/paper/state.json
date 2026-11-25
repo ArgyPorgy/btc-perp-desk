@@ -2,33 +2,29 @@
   "start_equity": 10000.0,
   "equity": 10323.771907957253,
   "risk_pct": 0.5,
-  "orders": [
+  "orders": [],
+  "positions": [
     {
       "id": "SW48",
       "symbol": "BTCUSDT",
       "book": "swing",
       "side": "short",
-      "trigger": "close_below",
-      "tf": "15m",
-      "level": 58420.0,
+      "entry": 58172.1,
       "stop": 59330.0,
-      "target": null,
-      "target_r": 1.5,
-      "manage": "tp1_trail",
-      "oco": null,
+      "target": 56435.25,
+      "qty": 0.17746947261586316,
+      "risk_pct": 1.99,
+      "opened_ms": 1795621500000,
       "note": "Rule-27 retest short: BTC -9/9 flushed through the 58,420 move low to 57,258 on PCE/tariffs/Nasdaq -3%; must TAG 58,420 then 15m close back below. Stop 59,330 = 58,896 swing high + 1 ATR(15m) 434. TP1 1.5R, BE + 1R trail (rule 29). Conf 100: -9/9 + catalyst the tape confirms, no violations (not chasing - retest entry; funding +0.004% / OI +4% = not a crowded short).",
-      "conf": 100.0,
-      "risk_pct": null,
-      "notional": 10323.771907957253,
-      "full_port": true,
       "max_hold_h": 168,
-      "created_ms": 1795619633211.3655,
-      "arm": null,
-      "tag": 58420.0,
-      "expires_ms": 1795662000000
+      "conf": 100.0,
+      "manage": "tp1_trail",
+      "orig_qty": 0.17746947261586316,
+      "orig_stop": 59330.0,
+      "partials": [],
+      "checked_ms": 1795623000000
     }
   ],
-  "positions": [],
   "closed": [
     {
       "id": "SW47",
