@@ -2362,3 +2362,6 @@
 
 ## 2026-11-26 04:11 UTC — price 60,910
 04:10 UTC Thu 26 Nov (4h close zoom-out). Flat. Equity $9,843.28, room $38.66 - no trade fits until 00:00 UTC Nov 27 (~$143). 4h 00-04 closed BTC 60,755 (low 60,342) - a higher low; BTC/ETH/HYPE above 1h EMA50 but below 4h EMA50 (BTC 61,488, ETH 1,728, HYPE 63.2) and the daily EMAs; daily regime BEAR, no B20 signal, S20 20-day low 55,127 (+10.2%), D1F no unretested flips. Watch: a 4h close above the 4h EMA50 would flip the 4h trend; a 4h close below 59,258 would re-open shorts under proposed rule 33. Scores - BTC long 44% / short 56%; ETH long 44% / short 56%; HYPE long 56% -15 alt-long rule = 41% / short 44%. All < 60%, no room - no orders. News: Brazil/China reject the new tariffs.
+
+## 2026-11-26 05:12 UTC — price 60,896
+05:11 UTC Thu 26 Nov. Flat. Equity $9,843.28, room $38.66 - no trade fits until 00:00 UTC Nov 27 (~$143). BTC 60,939 in a 60,439-61,620 range, above 1h EMA50, below the 4h EMA50 61,490; ETH 1,702, HYPE 61.9; funding +0.008-0.010%. Scores - BTC long 44% / short 56%; ETH long 44% / short 56%; HYPE long 56% -15 alt-long rule = 41% / short 44%. All < 60%, no room - no orders. News: nothing new (tariff/tech recaps).
