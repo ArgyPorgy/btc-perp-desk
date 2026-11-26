@@ -2374,3 +2374,6 @@
 
 ## 2026-11-26 08:11 UTC — price 60,637
 08:11 UTC Thu 26 Nov (4h close zoom-out). Flat. Equity $9,843.28, room $38.66 - no trade fits until 00:00 UTC Nov 27 (~$143). 4h 04-08 closed BTC 60,501 (inside the 60,343-61,120 band, low 60,343); all three above 1h EMA50, below 4h EMA50 (BTC 61,441, ETH 1,726, HYPE 63.1) and the daily EMAs; daily regime BEAR, no B20 signal, S20 20-day low 55,127 (+9.8%), D1F no unretested flips. Watch levels unchanged: 4h close > 4h EMA50 flips the 4h trend up; 4h close < 59,258 re-opens shorts (proposed rule 33). Scores - BTC long 44% / short 56%; ETH long 33% / short 67% (no room); HYPE long 44% -15 alt-long rule = 29% / short 56%. No orders.
+
+## 2026-11-26 09:11 UTC — price 60,805
+09:10 UTC Thu 26 Nov. Flat. Equity $9,843.28, room $38.66 - no trade fits until 00:00 UTC Nov 27 (~$143). BTC 60,803 mid 60,343-61,120, above 1h EMA50, below 4h EMA50 61,447; ETH 1,700, HYPE 61.4. Scores - BTC long 44% / short 56%; ETH long 44% / short 56%; HYPE long 44% -15 alt-long rule = 29% / short 56%. All < 60%, no room - no orders. News: geo only.
