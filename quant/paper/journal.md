@@ -2404,3 +2404,6 @@
 
 ## 2026-11-26 20:11 UTC — price 60,700
 20:10 UTC Thu 26 Nov (4h close zoom-out). Flat. Equity $9,843.28, room $38.66 - no trade fits until 00:00 UTC Nov 27 (~$143). 4h 16-20 closed BTC 60,690 (low 60,315), still inside 59,887-61,120 under the 4h EMA50 61,355; ETH 1,703 under 4h EMA50 1,723; HYPE 62.8 pressing its 4h EMA50 62.95 and the 63.0 range high with funding -0.004% (shorts paying) - a 4h close above 63 would be the first alt 4h trend flip, but the alt-long rule still needs BTC long >= 50 or BTC above its 4h EMA50. Daily regime BEAR, no B20 signal, S20 20-day low 55,127 (+10.1%), D1F no unretested flips. Scores - BTC long 33% / short 67%; ETH long 44% / short 56%; HYPE long 44% -15 alt-long rule = 29% / short 56%. No room - no orders.
+
+## 2026-11-26 21:12 UTC — price 60,751
+21:11 UTC Thu 26 Nov. Flat. Equity $9,843.28, room $38.66 - no trade fits until 00:00 UTC Nov 27 (~$143). HYPE broke the 63.0 range high to 63.5, now 63.3 above its 4h EMA50 (62.97) and 1h EMA200, confluence +1/9, funding still negative - the 4h close at 00:00 decides whether the alt 4h trend flips. BTC 60,748 (60,315-60,796, under 4h EMA50 61,356), ETH 1,704. Scores - BTC long 33% / short 67%; ETH long 44% / short 56%; HYPE long 56% -15 alt-long rule (BTC long 33 < 50, below its 4h EMA50) = 41% / short 44%. No room - no orders. News: Jazan refinery attack (no reaction).
