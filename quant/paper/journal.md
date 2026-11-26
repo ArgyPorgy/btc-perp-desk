@@ -2389,3 +2389,6 @@
 
 ## 2026-11-26 13:13 UTC — price 60,837
 13:12 UTC Thu 26 Nov. Flat. Equity $9,843.28, room $38.66 - no trade fits until 00:00 UTC Nov 27 (~$143). BTC 60,833 inside 60,435-61,040, ETH 1,707, HYPE 61.2 - Thanksgiving chop. Scores - BTC long 44% / short 56%; ETH long 44% / short 56%; HYPE long 44% -15 alt-long rule = 29% / short 56%. All < 60%, no room - no orders. News: tariff recaps.
+
+## 2026-11-26 16:12 UTC — price 60,668
+16:11 UTC Thu 26 Nov (4h close zoom-out; the 14:11 and 15:11 runs were lost to worker restarts - flat with $38.66 room, so nothing could have filled or triggered). Equity $9,843.28, room $38.66 - no trade fits until 00:00 UTC Nov 27 (~$143). 4h 12-16 closed BTC 60,598 after dipping to 59,887 (held above 59,258 - proposed rule 33 short re-entry level not hit); all three below 4h EMA50 (BTC 61,379, ETH 1,724, HYPE 62.9) and daily EMAs; daily regime BEAR, no B20 signal, S20 20-day low 55,127 (+9.9%), D1F no unretested flips. Confluence tilted back to -3/9 on all three. Scores - BTC long 33% / short 67%; ETH long 33% / short 67%; HYPE long 33% -15 alt-long rule = 18% / short 67%. Shorts clear 60% but there is no room today and none planned - no orders. News: NK launderers moving the Binance haul; geo.
