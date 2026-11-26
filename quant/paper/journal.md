@@ -2356,3 +2356,6 @@
 
 ## 2026-11-26 02:11 UTC — price 60,890
 02:11 UTC Thu 26 Nov. Flat. Equity $9,843.28, room $38.66 (daily floor $9,804.62) - no full-port stop fits today; trading resumes at 00:00 UTC Nov 27 with ~$143 of room (static floor). BTC 60,830 holding above 15m/1h EMAs after the squeeze to 61,620, under the 4h EMA50 61,516; funding +0.010% on all three. Scores - BTC long 44% / short 56%; ETH long 44% / short 56%; HYPE long 56% -15 alt-long rule = 41% / short 44%. All < 60%, and no room - no orders. Awaiting the user's call on account 3 (keep on current rules / cap stops ~1.4% / retire for account 4).
+
+## 2026-11-26 03:12 UTC — price 60,720
+03:11 UTC Thu 26 Nov. Flat. Equity $9,843.28, room $38.66 - no trade fits until 00:00 UTC Nov 27 (~$143 room). BTC 60,668 in a 59,912-61,620 range above 15m/1h EMAs, under the 4h EMA50 61,510; funding ~+0.009-0.010% on all three. Scores - BTC long 44% / short 56%; ETH long 44% / short 56%; HYPE long 56% -15 alt-long rule = 41% / short 44%. All < 60% and no room - no orders. News: SBR bill advances (repeat, no reaction).
