@@ -1,30 +1,9 @@
 {
   "start_equity": 10000.0,
-  "equity": 10107.853487756216,
+  "equity": 9843.277578089692,
   "risk_pct": 0.5,
   "orders": [],
-  "positions": [
-    {
-      "id": "SW49",
-      "symbol": "BTCUSDT",
-      "book": "swing",
-      "side": "short",
-      "entry": 59127.2,
-      "stop": 60615.0,
-      "target": 56895.49999999999,
-      "qty": 0.17095099189131596,
-      "risk_pct": 2.516,
-      "opened_ms": 1795627800000,
-      "note": "Rule-27 short at a HIGHER level (proposed rule 31 after SW48): BTC -9/9 squeezed to 59,450; must TAG 59,650 (1h EMA50 / 15m EMA200) then 15m close back below. Stop 60,615 = 60,085 1h range high + 1 ATR(15m) 530. TP1 1.5R, BE + 1R trail. Conf 100 -15 judgment (fresh bullish tape catalyst: HYPE ETF inclusion) = 85.",
-      "max_hold_h": 168,
-      "conf": 85.0,
-      "manage": "tp1_trail",
-      "orig_qty": 0.17095099189131596,
-      "orig_stop": 60615.0,
-      "partials": [],
-      "checked_ms": 1795651800000
-    }
-  ],
+  "positions": [],
   "closed": [
     {
       "id": "SW47",
@@ -84,6 +63,31 @@
       "reason": "stop",
       "pnl": -215.9184202010364,
       "R": -1.0507393125485793
+    },
+    {
+      "id": "SW49",
+      "symbol": "BTCUSDT",
+      "book": "swing",
+      "side": "short",
+      "entry": 59127.2,
+      "stop": 60615.0,
+      "target": 56895.49999999999,
+      "qty": 0.17095099189131596,
+      "risk_pct": 2.516,
+      "opened_ms": 1795627800000,
+      "note": "Rule-27 short at a HIGHER level (proposed rule 31 after SW48): BTC -9/9 squeezed to 59,450; must TAG 59,650 (1h EMA50 / 15m EMA200) then 15m close back below. Stop 60,615 = 60,085 1h range high + 1 ATR(15m) 530. TP1 1.5R, BE + 1R trail. Conf 100 -15 judgment (fresh bullish tape catalyst: HYPE ETF inclusion) = 85.",
+      "max_hold_h": 168,
+      "conf": 85.0,
+      "manage": "tp1_trail",
+      "orig_qty": 0.17095099189131596,
+      "orig_stop": 60615.0,
+      "partials": [],
+      "checked_ms": 1795652100000,
+      "exit": 60615.0,
+      "closed_ms": 1795652100000,
+      "reason": "stop",
+      "pnl": -264.5759096665245,
+      "R": -1.0402413630864362
     }
   ],
   "shadow": [],
