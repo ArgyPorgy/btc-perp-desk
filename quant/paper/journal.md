@@ -2392,3 +2392,6 @@
 
 ## 2026-11-26 16:12 UTC — price 60,668
 16:11 UTC Thu 26 Nov (4h close zoom-out; the 14:11 and 15:11 runs were lost to worker restarts - flat with $38.66 room, so nothing could have filled or triggered). Equity $9,843.28, room $38.66 - no trade fits until 00:00 UTC Nov 27 (~$143). 4h 12-16 closed BTC 60,598 after dipping to 59,887 (held above 59,258 - proposed rule 33 short re-entry level not hit); all three below 4h EMA50 (BTC 61,379, ETH 1,724, HYPE 62.9) and daily EMAs; daily regime BEAR, no B20 signal, S20 20-day low 55,127 (+9.9%), D1F no unretested flips. Confluence tilted back to -3/9 on all three. Scores - BTC long 33% / short 67%; ETH long 33% / short 67%; HYPE long 33% -15 alt-long rule = 18% / short 67%. Shorts clear 60% but there is no room today and none planned - no orders. News: NK launderers moving the Binance haul; geo.
+
+## 2026-11-26 17:12 UTC — price 60,563
+17:11 UTC Thu 26 Nov. Flat. Equity $9,843.28, room $38.66 - no trade fits until 00:00 UTC Nov 27 (~$143). BTC 60,569 inside 59,887-60,960 under its 15m EMA50; ETH 1,694; HYPE 60.5 with funding flipping negative (-0.001%). Scores - BTC long 33% / short 67%; ETH long 33% / short 67%; HYPE long 33% -15 alt-long rule = 18% / short 67%. Shorts clear 60% but no room and no plan - no orders. News: Trump calls GDP figures 'fake'; de Cos tipped for ECB president. No reaction.
