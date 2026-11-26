@@ -2398,3 +2398,6 @@
 
 ## 2026-11-26 18:11 UTC — price 60,500
 18:11 UTC Thu 26 Nov. Flat. Equity $9,843.28, room $38.66 - no trade fits until 00:00 UTC Nov 27 (~$143). BTC 60,509 inside 59,887-60,939; ETH 1,693; HYPE 60.6 (funding -0.002%). Thanksgiving-quiet. Scores - BTC long 33% / short 67%; ETH long 33% / short 67%; HYPE long 33% -15 alt-long rule = 18% / short 67%. No room - no orders. News: geo only.
+
+## 2026-11-26 19:11 UTC — price 60,509
+19:11 UTC Thu 26 Nov. Flat. Equity $9,843.28, room $38.66 - no trade fits until 00:00 UTC Nov 27 (~$143). BTC 60,519 inside 59,887-60,938; ETH 1,702; HYPE popped to 62.2 (above 15m/1h EMAs, under 4h EMA50 62.96) with funding -0.003%. Scores - BTC long 33% / short 67%; ETH long 44% / short 56%; HYPE long 44% -15 alt-long rule = 29% / short 56%. No room - no orders. News: geo only.
