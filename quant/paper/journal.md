@@ -2368,3 +2368,6 @@
 
 ## 2026-11-26 06:11 UTC — price 60,503
 06:11 UTC Thu 26 Nov. Flat. Equity $9,843.28, room $38.66 - no trade fits until 00:00 UTC Nov 27 (~$143). BTC 60,497 slipping to the bottom of its 60,480-61,120 range (still above 1h EMA50 59,996, below 4h EMA50 61,474); ETH 1,684 under its 15m EMA50; HYPE 61.4. Scores - BTC long 44% / short 56%; ETH long 44% / short 56%; HYPE long 56% -15 alt-long rule = 41% / short 44%. All < 60%, no room - no orders. News: UK regulator plans tighter DeFi rules citing the Binance hack (impact 3, BTC -0.5%).
+
+## 2026-11-26 07:12 UTC — price 60,464
+07:11 UTC Thu 26 Nov. Flat. Equity $9,843.28, room $38.66 - no trade fits until 00:00 UTC Nov 27 (~$143). BTC 60,421 drifting at the bottom of its 60,343-61,120 range; ETH 1,686, HYPE 61.0 just under their 15m EMA50. Scores - BTC long 44% / short 56%; ETH long 44% / short 56%; HYPE long 44% -15 alt-long rule = 29% / short 56%. All < 60%, no room - no orders. News: Asian partners hit back at tariffs; nothing crypto-moving.
