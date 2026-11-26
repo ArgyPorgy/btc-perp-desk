@@ -2410,3 +2410,6 @@
 
 ## 2026-11-26 22:11 UTC — price 60,542
 22:11 UTC Thu 26 Nov. Flat. Equity $9,843.28, room $38.66 - no trade fits until 00:00 UTC Nov 27 (~$143). HYPE's 63 breakout faded: high 63.53, now 62.6 back under its 4h EMA50 (62.94) - a failed break so far. BTC 60,550 (60,356-60,991, under 4h EMA50 61,348), ETH 1,698. Scores - BTC long 33% / short 67%; ETH long 44% / short 56%; HYPE long 56% -15 alt-long rule = 41% / short 44%. No room - no orders. News: Kuwait attack (impact 3, BTC -0.3%).
+
+## 2026-11-26 23:12 UTC — price 60,469
+23:11 UTC Thu 26 Nov. Flat. Equity $9,843.28, room $38.66. At 00:00 UTC the daily floor (97% of $9,843.28 = $9,548) falls under the static $9,700, so room becomes ~$143 and a full-port stop of <= ~1.45% fits. BTC 60,488 (60,356-60,991, under 4h EMA50 61,346); ETH 1,688.5 slipping under 15m/1h EMAs; HYPE 62.1 (failed 63 break). Scores - BTC long 44% / short 56%; ETH long 44% / short 56%; HYPE long 56% -15 alt-long rule = 41% / short 44%. All < 60% - no orders. News: nothing new.
