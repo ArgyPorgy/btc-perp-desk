@@ -2476,3 +2476,6 @@
 
 ## 2026-11-27 20:11 UTC — price 59,782
 20:11 UTC Fri 27 Nov (4h close zoom-out). SW52 ETH short: 1,668.3 vs entry 1,679.6, +0.42R (+$67); ETH coiling 1,653.8-1,686.8 under its 15m EMA50 1,691; stop 1,706.5 / TP1 1,639.3 untouched, no change (rule 28). 4h 16-20 closed BTC 59,880 (low 59,469), ETH 1,668 - both under their 4h EMA50 (61,206 / 1,717); HYPE 63.8 just above its 4h EMA50 63.3. Daily BEAR, no B20 signal, S20 20-day low 55,127 (+8.6%), D1F no unretested flips. ETH funding -0.0032% (crowding flag). Room $175.83. Scores - BTC long 0% / short 100% (correlated); ETH long 0% / short 85% = held via SW52; HYPE long 56% -15 alt-long rule = 41% / short 44% -15 correlated = 29%. No new orders. News: US disables first ship since Iran vowed to break the blockade (impact 3, BTC -0.25%).
+
+## 2026-11-27 21:11 UTC — price 59,830
+21:11 UTC Fri 27 Nov. SW52 ETH short: 1,666.5 vs entry 1,679.6, +0.49R (+$77); ETH in 1,655.6-1,686.8 under its 15m EMA50 1,687, 1h taker -169k, funding -0.0015%; stop 1,706.5 / TP1 1,639.3 untouched, no change (rule 28). BTC 59,814 (-9/9), HYPE 64.1. Room $175.83. Scores - BTC long 0% / short 100% (correlated); ETH long 0% / short 85% = held via SW52; HYPE long 56% -15 alt-long rule = 41% / short 44% -15 correlated = 29%. No new orders. News: geo only.
