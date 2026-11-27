@@ -2,7 +2,32 @@
   "start_equity": 10000.0,
   "equity": 9843.277578089692,
   "risk_pct": 0.5,
-  "orders": [],
+  "orders": [
+    {
+      "id": "SW50",
+      "symbol": "ETHUSDT",
+      "book": "swing",
+      "side": "short",
+      "trigger": "close_below",
+      "tf": "15m",
+      "level": 1700.0,
+      "stop": 1717.5,
+      "target": null,
+      "target_r": 1.5,
+      "manage": "tp1_trail",
+      "oco": null,
+      "note": "Rule-27 retest short: ETH weakest major (-5/9, 15m broke down w/ volume, under 15m/1h/4h/1d EMAs). Must TAG 1,700 (round + 15m EMA50 zone) then 15m close back below (max slip 0.35R, rule 32). Stop 1,717.5 = 1,711.9 swing high + 1 ATR(15m) 5.6 (~1.0-1.1%, fits the $143 static-floor room without tightening). TP1 1.5R, BE + 1R trail. Conf 78 (confluence short 78, no violations).",
+      "conf": 78.0,
+      "risk_pct": null,
+      "notional": 9843.277578089692,
+      "full_port": true,
+      "max_hold_h": 168,
+      "created_ms": 1795738332927.0967,
+      "arm": null,
+      "tag": 1700.0,
+      "expires_ms": 1795780800000
+    }
+  ],
   "positions": [],
   "closed": [
     {
