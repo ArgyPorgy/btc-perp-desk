@@ -2446,3 +2446,6 @@
 
 ## 2026-11-27 10:12 UTC — price 61,646
 10:11 UTC Fri 27 Nov. SW51 ETH long: 1,728.7 vs entry 1,734.3, -0.28R (-$33); holding the 1,725-1,730 shelf above the 15m EMA50 1,722.7 and 4h EMA50 1,723.5; stop 1,714.5 / TP1 1,764.0 untouched, no change (rule 28). BTC 61,652 above its 4h EMA50 61,372, funding flat (-0.0002%); HYPE 65.7. Room $300. Scores - BTC long 56% / short 44% (correlated with SW51); ETH long 66% = held via SW51 / short 44%; HYPE long 67% -15 correlated -15 late = 37% / short 33%. No new orders. News: Tether freeze piece (impact 3, no reaction).
+
+## 2026-11-27 11:11 UTC — price 61,566
+11:11 UTC Fri 27 Nov. SW51 ETH long: 1,725.3 vs entry 1,734.3, -0.45R (-$52); drifting on the 15m EMA50 / 4h EMA50 (both ~1,723.5), low 1,722.6; stop 1,714.5 (8 under the EMAs, 1 ATR under the 1,722.7 shelf) / TP1 1,764.0 untouched, no change (rule 28). BTC 61,570 above its 4h EMA50 61,370, funding slightly negative (-0.001%) - shorts leaning on the bounce. HYPE 66.1. Room $300. Scores - BTC long 56% / short 44%; ETH long 66% = held via SW51 / short 44%; HYPE long 67% -15 correlated -15 late = 37% / short 33%. No new orders. News: Wall St week ahead (jobs data next week).
