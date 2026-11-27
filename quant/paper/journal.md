@@ -2479,3 +2479,6 @@
 
 ## 2026-11-27 21:11 UTC — price 59,830
 21:11 UTC Fri 27 Nov. SW52 ETH short: 1,666.5 vs entry 1,679.6, +0.49R (+$77); ETH in 1,655.6-1,686.8 under its 15m EMA50 1,687, 1h taker -169k, funding -0.0015%; stop 1,706.5 / TP1 1,639.3 untouched, no change (rule 28). BTC 59,814 (-9/9), HYPE 64.1. Room $175.83. Scores - BTC long 0% / short 100% (correlated); ETH long 0% / short 85% = held via SW52; HYPE long 56% -15 alt-long rule = 41% / short 44% -15 correlated = 29%. No new orders. News: geo only.
+
+## 2026-11-27 22:12 UTC — price 59,693
+22:11 UTC Fri 27 Nov. SW52 ETH short: 1,659.6 vs entry 1,679.6, +0.75R (+$118); ETH breaking the bottom of its 1,655.6-1,674.9 coil, under the 15m EMA50 1,683.7; funding back to flat (-0.0004%, crowding flag easing); TP1 1,639.3 is 20 away (above the 1,632 low); stop 1,706.5 untouched, no change (rule 28). BTC 59,719 (-9/9), HYPE 63.7. Room $175.83. Scores - BTC long 0% / short 100% (correlated); ETH long 0% / short 100% = held via SW52; HYPE long 56% -15 alt-long rule = 41% / short 44% -15 correlated = 29%. No new orders. News: dovish-Fed commentary.
