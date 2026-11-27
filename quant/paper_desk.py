@@ -170,6 +170,11 @@ def open_position(s, o, entry, at_ms, events):
             return
         qty = s["equity"] * LEVERAGE / entry
         risk_pct = round(qty * risk_px / s["equity"] * 100, 3)
+        stop_loss = qty * risk_px + FEE * (entry + stop) * qty  # what a stop-out costs, fees included
+        if stop_loss >= s["equity"] - floor(s):
+            events.append(f"SKIPPED {o['id']}: a stop-out at {px(stop)} from the fill {px(entry)} would cost ${stop_loss:,.0f}, "
+                          f"more than the ${s['equity'] - floor(s):,.0f} room - it would fail the account")
+            return
     elif o.get("notional"):  # fixed position size: the stop distance sets the dollar risk
         qty = o["notional"] / entry
         risk_pct = round(qty * risk_px / s["equity"] * 100, 3)
