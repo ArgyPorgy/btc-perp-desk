@@ -1,9 +1,10 @@
 {
   "start_equity": 10000.0,
-  "equity": 10000.0,
+  "equity": 9875.833011399347,
   "risk_pct": 0.5,
   "orders": [],
-  "positions": [
+  "positions": [],
+  "closed": [
     {
       "id": "SW51",
       "symbol": "ETHUSDT",
@@ -22,10 +23,14 @@
       "orig_qty": 5.765981860221068,
       "orig_stop": 1714.5,
       "partials": [],
-      "checked_ms": 1795785000000
+      "checked_ms": 1795785900000,
+      "exit": 1714.5,
+      "closed_ms": 1795785900000,
+      "reason": "stop",
+      "pnl": -124.16698860065355,
+      "R": -1.0870471983846546
     }
   ],
-  "closed": [],
   "shadow": [],
   "account_no": 4,
   "started_ms": 1795745532553.1902

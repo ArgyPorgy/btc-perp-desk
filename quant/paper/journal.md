@@ -2455,3 +2455,6 @@
 
 ## 2026-11-27 13:14 UTC — price 61,483
 13:13 UTC Fri 27 Nov. SW51 ETH long: 1,721.7 vs entry 1,734.3, -0.64R (-$73); 15m low still 1,716.2 (stop 1,714.5 untouched), ETH under its 15m EMA50 1,723.4 and 4h EMA50 1,723.3; 1h taker still +69k. No change (rule 28). BTC 61,511 holds above its 4h EMA50 61,377; HYPE 65.9 with funding -0.006% (shorts paying). Room $300. Scores - BTC long 56% / short 44%; ETH long 44% / short 56% (holding SW51 long, no flip); HYPE long 67% -15 correlated -15 late = 37% / short 33%. No new orders. News: OPEC+ meeting ahead; tariff commentary.
+
+## 2026-11-27 14:13 UTC — price 61,410
+14:12 UTC Fri 27 Nov. SW51 STOPPED 13:25 UTC at 1,714.5: -$124.17 = -1.09R. ETH wicked to 1,714.00 (0.50 through the stop, under the 12:00 low 1,716.2 and the 1,715 round number) and is back at 1,722.6. Account 4 equity $9,875.83, room $175.83 (a ~1.7% stop still fits). Lessons mistake row: stop on obvious liquidity (sub-1,716 low + round number) - fix proposed: push stops beyond any swing low/round number within 0.5 ATR(15m) and re-check R/room before placing. Scores - BTC long 56% / short 44%; ETH long 44% / short 56% (no short: not the SW50 setup either way, mid-range 1,714-1,736); HYPE long 67% -15 late (4.8% above its 15m EMA200; valid stop under 65.4 = ~1.2% but target into the 66.8 high/69.8 4h swing) = 52% / short 33%. No orders.
