@@ -2434,3 +2434,6 @@
 
 ## 2026-11-27 06:12 UTC — price 61,896
 06:11 UTC Fri 27 Nov. Account 4 flat, room $300. SW51 (ETH pullback long, tag 1,730) not tagged: ETH 1,742 (high 1,754.99, low since placement ~1,737) - no pullback yet; order stays armed to 17:00 UTC. BTC 61,867 (high 61,958) above its 4h EMA50 61,370; HYPE 66.2. Funding ~+0.007-0.010% (longs paying). Scores - BTC long 56% / short 44%; ETH long 56% +10 catalyst = 66% (held as the SW51 plan, waiting for the pullback - no chase) / short 44%; HYPE long 67% -15 late = 52% / short 33%. No new orders. News: India-US trade deal 'close to culmination' (impact 3, BTC +0.2%).
+
+## 2026-11-27 07:12 UTC — price 61,736
+07:11 UTC Fri 27 Nov. Account 4 flat, room $300. SW51 still untagged: ETH pulling back to 1,733 (3 above the 1,730 tag) after the 1,754.99 high; order armed to 17:00 UTC (fills on a 15m close 1,730-1,735.4 after a trade at 1,730; stop 1,714.5). BTC 61,701 (61,150-62,028), above its 4h EMA50 61,365; HYPE 66.3. Funding +0.008-0.010%. Scores - BTC long 56% / short 44%; ETH long 56% +10 catalyst = 66% (SW51 plan) / short 44%; HYPE long 67% -15 late = 52% / short 33%. No new orders. News: tariff/Nvidia recaps.
