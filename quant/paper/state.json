@@ -2,33 +2,29 @@
   "start_equity": 10000.0,
   "equity": 9875.833011399347,
   "risk_pct": 0.5,
-  "orders": [
+  "orders": [],
+  "positions": [
     {
       "id": "SW52",
       "symbol": "ETHUSDT",
       "book": "swing",
       "side": "short",
-      "trigger": "close_below",
-      "tf": "15m",
-      "level": 1682.0,
+      "entry": 1679.63,
       "stop": 1706.5,
-      "target": null,
-      "target_r": 1.5,
-      "manage": "tp1_trail",
-      "oco": null,
+      "target": 1639.3250000000003,
+      "qty": 5.879766979274808,
+      "risk_pct": 1.6,
+      "opened_ms": 1795797900000,
       "note": "Rule-27 retest short after the 15:00 flush (ETH 1,720 -> 1,632, BTC 61.4k -> 58.7k; ETH -9/9, BTC -7/9, 15m/1h broke down w/ volume). Must TAG 1,682 (broken 1,682.4 swing low) then 15m close back below (max slip 0.35R). Stop 1,706.5: 1 ATR(15m) above the level = 1,695, pushed past the 1,700 round number + 1h EMA50 1,701 per the SW51 lesson (no stop within 0.5 ATR of a round number/level) -> ~1.6%, risk ~$160 of the $176 room. TP1 1.5R (~1,640, above the 1,632 low), BE + 1R trail. Alt-short check met (BTC short 89 >= 50, BTC below its 1h EMA50). Conf 100.",
-      "conf": 100.0,
-      "risk_pct": null,
-      "notional": 9875.833011399347,
-      "full_port": true,
       "max_hold_h": 168,
-      "created_ms": 1795792540717.3362,
-      "arm": null,
-      "tag": 1682.0,
-      "expires_ms": 1795834800000
+      "conf": 100.0,
+      "manage": "tp1_trail",
+      "orig_qty": 5.879766979274808,
+      "orig_stop": 1706.5,
+      "partials": [],
+      "checked_ms": 1795799400000
     }
   ],
-  "positions": [],
   "closed": [
     {
       "id": "SW51",
