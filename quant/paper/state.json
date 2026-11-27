@@ -25,7 +25,9 @@
       "created_ms": 1795738332927.0967,
       "arm": null,
       "tag": 1700.0,
-      "expires_ms": 1795780800000
+      "expires_ms": 1795780800000,
+      "tagged_ms": 1795740600000,
+      "tag_extreme": 1700.92
     }
   ],
   "positions": [],
