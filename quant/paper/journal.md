@@ -2470,3 +2470,6 @@
 
 ## 2026-11-27 18:11 UTC — price 59,915
 18:11 UTC Fri 27 Nov. SW52 ETH short: 1,671.0 vs entry 1,679.6, +0.32R (+$51); stop 1,706.5 / TP1 1,639.3 untouched, no change (rule 28). ETH 1h taker -178k, funding -0.0051% (crowding flag), 15m flat. BTC 59,900 (-9/9), HYPE 63.9. Room $175.83 (stop-out leaves ~$8). Scores - BTC long 0% / short 100% (correlated with SW52); ETH long 0% / short 85% = held via SW52; HYPE long 56% -15 alt-long rule = 41% / short 44% -15 correlated = 29%. No new orders. News: Kyiv offers Black Sea ceasefire (BTC +0.6%).
+
+## 2026-11-27 19:11 UTC — price 59,812
+19:11 UTC Fri 27 Nov. SW52 ETH short: 1,669.4 vs entry 1,679.6, +0.38R (+$60); stop 1,706.5 / TP1 1,639.3 untouched, no change (rule 28). ETH coiling 1,660-1,680 under 15m EMA50 1,694, 1h taker -170k, funding -0.0043%. BTC 59,829 (-9/9), HYPE 63.8. Room $175.83. Scores - BTC long 0% / short 100% (correlated); ETH long 0% / short 85% = held via SW52; HYPE long 56% -15 alt-long rule = 41% / short 44% -15 correlated = 29%. No new orders. News: geo only.
