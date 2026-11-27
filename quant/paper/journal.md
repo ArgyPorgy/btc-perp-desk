@@ -2467,3 +2467,6 @@
 
 ## 2026-11-27 17:12 UTC — price 59,949
 17:11 UTC Fri 27 Nov. SW52 FILLED: ETH tagged 1,682 at 16:35, the 16:45 15m candle closed 1,679.6 (0.09R past the level; rule-34 check passed - stop-out $167.9 < $175.8 room) -> short 5.8798 ETH ($9,876 full port, 1x), stop 1,706.5, TP1 1,639.3, risk $158 (1.6%). Now 1,668.8 = +0.40R (+$64). ETH -9/9, 1h taker -175k, funding -0.0036% (shorts paying - the crowding flag stays). BTC 59,919 (-9/9), HYPE 64.2. Scores - BTC long 0% / short 100% (correlated with SW52); ETH long 0% / short 100% -15 crowding = 85% = held via SW52; HYPE long 56% -15 alt-long rule = 41% / short 44% -15 correlated = 29%. News: Binance restores withdrawals after the $6.4B October hack (impact 3, BTC flat-to-up).
+
+## 2026-11-27 18:11 UTC — price 59,915
+18:11 UTC Fri 27 Nov. SW52 ETH short: 1,671.0 vs entry 1,679.6, +0.32R (+$51); stop 1,706.5 / TP1 1,639.3 untouched, no change (rule 28). ETH 1h taker -178k, funding -0.0051% (crowding flag), 15m flat. BTC 59,900 (-9/9), HYPE 63.9. Room $175.83 (stop-out leaves ~$8). Scores - BTC long 0% / short 100% (correlated with SW52); ETH long 0% / short 85% = held via SW52; HYPE long 56% -15 alt-long rule = 41% / short 44% -15 correlated = 29%. No new orders. News: Kyiv offers Black Sea ceasefire (BTC +0.6%).
