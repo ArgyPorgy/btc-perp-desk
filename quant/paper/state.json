@@ -1,6 +1,6 @@
 {
   "start_equity": 10000.0,
-  "equity": 9875.833011399347,
+  "equity": 9989.446344945507,
   "risk_pct": 0.5,
   "orders": [],
   "positions": [
@@ -10,9 +10,9 @@
       "book": "swing",
       "side": "short",
       "entry": 1679.63,
-      "stop": 1706.5,
+      "stop": 1679.63,
       "target": 1639.3250000000003,
-      "qty": 5.879766979274808,
+      "qty": 2.939883489637404,
       "risk_pct": 1.6,
       "opened_ms": 1795797900000,
       "note": "Rule-27 retest short after the 15:00 flush (ETH 1,720 -> 1,632, BTC 61.4k -> 58.7k; ETH -9/9, BTC -7/9, 15m/1h broke down w/ volume). Must TAG 1,682 (broken 1,682.4 swing low) then 15m close back below (max slip 0.35R). Stop 1,706.5: 1 ATR(15m) above the level = 1,695, pushed past the 1,700 round number + 1h EMA50 1,701 per the SW51 lesson (no stop within 0.5 ATR of a round number/level) -> ~1.6%, risk ~$160 of the $176 room. TP1 1.5R (~1,640, above the 1,632 low), BE + 1R trail. Alt-short check met (BTC short 89 >= 50, BTC below its 1h EMA50). Conf 100.",
@@ -21,8 +21,17 @@
       "manage": "tp1_trail",
       "orig_qty": 5.879766979274808,
       "orig_stop": 1706.5,
-      "partials": [],
-      "checked_ms": 1795846200000
+      "partials": [
+        {
+          "px": 1639.3250000000003,
+          "qty": 2.939883489637404,
+          "pnl": 113.61333354616033,
+          "at_ms": 1795849800000
+        }
+      ],
+      "checked_ms": 1795849800000,
+      "tp1_done": true,
+      "best": 1639.3250000000003
     }
   ],
   "closed": [

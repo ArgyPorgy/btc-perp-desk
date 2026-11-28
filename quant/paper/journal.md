@@ -2506,3 +2506,6 @@
 
 ## 2026-11-28 06:12 UTC — price 59,738
 06:11 UTC Sat 28 Nov. SW52 ETH short: 1,654.9 vs entry 1,679.6, +0.92R (+$145); ETH low 1,645.5 this hour (6.2 above TP1 1,639.3), under every EMA, 15m broke down w/ volume; stop 1,706.5 untouched, no change (rule 28). BTC 59,690 (15m broke down), HYPE 63.0 slipped under its 4h EMA50 63.35. Room $175.83. Scores - BTC long 0% / short 100% (correlated); ETH long 0% / short 100% = held via SW52; HYPE long 44% -15 alt-long rule = 29% / short 56% -15 correlated = 41%. No new orders. News: BTC under 60k, ETF outflows mount.
+
+## 2026-11-28 07:12 UTC — price 59,488
+07:11 UTC Sat 28 Nov. SW52 TP1 HIT 07:10 UTC: closed 50% (2.9399 ETH) @ 1,639.3 = +$113.61; stop -> breakeven 1,679.6 (rule 29), runner 2.9399 ETH trails 1R (26.9) behind the best price from the next candle. Equity $9,989.45 (-0.11%), room $289.45; the runner cannot lose (open risk ~$5 fees). ETH 1,650.6 (low 1,638.2), BTC 59,480 (15m broke down w/ volume to 59,156), HYPE 63.7. Scores - BTC long 0% / short 100% (runner occupies the one FULL PORT slot, correlated); ETH long 0% / short 100% = held via runner; HYPE long 67% -15 alt-long rule (BTC long 0, below its 4h EMA50) -15 correlated = 37% / short 33%. No new orders. News: tariffs-as-new-normal commentary.
