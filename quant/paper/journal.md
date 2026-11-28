@@ -2503,3 +2503,6 @@
 
 ## 2026-11-28 05:11 UTC — price 59,775
 05:11 UTC Sat 28 Nov. SW52 ETH short: 1,655.9 vs entry 1,679.6, +0.88R (+$140, new high-water); ETH breaking the 1,653.6-1,672 weekend range down with volume (15m taker -22k), under every EMA; TP1 1,639.3 is 16.6 away (just above the 1,632 low); stop 1,706.5 untouched, no change (rule 28). BTC 59,757 (15m broke down w/ volume), HYPE 63.4. Room $175.83. Scores - BTC long 0% / short 100% (correlated); ETH long 0% / short 100% = held via SW52; HYPE long 56% -15 alt-long rule = 41% / short 44% -15 correlated = 29%. No new orders. News: geo only (Rostov refinery fire).
+
+## 2026-11-28 06:12 UTC — price 59,738
+06:11 UTC Sat 28 Nov. SW52 ETH short: 1,654.9 vs entry 1,679.6, +0.92R (+$145); ETH low 1,645.5 this hour (6.2 above TP1 1,639.3), under every EMA, 15m broke down w/ volume; stop 1,706.5 untouched, no change (rule 28). BTC 59,690 (15m broke down), HYPE 63.0 slipped under its 4h EMA50 63.35. Room $175.83. Scores - BTC long 0% / short 100% (correlated); ETH long 0% / short 100% = held via SW52; HYPE long 44% -15 alt-long rule = 29% / short 56% -15 correlated = 41%. No new orders. News: BTC under 60k, ETF outflows mount.
