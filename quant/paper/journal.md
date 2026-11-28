@@ -2491,3 +2491,6 @@
 
 ## 2026-11-28 01:12 UTC — price 60,043
 01:11 UTC Sat 28 Nov. SW52 ETH short: 1,665.6 vs entry 1,679.6, +0.52R (+$82); ETH in 1,651.3-1,668.7 under its 15m EMA50 1,675, 15m taker turned +12.8k (small bounce), 1h still -162k; stop 1,706.5 / TP1 1,639.3 untouched, no change (rule 28). BTC 60,037 back at 60k (-9/9), HYPE 64.0. Room $175.83. Scores - BTC long 0% / short 100% (correlated); ETH long 0% / short 100% = held via SW52; HYPE long 56% -15 alt-long rule = 41% / short 44% -15 correlated = 29%. No new orders. Weekend - thinner liquidity. News: geo only.
+
+## 2026-11-28 02:11 UTC — price 60,156
+02:10 UTC Sat 28 Nov. SW52 ETH short: 1,668.9 vs entry 1,679.6, +0.40R (+$63); ETH grinding up inside 1,651.3-1,670.5 under its 15m EMA50 1,674, 15m taker +17k (short-covering), 1h taker now -45k (was -162k); stop 1,706.5 / TP1 1,639.3 untouched, no change (rule 28). BTC 60,151 (15m back above its EMA50), HYPE 64.6 (+3/9). Room $175.83. Scores - BTC long 0% / short 100% (correlated); ETH long 0% / short 100% = held via SW52; HYPE long 67% -15 alt-long rule (BTC long 0, below its 4h EMA50) -15 correlated (opposite SW52's beta) = 37% / short 33%. No new orders. News: OPEC+ to keep output steady.
