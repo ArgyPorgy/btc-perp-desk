@@ -29,7 +29,7 @@
           "at_ms": 1795849800000
         }
       ],
-      "checked_ms": 1795864200000,
+      "checked_ms": 1795867800000,
       "tp1_done": true,
       "best": 1639.3250000000003
     }
@@ -61,7 +61,22 @@
       "R": -1.0870471983846546
     }
   ],
-  "shadow": [],
+  "shadow": [
+    {
+      "id": "SH52",
+      "symbol": "HYPEUSDT",
+      "side": "short",
+      "entry": 62.6,
+      "at_ms": 1795867800000,
+      "stop": 64.85,
+      "target": 59.225,
+      "why": "HYPE short scored 63% (78 conf -15 correlated) at the 12:00 4h close, but the one full-port slot is held by the SW52 ETH runner; also rule 34: stop 64.85 (beyond the 64.07 range high + 1 ATR, pushed past 64.5 round / 64.73 swing per rule 35) is 3.6% = ~$359 stop-out > $289 room",
+      "result": null,
+      "R": null,
+      "max_hold_h": 168.0,
+      "limit": false
+    }
+  ],
   "account_no": 4,
   "started_ms": 1795745532553.1902
 }
