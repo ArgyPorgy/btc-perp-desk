@@ -2488,3 +2488,6 @@
 
 ## 2026-11-28 00:12 UTC — price 59,934
 00:11 UTC Sat 28 Nov (daily + 4h close zoom-out). New day: daily floor $9,579.56 < static $9,700 -> static binds, room $175.83. SW52 ETH short: 1,664.0 vs entry 1,679.6, +0.58R (+$92); ETH ranging 1,651-1,675 under its 15m EMA50 1,677; stop 1,706.5 / TP1 1,639.3 untouched, no change (rule 28). Daily Fri 27 Nov closed BTC 59,894 (range 58,730-62,199 - a bearish outside-ish day back under 60k), ETH 1,662, HYPE 63.53; all below daily EMA50/200, regime BEAR, no B20 signal, S20 20-day low 55,127 (+8.7%), D1F no unretested flips. Scores - BTC long 0% / short 100% (correlated with SW52); ETH long 0% / short 100% = held via SW52; HYPE long 56% -15 alt-long rule = 41% / short 44% -15 correlated = 29%. No new orders. News: US disables another blockade runner (repeat).
+
+## 2026-11-28 01:12 UTC — price 60,043
+01:11 UTC Sat 28 Nov. SW52 ETH short: 1,665.6 vs entry 1,679.6, +0.52R (+$82); ETH in 1,651.3-1,668.7 under its 15m EMA50 1,675, 15m taker turned +12.8k (small bounce), 1h still -162k; stop 1,706.5 / TP1 1,639.3 untouched, no change (rule 28). BTC 60,037 back at 60k (-9/9), HYPE 64.0. Room $175.83. Scores - BTC long 0% / short 100% (correlated); ETH long 0% / short 100% = held via SW52; HYPE long 56% -15 alt-long rule = 41% / short 44% -15 correlated = 29%. No new orders. Weekend - thinner liquidity. News: geo only.
